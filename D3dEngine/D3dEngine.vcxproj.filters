@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{c535923f-6a5e-421d-95a7-7fc56197af96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\Loaders">
+      <UniqueIdentifier>{96b7af03-4d7f-4a65-997e-a3fdbb190625}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\ResourceManagement">
+      <UniqueIdentifier>{f2f22a3f-b77c-4888-a54f-dc8ac27cc404}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\ResourceManagement\Buffers">
+      <UniqueIdentifier>{6fa04c1a-d839-4eb9-aae8-62c367fd9bda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\Helpers">
+      <UniqueIdentifier>{8a57e312-2c9c-4ded-9519-48550aac93e3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dx12.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceResources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraHelper.h">
+      <Filter>Util\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryModelLoader.h">
+      <Filter>Util\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationManager.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferManagerBase.h">
+      <Filter>Util\ResourceManagement\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandListManager.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantBufferManager.h">
+      <Filter>Util\ResourceManagement\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="DescriptorHeapManager.h">
+      <Filter>Util\ResourceManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBufferManager.h">
+      <Filter>Util\ResourceManagement\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelViewProjectionManager.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="PathManager.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader.h">
+      <Filter>Util\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="PerlinNoise.h">
+      <Filter>Util\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsHelper.h">
+      <Filter>Util\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainCollisionHelper.h">
+      <Filter>Util\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainGenerationHelper.h">
+      <Filter>Util\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Util\ResourceManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="RootSignatureManager.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="PSOManager.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderLoader.h">
+      <Filter>Util\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureResourceManager.h">
+      <Filter>Util\ResourceManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBufferManager.h">
+      <Filter>Util\ResourceManagement\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureLoader.h">
+      <Filter>Util\Loaders</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D3dEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceResources.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraHelper.cpp">
+      <Filter>Util\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryModelLoader.cpp">
+      <Filter>Util\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationManager.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="BufferManagerBase.cpp">
+      <Filter>Util\ResourceManagement\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandListManager.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="DescriptorHeapManager.cpp">
+      <Filter>Util\ResourceManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexBufferManager.cpp">
+      <Filter>Util\ResourceManagement\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelViewProjectionManager.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="PathManager.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelLoader.cpp">
+      <Filter>Util\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="PerlinNoise.cpp">
+      <Filter>Util\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsHelper.cpp">
+      <Filter>Util\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainCollisionHelper.cpp">
+      <Filter>Util\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainGenerationHelper.cpp">
+      <Filter>Util\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Util\ResourceManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="RootSignatureManager.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderLoader.cpp">
+      <Filter>Util\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureResourceManager.cpp">
+      <Filter>Util\ResourceManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBufferManager.cpp">
+      <Filter>Util\ResourceManagement\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureLoader.cpp">
+      <Filter>Util\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="PSOManager.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
