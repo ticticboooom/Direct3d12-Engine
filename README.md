@@ -10,3 +10,9 @@
 ## Work:
 - to see what work needs to be done message me at kyle.cox.development@outlook.com
 - no changes will be accepted unless you can prove you are a membver of the trello board and you have said which card you have been working on
+
+## Documentation
+- The docs can be found at: https://kylebcox.github.io/Direct3d12-Engine/ 
+- All docs are made with doxygen and are automatically generated from comments in the source code
+- To contricute to the documentation download the source code and change or add comments
+- to generate the doxygen files use the Doxyfile in this repo to configure doxygen then run the generator and commit the changes
