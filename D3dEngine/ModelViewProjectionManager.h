@@ -13,8 +13,8 @@ public:
 	D3DENGINE_API Structures::ModelViewProjectionConstantBuffer GetCbvData();
 	
 private:
-	XMMATRIX m_model;
-	XMMATRIX m_view;
-	XMMATRIX m_projection;
+	XMMATRIX m_model; /// model matrix
+	XMMATRIX m_view; /// view matrix
+	XMMATRIX m_projection; /// projection / perspective matrix
 };
 

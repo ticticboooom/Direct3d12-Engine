@@ -17,14 +17,14 @@ public:
 
 private:
 	static const UINT c_alignedBufferSize = (sizeof(TData) + 255) & ~255;
-	std::unique_ptr<ResourceManager> m_resourceManager;
-	UINT8* m_mappedBufferData;
-	const std::shared_ptr<DX::DeviceResources>& m_deviceResources;
-	const std::shared_ptr<CommandListManager> m_commandListManager;
-	CD3DX12_CPU_DESCRIPTOR_HANDLE cbvCpuHandle;
-	D3D12_GPU_VIRTUAL_ADDRESS cbvGpuAddress;
-	UINT sizeInBytes;
-	bool hasCreated = false;
+	std::unique_ptr<ResourceManager> m_resourceManager; /// resource manager
+	UINT8* m_mappedBufferData; /// the data mapped to the resource
+	const std::shared_ptr<DX::DeviceResources>& m_deviceResources; /// device resources
+	const std::shared_ptr<CommandListManager> m_commandListManager; /// command list manager
+	CD3DX12_CPU_DESCRIPTOR_HANDLE cbvCpuHandle; ///the constant buffer view cpu handle
+	D3D12_GPU_VIRTUAL_ADDRESS cbvGpuAddress; ///the gpu address of the resource
+	UINT sizeInBytes; /// the size of the resourc ein bytes
+	bool hasCreated = false; /// has the buffer view been created
 };
 
 /**

@@ -2,16 +2,29 @@
 #include "ModelViewProjectionManager.h"
 
 
-
+/**
+ * @brief Construct a new Model View Projection Manager:: Model View Projection Manager object
+ * @detail This will store the Model View and Perspective Matrices and will convert them to Constant buffer safe Data 
+ * 
+ */
 ModelViewProjectionManager::ModelViewProjectionManager()
 {
 }
 
-
+/**
+ * @brief Destroy the Model View Projection Manager:: Model View Projection Manager object
+ * 
+ */
 ModelViewProjectionManager::~ModelViewProjectionManager()
 {
 }
 
+/**
+ * @brief store a matrix in 1 of the 3 types
+ * 
+ * @param type integer of representing matrix (0 = model, 1 = view, 3 = perspective)
+ * @param mat the matrix to store
+ */
 void ModelViewProjectionManager::SetMatrix(UINT type, XMMATRIX mat)
 {
 	if (type == 0) {
@@ -25,6 +38,11 @@ void ModelViewProjectionManager::SetMatrix(UINT type, XMMATRIX mat)
 	}
 }
 
+/**
+ * @brief store a matrix in 1 of the 3 types
+ * 
+ * @param type integer of representing matrix to get (0 = model, 1 = view, 3 = perspective)
+ */
 XMMATRIX ModelViewProjectionManager::GetMatrix(UINT type)
 {
 	if (type == 0) {
@@ -38,6 +56,11 @@ XMMATRIX ModelViewProjectionManager::GetMatrix(UINT type)
 	}
 }
 
+/**
+ * @brief turns the Matrices into Constant buffer usable data.
+ * 
+ * @return Structures::ModelViewProjectionConstantBuffer 
+ */
 Structures::ModelViewProjectionConstantBuffer ModelViewProjectionManager::GetCbvData()
 {
 	Structures::ModelViewProjectionConstantBuffer value;

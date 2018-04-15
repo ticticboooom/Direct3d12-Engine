@@ -3,6 +3,10 @@
 #include <assimp/scene.h>
 #include "AnimationManager.h"
 #include <assimp/matrix4x4.h>
+/**
+ * @brief deprecated, for use only when coxl loader not working
+ * 
+ */
 class ModelLoader
 {
 public:

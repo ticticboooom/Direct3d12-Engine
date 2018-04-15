@@ -20,6 +20,6 @@ private:
 	};
 	LoadedData LoadTextureFromFile(std::wstring fileName);
 	std::shared_ptr<DX::DeviceResources> m_deviceResources;
-	D3D12_RESOURCE_DESC m_textureDesc;
-	std::unique_ptr<ResourceManager> m_resourceManager;
+	D3D12_RESOURCE_DESC m_textureDesc; /// descriptor of texture
+	std::unique_ptr<ResourceManager> m_resourceManager; /// resource manager for texture
 };

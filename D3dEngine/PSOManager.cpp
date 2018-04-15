@@ -3,6 +3,11 @@
 #include "DirectXHelper.h"
 #include "DeviceResources.h"
 
+/**
+ * @brief Construct a new PSOManager::PSOManager object
+ * @detail init with default values, this stores the shaders and renderer pipeline data
+ * @param deviceResources 
+ */
 PSOManager::PSOManager(const std::shared_ptr<DX::DeviceResources> deviceResources) :
 	m_deviceResources(deviceResources)
 {
@@ -13,11 +18,17 @@ PSOManager::PSOManager(const std::shared_ptr<DX::DeviceResources> deviceResource
 	m_desc.SampleMask = UINT_MAX;
 	m_desc.SampleDesc.Count = 1;
 }
-
+/**
+ * @brief Destroy the PSOManager::PSOManager object
+ * 
+ */
 PSOManager::~PSOManager()
 {
 }
-
+/**
+ * @brief finalises and creates the PSO
+ * 
+ */
 void PSOManager::Finalise()
 {
 	ThrowIfFailed(m_deviceResources->GetD3DDevice()->CreateGraphicsPipelineState(&m_desc, IID_PPV_ARGS(&m_pipelineState)));

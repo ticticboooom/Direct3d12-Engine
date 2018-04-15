@@ -14,5 +14,5 @@ public:
 	D3DENGINE_API ID3D12Resource* GetResource() const { return m_resourceManager->Get(); };
 
 private:
-	std::unique_ptr<ResourceManager> m_resourceManager;
+	std::unique_ptr<ResourceManager> m_resourceManager; /// The resource that is managed
 };

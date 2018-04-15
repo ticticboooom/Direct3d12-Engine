@@ -1,16 +1,27 @@
 ﻿#include "stdafx.h"
 #include "TextureLoader.h"
 
-
+/**
+ * @brief Construct a new Texture Loader:: Texture Loader object
+ * 
+ */
 TextureLoader::TextureLoader()
 {
 }
 
-
+/**
+ * @brief Destroy the Texture Loader:: Texture Loader object
+ * 
+ */
 TextureLoader::~TextureLoader()
 {
 }
-
+/**
+ * @brief 
+ * 
+ * @param wicFormatGUID the WIC format GUID
+ * @return DXGI_FORMAT the DXGI format
+ */
 DXGI_FORMAT TextureLoader::GetDXGIFormatFromWICFormat(WICPixelFormatGUID& wicFormatGUID)
 {
 	if (wicFormatGUID == GUID_WICPixelFormat128bppRGBAFloat) return DXGI_FORMAT_R32G32B32A32_FLOAT;
@@ -82,6 +93,12 @@ WICPixelFormatGUID TextureLoader::GetConvertToWICFormat(WICPixelFormatGUID& wicF
 	else return GUID_WICPixelFormatDontCare;
 }
 
+/**
+ * @brief gets the bits per pixel
+ * 
+ * @param dxgiFormat
+ * @return int the bits per pixel
+ */
 // get the number of bits per pixel for a dxgi format
 int TextureLoader::GetDXGIFormatBitsPerPixel(DXGI_FORMAT& dxgiFormat)
 {
@@ -103,7 +120,15 @@ int TextureLoader::GetDXGIFormatBitsPerPixel(DXGI_FORMAT& dxgiFormat)
 	else if (dxgiFormat == DXGI_FORMAT_A8_UNORM) return 8;
 }
 
-// load and decode image from file
+/**
+ * @brief load the texture from a file
+ * 
+ * @param imageData the out parameter of data which is the image
+ * @param resourceDescription description of the resouce that is filled by this function
+ * @param filename path and filename of the texture
+ * @param bytesPerRow the number of bytes per row
+ * @return int success message
+ */
 int TextureLoader::LoadImageDataFromFile(BYTE** imageData, D3D12_RESOURCE_DESC& resourceDescription, LPCWSTR filename, int &bytesPerRow)
 {
 	HRESULT hr;

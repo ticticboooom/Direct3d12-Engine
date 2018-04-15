@@ -11,6 +11,6 @@ public:
 	D3DENGINE_API ~VertexBufferManager();
 	D3DENGINE_API D3D12_VERTEX_BUFFER_VIEW CreateVertexBufferView() const;
 private:
-	std::shared_ptr<std::vector<Structures::VertexTexCoordNormal>> m_vertices;
-	size_t m_verticesSize;
+	std::shared_ptr<std::vector<Structures::VertexTexCoordNormal>> m_vertices; /// vertices
+	size_t m_verticesSize; /// count of vertices
 };

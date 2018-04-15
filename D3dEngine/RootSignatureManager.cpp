@@ -2,16 +2,30 @@
 #include "RootSignatureManager.h"
 #include "DirectXHelper.h"
 #include "DeviceResources.h"
-
+/**
+ * @brief Construct a new Root Signature:: Root Signature object
+ * @detail this is a signature for what resources will be rendered
+ * @param deviceResources 
+ */
 RootSignature::RootSignature(const std::shared_ptr<DX::DeviceResources> deviceResources):
 m_deviceResources(deviceResources)
 {
 }
-
+/**
+ * @brief Destroy the Root Signature:: Root Signature object
+ * 
+ */
 RootSignature::~RootSignature()
 {
 }
 
+/**
+ * @brief initialise static sampler from a nonstatic sampler
+ * 
+ * @param Register the register it will map to
+ * @param NonStaticSamplerDesc the descriptor of the nmon static sampler
+ * @param Visibility the shader visibility flags which decide which shaders it will be exposed to
+ */
 void RootSignature::InitStaticSampler(UINT Register, const D3D12_SAMPLER_DESC& NonStaticSamplerDesc,
 	D3D12_SHADER_VISIBILITY Visibility)
 {
@@ -33,6 +47,12 @@ void RootSignature::InitStaticSampler(UINT Register, const D3D12_SAMPLER_DESC& N
 
 }
 
+/**
+ * @brief finalise, serialise and create the root signature
+ * 
+ * @param name name of the rootsignature
+ * @param Flags creation flags
+ */
 void RootSignature::Finalize(const std::wstring& name, D3D12_ROOT_SIGNATURE_FLAGS Flags)
 {
 	if (m_Finalized)
@@ -55,15 +75,28 @@ void RootSignature::Finalize(const std::wstring& name, D3D12_ROOT_SIGNATURE_FLAG
 
 }
 
+/**
+ * @brief Construct a new Root Signature Manager:: Root Signature Manager object
+ * @detail stores the root signature managers
+ */
 RootSignatureManager::RootSignatureManager()
 {
 
 }
-
+/**
+ * @brief Destroy the Root Signature Manager:: Root Signature Manager object
+ * 
+ */
 RootSignatureManager::~RootSignatureManager()
 {
 }
-
+/**
+ * @brief add a root signature to the list
+ * 
+ * @param deviceResources 
+ * @param NumRootParams number of root parameters
+ * @param NumStaticSamplers number of static amplers
+ */
 void RootSignatureManager::AddSignature(const std::shared_ptr<DX::DeviceResources> deviceResources, UINT NumRootParams,
 	UINT NumStaticSamplers)
 {

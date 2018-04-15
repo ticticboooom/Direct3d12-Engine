@@ -11,6 +11,6 @@ public:
 	D3DENGINE_API ~BinaryModelLoader();
 	D3DENGINE_API std::shared_ptr<Structures::VerticesIndicesFromBin> GetFinalData() const { return m_finalData; };
 private:
-	std::shared_ptr<Structures::VerticesIndicesFromBin> m_finalData;
+	std::shared_ptr<Structures::VerticesIndicesFromBin> m_finalData; /// The final data that can be retrieved
 };
 

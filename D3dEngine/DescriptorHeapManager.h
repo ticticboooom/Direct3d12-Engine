@@ -17,9 +17,9 @@ public:
 	D3DENGINE_API D3D12_GPU_DESCRIPTOR_HANDLE GetGPUDescriptorHandleForHeapStart() const { return m_heap.Get()->GetGPUDescriptorHandleForHeapStart(); };
 	D3DENGINE_API ID3D12DescriptorHeap* Get() const { return m_heap.Get(); };
 private:
-	D3D12_DESCRIPTOR_HEAP_DESC m_desc;
-	Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> m_heap;
-	D3D12_DESCRIPTOR_HEAP_TYPE m_type;
-	std::shared_ptr<DX::DeviceResources> m_deviceResources;
+	D3D12_DESCRIPTOR_HEAP_DESC m_desc; /// The descriptor for the heap
+	Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> m_heap; /// the heap itself
+	D3D12_DESCRIPTOR_HEAP_TYPE m_type; /// the type of the descriptor heap
+	std::shared_ptr<DX::DeviceResources> m_deviceResources; /// device resources
 
 };

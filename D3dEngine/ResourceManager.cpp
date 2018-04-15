@@ -1,11 +1,23 @@
 ﻿#include "stdafx.h"
 #include "ResourceManager.h"
 #include "DirectXHelper.h"
-
+/**
+ * @brief Destroy the Resource Manager:: Resource Manager object
+ * 
+ */
 ResourceManager::~ResourceManager()
 {
 }
 
+/**
+ * @brief update the subresource of the resouce 
+ * 
+ * @param data the subresource's data
+ * @param size the size of the data
+ * @param width the width of the data
+ * @param height the height of the data
+ * @param state the state of the subresource
+ */
 void ResourceManager::UpdateSubresource(BYTE* data, UINT size, const UINT width, const UINT height, const D3D12_RESOURCE_STATES state) const
 {
 	D3D12_SUBRESOURCE_DATA subresource = {};
@@ -16,12 +28,23 @@ void ResourceManager::UpdateSubresource(BYTE* data, UINT size, const UINT width,
 	m_commandListManager->CreateResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(m_resource.Get(), D3D12_RESOURCE_STATE_COPY_DEST, state));
 }
 
+/**
+ * @brief get the required size for a resource
+ * 
+ * @return UINT64 the required size
+ */
 UINT64 ResourceManager::GetRequiredIntermediateSizeForResource() const
 {
 	return  GetRequiredIntermediateSize(m_resource.Get(), 0, 1);
 
 }
 
+/**
+ * @brief Construct a new Resource Manager:: Resource Manager object
+ * 
+ * @param deviceResources 
+ * @param commandListManager 
+ */
 ResourceManager::ResourceManager(const std::shared_ptr<DX::DeviceResources> deviceResources,
 	const std::shared_ptr<CommandListManager> commandListManager) :
 	m_deviceResources(deviceResources),
@@ -29,6 +52,11 @@ ResourceManager::ResourceManager(const std::shared_ptr<DX::DeviceResources> devi
 {
 }
 
+/**
+ * @brief create upload resource with the upload heap to upload the data
+ * 
+ * @param desc  resource descriptor
+ */
 void ResourceManager::UploadResource(D3D12_RESOURCE_DESC desc)
 {
 	CD3DX12_HEAP_PROPERTIES uploadHeapProperties(D3D12_HEAP_TYPE_UPLOAD);
@@ -42,6 +70,11 @@ void ResourceManager::UploadResource(D3D12_RESOURCE_DESC desc)
 		ThrowIfFailed(result);
 }
 
+/**
+ * @brief creates a resource that cannot be mapped to a vriable and must be changed using update subresource
+ * 
+ * @param desc 
+ */
 void ResourceManager::DefaultHeapResource(D3D12_RESOURCE_DESC desc)
 {
 	CD3DX12_HEAP_PROPERTIES defaultHeapProperties(D3D12_HEAP_TYPE_DEFAULT);

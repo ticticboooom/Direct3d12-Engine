@@ -16,9 +16,9 @@ private:
 	Structures::VerticesIndicesFromBin GenVertices(std::shared_ptr<std::vector<std::vector<float>>> heights, float originX, float originZ);
 	Structures::VertexTexCoordNormal GenVertex(float height, float x, float z);
 	void GenNormalsPerTri(Structures::VertexTexCoordNormal* v0, Structures::VertexTexCoordNormal* v1, Structures::VertexTexCoordNormal* v2);
-	std::shared_ptr<std::vector<std::shared_ptr<std::vector<std::vector<float>>>>> m_chunks;
-	std::shared_ptr<std::vector<XMFLOAT4>> m_chunkOrigins;
-	const int c_size = 250;
-	ULONG m_index;
+	std::shared_ptr<std::vector<std::shared_ptr<std::vector<std::vector<float>>>>> m_chunks; /// chunks of the terrain
+	std::shared_ptr<std::vector<XMFLOAT4>> m_chunkOrigins; /// chunk origins
+	const int c_size = 250; // constant size of chunk
+	ULONG m_index; /// vertex index 
 };
 

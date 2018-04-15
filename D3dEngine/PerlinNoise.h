@@ -11,7 +11,7 @@ private:
 	double Interpolate(double x, double y, double a) const;
 	double Noise(int x, int y) const;
 
-	double persistence, frequency, amplitude;
-	int octaves, randomseed;
+	double persistence, frequency, amplitude; /// required noise variables
+	int octaves, randomseed;/// required noise variables
 };
 

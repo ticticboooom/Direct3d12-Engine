@@ -10,6 +10,6 @@ public:
 	D3DENGINE_API ~IndexBufferManager();
 	D3DENGINE_API D3D12_INDEX_BUFFER_VIEW CreateIndexBufferView();
 private:
-	std::shared_ptr<std::vector<unsigned int>> m_indices;
-	size_t m_indicesSize;
+	std::shared_ptr<std::vector<unsigned int>> m_indices; /// The index data
+	size_t m_indicesSize; /// size of the index data
 };
