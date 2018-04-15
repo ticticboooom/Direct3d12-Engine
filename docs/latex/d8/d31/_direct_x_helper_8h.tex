@@ -1,0 +1,223 @@
+\hypertarget{_direct_x_helper_8h}{}\section{D3d\+Engine/\+Direct\+X\+Helper.h File Reference}
+\label{_direct_x_helper_8h}\index{D3d\+Engine/\+Direct\+X\+Helper.\+h@{D3d\+Engine/\+Direct\+X\+Helper.\+h}}
+{\ttfamily \#include \char`\"{}stdafx.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_direct_x_helper_8h_aac0bf77e771c5756a028295b6400839f}{N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+CT}}(x)~\mbox{\hyperlink{_direct_x_helper_8h_acafb1288adc883ddbf58b09975dc16b5}{Set\+Name}}(x.\+Get(), L\#x)
+\item 
+\#define \mbox{\hyperlink{_direct_x_helper_8h_a79a58dc06babec29638083e2d6cab28a}{N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+I\+N\+D\+E\+X\+ED}}(x,  n)~\mbox{\hyperlink{_direct_x_helper_8h_a9d72ba78c2685b08518b8d6d978841df}{Set\+Name\+Indexed}}(x\mbox{[}n\mbox{]}.Get(), L\#x, n)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{Throw\+If\+Failed}} (H\+R\+E\+S\+U\+LT hr)
+\begin{DoxyCompactList}\small\item\em throw exception if failed \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{_direct_x_helper_8h_ae43aaa2c2b87c4e0260c082d56ab3477}{Get\+Assets\+Path}} (\+\_\+\+Out\+\_\+writes\+\_\+(path\+Size) W\+C\+H\+AR $\ast$path, U\+I\+NT path\+Size)
+\begin{DoxyCompactList}\small\item\em get the path that the current E\+XE is in. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} H\+R\+E\+S\+U\+LT \mbox{\hyperlink{_direct_x_helper_8h_a0ae920cd8d8c647c6e7c9cb2d3b6c4ba}{Read\+Data\+From\+File}} (L\+P\+C\+W\+S\+TR filename, byte $\ast$$\ast$data, U\+I\+NT $\ast$size)
+\begin{DoxyCompactList}\small\item\em read the byte data from a file at a give directory \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{_direct_x_helper_8h_acafb1288adc883ddbf58b09975dc16b5}{Set\+Name}} (I\+D3\+D12\+Object $\ast$, L\+P\+C\+W\+S\+TR)
+\begin{DoxyCompactList}\small\item\em assign a debug name to object \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{_direct_x_helper_8h_a9d72ba78c2685b08518b8d6d978841df}{Set\+Name\+Indexed}} (I\+D3\+D12\+Object $\ast$, L\+P\+C\+W\+S\+TR, U\+I\+NT)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_direct_x_helper_8h_aac0bf77e771c5756a028295b6400839f}\label{_direct_x_helper_8h_aac0bf77e771c5756a028295b6400839f}} 
+\index{Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}!N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+CT@{N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+CT}}
+\index{N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+CT@{N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+CT}!Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}}
+\subsubsection{\texorpdfstring{N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+CT}{NAME\_D3D12\_OBJECT}}
+{\footnotesize\ttfamily \#define N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+CT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\mbox{\hyperlink{_direct_x_helper_8h_acafb1288adc883ddbf58b09975dc16b5}{Set\+Name}}(x.\+Get(), L\#x)}
+
+
+
+Definition at line 133 of file Direct\+X\+Helper.\+h.
+
+\mbox{\Hypertarget{_direct_x_helper_8h_a79a58dc06babec29638083e2d6cab28a}\label{_direct_x_helper_8h_a79a58dc06babec29638083e2d6cab28a}} 
+\index{Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}!N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+I\+N\+D\+E\+X\+ED@{N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+I\+N\+D\+E\+X\+ED}}
+\index{N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+I\+N\+D\+E\+X\+ED@{N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+I\+N\+D\+E\+X\+ED}!Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}}
+\subsubsection{\texorpdfstring{N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+I\+N\+D\+E\+X\+ED}{NAME\_D3D12\_OBJECT\_INDEXED}}
+{\footnotesize\ttfamily \#define N\+A\+M\+E\+\_\+\+D3\+D12\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+I\+N\+D\+E\+X\+ED(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{n }\end{DoxyParamCaption})~\mbox{\hyperlink{_direct_x_helper_8h_a9d72ba78c2685b08518b8d6d978841df}{Set\+Name\+Indexed}}(x\mbox{[}n\mbox{]}.Get(), L\#x, n)}
+
+
+
+Definition at line 134 of file Direct\+X\+Helper.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_direct_x_helper_8h_ae43aaa2c2b87c4e0260c082d56ab3477}\label{_direct_x_helper_8h_ae43aaa2c2b87c4e0260c082d56ab3477}} 
+\index{Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}!Get\+Assets\+Path@{Get\+Assets\+Path}}
+\index{Get\+Assets\+Path@{Get\+Assets\+Path}!Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}}
+\subsubsection{\texorpdfstring{Get\+Assets\+Path()}{GetAssetsPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void Get\+Assets\+Path (\begin{DoxyParamCaption}\item[{\+\_\+\+Out\+\_\+writes\+\_\+(path\+Size) W\+C\+H\+AR $\ast$}]{path,  }\item[{U\+I\+NT}]{path\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the path that the current E\+XE is in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+Size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI Get\+Assets\+Path 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file Direct\+X\+Helper.\+h.
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{keywordflow}{if} (path == \textcolor{keyword}{nullptr})
+39     \{
+40         \textcolor{keywordflow}{throw} std::exception();
+41     \}
+42 
+43     DWORD size = GetModuleFileName(\textcolor{keyword}{nullptr}, path, pathSize);
+44     \textcolor{keywordflow}{if} (size == 0 || size == pathSize)
+45     \{
+46         \textcolor{comment}{// Method failed or path was truncated.}
+47         \textcolor{keywordflow}{throw} std::exception();
+48     \}
+49 
+50     WCHAR* lastSlash = wcsrchr(path, L\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});
+51     \textcolor{keywordflow}{if} (lastSlash)
+52     \{
+53         *(lastSlash + 1) = L\textcolor{charliteral}{'\(\backslash\)0'};
+54     \}
+55 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{_direct_x_helper_8h_a0ae920cd8d8c647c6e7c9cb2d3b6c4ba}\label{_direct_x_helper_8h_a0ae920cd8d8c647c6e7c9cb2d3b6c4ba}} 
+\index{Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}!Read\+Data\+From\+File@{Read\+Data\+From\+File}}
+\index{Read\+Data\+From\+File@{Read\+Data\+From\+File}!Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}}
+\subsubsection{\texorpdfstring{Read\+Data\+From\+File()}{ReadDataFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} H\+R\+E\+S\+U\+LT Read\+Data\+From\+File (\begin{DoxyParamCaption}\item[{L\+P\+C\+W\+S\+TR}]{filename,  }\item[{byte $\ast$$\ast$}]{data,  }\item[{U\+I\+NT $\ast$}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+read the byte data from a file at a give directory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & the path and name of the file \\
+\hline
+{\em data} & the data that will be assigned to at the end (this will constain data after the function has finished kinda) \\
+\hline
+{\em size} & the size of the file again given value inside this function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Direct\+X\+Helper.\+h.
+
+
+\begin{DoxyCode}
+65 \{
+66     \textcolor{keyword}{using namespace }Microsoft::WRL;
+67 
+68     CREATEFILE2\_EXTENDED\_PARAMETERS extendedParams = \{\};
+69     extendedParams.dwSize = \textcolor{keyword}{sizeof}(CREATEFILE2\_EXTENDED\_PARAMETERS);
+70     extendedParams.dwFileAttributes = FILE\_ATTRIBUTE\_NORMAL;
+71     extendedParams.dwFileFlags = FILE\_FLAG\_SEQUENTIAL\_SCAN;
+72     extendedParams.dwSecurityQosFlags = SECURITY\_ANONYMOUS;
+73     extendedParams.lpSecurityAttributes = \textcolor{keyword}{nullptr};
+74     extendedParams.hTemplateFile = \textcolor{keyword}{nullptr};
+75 
+76     Wrappers::FileHandle file(CreateFile2(filename, GENERIC\_READ, FILE\_SHARE\_READ, OPEN\_EXISTING, &
+      extendedParams));
+77     \textcolor{keywordflow}{if} (file.Get() == INVALID\_HANDLE\_VALUE)
+78     \{
+79         \textcolor{keywordflow}{throw} std::exception();
+80     \}
+81 
+82     FILE\_STANDARD\_INFO fileInfo = \{\};
+83     \textcolor{keywordflow}{if} (!GetFileInformationByHandleEx(file.Get(), FileStandardInfo, &fileInfo, \textcolor{keyword}{sizeof}(fileInfo)))
+84     \{
+85         \textcolor{keywordflow}{throw} std::exception();
+86     \}
+87 
+88     \textcolor{keywordflow}{if} (fileInfo.EndOfFile.HighPart != 0)
+89     \{
+90         \textcolor{keywordflow}{throw} std::exception();
+91     \}
+92 
+93     *data = \textcolor{keyword}{reinterpret\_cast<}byte*\textcolor{keyword}{>}(malloc(fileInfo.EndOfFile.LowPart));
+94     *size = fileInfo.EndOfFile.LowPart;
+95 
+96     \textcolor{keywordflow}{if} (!ReadFile(file.Get(), *data, fileInfo.EndOfFile.LowPart, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}))
+97     \{
+98         \textcolor{keywordflow}{throw} std::exception();
+99     \}
+100 
+101     \textcolor{keywordflow}{return} S\_OK;
+102 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{_direct_x_helper_8h_acafb1288adc883ddbf58b09975dc16b5}\label{_direct_x_helper_8h_acafb1288adc883ddbf58b09975dc16b5}} 
+\index{Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}!Set\+Name@{Set\+Name}}
+\index{Set\+Name@{Set\+Name}!Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}}
+\subsubsection{\texorpdfstring{Set\+Name()}{SetName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void Set\+Name (\begin{DoxyParamCaption}\item[{I\+D3\+D12\+Object $\ast$}]{,  }\item[{L\+P\+C\+W\+S\+TR}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+assign a debug name to object 
+
+
+
+Definition at line 122 of file Direct\+X\+Helper.\+h.
+
+
+\begin{DoxyCode}
+123 \{
+124 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{_direct_x_helper_8h_a9d72ba78c2685b08518b8d6d978841df}\label{_direct_x_helper_8h_a9d72ba78c2685b08518b8d6d978841df}} 
+\index{Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}!Set\+Name\+Indexed@{Set\+Name\+Indexed}}
+\index{Set\+Name\+Indexed@{Set\+Name\+Indexed}!Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}}
+\subsubsection{\texorpdfstring{Set\+Name\+Indexed()}{SetNameIndexed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void Set\+Name\+Indexed (\begin{DoxyParamCaption}\item[{I\+D3\+D12\+Object $\ast$}]{,  }\item[{L\+P\+C\+W\+S\+TR}]{,  }\item[{U\+I\+NT}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 125 of file Direct\+X\+Helper.\+h.
+
+
+\begin{DoxyCode}
+126 \{
+127 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}\label{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}} 
+\index{Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}!Throw\+If\+Failed@{Throw\+If\+Failed}}
+\index{Throw\+If\+Failed@{Throw\+If\+Failed}!Direct\+X\+Helper.\+h@{Direct\+X\+Helper.\+h}}
+\subsubsection{\texorpdfstring{Throw\+If\+Failed()}{ThrowIfFailed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void Throw\+If\+Failed (\begin{DoxyParamCaption}\item[{H\+R\+E\+S\+U\+LT}]{hr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+throw exception if failed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI Throw\+If\+Failed 
+\end{DoxyReturn}
+
+
+Definition at line 20 of file Direct\+X\+Helper.\+h.
+
+
+\begin{DoxyCode}
+21 \{
+22     \textcolor{keywordflow}{if} (FAILED(hr))
+23     \{
+24         \textcolor{keywordflow}{throw} std::exception();
+25     \}
+26 \}
+\end{DoxyCode}

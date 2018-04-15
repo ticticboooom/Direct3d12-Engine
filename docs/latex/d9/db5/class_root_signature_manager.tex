@@ -1,0 +1,170 @@
+\hypertarget{class_root_signature_manager}{}\section{Root\+Signature\+Manager Class Reference}
+\label{class_root_signature_manager}\index{Root\+Signature\+Manager@{Root\+Signature\+Manager}}
+
+
+{\ttfamily \#include $<$Root\+Signature\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_root_signature_manager_a21d3c6836d4876126278a0a697261e8a}{Root\+Signature\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Root Signature Manager\+:\+: Root Signature Manager object stores the root signature managers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_root_signature_manager_ac524bfff2dc4e5627ae949235f48e153}{$\sim$\+Root\+Signature\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Root Signature Manager\+:\+: Root Signature Manager object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_root_signature_manager_a068bb9feb2700ec2beb8a3f900ee9f56}{Add\+Signature}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$ device\+Resources, U\+I\+NT Num\+Root\+Params, U\+I\+NT Num\+Static\+Samplers=0)
+\begin{DoxyCompactList}\small\item\em add a root signature to the list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_root_signature}{Root\+Signature}} $\ast$\& \mbox{\hyperlink{class_root_signature_manager_a668be5bbf4145647bbe7678002fd5b05}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t Entry\+Index)
+\begin{DoxyCompactList}\small\item\em get root signature at Entry\+Index \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} size\+\_\+t \mbox{\hyperlink{class_root_signature_manager_abb1cf48c03d13e3b7a85fb0fe193dd36}{Get\+Signature\+Count}} () const
+\begin{DoxyCompactList}\small\item\em get count of signatures \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_root_signature}{Root\+Signature}} $\ast$ $>$ \mbox{\hyperlink{class_root_signature_manager_a7d766443fb0a3ba77585fc0a08cfee07}{m\+\_\+\+Signatures}} = std\+::vector$<$\mbox{\hyperlink{class_root_signature}{Root\+Signature}}$\ast$$>$()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 219 of file Root\+Signature\+Manager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_root_signature_manager_a21d3c6836d4876126278a0a697261e8a}\label{class_root_signature_manager_a21d3c6836d4876126278a0a697261e8a}} 
+\index{Root\+Signature\+Manager@{Root\+Signature\+Manager}!Root\+Signature\+Manager@{Root\+Signature\+Manager}}
+\index{Root\+Signature\+Manager@{Root\+Signature\+Manager}!Root\+Signature\+Manager@{Root\+Signature\+Manager}}
+\subsubsection{\texorpdfstring{Root\+Signature\+Manager()}{RootSignatureManager()}}
+{\footnotesize\ttfamily Root\+Signature\+Manager\+::\+Root\+Signature\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Root Signature Manager\+:\+: Root Signature Manager object stores the root signature managers. 
+
+
+
+Definition at line 82 of file Root\+Signature\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+83 \{
+84 
+85 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_root_signature_manager_ac524bfff2dc4e5627ae949235f48e153}\label{class_root_signature_manager_ac524bfff2dc4e5627ae949235f48e153}} 
+\index{Root\+Signature\+Manager@{Root\+Signature\+Manager}!````~Root\+Signature\+Manager@{$\sim$\+Root\+Signature\+Manager}}
+\index{````~Root\+Signature\+Manager@{$\sim$\+Root\+Signature\+Manager}!Root\+Signature\+Manager@{Root\+Signature\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Root\+Signature\+Manager()}{~RootSignatureManager()}}
+{\footnotesize\ttfamily Root\+Signature\+Manager\+::$\sim$\+Root\+Signature\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Root Signature Manager\+:\+: Root Signature Manager object. 
+
+
+
+Definition at line 90 of file Root\+Signature\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+91 \{
+92 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_root_signature_manager_a068bb9feb2700ec2beb8a3f900ee9f56}\label{class_root_signature_manager_a068bb9feb2700ec2beb8a3f900ee9f56}} 
+\index{Root\+Signature\+Manager@{Root\+Signature\+Manager}!Add\+Signature@{Add\+Signature}}
+\index{Add\+Signature@{Add\+Signature}!Root\+Signature\+Manager@{Root\+Signature\+Manager}}
+\subsubsection{\texorpdfstring{Add\+Signature()}{AddSignature()}}
+{\footnotesize\ttfamily void Root\+Signature\+Manager\+::\+Add\+Signature (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$}]{device\+Resources,  }\item[{U\+I\+NT}]{Num\+Root\+Params,  }\item[{U\+I\+NT}]{Num\+Static\+Samplers = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+add a root signature to the list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Resources} & \\
+\hline
+{\em Num\+Root\+Params} & number of root parameters \\
+\hline
+{\em Num\+Static\+Samplers} & number of static amplers \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file Root\+Signature\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+102 \{
+103     \mbox{\hyperlink{class_root_signature}{RootSignature}}* signature = \textcolor{keyword}{new} \mbox{\hyperlink{class_root_signature}{RootSignature}}(deviceResources);
+104 
+105     signature->\mbox{\hyperlink{class_root_signature_adf2d07ea00480100b1504fa9f759712b}{Reset}}(NumRootParams, NumStaticSamplers);
+106     \mbox{\hyperlink{class_root_signature_manager_a7d766443fb0a3ba77585fc0a08cfee07}{m\_Signatures}}.push\_back(signature);
+107 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_root_signature_manager_abb1cf48c03d13e3b7a85fb0fe193dd36}\label{class_root_signature_manager_abb1cf48c03d13e3b7a85fb0fe193dd36}} 
+\index{Root\+Signature\+Manager@{Root\+Signature\+Manager}!Get\+Signature\+Count@{Get\+Signature\+Count}}
+\index{Get\+Signature\+Count@{Get\+Signature\+Count}!Root\+Signature\+Manager@{Root\+Signature\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Signature\+Count()}{GetSignatureCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} size\+\_\+t Root\+Signature\+Manager\+::\+Get\+Signature\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get count of signatures 
+
+
+
+Definition at line 237 of file Root\+Signature\+Manager.\+h.
+
+
+\begin{DoxyCode}
+237 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_root_signature_manager_a7d766443fb0a3ba77585fc0a08cfee07}{m\_Signatures}}.size(); \};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_root_signature_manager_a668be5bbf4145647bbe7678002fd5b05}\label{class_root_signature_manager_a668be5bbf4145647bbe7678002fd5b05}} 
+\index{Root\+Signature\+Manager@{Root\+Signature\+Manager}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Root\+Signature\+Manager@{Root\+Signature\+Manager}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_root_signature}{Root\+Signature}}$\ast$\& Root\+Signature\+Manager\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{Entry\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get root signature at Entry\+Index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Entry\+Index} & index of signature \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 230 of file Root\+Signature\+Manager.\+h.
+
+
+\begin{DoxyCode}
+231     \{
+232         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_root_signature_manager_a7d766443fb0a3ba77585fc0a08cfee07}{m\_Signatures}}[EntryIndex];
+233     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_root_signature_manager_a7d766443fb0a3ba77585fc0a08cfee07}\label{class_root_signature_manager_a7d766443fb0a3ba77585fc0a08cfee07}} 
+\index{Root\+Signature\+Manager@{Root\+Signature\+Manager}!m\+\_\+\+Signatures@{m\+\_\+\+Signatures}}
+\index{m\+\_\+\+Signatures@{m\+\_\+\+Signatures}!Root\+Signature\+Manager@{Root\+Signature\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Signatures}{m\_Signatures}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_root_signature}{Root\+Signature}}$\ast$$>$ Root\+Signature\+Manager\+::m\+\_\+\+Signatures = std\+::vector$<$\mbox{\hyperlink{class_root_signature}{Root\+Signature}}$\ast$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 239 of file Root\+Signature\+Manager.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_root_signature_manager_8h}{Root\+Signature\+Manager.\+h}}\item 
+D3d\+Engine/\mbox{\hyperlink{_root_signature_manager_8cpp}{Root\+Signature\+Manager.\+cpp}}\end{DoxyCompactItemize}

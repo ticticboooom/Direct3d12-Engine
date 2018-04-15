@@ -1,0 +1,404 @@
+\hypertarget{class_texture_loader}{}\section{Texture\+Loader Class Reference}
+\label{class_texture_loader}\index{Texture\+Loader@{Texture\+Loader}}
+
+
+{\ttfamily \#include $<$Texture\+Loader.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_texture_loader_aafa6ca3bdbee3874a73aafae39d5c804}{Texture\+Loader}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Texture Loader\+:\+: Texture Loader object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_texture_loader_aee3a49f73e5f88890658b17e9896c4f2}{$\sim$\+Texture\+Loader}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Texture Loader\+:\+: Texture Loader object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} int \mbox{\hyperlink{class_texture_loader_a089f3c76583c3401fcadd85d26d65b31}{Load\+Image\+Data\+From\+File}} (B\+Y\+TE $\ast$$\ast$image\+Data, D3\+D12\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+D\+E\+SC \&resource\+Description, L\+P\+C\+W\+S\+TR filename, int \&bytes\+Per\+Row)
+\begin{DoxyCompactList}\small\item\em load the texture from a file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT \mbox{\hyperlink{class_texture_loader_a326429e52878185255290f5bc1ae0219}{Get\+D\+X\+G\+I\+Format\+From\+W\+I\+C\+Format}} (W\+I\+C\+Pixel\+Format\+G\+U\+ID \&wic\+Format\+G\+U\+ID)
+\item 
+W\+I\+C\+Pixel\+Format\+G\+U\+ID \mbox{\hyperlink{class_texture_loader_a7a5e02ea4500b85ca7dc437f741bd90e}{Get\+Convert\+To\+W\+I\+C\+Format}} (W\+I\+C\+Pixel\+Format\+G\+U\+ID \&wic\+Format\+G\+U\+ID)
+\item 
+int \mbox{\hyperlink{class_texture_loader_a32ad2663545df2f57f794d617429ebd1}{Get\+D\+X\+G\+I\+Format\+Bits\+Per\+Pixel}} (D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT \&dxgi\+Format)
+\begin{DoxyCompactList}\small\item\em gets the bits per pixel \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3 of file Texture\+Loader.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_texture_loader_aafa6ca3bdbee3874a73aafae39d5c804}\label{class_texture_loader_aafa6ca3bdbee3874a73aafae39d5c804}} 
+\index{Texture\+Loader@{Texture\+Loader}!Texture\+Loader@{Texture\+Loader}}
+\index{Texture\+Loader@{Texture\+Loader}!Texture\+Loader@{Texture\+Loader}}
+\subsubsection{\texorpdfstring{Texture\+Loader()}{TextureLoader()}}
+{\footnotesize\ttfamily Texture\+Loader\+::\+Texture\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Texture Loader\+:\+: Texture Loader object. 
+
+
+
+Definition at line 8 of file Texture\+Loader.\+cpp.
+
+
+\begin{DoxyCode}
+9 \{
+10 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_loader_aee3a49f73e5f88890658b17e9896c4f2}\label{class_texture_loader_aee3a49f73e5f88890658b17e9896c4f2}} 
+\index{Texture\+Loader@{Texture\+Loader}!````~Texture\+Loader@{$\sim$\+Texture\+Loader}}
+\index{````~Texture\+Loader@{$\sim$\+Texture\+Loader}!Texture\+Loader@{Texture\+Loader}}
+\subsubsection{\texorpdfstring{$\sim$\+Texture\+Loader()}{~TextureLoader()}}
+{\footnotesize\ttfamily Texture\+Loader\+::$\sim$\+Texture\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Texture Loader\+:\+: Texture Loader object. 
+
+
+
+Definition at line 16 of file Texture\+Loader.\+cpp.
+
+
+\begin{DoxyCode}
+17 \{
+18 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_texture_loader_a7a5e02ea4500b85ca7dc437f741bd90e}\label{class_texture_loader_a7a5e02ea4500b85ca7dc437f741bd90e}} 
+\index{Texture\+Loader@{Texture\+Loader}!Get\+Convert\+To\+W\+I\+C\+Format@{Get\+Convert\+To\+W\+I\+C\+Format}}
+\index{Get\+Convert\+To\+W\+I\+C\+Format@{Get\+Convert\+To\+W\+I\+C\+Format}!Texture\+Loader@{Texture\+Loader}}
+\subsubsection{\texorpdfstring{Get\+Convert\+To\+W\+I\+C\+Format()}{GetConvertToWICFormat()}}
+{\footnotesize\ttfamily W\+I\+C\+Pixel\+Format\+G\+U\+ID Texture\+Loader\+::\+Get\+Convert\+To\+W\+I\+C\+Format (\begin{DoxyParamCaption}\item[{W\+I\+C\+Pixel\+Format\+G\+U\+ID \&}]{wic\+Format\+G\+U\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 48 of file Texture\+Loader.\+cpp.
+
+
+\begin{DoxyCode}
+49 \{
+50     \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormatBlackWhite) \textcolor{keywordflow}{return} GUID\_WICPixelFormat8bppGray;
+51     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat1bppIndexed) \textcolor{keywordflow}{return} GUID\_WICPixelFormat32bppRGBA;
+52     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat2bppIndexed) \textcolor{keywordflow}{return} GUID\_WICPixelFormat32bppRGBA;
+53     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat4bppIndexed) \textcolor{keywordflow}{return} GUID\_WICPixelFormat32bppRGBA;
+54     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat8bppIndexed) \textcolor{keywordflow}{return} GUID\_WICPixelFormat32bppRGBA;
+55     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat2bppGray) \textcolor{keywordflow}{return} GUID\_WICPixelFormat8bppGray;
+56     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat4bppGray) \textcolor{keywordflow}{return} GUID\_WICPixelFormat8bppGray;
+57     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat16bppGrayFixedPoint) \textcolor{keywordflow}{return} 
+      GUID\_WICPixelFormat16bppGrayHalf;
+58     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppGrayFixedPoint) \textcolor{keywordflow}{return} 
+      GUID\_WICPixelFormat32bppGrayFloat;
+59     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat16bppBGR555) \textcolor{keywordflow}{return} GUID\_WICPixelFormat16bppBGRA5551;
+60     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppBGR101010) \textcolor{keywordflow}{return} GUID\_WICPixelFormat32bppRGBA1010102
+      ;
+61     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat24bppBGR) \textcolor{keywordflow}{return} GUID\_WICPixelFormat32bppRGBA;
+62     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat24bppRGB) \textcolor{keywordflow}{return} GUID\_WICPixelFormat32bppRGBA;
+63     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppPBGRA) \textcolor{keywordflow}{return} GUID\_WICPixelFormat32bppRGBA;
+64     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppPRGBA) \textcolor{keywordflow}{return} GUID\_WICPixelFormat32bppRGBA;
+65     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat48bppRGB) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBA;
+66     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat48bppBGR) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBA;
+67     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppBGRA) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBA;
+68     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppPRGBA) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBA;
+69     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppPBGRA) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBA;
+70     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat48bppRGBFixedPoint) \textcolor{keywordflow}{return} 
+      GUID\_WICPixelFormat64bppRGBAHalf;
+71     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat48bppBGRFixedPoint) \textcolor{keywordflow}{return} 
+      GUID\_WICPixelFormat64bppRGBAHalf;
+72     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppRGBAFixedPoint) \textcolor{keywordflow}{return} 
+      GUID\_WICPixelFormat64bppRGBAHalf;
+73     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppBGRAFixedPoint) \textcolor{keywordflow}{return} 
+      GUID\_WICPixelFormat64bppRGBAHalf;
+74     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppRGBFixedPoint) \textcolor{keywordflow}{return} 
+      GUID\_WICPixelFormat64bppRGBAHalf;
+75     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppRGBHalf) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBAHalf;
+76     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat48bppRGBHalf) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBAHalf;
+77     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat128bppPRGBAFloat) \textcolor{keywordflow}{return} 
+      GUID\_WICPixelFormat128bppRGBAFloat;
+78     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat128bppRGBFloat) \textcolor{keywordflow}{return} GUID\_WICPixelFormat128bppRGBAFloat;
+79     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat128bppRGBAFixedPoint) \textcolor{keywordflow}{return} 
+      GUID\_WICPixelFormat128bppRGBAFloat;
+80     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat128bppRGBFixedPoint) \textcolor{keywordflow}{return} 
+      GUID\_WICPixelFormat128bppRGBAFloat;
+81     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppRGBE) \textcolor{keywordflow}{return} GUID\_WICPixelFormat128bppRGBAFloat;
+82     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppCMYK) \textcolor{keywordflow}{return} GUID\_WICPixelFormat32bppRGBA;
+83     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppCMYK) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBA;
+84     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat40bppCMYKAlpha) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBA;
+85     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat80bppCMYKAlpha) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBA;
+86 
+87 \textcolor{preprocessor}{#if (\_WIN32\_WINNT >= \_WIN32\_WINNT\_WIN8) || defined(\_WIN7\_PLATFORM\_UPDATE)}
+88     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppRGB) \textcolor{keywordflow}{return} GUID\_WICPixelFormat32bppRGBA;
+89     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppRGB) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBA;
+90     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppPRGBAHalf) \textcolor{keywordflow}{return} GUID\_WICPixelFormat64bppRGBAHalf;
+91 \textcolor{preprocessor}{#endif}
+92 
+93     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} GUID\_WICPixelFormatDontCare;
+94 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_loader_a32ad2663545df2f57f794d617429ebd1}\label{class_texture_loader_a32ad2663545df2f57f794d617429ebd1}} 
+\index{Texture\+Loader@{Texture\+Loader}!Get\+D\+X\+G\+I\+Format\+Bits\+Per\+Pixel@{Get\+D\+X\+G\+I\+Format\+Bits\+Per\+Pixel}}
+\index{Get\+D\+X\+G\+I\+Format\+Bits\+Per\+Pixel@{Get\+D\+X\+G\+I\+Format\+Bits\+Per\+Pixel}!Texture\+Loader@{Texture\+Loader}}
+\subsubsection{\texorpdfstring{Get\+D\+X\+G\+I\+Format\+Bits\+Per\+Pixel()}{GetDXGIFormatBitsPerPixel()}}
+{\footnotesize\ttfamily int Texture\+Loader\+::\+Get\+D\+X\+G\+I\+Format\+Bits\+Per\+Pixel (\begin{DoxyParamCaption}\item[{D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT \&}]{dxgi\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+gets the bits per pixel 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dxgi\+Format} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int the bits per pixel 
+\end{DoxyReturn}
+
+
+Definition at line 103 of file Texture\+Loader.\+cpp.
+
+
+\begin{DoxyCode}
+104 \{
+105     \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_R32G32B32A32\_FLOAT) \textcolor{keywordflow}{return} 128;
+106     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_R16G16B16A16\_FLOAT) \textcolor{keywordflow}{return} 64;
+107     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_R16G16B16A16\_UNORM) \textcolor{keywordflow}{return} 64;
+108     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_R8G8B8A8\_UNORM) \textcolor{keywordflow}{return} 32;
+109     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_B8G8R8A8\_UNORM) \textcolor{keywordflow}{return} 32;
+110     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_B8G8R8X8\_UNORM) \textcolor{keywordflow}{return} 32;
+111     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_R10G10B10\_XR\_BIAS\_A2\_UNORM) \textcolor{keywordflow}{return} 32;
+112 
+113     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_R10G10B10A2\_UNORM) \textcolor{keywordflow}{return} 32;
+114     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_B5G5R5A1\_UNORM) \textcolor{keywordflow}{return} 16;
+115     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_B5G6R5\_UNORM) \textcolor{keywordflow}{return} 16;
+116     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_R32\_FLOAT) \textcolor{keywordflow}{return} 32;
+117     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_R16\_FLOAT) \textcolor{keywordflow}{return} 16;
+118     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_R16\_UNORM) \textcolor{keywordflow}{return} 16;
+119     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_R8\_UNORM) \textcolor{keywordflow}{return} 8;
+120     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_A8\_UNORM) \textcolor{keywordflow}{return} 8;
+121 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_loader_a326429e52878185255290f5bc1ae0219}\label{class_texture_loader_a326429e52878185255290f5bc1ae0219}} 
+\index{Texture\+Loader@{Texture\+Loader}!Get\+D\+X\+G\+I\+Format\+From\+W\+I\+C\+Format@{Get\+D\+X\+G\+I\+Format\+From\+W\+I\+C\+Format}}
+\index{Get\+D\+X\+G\+I\+Format\+From\+W\+I\+C\+Format@{Get\+D\+X\+G\+I\+Format\+From\+W\+I\+C\+Format}!Texture\+Loader@{Texture\+Loader}}
+\subsubsection{\texorpdfstring{Get\+D\+X\+G\+I\+Format\+From\+W\+I\+C\+Format()}{GetDXGIFormatFromWICFormat()}}
+{\footnotesize\ttfamily D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT Texture\+Loader\+::\+Get\+D\+X\+G\+I\+Format\+From\+W\+I\+C\+Format (\begin{DoxyParamCaption}\item[{W\+I\+C\+Pixel\+Format\+G\+U\+ID \&}]{wic\+Format\+G\+U\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em wic\+Format\+G\+U\+ID} & the W\+IC format G\+U\+ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT the D\+X\+GI format 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file Texture\+Loader.\+cpp.
+
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat128bppRGBAFloat) \textcolor{keywordflow}{return} DXGI\_FORMAT\_R32G32B32A32\_FLOAT;
+28     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppRGBAHalf) \textcolor{keywordflow}{return} DXGI\_FORMAT\_R16G16B16A16\_FLOAT;
+29     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat64bppRGBA) \textcolor{keywordflow}{return} DXGI\_FORMAT\_R16G16B16A16\_UNORM;
+30     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppRGBA) \textcolor{keywordflow}{return} DXGI\_FORMAT\_R8G8B8A8\_UNORM;
+31     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppBGRA) \textcolor{keywordflow}{return} DXGI\_FORMAT\_B8G8R8A8\_UNORM;
+32     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppBGR) \textcolor{keywordflow}{return} DXGI\_FORMAT\_B8G8R8X8\_UNORM;
+33     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppRGBA1010102XR) \textcolor{keywordflow}{return} 
+      DXGI\_FORMAT\_R10G10B10\_XR\_BIAS\_A2\_UNORM;
+34 
+35     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppRGBA1010102) \textcolor{keywordflow}{return} DXGI\_FORMAT\_R10G10B10A2\_UNORM;
+36     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat16bppBGRA5551) \textcolor{keywordflow}{return} DXGI\_FORMAT\_B5G5R5A1\_UNORM;
+37     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat16bppBGR565) \textcolor{keywordflow}{return} DXGI\_FORMAT\_B5G6R5\_UNORM;
+38     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat32bppGrayFloat) \textcolor{keywordflow}{return} DXGI\_FORMAT\_R32\_FLOAT;
+39     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat16bppGrayHalf) \textcolor{keywordflow}{return} DXGI\_FORMAT\_R16\_FLOAT;
+40     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat16bppGray) \textcolor{keywordflow}{return} DXGI\_FORMAT\_R16\_UNORM;
+41     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat8bppGray) \textcolor{keywordflow}{return} DXGI\_FORMAT\_R8\_UNORM;
+42     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (wicFormatGUID == GUID\_WICPixelFormat8bppAlpha) \textcolor{keywordflow}{return} DXGI\_FORMAT\_A8\_UNORM;
+43 
+44     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} DXGI\_FORMAT\_UNKNOWN;
+45 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_loader_a089f3c76583c3401fcadd85d26d65b31}\label{class_texture_loader_a089f3c76583c3401fcadd85d26d65b31}} 
+\index{Texture\+Loader@{Texture\+Loader}!Load\+Image\+Data\+From\+File@{Load\+Image\+Data\+From\+File}}
+\index{Load\+Image\+Data\+From\+File@{Load\+Image\+Data\+From\+File}!Texture\+Loader@{Texture\+Loader}}
+\subsubsection{\texorpdfstring{Load\+Image\+Data\+From\+File()}{LoadImageDataFromFile()}}
+{\footnotesize\ttfamily int Texture\+Loader\+::\+Load\+Image\+Data\+From\+File (\begin{DoxyParamCaption}\item[{B\+Y\+TE $\ast$$\ast$}]{image\+Data,  }\item[{D3\+D12\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+D\+E\+SC \&}]{resource\+Description,  }\item[{L\+P\+C\+W\+S\+TR}]{filename,  }\item[{int \&}]{bytes\+Per\+Row }\end{DoxyParamCaption})}
+
+
+
+load the texture from a file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Data} & the out parameter of data which is the image \\
+\hline
+{\em resource\+Description} & description of the resouce that is filled by this function \\
+\hline
+{\em filename} & path and filename of the texture \\
+\hline
+{\em bytes\+Per\+Row} & the number of bytes per row \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int success message 
+\end{DoxyReturn}
+
+
+Definition at line 132 of file Texture\+Loader.\+cpp.
+
+
+\begin{DoxyCode}
+133 \{
+134     HRESULT hr;
+135 
+136     \textcolor{comment}{// we only need one instance of the imaging factory to create decoders and frames}
+137     IWICImagingFactory *wicFactory = NULL;
+138 
+139     \textcolor{comment}{// reset decoder, frame, and converter, since these will be different for each image we load}
+140     IWICBitmapDecoder *wicDecoder = NULL;
+141     IWICBitmapFrameDecode *wicFrame = NULL;
+142     IWICFormatConverter *wicConverter = NULL;
+143 
+144     \textcolor{keywordtype}{bool} imageConverted = \textcolor{keyword}{false};
+145 
+146     \textcolor{keywordflow}{if} (wicFactory == NULL)
+147     \{
+148         \textcolor{comment}{// Initialize the COM library}
+149         CoInitialize(\textcolor{keyword}{nullptr});
+150 
+151         \textcolor{comment}{// create the WIC factory}
+152         hr = CoCreateInstance(
+153             CLSID\_WICImagingFactory,
+154             NULL,
+155             CLSCTX\_INPROC\_SERVER,
+156             IID\_PPV\_ARGS(&wicFactory)
+157         );
+158         \textcolor{keywordflow}{if} (FAILED(hr)) \textcolor{keywordflow}{return} 0;
+159 
+160         hr = wicFactory->CreateFormatConverter(&wicConverter);
+161         \textcolor{keywordflow}{if} (FAILED(hr)) \textcolor{keywordflow}{return} 0;
+162     \}
+163 
+164     \textcolor{comment}{// load a decoder for the image}
+165     hr = wicFactory->CreateDecoderFromFilename(
+166         filename,                        \textcolor{comment}{// Image we want to load in}
+167         NULL,                            \textcolor{comment}{// This is a vendor ID, we do not prefer a specific one so set to
+       null}
+168         GENERIC\_READ,                    \textcolor{comment}{// We want to read from this file}
+169         WICDecodeMetadataCacheOnLoad,    \textcolor{comment}{// We will cache the metadata right away, rather than when needed,
+       which might be unknown}
+170         &wicDecoder                      \textcolor{comment}{// the wic decoder to be created}
+171     );
+172     \textcolor{keywordflow}{if} (FAILED(hr)) \textcolor{keywordflow}{return} 0;
+173 
+174     \textcolor{comment}{// get image from decoder (this will decode the "frame")}
+175     hr = wicDecoder->GetFrame(0, &wicFrame);
+176     \textcolor{keywordflow}{if} (FAILED(hr)) \textcolor{keywordflow}{return} 0;
+177 
+178     \textcolor{comment}{// get wic pixel format of image}
+179     WICPixelFormatGUID pixelFormat;
+180     hr = wicFrame->GetPixelFormat(&pixelFormat);
+181     \textcolor{keywordflow}{if} (FAILED(hr)) \textcolor{keywordflow}{return} 0;
+182 
+183     \textcolor{comment}{// get size of image}
+184     UINT textureWidth, textureHeight;
+185     hr = wicFrame->GetSize(&textureWidth, &textureHeight);
+186     \textcolor{keywordflow}{if} (FAILED(hr)) \textcolor{keywordflow}{return} 0;
+187 
+188     \textcolor{comment}{// we are not handling sRGB types in this tutorial, so if you need that support, you'll have to figure}
+189     \textcolor{comment}{// out how to implement the support yourself}
+190 
+191     \textcolor{comment}{// convert wic pixel format to dxgi pixel format}
+192     DXGI\_FORMAT dxgiFormat = \mbox{\hyperlink{class_texture_loader_a326429e52878185255290f5bc1ae0219}{GetDXGIFormatFromWICFormat}}(pixelFormat);
+193 
+194     \textcolor{comment}{// if the format of the image is not a supported dxgi format, try to convert it}
+195     \textcolor{keywordflow}{if} (dxgiFormat == DXGI\_FORMAT\_UNKNOWN)
+196     \{
+197         \textcolor{comment}{// get a dxgi compatible wic format from the current image format}
+198         WICPixelFormatGUID convertToPixelFormat = \mbox{\hyperlink{class_texture_loader_a7a5e02ea4500b85ca7dc437f741bd90e}{GetConvertToWICFormat}}(pixelFormat);
+199 
+200         \textcolor{comment}{// return if no dxgi compatible format was found}
+201         \textcolor{keywordflow}{if} (convertToPixelFormat == GUID\_WICPixelFormatDontCare) \textcolor{keywordflow}{return} 0;
+202 
+203         \textcolor{comment}{// set the dxgi format}
+204         dxgiFormat = \mbox{\hyperlink{class_texture_loader_a326429e52878185255290f5bc1ae0219}{GetDXGIFormatFromWICFormat}}(convertToPixelFormat);
+205 
+206         \textcolor{comment}{// make sure we can convert to the dxgi compatible format}
+207         BOOL canConvert = FALSE;
+208         hr = wicConverter->CanConvert(pixelFormat, convertToPixelFormat, &canConvert);
+209         \textcolor{keywordflow}{if} (FAILED(hr) || !canConvert) \textcolor{keywordflow}{return} 0;
+210 
+211         \textcolor{comment}{// do the conversion (wicConverter will contain the converted image)}
+212         hr = wicConverter->Initialize(wicFrame, convertToPixelFormat, WICBitmapDitherTypeErrorDiffusion, 0,
+       0, WICBitmapPaletteTypeCustom);
+213         \textcolor{keywordflow}{if} (FAILED(hr)) \textcolor{keywordflow}{return} 0;
+214 
+215         \textcolor{comment}{// this is so we know to get the image data from the wicConverter (otherwise we will get from
+       wicFrame)}
+216         imageConverted = \textcolor{keyword}{true};
+217     \}
+218 
+219     \textcolor{keywordtype}{int} bitsPerPixel = \mbox{\hyperlink{class_texture_loader_a32ad2663545df2f57f794d617429ebd1}{GetDXGIFormatBitsPerPixel}}(dxgiFormat); \textcolor{comment}{// number of bits
+       per pixel}
+220     bytesPerRow = (textureWidth * bitsPerPixel) / 8; \textcolor{comment}{// number of bytes in each row of the image data}
+221     \textcolor{keywordtype}{int} imageSize = bytesPerRow * textureHeight; \textcolor{comment}{// total image size in bytes}
+222 
+223                                                  \textcolor{comment}{// allocate enough memory for the raw image data, and set
+       imageData to point to that memory}
+224     *imageData = (BYTE*)malloc(imageSize);
+225 
+226     \textcolor{comment}{// copy (decoded) raw image data into the newly allocated memory (imageData)}
+227     \textcolor{keywordflow}{if} (imageConverted)
+228     \{
+229         \textcolor{comment}{// if image format needed to be converted, the wic converter will contain the converted image}
+230         hr = wicConverter->CopyPixels(0, bytesPerRow, imageSize, *imageData);
+231         \textcolor{keywordflow}{if} (FAILED(hr)) \textcolor{keywordflow}{return} 0;
+232     \}
+233     \textcolor{keywordflow}{else}
+234     \{
+235         \textcolor{comment}{// no need to convert, just copy data from the wic frame}
+236         hr = wicFrame->CopyPixels(0, bytesPerRow, imageSize, *imageData);
+237         \textcolor{keywordflow}{if} (FAILED(hr)) \textcolor{keywordflow}{return} 0;
+238     \}
+239 
+240     \textcolor{comment}{// now describe the texture with the information we have obtained from the image}
+241     resourceDescription = \{\};
+242     resourceDescription.Dimension = D3D12\_RESOURCE\_DIMENSION\_TEXTURE2D;
+243     resourceDescription.Alignment = 0; \textcolor{comment}{// may be 0, 4KB, 64KB, or 4MB. 0 will let runtime decide between
+       64KB and 4MB (4MB for multi-sampled textures)}
+244     resourceDescription.Width = textureWidth; \textcolor{comment}{// width of the texture}
+245     resourceDescription.Height = textureHeight; \textcolor{comment}{// height of the texture}
+246     resourceDescription.DepthOrArraySize = 1; \textcolor{comment}{// if 3d image, depth of 3d image. Otherwise an array of 1D
+       or 2D textures (we only have one image, so we set 1)}
+247     resourceDescription.MipLevels = 1; \textcolor{comment}{// Number of mipmaps. We are not generating mipmaps for this
+       texture, so we have only one level}
+248     resourceDescription.Format = dxgiFormat; \textcolor{comment}{// This is the dxgi format of the image (format of the pixels)}
+249     resourceDescription.SampleDesc.Count = 1; \textcolor{comment}{// This is the number of samples per pixel, we just want 1
+       sample}
+250     resourceDescription.SampleDesc.Quality = 0; \textcolor{comment}{// The quality level of the samples. Higher is better
+       quality, but worse performance}
+251     resourceDescription.Layout = D3D12\_TEXTURE\_LAYOUT\_UNKNOWN; \textcolor{comment}{// The arrangement of the pixels. Setting to
+       unknown lets the driver choose the most efficient one}
+252     resourceDescription.Flags = D3D12\_RESOURCE\_FLAG\_NONE; \textcolor{comment}{// no flags}
+253 
+254                                                           \textcolor{comment}{// return the size of the image. remember to
+       delete the image once your done with it (in this tutorial once its uploaded to the gpu)}
+255     \textcolor{keywordflow}{return} imageSize;
+256 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_texture_loader_8h}{Texture\+Loader.\+h}}\item 
+D3d\+Engine/\mbox{\hyperlink{_texture_loader_8cpp}{Texture\+Loader.\+cpp}}\end{DoxyCompactItemize}

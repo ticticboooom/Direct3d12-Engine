@@ -1,0 +1,351 @@
+\hypertarget{class_perlin_noise}{}\section{Perlin\+Noise Class Reference}
+\label{class_perlin_noise}\index{Perlin\+Noise@{Perlin\+Noise}}
+
+
+{\ttfamily \#include $<$Perlin\+Noise.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_perlin_noise_a3926062e9211b00fedd72b1b5d02a537}{Perlin\+Noise}} (double \+\_\+persistence, double \+\_\+frequency, double \+\_\+amplitude, int \+\_\+octaves, int \+\_\+randomseed)
+\begin{DoxyCompactList}\small\item\em Construct a new Perlin Noise\+:\+: Perlin Noise object assigns the private members with the passed parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_perlin_noise_a39f323fb44aaf9a9e4450ef49798117a}{$\sim$\+Perlin\+Noise}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Perlin Noise\+:\+: Perlin Noise object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} double \mbox{\hyperlink{class_perlin_noise_a1eea20ff062778d6668b32f1d75a8e2a}{Get\+Height}} (double x, double y) const
+\begin{DoxyCompactList}\small\item\em Gtes the height of a given coordinate with the noise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_perlin_noise_a63d0a127952107e5628c428c8a234de8}{Total}} (double i, double j) const
+\begin{DoxyCompactList}\small\item\em Gets the total of the given coordinates using perlin noise. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_perlin_noise_aa62e61ba1a73bdeff0901e95f656a806}{Get\+Value}} (double x, double y) const
+\begin{DoxyCompactList}\small\item\em Calculates the noise. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_perlin_noise_ac4a0870388edd44e14caca983bd018aa}{Interpolate}} (double x, double y, double a) const
+\item 
+double \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}} (int x, int y) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_perlin_noise_aeb01e2c26e1b3c87fcbe1a1e0bc28881}{persistence}}
+\item 
+double \mbox{\hyperlink{class_perlin_noise_a5e0b39e0cf38d292f0c92a428ecc56fc}{frequency}}
+\item 
+double \mbox{\hyperlink{class_perlin_noise_a61323596df1daa4a56f057a43f9c12ba}{amplitude}}
+\item 
+int \mbox{\hyperlink{class_perlin_noise_a1098ffa60dc53802b509e57e6d96c072}{octaves}}
+\begin{DoxyCompactList}\small\item\em required noise variables \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_perlin_noise_a012846debd95e4cc158600fa381810d9}{randomseed}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2 of file Perlin\+Noise.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_perlin_noise_a3926062e9211b00fedd72b1b5d02a537}\label{class_perlin_noise_a3926062e9211b00fedd72b1b5d02a537}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!Perlin\+Noise@{Perlin\+Noise}}
+\index{Perlin\+Noise@{Perlin\+Noise}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{Perlin\+Noise()}{PerlinNoise()}}
+{\footnotesize\ttfamily Perlin\+Noise\+::\+Perlin\+Noise (\begin{DoxyParamCaption}\item[{double}]{\+\_\+persistence,  }\item[{double}]{\+\_\+frequency,  }\item[{double}]{\+\_\+amplitude,  }\item[{int}]{\+\_\+octaves,  }\item[{int}]{\+\_\+randomseed }\end{DoxyParamCaption})}
+
+
+
+Construct a new Perlin Noise\+:\+: Perlin Noise object assigns the private members with the passed parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+persistence} & \\
+\hline
+{\em \+\_\+frequency} & \\
+\hline
+{\em \+\_\+amplitude} & \\
+\hline
+{\em \+\_\+octaves} & \\
+\hline
+{\em \+\_\+randomseed} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file Perlin\+Noise.\+cpp.
+
+
+\begin{DoxyCode}
+15 \{
+16     \mbox{\hyperlink{class_perlin_noise_aeb01e2c26e1b3c87fcbe1a1e0bc28881}{persistence}} = \_persistence;
+17     \mbox{\hyperlink{class_perlin_noise_a5e0b39e0cf38d292f0c92a428ecc56fc}{frequency}} = \_frequency;
+18     \mbox{\hyperlink{class_perlin_noise_a61323596df1daa4a56f057a43f9c12ba}{amplitude}} = \_amplitude;
+19     \mbox{\hyperlink{class_perlin_noise_a1098ffa60dc53802b509e57e6d96c072}{octaves}} = \_octaves;
+20     \mbox{\hyperlink{class_perlin_noise_a012846debd95e4cc158600fa381810d9}{randomseed}} = \_randomseed;
+21 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_perlin_noise_a39f323fb44aaf9a9e4450ef49798117a}\label{class_perlin_noise_a39f323fb44aaf9a9e4450ef49798117a}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!````~Perlin\+Noise@{$\sim$\+Perlin\+Noise}}
+\index{````~Perlin\+Noise@{$\sim$\+Perlin\+Noise}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{$\sim$\+Perlin\+Noise()}{~PerlinNoise()}}
+{\footnotesize\ttfamily Perlin\+Noise\+::$\sim$\+Perlin\+Noise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Perlin Noise\+:\+: Perlin Noise object. 
+
+
+
+Definition at line 27 of file Perlin\+Noise.\+cpp.
+
+
+\begin{DoxyCode}
+28 \{
+29 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_perlin_noise_a1eea20ff062778d6668b32f1d75a8e2a}\label{class_perlin_noise_a1eea20ff062778d6668b32f1d75a8e2a}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!Get\+Height@{Get\+Height}}
+\index{Get\+Height@{Get\+Height}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{Get\+Height()}{GetHeight()}}
+{\footnotesize\ttfamily double Perlin\+Noise\+::\+Get\+Height (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption}) const}
+
+
+
+Gtes the height of a given coordinate with the noise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x position \\
+\hline
+{\em z} & the yposition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double the height 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Perlin\+Noise.\+cpp.
+
+
+\begin{DoxyCode}
+39 \{
+40     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_perlin_noise_a63d0a127952107e5628c428c8a234de8}{Total}}(x, y);
+41 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_perlin_noise_aa62e61ba1a73bdeff0901e95f656a806}\label{class_perlin_noise_aa62e61ba1a73bdeff0901e95f656a806}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{Get\+Value()}{GetValue()}}
+{\footnotesize\ttfamily double Perlin\+Noise\+::\+Get\+Value (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates the noise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & position of x \\
+\hline
+{\em y} & position of z \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double the value of the generated noise 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file Perlin\+Noise.\+cpp.
+
+
+\begin{DoxyCode}
+74 \{
+75     \textcolor{keywordtype}{int} Xint = (int)x;
+76     \textcolor{keywordtype}{int} Yint = (int)y;
+77     \textcolor{keywordtype}{double} Xfrac = x - Xint;
+78     \textcolor{keywordtype}{double} Yfrac = y - Yint;
+79 
+80     \textcolor{comment}{//noise values}
+81     \textcolor{keywordtype}{double} n01 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint - 1, Yint - 1);
+82     \textcolor{keywordtype}{double} n02 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint + 1, Yint - 1);
+83     \textcolor{keywordtype}{double} n03 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint - 1, Yint + 1);
+84     \textcolor{keywordtype}{double} n04 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint + 1, Yint + 1);
+85     \textcolor{keywordtype}{double} n05 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint - 1, Yint);
+86     \textcolor{keywordtype}{double} n06 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint + 1, Yint);
+87     \textcolor{keywordtype}{double} n07 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint, Yint - 1);
+88     \textcolor{keywordtype}{double} n08 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint, Yint + 1);
+89     \textcolor{keywordtype}{double} n09 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint, Yint);
+90 
+91     \textcolor{keywordtype}{double} n12 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint + 2, Yint - 1);
+92     \textcolor{keywordtype}{double} n14 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint + 2, Yint + 1);
+93     \textcolor{keywordtype}{double} n16 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint + 2, Yint);
+94 
+95     \textcolor{keywordtype}{double} n23 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint - 1, Yint + 2);
+96     \textcolor{keywordtype}{double} n24 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint + 1, Yint + 2);
+97     \textcolor{keywordtype}{double} n28 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint, Yint + 2);
+98 
+99     \textcolor{keywordtype}{double} n34 = \mbox{\hyperlink{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}{Noise}}(Xint + 2, Yint + 2);
+100 
+101     \textcolor{comment}{//find the noise values of the four corners}
+102     \textcolor{keywordtype}{double} x0y0 = 0.0625*(n01 + n02 + n03 + n04) + 0.125*(n05 + n06 + n07 + n08) + 0.25*(n09);
+103     \textcolor{keywordtype}{double} x1y0 = 0.0625*(n07 + n12 + n08 + n14) + 0.125*(n09 + n16 + n02 + n04) + 0.25*(n06);
+104     \textcolor{keywordtype}{double} x0y1 = 0.0625*(n05 + n06 + n23 + n24) + 0.125*(n03 + n04 + n09 + n28) + 0.25*(n08);
+105     \textcolor{keywordtype}{double} x1y1 = 0.0625*(n09 + n16 + n28 + n34) + 0.125*(n08 + n14 + n06 + n24) + 0.25*(n04);
+106 
+107     \textcolor{comment}{//interpolate between those values according to the x and y fractions}
+108     \textcolor{keywordtype}{double} v1 = \mbox{\hyperlink{class_perlin_noise_ac4a0870388edd44e14caca983bd018aa}{Interpolate}}(x0y0, x1y0, Xfrac); \textcolor{comment}{//interpolate in x direction (y)}
+109     \textcolor{keywordtype}{double} v2 = \mbox{\hyperlink{class_perlin_noise_ac4a0870388edd44e14caca983bd018aa}{Interpolate}}(x0y1, x1y1, Xfrac); \textcolor{comment}{//interpolate in x direction (y+1)}
+110     \textcolor{keywordtype}{double} fin = \mbox{\hyperlink{class_perlin_noise_ac4a0870388edd44e14caca983bd018aa}{Interpolate}}(v1, v2, Yfrac);  \textcolor{comment}{//interpolate in y direction}
+111 
+112     \textcolor{keywordflow}{return} fin;
+113 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_perlin_noise_ac4a0870388edd44e14caca983bd018aa}\label{class_perlin_noise_ac4a0870388edd44e14caca983bd018aa}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!Interpolate@{Interpolate}}
+\index{Interpolate@{Interpolate}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{Interpolate()}{Interpolate()}}
+{\footnotesize\ttfamily double Perlin\+Noise\+::\+Interpolate (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{a }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 115 of file Perlin\+Noise.\+cpp.
+
+
+\begin{DoxyCode}
+116 \{
+117     \textcolor{keywordtype}{double} negA = 1.0 - a;
+118     \textcolor{keywordtype}{double} negASqr = negA * negA;
+119     \textcolor{keywordtype}{double} fac1 = 3.0 * (negASqr)-2.0 * (negASqr * negA);
+120     \textcolor{keywordtype}{double} aSqr = a * a;
+121     \textcolor{keywordtype}{double} fac2 = 3.0 * aSqr - 2.0 * (aSqr * a);
+122 
+123     \textcolor{keywordflow}{return} x * fac1 + y * fac2; \textcolor{comment}{//add the weighted factors}
+124 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}\label{class_perlin_noise_a40cedf54fffebae57229216cd1b2c880}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!Noise@{Noise}}
+\index{Noise@{Noise}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{Noise()}{Noise()}}
+{\footnotesize\ttfamily double Perlin\+Noise\+::\+Noise (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+1073741824.\+0); 
+
+Definition at line 126 of file Perlin\+Noise.\+cpp.
+
+
+\begin{DoxyCode}
+127 \{
+128     \textcolor{keywordtype}{int} n = x + y * 57;
+129     n = (n << 13) ^ n;
+130     \textcolor{keywordtype}{int} t = (n * (n * n * 15731 + 789221) + 1376312589) & 0x7fffffff;
+131     \textcolor{keywordflow}{return} 1.0 - double(t) * 0.931322574615478515625e-9;\textcolor{comment}{/// 1073741824.0);}
+132 \textcolor{comment}{}\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_perlin_noise_a63d0a127952107e5628c428c8a234de8}\label{class_perlin_noise_a63d0a127952107e5628c428c8a234de8}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!Total@{Total}}
+\index{Total@{Total}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{Total()}{Total()}}
+{\footnotesize\ttfamily double Perlin\+Noise\+::\+Total (\begin{DoxyParamCaption}\item[{double}]{i,  }\item[{double}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the total of the given coordinates using perlin noise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & x position \\
+\hline
+{\em j} & z position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double the height 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file Perlin\+Noise.\+cpp.
+
+
+\begin{DoxyCode}
+51 \{
+52     \textcolor{keywordtype}{double} t = 0.0f;
+53     \textcolor{keywordtype}{double} \_amplitude = 1;
+54     \textcolor{keywordtype}{double} freq = \mbox{\hyperlink{class_perlin_noise_a5e0b39e0cf38d292f0c92a428ecc56fc}{frequency}};
+55 
+56     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < \mbox{\hyperlink{class_perlin_noise_a1098ffa60dc53802b509e57e6d96c072}{octaves}}; k++)
+57     \{
+58         t += \mbox{\hyperlink{class_perlin_noise_aa62e61ba1a73bdeff0901e95f656a806}{GetValue}}(j * freq + \mbox{\hyperlink{class_perlin_noise_a012846debd95e4cc158600fa381810d9}{randomseed}}, i * freq + 
+      \mbox{\hyperlink{class_perlin_noise_a012846debd95e4cc158600fa381810d9}{randomseed}}) * \_amplitude;
+59         \_amplitude *= \mbox{\hyperlink{class_perlin_noise_aeb01e2c26e1b3c87fcbe1a1e0bc28881}{persistence}};
+60         freq *= 2;
+61     \}
+62 
+63     \textcolor{keywordflow}{return} t;
+64 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_perlin_noise_a61323596df1daa4a56f057a43f9c12ba}\label{class_perlin_noise_a61323596df1daa4a56f057a43f9c12ba}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!amplitude@{amplitude}}
+\index{amplitude@{amplitude}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{amplitude}{amplitude}}
+{\footnotesize\ttfamily double Perlin\+Noise\+::amplitude\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 14 of file Perlin\+Noise.\+h.
+
+\mbox{\Hypertarget{class_perlin_noise_a5e0b39e0cf38d292f0c92a428ecc56fc}\label{class_perlin_noise_a5e0b39e0cf38d292f0c92a428ecc56fc}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!frequency@{frequency}}
+\index{frequency@{frequency}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{frequency}{frequency}}
+{\footnotesize\ttfamily double Perlin\+Noise\+::frequency\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 14 of file Perlin\+Noise.\+h.
+
+\mbox{\Hypertarget{class_perlin_noise_a1098ffa60dc53802b509e57e6d96c072}\label{class_perlin_noise_a1098ffa60dc53802b509e57e6d96c072}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!octaves@{octaves}}
+\index{octaves@{octaves}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{octaves}{octaves}}
+{\footnotesize\ttfamily int Perlin\+Noise\+::octaves\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+required noise variables 
+
+
+
+Definition at line 15 of file Perlin\+Noise.\+h.
+
+\mbox{\Hypertarget{class_perlin_noise_aeb01e2c26e1b3c87fcbe1a1e0bc28881}\label{class_perlin_noise_aeb01e2c26e1b3c87fcbe1a1e0bc28881}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!persistence@{persistence}}
+\index{persistence@{persistence}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{persistence}{persistence}}
+{\footnotesize\ttfamily double Perlin\+Noise\+::persistence\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 14 of file Perlin\+Noise.\+h.
+
+\mbox{\Hypertarget{class_perlin_noise_a012846debd95e4cc158600fa381810d9}\label{class_perlin_noise_a012846debd95e4cc158600fa381810d9}} 
+\index{Perlin\+Noise@{Perlin\+Noise}!randomseed@{randomseed}}
+\index{randomseed@{randomseed}!Perlin\+Noise@{Perlin\+Noise}}
+\subsubsection{\texorpdfstring{randomseed}{randomseed}}
+{\footnotesize\ttfamily int Perlin\+Noise\+::randomseed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 15 of file Perlin\+Noise.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_perlin_noise_8h}{Perlin\+Noise.\+h}}\item 
+D3d\+Engine/\mbox{\hyperlink{_perlin_noise_8cpp}{Perlin\+Noise.\+cpp}}\end{DoxyCompactItemize}

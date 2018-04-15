@@ -1,0 +1,723 @@
+\hypertarget{class_camera_helper}{}\section{Camera\+Helper Class Reference}
+\label{class_camera_helper}\index{Camera\+Helper@{Camera\+Helper}}
+
+
+{\ttfamily \#include $<$Camera\+Helper.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_camera_helper_a401e32c823d85e9dedeebfd67318e557}{Camera\+Helper}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$ device\+Resources)
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_camera_helper_af339b23a92498ca44946c589a7004837}{$\sim$\+Camera\+Helper}} ()
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_camera_helper_ac9033557a8988c86d0daf3aab1bbfa7f}{On\+Key\+Down}} (U\+I\+NT key)
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_camera_helper_ab7a651ac749461d078779b8c0accd9a7}{On\+Key\+Up}} (U\+I\+NT key)
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_camera_helper_a0b9c762c778086dd01d90a25b7ea2989}{Update}} (X\+M\+V\+E\+C\+T\+OR $\ast$pos)
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_camera_helper_add97d2d08199687ac37111773001bb10}{On\+Mouse\+Moved}} (float x, float y)
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} bool \mbox{\hyperlink{class_camera_helper_a1801645e4919706fe53c2d8bc2683933}{Get\+Is\+Jumping}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_camera_helper_a2fc6faa8ce769fdedee3802719c2f372}{On\+Window\+Size\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Called when the window size is changed s Sets the perspective matrix from the \mbox{\hyperlink{class_model_view_projection_manager}{Model\+View\+Projection\+Manager}} and the m\+\_\+scissor\+Rect. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} D3\+D12\+\_\+\+R\+E\+CT \mbox{\hyperlink{class_camera_helper_a75e575bef9dd1e3f6b2608be1b5f15b7}{Get\+Scissor\+Rect}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} X\+M\+V\+E\+C\+T\+OR \mbox{\hyperlink{class_camera_helper_a142721c2285930e8fa5f5674c6196688}{Get\+Position}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} X\+M\+V\+E\+C\+T\+OR \mbox{\hyperlink{class_camera_helper_a26e57d260f821f47b9fd5ca456d25e7c}{Get\+Camera\+Position}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} float \mbox{\hyperlink{class_camera_helper_a82e6dc2802d286a719c07b3d8484f139}{Get\+Camera\+Rot\+Yaw}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{struct_structures_1_1_model_view_projection_constant_buffer}{Structures\+::\+Model\+View\+Projection\+Constant\+Buffer}} \mbox{\hyperlink{class_camera_helper_a52e1cde25a6b6486dc9df5f25ae695d2}{Get\+Cbv\+Data}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$ \mbox{\hyperlink{class_camera_helper_a68562f65262d3c90532df0a194624ec9}{m\+\_\+device\+Resources}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_model_view_projection_manager}{Model\+View\+Projection\+Manager}} $>$ \mbox{\hyperlink{class_camera_helper_a10d96783299a8c958f84d46542a3d93f}{m\+\_\+mvp\+Manager}}
+\begin{DoxyCompactList}\small\item\em The D3d Device manager class. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_terrain_collision_helper}{Terrain\+Collision\+Helper}} $>$ \mbox{\hyperlink{class_camera_helper_a5ce949723d775603a605ffcd9cc68bbc}{m\+\_\+terrain\+Collider}}
+\begin{DoxyCompactList}\small\item\em The Model View Perspective matrices manager. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_helper_ae2a32d581a829b05300d7298b5622469}{m\+\_\+pitch}}
+\begin{DoxyCompactList}\small\item\em Terrain Collision detecter and manager. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_helper_a9bdda4839839b4329188fc44517e8b01}{m\+\_\+yaw}}
+\begin{DoxyCompactList}\small\item\em The pitch of the mouse movement. \end{DoxyCompactList}\item 
+Direct\+X\+::\+X\+M\+V\+E\+C\+T\+O\+R\+F32 \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\+\_\+direction}}
+\begin{DoxyCompactList}\small\item\em The yaw of the mouse movement. \end{DoxyCompactList}\item 
+Direct\+X\+::\+X\+M\+V\+E\+C\+T\+O\+R\+F32 \mbox{\hyperlink{class_camera_helper_a9f225b52b05df432872e8b541079935f}{m\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The direction the keys have been pressed to form. \end{DoxyCompactList}\item 
+Direct\+X\+::\+X\+M\+M\+A\+T\+R\+IX \mbox{\hyperlink{class_camera_helper_a995de11be349b7d74075f08fa5e2f437}{m\+\_\+cam\+Rotation\+Matrix}}
+\begin{DoxyCompactList}\small\item\em The position of the camera. \end{DoxyCompactList}\item 
+Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR \mbox{\hyperlink{class_camera_helper_a4f5d97db4f91d138f5ea4bf4416df132}{Default\+Forward}} = Direct\+X\+::\+X\+M\+Vector\+Set(0.\+0f, 0.\+0f, 1.\+0f, 0.\+0f)
+\begin{DoxyCompactList}\small\item\em The rotation matrix of the camera. \end{DoxyCompactList}\item 
+Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR \mbox{\hyperlink{class_camera_helper_af4ca47176953088f0f18adecf7bf4409}{Default\+Right}} = Direct\+X\+::\+X\+M\+Vector\+Set(1.\+0f, 0.\+0f, 0.\+0f, 0.\+0f)
+\begin{DoxyCompactList}\small\item\em The Default forward facing vector. \end{DoxyCompactList}\item 
+Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR \mbox{\hyperlink{class_camera_helper_abc1a814a0b54bfcb70f3e24bcd444f01}{m\+\_\+cam\+Target}}
+\begin{DoxyCompactList}\small\item\em The Default Right facing vector. \end{DoxyCompactList}\item 
+D3\+D12\+\_\+\+R\+E\+CT \mbox{\hyperlink{class_camera_helper_add052fea87500f1d3b2732ec46c3ae85}{m\+\_\+scissor\+Rect}}
+\begin{DoxyCompactList}\small\item\em The target that the camera will look at. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_camera_helper_ac0dd816f2a5e8b4030b62e703ab92861}{is\+Jumping}}
+\begin{DoxyCompactList}\small\item\em Rect that anything outside of it will not be displayed. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{class_camera_helper_ac0b6f1a7975e28a7604985da3f29278b}{c\+\_\+camera\+Ground\+Offset}} = 2
+\begin{DoxyCompactList}\small\item\em Is camera or player jumping. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_camera_helper_a58fe7fb37f0bda549c7a8cc59fb58042}{m\+\_\+is\+Under\+Ground}}
+\begin{DoxyCompactList}\small\item\em The constant offset of the camera from the ground. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Camera\+Helper.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_camera_helper_a401e32c823d85e9dedeebfd67318e557}\label{class_camera_helper_a401e32c823d85e9dedeebfd67318e557}} 
+\index{Camera\+Helper@{Camera\+Helper}!Camera\+Helper@{Camera\+Helper}}
+\index{Camera\+Helper@{Camera\+Helper}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{Camera\+Helper()}{CameraHelper()}}
+{\footnotesize\ttfamily Camera\+Helper\+::\+Camera\+Helper (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$}]{device\+Resources }\end{DoxyParamCaption})}
+
+The Constructor Creates and initialises members of the class 
+\begin{DoxyParams}{Parameters}
+{\em device\+Resources} & the Direct3D Device manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file Camera\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+13     : \mbox{\hyperlink{class_camera_helper_a68562f65262d3c90532df0a194624ec9}{m\_deviceResources}}(deviceResources),
+14     \mbox{\hyperlink{class_camera_helper_ae2a32d581a829b05300d7298b5622469}{m\_pitch}}(0),
+15     \mbox{\hyperlink{class_camera_helper_a9bdda4839839b4329188fc44517e8b01}{m\_yaw}}(0),
+16     \mbox{\hyperlink{class_camera_helper_abc1a814a0b54bfcb70f3e24bcd444f01}{m\_camTarget}}(\{\}),
+17     \mbox{\hyperlink{class_camera_helper_a9f225b52b05df432872e8b541079935f}{m\_position}}(\{ 0,0,0,0 \}),
+18     \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}(\{\}),
+19     \mbox{\hyperlink{class_camera_helper_ac0dd816f2a5e8b4030b62e703ab92861}{isJumping}}(\textcolor{keyword}{false}),
+20     \mbox{\hyperlink{class_camera_helper_a58fe7fb37f0bda549c7a8cc59fb58042}{m\_isUnderGround}}(\textcolor{keyword}{false})
+21 \{
+22     \textcolor{comment}{// Creates shared\_ptr of \(\backslash\)class TerrainCollisionHelper}
+23     \mbox{\hyperlink{class_camera_helper_a5ce949723d775603a605ffcd9cc68bbc}{m\_terrainCollider}} = std::make\_unique<TerrainCollisionHelper>();
+24     \textcolor{comment}{// Creates shared\_ptr of \(\backslash\)class ModelViewProjectionManager}
+25     \mbox{\hyperlink{class_camera_helper_a10d96783299a8c958f84d46542a3d93f}{m\_mvpManager}} = std::make\_shared<ModelViewProjectionManager>();
+26 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_helper_af339b23a92498ca44946c589a7004837}\label{class_camera_helper_af339b23a92498ca44946c589a7004837}} 
+\index{Camera\+Helper@{Camera\+Helper}!````~Camera\+Helper@{$\sim$\+Camera\+Helper}}
+\index{````~Camera\+Helper@{$\sim$\+Camera\+Helper}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{$\sim$\+Camera\+Helper()}{~CameraHelper()}}
+{\footnotesize\ttfamily Camera\+Helper\+::$\sim$\+Camera\+Helper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The Deconstructor 
+
+Definition at line 31 of file Camera\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+32 \{
+33 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_helper_a26e57d260f821f47b9fd5ca456d25e7c}\label{class_camera_helper_a26e57d260f821f47b9fd5ca456d25e7c}} 
+\index{Camera\+Helper@{Camera\+Helper}!Get\+Camera\+Position@{Get\+Camera\+Position}}
+\index{Get\+Camera\+Position@{Get\+Camera\+Position}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{Get\+Camera\+Position()}{GetCameraPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} X\+M\+V\+E\+C\+T\+OR Camera\+Helper\+::\+Get\+Camera\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 28 of file Camera\+Helper.\+h.
+
+
+\begin{DoxyCode}
+28 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_camera_helper_abc1a814a0b54bfcb70f3e24bcd444f01}{m\_camTarget}}; \};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_helper_a82e6dc2802d286a719c07b3d8484f139}\label{class_camera_helper_a82e6dc2802d286a719c07b3d8484f139}} 
+\index{Camera\+Helper@{Camera\+Helper}!Get\+Camera\+Rot\+Yaw@{Get\+Camera\+Rot\+Yaw}}
+\index{Get\+Camera\+Rot\+Yaw@{Get\+Camera\+Rot\+Yaw}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{Get\+Camera\+Rot\+Yaw()}{GetCameraRotYaw()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} float Camera\+Helper\+::\+Get\+Camera\+Rot\+Yaw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 29 of file Camera\+Helper.\+h.
+
+
+\begin{DoxyCode}
+29 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_camera_helper_a9bdda4839839b4329188fc44517e8b01}{m\_yaw}}; \};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_helper_a52e1cde25a6b6486dc9df5f25ae695d2}\label{class_camera_helper_a52e1cde25a6b6486dc9df5f25ae695d2}} 
+\index{Camera\+Helper@{Camera\+Helper}!Get\+Cbv\+Data@{Get\+Cbv\+Data}}
+\index{Get\+Cbv\+Data@{Get\+Cbv\+Data}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{Get\+Cbv\+Data()}{GetCbvData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_structures_1_1_model_view_projection_constant_buffer}{Structures\+::\+Model\+View\+Projection\+Constant\+Buffer}} Camera\+Helper\+::\+Get\+Cbv\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 262 of file Camera\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+263 \{
+264     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_camera_helper_a10d96783299a8c958f84d46542a3d93f}{m\_mvpManager}}->GetCbvData();
+265 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_helper_a1801645e4919706fe53c2d8bc2683933}\label{class_camera_helper_a1801645e4919706fe53c2d8bc2683933}} 
+\index{Camera\+Helper@{Camera\+Helper}!Get\+Is\+Jumping@{Get\+Is\+Jumping}}
+\index{Get\+Is\+Jumping@{Get\+Is\+Jumping}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{Get\+Is\+Jumping()}{GetIsJumping()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} bool Camera\+Helper\+::\+Get\+Is\+Jumping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 23 of file Camera\+Helper.\+h.
+
+
+\begin{DoxyCode}
+23 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_camera_helper_ac0dd816f2a5e8b4030b62e703ab92861}{isJumping}}; \};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_helper_a142721c2285930e8fa5f5674c6196688}\label{class_camera_helper_a142721c2285930e8fa5f5674c6196688}} 
+\index{Camera\+Helper@{Camera\+Helper}!Get\+Position@{Get\+Position}}
+\index{Get\+Position@{Get\+Position}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{Get\+Position()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} X\+M\+V\+E\+C\+T\+OR Camera\+Helper\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 27 of file Camera\+Helper.\+h.
+
+
+\begin{DoxyCode}
+27 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_camera_helper_a9f225b52b05df432872e8b541079935f}{m\_position}}; \};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_helper_a75e575bef9dd1e3f6b2608be1b5f15b7}\label{class_camera_helper_a75e575bef9dd1e3f6b2608be1b5f15b7}} 
+\index{Camera\+Helper@{Camera\+Helper}!Get\+Scissor\+Rect@{Get\+Scissor\+Rect}}
+\index{Get\+Scissor\+Rect@{Get\+Scissor\+Rect}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{Get\+Scissor\+Rect()}{GetScissorRect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} D3\+D12\+\_\+\+R\+E\+CT Camera\+Helper\+::\+Get\+Scissor\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 26 of file Camera\+Helper.\+h.
+
+
+\begin{DoxyCode}
+26 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_camera_helper_add052fea87500f1d3b2732ec46c3ae85}{m\_scissorRect}}; \};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_helper_ac9033557a8988c86d0daf3aab1bbfa7f}\label{class_camera_helper_ac9033557a8988c86d0daf3aab1bbfa7f}} 
+\index{Camera\+Helper@{Camera\+Helper}!On\+Key\+Down@{On\+Key\+Down}}
+\index{On\+Key\+Down@{On\+Key\+Down}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{On\+Key\+Down()}{OnKeyDown()}}
+{\footnotesize\ttfamily void Camera\+Helper\+::\+On\+Key\+Down (\begin{DoxyParamCaption}\item[{U\+I\+NT}]{key }\end{DoxyParamCaption})}
+
+Gets key presses to move the camera and player Changes the direction of movement doesn\textquotesingle{}t move anything 
+\begin{DoxyParams}{Parameters}
+{\em key} & the unsigned integer key code for the key that has been pressed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file Camera\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+41 \{
+42     \textcolor{comment}{// Set \(\backslash\)property m\_direction to forward on "W" pressed}
+43     \textcolor{keywordflow}{if} (key == 0x57)
+44     \{
+45         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetZ(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, 1);
+46     \}
+47     \textcolor{comment}{// Set \(\backslash\)property m\_direction to left on "A" pressed}
+48     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key == 0x41)
+49     \{
+50         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetX(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, 1);
+51     \}
+52     \textcolor{comment}{// Set \(\backslash\)property m\_direction to backward on "S" pressed}
+53     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key == 0x53)
+54     \{
+55         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetZ(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, -1);
+56     \}
+57     \textcolor{comment}{// Set \(\backslash\)property m\_direction to right on "D" pressed}
+58     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key == 0x44)
+59     \{
+60         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetX(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, -1);
+61     \}
+62     \textcolor{comment}{// Set \(\backslash\)property m\_direction to up on "SpaceBar" pressed}
+63     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key == VK\_SPACE)
+64     \{
+65         \mbox{\hyperlink{class_camera_helper_ac0dd816f2a5e8b4030b62e703ab92861}{isJumping}} = \textcolor{keyword}{true};
+66         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetY(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, 1);
+67     \}
+68     \textcolor{comment}{// Set \(\backslash\)property m\_direction to down on "Shift" pressed}
+69     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key == VK\_SHIFT)
+70     \{
+71         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetY(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, -1);
+72     \}
+73 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_helper_ab7a651ac749461d078779b8c0accd9a7}\label{class_camera_helper_ab7a651ac749461d078779b8c0accd9a7}} 
+\index{Camera\+Helper@{Camera\+Helper}!On\+Key\+Up@{On\+Key\+Up}}
+\index{On\+Key\+Up@{On\+Key\+Up}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{On\+Key\+Up()}{OnKeyUp()}}
+{\footnotesize\ttfamily void Camera\+Helper\+::\+On\+Key\+Up (\begin{DoxyParamCaption}\item[{U\+I\+NT}]{key }\end{DoxyParamCaption})}
+
+Gets key presses to stop moving the camera and player Changes the direction of movement doesn\textquotesingle{}t move anything 
+\begin{DoxyParams}{Parameters}
+{\em key} & the unsigned integer key code for the key that has been released \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file Camera\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+81 \{
+82     \textcolor{comment}{// Set \(\backslash\)property m\_direction to forward on "W" pressed}
+83     \textcolor{keywordflow}{if} (key == 0x57)
+84     \{
+85         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetZ(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, 0);
+86     \}
+87     \textcolor{comment}{// Set \(\backslash\)property m\_direction to not left on "A" pressed}
+88     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key == 0x41)
+89     \{
+90         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetX(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, 0);
+91     \}
+92     \textcolor{comment}{// Set \(\backslash\)property m\_direction to not backward on "S" pressed}
+93     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key == 0x53)
+94     \{
+95         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetZ(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, 0);
+96     \}
+97     \textcolor{comment}{// Set \(\backslash\)property m\_direction to not right on "D" pressed}
+98     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key == 0x44)
+99     \{
+100         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetX(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, 0);
+101     \}
+102     \textcolor{comment}{// Set \(\backslash\)property m\_direction to not up on "SpaceBar" pressed}
+103     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key == VK\_SPACE)
+104     \{
+105         \mbox{\hyperlink{class_camera_helper_ac0dd816f2a5e8b4030b62e703ab92861}{isJumping}} = \textcolor{keyword}{false};
+106         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetY(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, 0);
+107     \}
+108     \textcolor{comment}{// Set \(\backslash\)property m\_direction to not down on "Shift" pressed}
+109     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key == VK\_SHIFT)
+110     \{
+111         \mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}.v = XMVectorSetY(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}, 0);
+112     \}
+113 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_helper_add97d2d08199687ac37111773001bb10}\label{class_camera_helper_add97d2d08199687ac37111773001bb10}} 
+\index{Camera\+Helper@{Camera\+Helper}!On\+Mouse\+Moved@{On\+Mouse\+Moved}}
+\index{On\+Mouse\+Moved@{On\+Mouse\+Moved}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Moved()}{OnMouseMoved()}}
+{\footnotesize\ttfamily void Camera\+Helper\+::\+On\+Mouse\+Moved (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+When the mouse is moved the function is called and the m\+\_\+pitch and m\+\_\+yaw are set to values which are relative to the new mouse movement the mouse movement is subtracted from the current m\+\_\+pitch and m\+\_\+yaw to achive smooth movement and cummulative movement (adds up) 
+\begin{DoxyParams}{Parameters}
+{\em x} & the horizonal movement of the mouse \\
+\hline
+{\em y} & the vertical movement of the mouse \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 198 of file Camera\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+199 \{
+200     \textcolor{comment}{// Multiplyer of the relative \(\backslash\)param x  \(\backslash\)param y;}
+201     \textcolor{keyword}{const} \textcolor{keyword}{auto} multiplyer = 0.003f;
+202     \textcolor{comment}{// is touching or under the terrain (see \(\backslash\)fn void CameraHelper::Update(XMVECTOR* pos) )}
+203     \textcolor{keywordflow}{if} ((y < 0 && \mbox{\hyperlink{class_camera_helper_a58fe7fb37f0bda549c7a8cc59fb58042}{m\_isUnderGround}}) || !\mbox{\hyperlink{class_camera_helper_a58fe7fb37f0bda549c7a8cc59fb58042}{m\_isUnderGround}}) \{
+204         \textcolor{comment}{// subtracts \(\backslash\)param y multiplied by \(\backslash\)var multiplyer to get the new \(\backslash\)property m\_pitch}
+205         \mbox{\hyperlink{class_camera_helper_ae2a32d581a829b05300d7298b5622469}{m\_pitch}} -= y * multiplyer;
+206     \}
+207 
+208     \textcolor{comment}{// subtracts negative \(\backslash\)param x multiplied by \(\backslash\)var multiplyer to get the new \(\backslash\)property m\_yaw}
+209     \mbox{\hyperlink{class_camera_helper_a9bdda4839839b4329188fc44517e8b01}{m\_yaw}} -= -x * multiplyer;
+210 
+211     \textcolor{comment}{// Stops the rotations from going past half a circle}
+212     \mbox{\hyperlink{class_camera_helper_ae2a32d581a829b05300d7298b5622469}{m\_pitch}} = (float)\_\_max(-DirectX::XM\_PI / 2.0f - 0.00003f, \mbox{\hyperlink{class_camera_helper_ae2a32d581a829b05300d7298b5622469}{m\_pitch}});
+213     \mbox{\hyperlink{class_camera_helper_ae2a32d581a829b05300d7298b5622469}{m\_pitch}} = (float)\_\_min(+DirectX::XM\_PI / 2.0f - 0.00003f, \mbox{\hyperlink{class_camera_helper_ae2a32d581a829b05300d7298b5622469}{m\_pitch}});
+214 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_helper_a2fc6faa8ce769fdedee3802719c2f372}\label{class_camera_helper_a2fc6faa8ce769fdedee3802719c2f372}} 
+\index{Camera\+Helper@{Camera\+Helper}!On\+Window\+Size\+Changed@{On\+Window\+Size\+Changed}}
+\index{On\+Window\+Size\+Changed@{On\+Window\+Size\+Changed}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{On\+Window\+Size\+Changed()}{OnWindowSizeChanged()}}
+{\footnotesize\ttfamily void Camera\+Helper\+::\+On\+Window\+Size\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called when the window size is changed s Sets the perspective matrix from the \mbox{\hyperlink{class_model_view_projection_manager}{Model\+View\+Projection\+Manager}} and the m\+\_\+scissor\+Rect. 
+
+
+
+Definition at line 220 of file Camera\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+221 \{
+222     \textcolor{comment}{// Gets thye inner window (output size) form \(\backslash\)class DeviceResources}
+223     \textcolor{keyword}{const} \textcolor{keyword}{auto} outputSize = \mbox{\hyperlink{class_camera_helper_a68562f65262d3c90532df0a194624ec9}{m\_deviceResources}}->GetOutputSize();
+224     \textcolor{comment}{// Gets aspect ratio from output size}
+225     \textcolor{keyword}{const} \textcolor{keywordtype}{float} aspectRatio = outputSize.x / outputSize.y;
+226     \textcolor{comment}{// Creates the Field of View for the perspective}
+227     \textcolor{keywordtype}{float} fovAngleY = 70.0f * DirectX::XM\_PI / 180.0f;
+228 
+229     \textcolor{comment}{// Gets the viewport structure from \(\backslash\)class Device Resources}
+230     \textcolor{keyword}{const} \textcolor{keyword}{auto} viewport = \mbox{\hyperlink{class_camera_helper_a68562f65262d3c90532df0a194624ec9}{m\_deviceResources}}->GetScreenViewport();
+231     \textcolor{comment}{// Sets \(\backslash\)property m\_scissorRect with the viewport width and height}
+232     \mbox{\hyperlink{class_camera_helper_add052fea87500f1d3b2732ec46c3ae85}{m\_scissorRect}} = \{ 0, 0, \textcolor{keyword}{static\_cast<}LONG\textcolor{keyword}{>}(viewport.Width), static\_cast<LONG>(viewport.
+      Height) \};
+233     \textcolor{comment}{// Checks the aspect ratio to see if the FOV angle needs to be changed}
+234     \textcolor{keywordflow}{if} (aspectRatio < 1.0f)
+235     \{
+236         fovAngleY *= 2.0f;
+237     \}
+238     \textcolor{comment}{// Sets the perspective matrix using the \(\backslash\)var fovAngleY \(\backslash\)var aspectRatio and the constant vlaues which
+       represent the Z Cut off (near then far)}
+239     \textcolor{keyword}{const} \textcolor{keyword}{auto} perspectiveMatrix = DirectX::XMMatrixPerspectiveFovRH(
+240         fovAngleY,
+241         aspectRatio,
+242         0.01f,
+243         10000.0f
+244     );
+245 
+246     \textcolor{comment}{// Screen orientation}
+247     \textcolor{keyword}{static} \textcolor{keyword}{const} DirectX::XMFLOAT4X4 Rotation0(
+248         1.0f, 0.0f, 0.0f, 0.0f,
+249         0.0f, 1.0f, 0.0f, 0.0f,
+250         0.0f, 0.0f, 1.0f, 0.0f,
+251         0.0f, 0.0f, 0.0f, 1.0f
+252     );
+253     \textcolor{comment}{// Turns into an XMMATRIX}
+254     \textcolor{keyword}{const} \textcolor{keyword}{auto} orientationMatrix = XMLoadFloat4x4(&Rotation0);
+255 
+256     \textcolor{comment}{// Sets the perspective matrix in the \(\backslash\)class ModelViewProjectionManager}
+257     \mbox{\hyperlink{class_camera_helper_a10d96783299a8c958f84d46542a3d93f}{m\_mvpManager}}->SetMatrix(2, XMMatrixTranspose(perspectiveMatrix * orientationMatrix));
+258 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_helper_a0b9c762c778086dd01d90a25b7ea2989}\label{class_camera_helper_a0b9c762c778086dd01d90a25b7ea2989}} 
+\index{Camera\+Helper@{Camera\+Helper}!Update@{Update}}
+\index{Update@{Update}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Camera\+Helper\+::\+Update (\begin{DoxyParamCaption}\item[{X\+M\+V\+E\+C\+T\+OR $\ast$}]{pos }\end{DoxyParamCaption})}
+
+Updates and performs the mathamatical calculations to move the camera in relation to the players position The Camera is being moved here and it moves in relation to the players position which is passed as pos. the 
+\begin{DoxyParams}{Parameters}
+{\em pos} & X\+M\+V\+E\+C\+T\+OR of the players position \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file Camera\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+122 \{
+123     \textcolor{comment}{// The vector that is facing up}
+124     DirectX::XMVECTORF32 up = \{ 0.0f, 1.0f, 0.0f, 0.0f \};
+125 
+126     \textcolor{comment}{// Gets the rotation matrix from \(\backslash\)property m\_pitch (pitch from mouse movement) and m\_yaw (yaw from
+       mouse movenment)}
+127     \mbox{\hyperlink{class_camera_helper_a995de11be349b7d74075f08fa5e2f437}{m\_camRotationMatrix}} = XMMatrixRotationRollPitchYaw(
+      \mbox{\hyperlink{class_camera_helper_ae2a32d581a829b05300d7298b5622469}{m\_pitch}}, \mbox{\hyperlink{class_camera_helper_a9bdda4839839b4329188fc44517e8b01}{m\_yaw}}, 0);
+128     \textcolor{comment}{// Transforms the forward facing vector with the rotation matrix}
+129     \mbox{\hyperlink{class_camera_helper_abc1a814a0b54bfcb70f3e24bcd444f01}{m\_camTarget}} = XMVector3TransformCoord(\mbox{\hyperlink{class_camera_helper_a4f5d97db4f91d138f5ea4bf4416df132}{DefaultForward}}, 
+      \mbox{\hyperlink{class_camera_helper_a995de11be349b7d74075f08fa5e2f437}{m\_camRotationMatrix}});
+130     \textcolor{comment}{// Normalises the vector which has just been rotated}
+131     \mbox{\hyperlink{class_camera_helper_abc1a814a0b54bfcb70f3e24bcd444f01}{m\_camTarget}} = XMVector3Normalize(\mbox{\hyperlink{class_camera_helper_abc1a814a0b54bfcb70f3e24bcd444f01}{m\_camTarget}});
+132     \textcolor{comment}{// Gets the yaw rotation matrix from \(\backslash\)property m\_yaw}
+133     \textcolor{keyword}{const} \textcolor{keyword}{auto} RotateYTempMatrix = XMMatrixRotationY(\mbox{\hyperlink{class_camera_helper_a9bdda4839839b4329188fc44517e8b01}{m\_yaw}});
+134 
+135     \textcolor{comment}{// Rotates the \(\backslash\)property DefaultRight vector with the yaw rotation matrix \(\backslash\)var RotateYTempMatrix}
+136     \textcolor{keyword}{const} \textcolor{keyword}{auto} camRight = XMVector3TransformCoord(\mbox{\hyperlink{class_camera_helper_af4ca47176953088f0f18adecf7bf4409}{DefaultRight}}, RotateYTempMatrix);
+137     \textcolor{comment}{// Rotates the \(\backslash\)property DefaultForward vector with the yaw rotation matrix \(\backslash\)var RotateYTempMatrix}
+138     \textcolor{keyword}{const} \textcolor{keyword}{auto} camForward = XMVector3TransformCoord(\mbox{\hyperlink{class_camera_helper_a4f5d97db4f91d138f5ea4bf4416df132}{DefaultForward}}, RotateYTempMatrix);
+139     \textcolor{comment}{// Rotates the \(\backslash\)var up vector with the yaw rotation matrix \(\backslash\)var RotateYTempMatrix}
+140     up.v = XMVector3TransformCoord(up, RotateYTempMatrix);
+141 
+142     \textcolor{comment}{// The float value to multiply the \(\backslash\)property m\_direction vector coords X and Z}
+143     \textcolor{keyword}{const} \textcolor{keyword}{auto} multiplyerXZ = -0.3f;
+144     \textcolor{comment}{// The float value to multiply the \(\backslash\)property m\_direction vector coord Y}
+145     \textcolor{keyword}{const} \textcolor{keyword}{auto} multiplyerY = 0.3f;
+146 
+147     \textcolor{comment}{// Multiplies the \(\backslash\)property m\_direction vector with the multiplyers \(\backslash\)var multiplyerXZ and \(\backslash\)var
+       multiplyerY}
+148     \textcolor{keyword}{const} \textcolor{keyword}{auto} x = XMVectorGetX(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}) * multiplyerXZ;
+149     \textcolor{keyword}{const} \textcolor{keyword}{auto} z = XMVectorGetZ(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}) * multiplyerXZ;
+150     \textcolor{keyword}{const} \textcolor{keyword}{auto} y = XMVectorGetY(\mbox{\hyperlink{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}{m\_direction}}) * multiplyerY;
+151 
+152     \textcolor{comment}{// Creates XMVECTOR from \(\backslash\)var x and multiplies it by \(\backslash\)var camRight to get the x movement of the camera}
+153     \textcolor{keyword}{const} \textcolor{keyword}{auto} xAxisMovement = XMVectorMultiply(XMVectorSet(x, x, x, x), camRight);
+154     \textcolor{comment}{// Creates XMVECTOR from \(\backslash\)var z and multiplies it by \(\backslash\)var camForward to get the z movement of the
+       camera}
+155     \textcolor{keyword}{const} \textcolor{keyword}{auto} zAxisMovement = XMVectorMultiply(XMVectorSet(z, z, z, z), camForward);
+156     \textcolor{comment}{// Creates XMVECTOR from \(\backslash\)var y and multiplies it by the \(\backslash\)var up vector to get the y movement of the
+       camera}
+157     \textcolor{keyword}{const} \textcolor{keyword}{auto} yAxisMovement = XMVectorMultiply(XMVectorSet(y, y, y, y), up);
+158     
+159     \textcolor{comment}{// Add the movement vectors (\(\backslash\)var xAxisMovement \(\backslash\)var zAxisMovement \(\backslash\)var yAxisMovement) to the position
+       (\(\backslash\)var pos) of the camera}
+160     (*pos) = XMVectorAdd(*pos, xAxisMovement);
+161     (*pos) = XMVectorAdd(*pos, zAxisMovement);
+162     (*pos) = XMVectorAdd(*pos, yAxisMovement);
+163 
+164     \textcolor{comment}{// Creates the variable which will be passed to the XMStoreFloat3 function to store the final vector as
+       a XMFLOAT3 structure}
+165     XMFLOAT3 fullNewPosFloat3;
+166     \textcolor{comment}{// Creates the multiplyer / offset for the camera orbitting the player.}
+167     \textcolor{keyword}{const} \textcolor{keyword}{auto} camMultiplyer = 10;
+168     \textcolor{comment}{// Orbits the camera around the player (research sin waves and cos waves to understand more)}
+169     XMStoreFloat3(&fullNewPosFloat3, XMVectorSet(sin(\mbox{\hyperlink{class_camera_helper_a9bdda4839839b4329188fc44517e8b01}{m\_yaw}}) * camMultiplyer, sin(
+      \mbox{\hyperlink{class_camera_helper_ae2a32d581a829b05300d7298b5622469}{m\_pitch}}) * camMultiplyer, cos(\mbox{\hyperlink{class_camera_helper_a9bdda4839839b4329188fc44517e8b01}{m\_yaw}}) * camMultiplyer, 1) + (*pos));
+170     \textcolor{comment}{// the new position of Y for the cameras position (to be passed into the \(\backslash\)fn bool
+       TerrainCollisionHelper::GetNewYPos(XMFLOAT3 position, float* yOut) )}
+171     \textcolor{keywordtype}{float} newYPos;
+172 
+173     \textcolor{comment}{// Gets the new Y location of the cameras position (in case of colliding with terrain)}
+174     \mbox{\hyperlink{class_camera_helper_a5ce949723d775603a605ffcd9cc68bbc}{m\_terrainCollider}}->GetNewYPos(fullNewPosFloat3, &newYPos);
+175 
+176     \textcolor{comment}{// sets the \(\backslash\)var newYPos if it is above terrain and the camera is not (\(\backslash\)property c\_cameraGroundOffset
+       is the constant offset of how much the camera should be above ground)}
+177     \textcolor{keywordflow}{if} (newYPos > fullNewPosFloat3.y - \mbox{\hyperlink{class_camera_helper_ac0b6f1a7975e28a7604985da3f29278b}{c\_cameraGroundOffset}}) \{
+178         fullNewPosFloat3.y = newYPos + \mbox{\hyperlink{class_camera_helper_ac0b6f1a7975e28a7604985da3f29278b}{c\_cameraGroundOffset}};
+179         \mbox{\hyperlink{class_camera_helper_a58fe7fb37f0bda549c7a8cc59fb58042}{m\_isUnderGround}} = \textcolor{keyword}{true};
+180     \}
+181     \textcolor{keywordflow}{else} \{
+182         \mbox{\hyperlink{class_camera_helper_a58fe7fb37f0bda549c7a8cc59fb58042}{m\_isUnderGround}} = \textcolor{keyword}{false};
+183     \}
+184     
+185     \textcolor{comment}{// Puts the new pos (after orbitting and terrain collision) in to an XMVECTOR structure}
+186     \textcolor{keyword}{auto} newPos = XMLoadFloat3(&fullNewPosFloat3);
+187     \textcolor{comment}{// Creates the View Matrix and adds it to the \(\backslash\)class ModelViewProjectionManager helper class}
+188     \mbox{\hyperlink{class_camera_helper_a10d96783299a8c958f84d46542a3d93f}{m\_mvpManager}}->SetMatrix(1, XMMatrixTranspose(XMMatrixLookAtRH(newPos, *pos, up.v)));
+189 
+190     \mbox{\hyperlink{class_camera_helper_a10d96783299a8c958f84d46542a3d93f}{m\_mvpManager}}->SetMatrix(0, XMMatrixIdentity());
+191 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_camera_helper_ac0b6f1a7975e28a7604985da3f29278b}\label{class_camera_helper_ac0b6f1a7975e28a7604985da3f29278b}} 
+\index{Camera\+Helper@{Camera\+Helper}!c\+\_\+camera\+Ground\+Offset@{c\+\_\+camera\+Ground\+Offset}}
+\index{c\+\_\+camera\+Ground\+Offset@{c\+\_\+camera\+Ground\+Offset}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{c\+\_\+camera\+Ground\+Offset}{c\_cameraGroundOffset}}
+{\footnotesize\ttfamily const float Camera\+Helper\+::c\+\_\+camera\+Ground\+Offset = 2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Is camera or player jumping. 
+
+
+
+Definition at line 46 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_a4f5d97db4f91d138f5ea4bf4416df132}\label{class_camera_helper_a4f5d97db4f91d138f5ea4bf4416df132}} 
+\index{Camera\+Helper@{Camera\+Helper}!Default\+Forward@{Default\+Forward}}
+\index{Default\+Forward@{Default\+Forward}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{Default\+Forward}{DefaultForward}}
+{\footnotesize\ttfamily Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR Camera\+Helper\+::\+Default\+Forward = Direct\+X\+::\+X\+M\+Vector\+Set(0.\+0f, 0.\+0f, 1.\+0f, 0.\+0f)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The rotation matrix of the camera. 
+
+
+
+Definition at line 41 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_af4ca47176953088f0f18adecf7bf4409}\label{class_camera_helper_af4ca47176953088f0f18adecf7bf4409}} 
+\index{Camera\+Helper@{Camera\+Helper}!Default\+Right@{Default\+Right}}
+\index{Default\+Right@{Default\+Right}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{Default\+Right}{DefaultRight}}
+{\footnotesize\ttfamily Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR Camera\+Helper\+::\+Default\+Right = Direct\+X\+::\+X\+M\+Vector\+Set(1.\+0f, 0.\+0f, 0.\+0f, 0.\+0f)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The Default forward facing vector. 
+
+
+
+Definition at line 42 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_ac0dd816f2a5e8b4030b62e703ab92861}\label{class_camera_helper_ac0dd816f2a5e8b4030b62e703ab92861}} 
+\index{Camera\+Helper@{Camera\+Helper}!is\+Jumping@{is\+Jumping}}
+\index{is\+Jumping@{is\+Jumping}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{is\+Jumping}{isJumping}}
+{\footnotesize\ttfamily bool Camera\+Helper\+::is\+Jumping\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Rect that anything outside of it will not be displayed. 
+
+
+
+Definition at line 45 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_a995de11be349b7d74075f08fa5e2f437}\label{class_camera_helper_a995de11be349b7d74075f08fa5e2f437}} 
+\index{Camera\+Helper@{Camera\+Helper}!m\+\_\+cam\+Rotation\+Matrix@{m\+\_\+cam\+Rotation\+Matrix}}
+\index{m\+\_\+cam\+Rotation\+Matrix@{m\+\_\+cam\+Rotation\+Matrix}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{m\+\_\+cam\+Rotation\+Matrix}{m\_camRotationMatrix}}
+{\footnotesize\ttfamily Direct\+X\+::\+X\+M\+M\+A\+T\+R\+IX Camera\+Helper\+::m\+\_\+cam\+Rotation\+Matrix\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The position of the camera. 
+
+
+
+Definition at line 40 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_abc1a814a0b54bfcb70f3e24bcd444f01}\label{class_camera_helper_abc1a814a0b54bfcb70f3e24bcd444f01}} 
+\index{Camera\+Helper@{Camera\+Helper}!m\+\_\+cam\+Target@{m\+\_\+cam\+Target}}
+\index{m\+\_\+cam\+Target@{m\+\_\+cam\+Target}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{m\+\_\+cam\+Target}{m\_camTarget}}
+{\footnotesize\ttfamily Direct\+X\+::\+X\+M\+V\+E\+C\+T\+OR Camera\+Helper\+::m\+\_\+cam\+Target\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The Default Right facing vector. 
+
+
+
+Definition at line 43 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_a68562f65262d3c90532df0a194624ec9}\label{class_camera_helper_a68562f65262d3c90532df0a194624ec9}} 
+\index{Camera\+Helper@{Camera\+Helper}!m\+\_\+device\+Resources@{m\+\_\+device\+Resources}}
+\index{m\+\_\+device\+Resources@{m\+\_\+device\+Resources}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{m\+\_\+device\+Resources}{m\_deviceResources}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}}$>$ Camera\+Helper\+::m\+\_\+device\+Resources\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 33 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}\label{class_camera_helper_af2822e6b05e48f33100c2f678e3776ce}} 
+\index{Camera\+Helper@{Camera\+Helper}!m\+\_\+direction@{m\+\_\+direction}}
+\index{m\+\_\+direction@{m\+\_\+direction}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{m\+\_\+direction}{m\_direction}}
+{\footnotesize\ttfamily Direct\+X\+::\+X\+M\+V\+E\+C\+T\+O\+R\+F32 Camera\+Helper\+::m\+\_\+direction\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The yaw of the mouse movement. 
+
+
+
+Definition at line 38 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_a58fe7fb37f0bda549c7a8cc59fb58042}\label{class_camera_helper_a58fe7fb37f0bda549c7a8cc59fb58042}} 
+\index{Camera\+Helper@{Camera\+Helper}!m\+\_\+is\+Under\+Ground@{m\+\_\+is\+Under\+Ground}}
+\index{m\+\_\+is\+Under\+Ground@{m\+\_\+is\+Under\+Ground}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{m\+\_\+is\+Under\+Ground}{m\_isUnderGround}}
+{\footnotesize\ttfamily bool Camera\+Helper\+::m\+\_\+is\+Under\+Ground\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The constant offset of the camera from the ground. 
+
+
+
+Definition at line 47 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_a10d96783299a8c958f84d46542a3d93f}\label{class_camera_helper_a10d96783299a8c958f84d46542a3d93f}} 
+\index{Camera\+Helper@{Camera\+Helper}!m\+\_\+mvp\+Manager@{m\+\_\+mvp\+Manager}}
+\index{m\+\_\+mvp\+Manager@{m\+\_\+mvp\+Manager}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{m\+\_\+mvp\+Manager}{m\_mvpManager}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_model_view_projection_manager}{Model\+View\+Projection\+Manager}}$>$ Camera\+Helper\+::m\+\_\+mvp\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The D3d Device manager class. 
+
+
+
+Definition at line 34 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_ae2a32d581a829b05300d7298b5622469}\label{class_camera_helper_ae2a32d581a829b05300d7298b5622469}} 
+\index{Camera\+Helper@{Camera\+Helper}!m\+\_\+pitch@{m\+\_\+pitch}}
+\index{m\+\_\+pitch@{m\+\_\+pitch}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{m\+\_\+pitch}{m\_pitch}}
+{\footnotesize\ttfamily float Camera\+Helper\+::m\+\_\+pitch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Terrain Collision detecter and manager. 
+
+
+
+Definition at line 36 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_a9f225b52b05df432872e8b541079935f}\label{class_camera_helper_a9f225b52b05df432872e8b541079935f}} 
+\index{Camera\+Helper@{Camera\+Helper}!m\+\_\+position@{m\+\_\+position}}
+\index{m\+\_\+position@{m\+\_\+position}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{m\+\_\+position}{m\_position}}
+{\footnotesize\ttfamily Direct\+X\+::\+X\+M\+V\+E\+C\+T\+O\+R\+F32 Camera\+Helper\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The direction the keys have been pressed to form. 
+
+
+
+Definition at line 39 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_add052fea87500f1d3b2732ec46c3ae85}\label{class_camera_helper_add052fea87500f1d3b2732ec46c3ae85}} 
+\index{Camera\+Helper@{Camera\+Helper}!m\+\_\+scissor\+Rect@{m\+\_\+scissor\+Rect}}
+\index{m\+\_\+scissor\+Rect@{m\+\_\+scissor\+Rect}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{m\+\_\+scissor\+Rect}{m\_scissorRect}}
+{\footnotesize\ttfamily D3\+D12\+\_\+\+R\+E\+CT Camera\+Helper\+::m\+\_\+scissor\+Rect\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The target that the camera will look at. 
+
+
+
+Definition at line 44 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_a5ce949723d775603a605ffcd9cc68bbc}\label{class_camera_helper_a5ce949723d775603a605ffcd9cc68bbc}} 
+\index{Camera\+Helper@{Camera\+Helper}!m\+\_\+terrain\+Collider@{m\+\_\+terrain\+Collider}}
+\index{m\+\_\+terrain\+Collider@{m\+\_\+terrain\+Collider}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{m\+\_\+terrain\+Collider}{m\_terrainCollider}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_terrain_collision_helper}{Terrain\+Collision\+Helper}}$>$ Camera\+Helper\+::m\+\_\+terrain\+Collider\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The Model View Perspective matrices manager. 
+
+
+
+Definition at line 35 of file Camera\+Helper.\+h.
+
+\mbox{\Hypertarget{class_camera_helper_a9bdda4839839b4329188fc44517e8b01}\label{class_camera_helper_a9bdda4839839b4329188fc44517e8b01}} 
+\index{Camera\+Helper@{Camera\+Helper}!m\+\_\+yaw@{m\+\_\+yaw}}
+\index{m\+\_\+yaw@{m\+\_\+yaw}!Camera\+Helper@{Camera\+Helper}}
+\subsubsection{\texorpdfstring{m\+\_\+yaw}{m\_yaw}}
+{\footnotesize\ttfamily float Camera\+Helper\+::m\+\_\+yaw\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The pitch of the mouse movement. 
+
+
+
+Definition at line 37 of file Camera\+Helper.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_camera_helper_8h}{Camera\+Helper.\+h}}\item 
+D3d\+Engine/\mbox{\hyperlink{_camera_helper_8cpp}{Camera\+Helper.\+cpp}}\end{DoxyCompactItemize}

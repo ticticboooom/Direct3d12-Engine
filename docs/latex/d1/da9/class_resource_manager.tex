@@ -1,0 +1,312 @@
+\hypertarget{class_resource_manager}{}\section{Resource\+Manager Class Reference}
+\label{class_resource_manager}\index{Resource\+Manager@{Resource\+Manager}}
+
+
+{\ttfamily \#include $<$Resource\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_resource_manager_a5705bb19a33d73b09888aa2f119105fe}{Resource\+Manager}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$ device\+Resources, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}} $>$ command\+List\+Manager)
+\begin{DoxyCompactList}\small\item\em Construct a new Resource Manager\+:\+: Resource Manager object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_resource_manager_a671c186e4630599e7e36d000c53eaf80}{$\sim$\+Resource\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Resource Manager\+:\+: Resource Manager object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_resource_manager_af0b7ab70d363c108f6ca1bde1dcd06fc}{Update\+Subresource}} (B\+Y\+TE $\ast$data, U\+I\+NT size, const U\+I\+NT width, const U\+I\+NT height, D3\+D12\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+S\+T\+A\+T\+ES state) const
+\begin{DoxyCompactList}\small\item\em update the subresource of the resouce \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} U\+I\+N\+T64 \mbox{\hyperlink{class_resource_manager_a6dd8fde1b39e245774f8a7120d7e3c99}{Get\+Required\+Intermediate\+Size\+For\+Resource}} () const
+\begin{DoxyCompactList}\small\item\em get the required size for a resource \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_resource_manager_abbcc9205898abeaad0a4a4a5ca23275c}{Upload\+Resource}} (D3\+D12\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+D\+E\+SC desc)
+\begin{DoxyCompactList}\small\item\em create upload resource with the upload heap to upload the data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_resource_manager_a9974fc877935a9b41e2416143fe8e72b}{Default\+Heap\+Resource}} (D3\+D12\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+D\+E\+SC desc)
+\begin{DoxyCompactList}\small\item\em creates a resource that cannot be mapped to a vriable and must be changed using update subresource \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Resource $\ast$ \mbox{\hyperlink{class_resource_manager_a0d93b29422a5f9eac0115254edb4327a}{Get}} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$ \mbox{\hyperlink{class_resource_manager_a91ec892c6045e5911c24c80b4112cad4}{m\+\_\+device\+Resources}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}} $>$ \mbox{\hyperlink{class_resource_manager_ad215168d29e86e1c705337d2625c0a05}{m\+\_\+command\+List\+Manager}}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Resource $>$ \mbox{\hyperlink{class_resource_manager_a5d2576312216c2e85631636f3e76c3b2}{m\+\_\+resource\+Upload}}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Resource $>$ \mbox{\hyperlink{class_resource_manager_a2190eea97044904955f1fead12732be5}{m\+\_\+resource}}
+\begin{DoxyCompactList}\small\item\em upload resource \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_resource_manager_ab6e43dce874459d3b2c422959158f0d3}{m\+\_\+has\+Default\+Heap}} = false
+\begin{DoxyCompactList}\small\item\em defualt resource \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Resource\+Manager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_resource_manager_a5705bb19a33d73b09888aa2f119105fe}\label{class_resource_manager_a5705bb19a33d73b09888aa2f119105fe}} 
+\index{Resource\+Manager@{Resource\+Manager}!Resource\+Manager@{Resource\+Manager}}
+\index{Resource\+Manager@{Resource\+Manager}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Resource\+Manager()}{ResourceManager()}}
+{\footnotesize\ttfamily Resource\+Manager\+::\+Resource\+Manager (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$}]{device\+Resources,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}} $>$}]{command\+List\+Manager }\end{DoxyParamCaption})}
+
+
+
+Construct a new Resource Manager\+:\+: Resource Manager object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Resources} & \\
+\hline
+{\em command\+List\+Manager} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Resource\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+49                                                                 :
+50     \mbox{\hyperlink{class_resource_manager_a91ec892c6045e5911c24c80b4112cad4}{m\_deviceResources}}(deviceResources),
+51     \mbox{\hyperlink{class_resource_manager_ad215168d29e86e1c705337d2625c0a05}{m\_commandListManager}}(commandListManager)
+52 \{
+53 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_resource_manager_a671c186e4630599e7e36d000c53eaf80}\label{class_resource_manager_a671c186e4630599e7e36d000c53eaf80}} 
+\index{Resource\+Manager@{Resource\+Manager}!````~Resource\+Manager@{$\sim$\+Resource\+Manager}}
+\index{````~Resource\+Manager@{$\sim$\+Resource\+Manager}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Resource\+Manager()}{~ResourceManager()}}
+{\footnotesize\ttfamily Resource\+Manager\+::$\sim$\+Resource\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Resource Manager\+:\+: Resource Manager object. 
+
+
+
+Definition at line 8 of file Resource\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+9 \{
+10 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_resource_manager_a9974fc877935a9b41e2416143fe8e72b}\label{class_resource_manager_a9974fc877935a9b41e2416143fe8e72b}} 
+\index{Resource\+Manager@{Resource\+Manager}!Default\+Heap\+Resource@{Default\+Heap\+Resource}}
+\index{Default\+Heap\+Resource@{Default\+Heap\+Resource}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Default\+Heap\+Resource()}{DefaultHeapResource()}}
+{\footnotesize\ttfamily void Resource\+Manager\+::\+Default\+Heap\+Resource (\begin{DoxyParamCaption}\item[{D3\+D12\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+D\+E\+SC}]{desc }\end{DoxyParamCaption})}
+
+
+
+creates a resource that cannot be mapped to a vriable and must be changed using update subresource 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file Resource\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+79 \{
+80     CD3DX12\_HEAP\_PROPERTIES defaultHeapProperties(D3D12\_HEAP\_TYPE\_DEFAULT);
+81     \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_resource_manager_a91ec892c6045e5911c24c80b4112cad4}{m\_deviceResources}}->GetD3DDevice()->CreateCommittedResource(
+82         &defaultHeapProperties,
+83         D3D12\_HEAP\_FLAG\_NONE,
+84         &desc,
+85         D3D12\_RESOURCE\_STATE\_COPY\_DEST,
+86         \textcolor{keyword}{nullptr},
+87         IID\_PPV\_ARGS(&\mbox{\hyperlink{class_resource_manager_a2190eea97044904955f1fead12732be5}{m\_resource}})));
+88     \mbox{\hyperlink{class_resource_manager_ab6e43dce874459d3b2c422959158f0d3}{m\_hasDefaultHeap}} = \textcolor{keyword}{true};
+89 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_resource_manager_a0d93b29422a5f9eac0115254edb4327a}\label{class_resource_manager_a0d93b29422a5f9eac0115254edb4327a}} 
+\index{Resource\+Manager@{Resource\+Manager}!Get@{Get}}
+\index{Get@{Get}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Resource$\ast$ Resource\+Manager\+::\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 17 of file Resource\+Manager.\+h.
+
+
+\begin{DoxyCode}
+17                                               \{
+18         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_resource_manager_ab6e43dce874459d3b2c422959158f0d3}{m\_hasDefaultHeap}})
+19             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_resource_manager_a2190eea97044904955f1fead12732be5}{m\_resource}}.Get();
+20         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_resource_manager_a5d2576312216c2e85631636f3e76c3b2}{m\_resourceUpload}}.Get();
+21     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_resource_manager_a6dd8fde1b39e245774f8a7120d7e3c99}\label{class_resource_manager_a6dd8fde1b39e245774f8a7120d7e3c99}} 
+\index{Resource\+Manager@{Resource\+Manager}!Get\+Required\+Intermediate\+Size\+For\+Resource@{Get\+Required\+Intermediate\+Size\+For\+Resource}}
+\index{Get\+Required\+Intermediate\+Size\+For\+Resource@{Get\+Required\+Intermediate\+Size\+For\+Resource}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Required\+Intermediate\+Size\+For\+Resource()}{GetRequiredIntermediateSizeForResource()}}
+{\footnotesize\ttfamily U\+I\+N\+T64 Resource\+Manager\+::\+Get\+Required\+Intermediate\+Size\+For\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get the required size for a resource 
+
+\begin{DoxyReturn}{Returns}
+U\+I\+N\+T64 the required size 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file Resource\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{keywordflow}{return}  GetRequiredIntermediateSize(\mbox{\hyperlink{class_resource_manager_a2190eea97044904955f1fead12732be5}{m\_resource}}.Get(), 0, 1);
+39 
+40 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_resource_manager_af0b7ab70d363c108f6ca1bde1dcd06fc}\label{class_resource_manager_af0b7ab70d363c108f6ca1bde1dcd06fc}} 
+\index{Resource\+Manager@{Resource\+Manager}!Update\+Subresource@{Update\+Subresource}}
+\index{Update\+Subresource@{Update\+Subresource}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Update\+Subresource()}{UpdateSubresource()}}
+{\footnotesize\ttfamily void Resource\+Manager\+::\+Update\+Subresource (\begin{DoxyParamCaption}\item[{B\+Y\+TE $\ast$}]{data,  }\item[{U\+I\+NT}]{size,  }\item[{const U\+I\+NT}]{width,  }\item[{const U\+I\+NT}]{height,  }\item[{D3\+D12\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+S\+T\+A\+T\+ES}]{state }\end{DoxyParamCaption}) const}
+
+
+
+update the subresource of the resouce 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & the subresource\textquotesingle{}s data \\
+\hline
+{\em size} & the size of the data \\
+\hline
+{\em width} & the width of the data \\
+\hline
+{\em height} & the height of the data \\
+\hline
+{\em state} & the state of the subresource \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file Resource\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+22 \{
+23     D3D12\_SUBRESOURCE\_DATA subresource = \{\};
+24     subresource.pData = data;
+25     subresource.RowPitch = width;
+26     subresource.SlicePitch = width * height;
+27     \mbox{\hyperlink{class_resource_manager_ad215168d29e86e1c705337d2625c0a05}{m\_commandListManager}}->UpdateSubresource(\mbox{\hyperlink{class_resource_manager_a2190eea97044904955f1fead12732be5}{m\_resource}}.Get(), 
+      \mbox{\hyperlink{class_resource_manager_a5d2576312216c2e85631636f3e76c3b2}{m\_resourceUpload}}.Get(), &subresource);
+28     \mbox{\hyperlink{class_resource_manager_ad215168d29e86e1c705337d2625c0a05}{m\_commandListManager}}->CreateResourceBarrier(1, &
+      CD3DX12\_RESOURCE\_BARRIER::Transition(\mbox{\hyperlink{class_resource_manager_a2190eea97044904955f1fead12732be5}{m\_resource}}.Get(), D3D12\_RESOURCE\_STATE\_COPY\_DEST, state));
+29 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_resource_manager_abbcc9205898abeaad0a4a4a5ca23275c}\label{class_resource_manager_abbcc9205898abeaad0a4a4a5ca23275c}} 
+\index{Resource\+Manager@{Resource\+Manager}!Upload\+Resource@{Upload\+Resource}}
+\index{Upload\+Resource@{Upload\+Resource}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{Upload\+Resource()}{UploadResource()}}
+{\footnotesize\ttfamily void Resource\+Manager\+::\+Upload\+Resource (\begin{DoxyParamCaption}\item[{D3\+D12\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+D\+E\+SC}]{desc }\end{DoxyParamCaption})}
+
+
+
+create upload resource with the upload heap to upload the data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & resource descriptor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file Resource\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+61 \{
+62     CD3DX12\_HEAP\_PROPERTIES uploadHeapProperties(D3D12\_HEAP\_TYPE\_UPLOAD);
+63     \textcolor{keyword}{auto} result = \mbox{\hyperlink{class_resource_manager_a91ec892c6045e5911c24c80b4112cad4}{m\_deviceResources}}->GetD3DDevice()->CreateCommittedResource(
+64         &uploadHeapProperties,
+65         D3D12\_HEAP\_FLAG\_NONE,
+66         &desc,
+67         D3D12\_RESOURCE\_STATE\_GENERIC\_READ,
+68         \textcolor{keyword}{nullptr},
+69         IID\_PPV\_ARGS(&\mbox{\hyperlink{class_resource_manager_a5d2576312216c2e85631636f3e76c3b2}{m\_resourceUpload}}));
+70         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(result);
+71 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_resource_manager_ad215168d29e86e1c705337d2625c0a05}\label{class_resource_manager_ad215168d29e86e1c705337d2625c0a05}} 
+\index{Resource\+Manager@{Resource\+Manager}!m\+\_\+command\+List\+Manager@{m\+\_\+command\+List\+Manager}}
+\index{m\+\_\+command\+List\+Manager@{m\+\_\+command\+List\+Manager}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+command\+List\+Manager}{m\_commandListManager}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}}$>$ Resource\+Manager\+::m\+\_\+command\+List\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 26 of file Resource\+Manager.\+h.
+
+\mbox{\Hypertarget{class_resource_manager_a91ec892c6045e5911c24c80b4112cad4}\label{class_resource_manager_a91ec892c6045e5911c24c80b4112cad4}} 
+\index{Resource\+Manager@{Resource\+Manager}!m\+\_\+device\+Resources@{m\+\_\+device\+Resources}}
+\index{m\+\_\+device\+Resources@{m\+\_\+device\+Resources}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+device\+Resources}{m\_deviceResources}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}}$>$ Resource\+Manager\+::m\+\_\+device\+Resources\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 25 of file Resource\+Manager.\+h.
+
+\mbox{\Hypertarget{class_resource_manager_ab6e43dce874459d3b2c422959158f0d3}\label{class_resource_manager_ab6e43dce874459d3b2c422959158f0d3}} 
+\index{Resource\+Manager@{Resource\+Manager}!m\+\_\+has\+Default\+Heap@{m\+\_\+has\+Default\+Heap}}
+\index{m\+\_\+has\+Default\+Heap@{m\+\_\+has\+Default\+Heap}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+has\+Default\+Heap}{m\_hasDefaultHeap}}
+{\footnotesize\ttfamily bool Resource\+Manager\+::m\+\_\+has\+Default\+Heap = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+defualt resource 
+
+
+
+Definition at line 29 of file Resource\+Manager.\+h.
+
+\mbox{\Hypertarget{class_resource_manager_a2190eea97044904955f1fead12732be5}\label{class_resource_manager_a2190eea97044904955f1fead12732be5}} 
+\index{Resource\+Manager@{Resource\+Manager}!m\+\_\+resource@{m\+\_\+resource}}
+\index{m\+\_\+resource@{m\+\_\+resource}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+resource}{m\_resource}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D3\+D12\+Resource$>$ Resource\+Manager\+::m\+\_\+resource\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+upload resource 
+
+
+
+Definition at line 28 of file Resource\+Manager.\+h.
+
+\mbox{\Hypertarget{class_resource_manager_a5d2576312216c2e85631636f3e76c3b2}\label{class_resource_manager_a5d2576312216c2e85631636f3e76c3b2}} 
+\index{Resource\+Manager@{Resource\+Manager}!m\+\_\+resource\+Upload@{m\+\_\+resource\+Upload}}
+\index{m\+\_\+resource\+Upload@{m\+\_\+resource\+Upload}!Resource\+Manager@{Resource\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+resource\+Upload}{m\_resourceUpload}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D3\+D12\+Resource$>$ Resource\+Manager\+::m\+\_\+resource\+Upload\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file Resource\+Manager.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_resource_manager_8h}{Resource\+Manager.\+h}}\item 
+D3d\+Engine/\mbox{\hyperlink{_resource_manager_8cpp}{Resource\+Manager.\+cpp}}\end{DoxyCompactItemize}

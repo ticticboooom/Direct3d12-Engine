@@ -1,0 +1,1246 @@
+\hypertarget{class_d_x_1_1_device_resources}{}\section{DX\+:\+:Device\+Resources Class Reference}
+\label{class_d_x_1_1_device_resources}\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+
+
+{\ttfamily \#include $<$Device\+Resources.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_d_x_1_1_device_resources_a78141267b73a601408bf12f5090b25ca}{Device\+Resources}} (D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT back\+Buffer\+Format=D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+B8\+G8\+R8\+A8\+\_\+\+U\+N\+O\+RM, D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT depth\+Buffer\+Format=D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+D32\+\_\+\+F\+L\+O\+AT)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_d_x_1_1_device_resources_a78141267b73a601408bf12f5090b25ca}{D\+X\+::\+Device\+Resources\+::\+Device\+Resources}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_d_x_1_1_device_resources_a76181b89d31d8aef4c8397fcee2c3d61}{Set\+Window}} (H\+W\+ND window)
+\begin{DoxyCompactList}\small\item\em sets the window (H\+W\+ND) to a new window \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_d_x_1_1_device_resources_a5a0453913627052d011544e4cff2f3e6}{Set\+Logical\+Size}} (Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2 logical\+Size)
+\begin{DoxyCompactList}\small\item\em sets the logical size of the viewport \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_d_x_1_1_device_resources_a82722ab9c5a11d27664e89b6a375902e}{Set\+Dpi}} (float dpi)
+\begin{DoxyCompactList}\small\item\em \mbox{[}not used\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_d_x_1_1_device_resources_ab6976bc6f653fab6899b53a4b5308b06}{Validate\+Device}} ()
+\begin{DoxyCompactList}\small\item\em validate the d3d device \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_d_x_1_1_device_resources_aba74d5a48d23672e6963be1413b054d0}{Present}} ()
+\begin{DoxyCompactList}\small\item\em presents everything to the swap chain checks the device is not ejected or broken \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_d_x_1_1_device_resources_a53d3cb840dfc40ef2eecfd993740447f}{Wait\+For\+Gpu}} ()
+\begin{DoxyCompactList}\small\item\em waits for the G\+PU to finish doing the processing \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2 \mbox{\hyperlink{class_d_x_1_1_device_resources_afa4a123452c35ff6208aa97ecbb8a725}{Get\+Output\+Size}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2 \mbox{\hyperlink{class_d_x_1_1_device_resources_a56ec7c2de3ad0d4c5c1447fdacbbdba1}{Get\+Logical\+Size}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} float \mbox{\hyperlink{class_d_x_1_1_device_resources_a3f921a0e44f6216b90114ba81305baf6}{Get\+Dpi}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} bool \mbox{\hyperlink{class_d_x_1_1_device_resources_ac6034a7660faea0d269dbb0d325cb7cd}{Is\+Device\+Removed}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Device $\ast$ \mbox{\hyperlink{class_d_x_1_1_device_resources_ab453c5634e7cd987bee4a1819b78122a}{Get\+D3\+D\+Device}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D\+X\+G\+I\+Swap\+Chain3 $\ast$ \mbox{\hyperlink{class_d_x_1_1_device_resources_a7a96c1ac092f671997e17f9078c409e3}{Get\+Swap\+Chain}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Resource $\ast$ \mbox{\hyperlink{class_d_x_1_1_device_resources_a8dd65cfba90dd43be6b43328985d6f75}{Get\+Render\+Target}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Resource $\ast$ \mbox{\hyperlink{class_d_x_1_1_device_resources_abb849df3775f377ef3e3625b5b43fa5b}{Get\+Depth\+Stencil}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Command\+Queue $\ast$ \mbox{\hyperlink{class_d_x_1_1_device_resources_adabcf266dec101a537eebbce5f74cfdd}{Get\+Command\+Queue}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Command\+Allocator $\ast$ \mbox{\hyperlink{class_d_x_1_1_device_resources_a416ba6505eff4048099366721ec9fc1d}{Get\+Command\+Allocator}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT \mbox{\hyperlink{class_d_x_1_1_device_resources_aca67f798cb4669d889a24e48b1b53acc}{Get\+Back\+Buffer\+Format}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT \mbox{\hyperlink{class_d_x_1_1_device_resources_a75ba016c43eba423ed0a6d9a3a60edf1}{Get\+Depth\+Buffer\+Format}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} D3\+D12\+\_\+\+V\+I\+E\+W\+P\+O\+RT \mbox{\hyperlink{class_d_x_1_1_device_resources_ab27be35d21e48abd8c6205e87b6b9cb7}{Get\+Screen\+Viewport}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} U\+I\+NT \mbox{\hyperlink{class_d_x_1_1_device_resources_af83cb32755c057e0750edec07a8e95de}{Get\+Current\+Frame\+Index}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} C\+D3\+D\+X12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE \mbox{\hyperlink{class_d_x_1_1_device_resources_a65919d934ad59f2c11df12f74a28b915}{Get\+Render\+Target\+View}} () const
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} C\+D3\+D\+X12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE \mbox{\hyperlink{class_d_x_1_1_device_resources_ab2a956c30e147ba5f96f13aa13fbb25a}{Get\+Depth\+Stencil\+View}} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_x_1_1_device_resources_a35d9d8e993551e6d5dd0ed2b7bc25806}{Create\+Device\+Independent\+Resources}} ()
+\item 
+void \mbox{\hyperlink{class_d_x_1_1_device_resources_abfbb8815f68e3b3f7d065c3679fbe58f}{Create\+Device\+Resources}} ()
+\begin{DoxyCompactList}\small\item\em creates the resouces that make up the device and its requirements \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_x_1_1_device_resources_a9556306971d5484caaa5a2aac42f253e}{Create\+Window\+Size\+Dependent\+Resources}} ()
+\begin{DoxyCompactList}\small\item\em creater the resources that require the wqindow size to be changed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_x_1_1_device_resources_a7adaa47153e97fbbcc524013905635f0}{Update\+Render\+Target\+Size}} ()
+\begin{DoxyCompactList}\small\item\em update the sie fo the render target \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_x_1_1_device_resources_af7005ac5c0fb7c7582740d0a767398c6}{Move\+To\+Next\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em move the G\+PU to the next frame \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_x_1_1_device_resources_a9d990146724d7f465b277c95675459bd}{Get\+Hardware\+Adapter}} (I\+D\+X\+G\+I\+Adapter1 $\ast$$\ast$pp\+Adapter)
+\begin{DoxyCompactList}\small\item\em get the G\+PU / Graphics card \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+U\+I\+NT \mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\+\_\+current\+Frame}}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Device $>$ \mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\+\_\+d3d\+Device}}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D\+X\+G\+I\+Factory4 $>$ \mbox{\hyperlink{class_d_x_1_1_device_resources_ab644f438ae69bde6c40c147dbda95928}{m\+\_\+dxgi\+Factory}}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D\+X\+G\+I\+Swap\+Chain3 $>$ \mbox{\hyperlink{class_d_x_1_1_device_resources_a8f067c81561cd51ac8e59a89e868571b}{m\+\_\+swap\+Chain}}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Resource $>$ \mbox{\hyperlink{class_d_x_1_1_device_resources_aa96cf4622c1a948b53dfd6f1a08a24cd}{m\+\_\+render\+Targets}} \mbox{[}\mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\+\_\+frame\+Count}}\mbox{]}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Resource $>$ \mbox{\hyperlink{class_d_x_1_1_device_resources_a98406a085f056b96a7c60ad257598fd3}{m\+\_\+depth\+Stencil}}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Descriptor\+Heap $>$ \mbox{\hyperlink{class_d_x_1_1_device_resources_a23433ca65c8264c961778b97a309ea6a}{m\+\_\+rtv\+Heap}}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Descriptor\+Heap $>$ \mbox{\hyperlink{class_d_x_1_1_device_resources_a71a459331defc54ff1677609d8608997}{m\+\_\+dsv\+Heap}}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Command\+Queue $>$ \mbox{\hyperlink{class_d_x_1_1_device_resources_a0f0882523aa09b109f3a7bc05ff01f46}{m\+\_\+command\+Queue}}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Command\+Allocator $>$ \mbox{\hyperlink{class_d_x_1_1_device_resources_afdaf82b33be14ee78ab6e540f4b63785}{m\+\_\+command\+Allocators}} \mbox{[}\mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\+\_\+frame\+Count}}\mbox{]}
+\item 
+D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT \mbox{\hyperlink{class_d_x_1_1_device_resources_a9f23666e062bdebe694eb2dd7e454cba}{m\+\_\+back\+Buffer\+Format}}
+\item 
+D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT \mbox{\hyperlink{class_d_x_1_1_device_resources_afb117f121edb8eb4df707d3f1b15445a}{m\+\_\+depth\+Buffer\+Format}}
+\item 
+D3\+D12\+\_\+\+V\+I\+E\+W\+P\+O\+RT \mbox{\hyperlink{class_d_x_1_1_device_resources_a0118fbbdb43755f01b25ed6d2e9893fc}{m\+\_\+screen\+Viewport}}
+\item 
+U\+I\+NT \mbox{\hyperlink{class_d_x_1_1_device_resources_adc2a1e5cbd63c54ad5a2836348a33cb8}{m\+\_\+rtv\+Descriptor\+Size}}
+\item 
+bool \mbox{\hyperlink{class_d_x_1_1_device_resources_af4d113c651dcae9a344094cfc02a6a09}{m\+\_\+device\+Removed}}
+\item 
+Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Fence $>$ \mbox{\hyperlink{class_d_x_1_1_device_resources_a147e6a63f6a733dc64c766c472d29d20}{m\+\_\+fence}}
+\item 
+U\+I\+N\+T64 \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\+\_\+fence\+Values}} \mbox{[}\mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\+\_\+frame\+Count}}\mbox{]}
+\item 
+H\+A\+N\+D\+LE \mbox{\hyperlink{class_d_x_1_1_device_resources_af3ecc18e8cf542dbcbd33872605e1b62}{m\+\_\+fence\+Event}}
+\item 
+H\+W\+ND \mbox{\hyperlink{class_d_x_1_1_device_resources_a71c1253aac157673ae385bf9d705584c}{m\+\_\+window}}
+\item 
+Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2 \mbox{\hyperlink{class_d_x_1_1_device_resources_a8ee855b75ab68a9fcc5f3564403cf8f8}{m\+\_\+d3d\+Render\+Target\+Size}}
+\item 
+Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2 \mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\+\_\+output\+Size}}
+\item 
+Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2 \mbox{\hyperlink{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}{m\+\_\+logical\+Size}}
+\item 
+float \mbox{\hyperlink{class_d_x_1_1_device_resources_a1d146efc89ae892dbcd78045d493ff2a}{m\+\_\+dpi}}
+\item 
+float \mbox{\hyperlink{class_d_x_1_1_device_resources_a0999b5522ac0a401e92b18db8f12a663}{m\+\_\+effective\+Dpi}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Device\+Resources.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a78141267b73a601408bf12f5090b25ca}\label{class_d_x_1_1_device_resources_a78141267b73a601408bf12f5090b25ca}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Device\+Resources@{Device\+Resources}}
+\index{Device\+Resources@{Device\+Resources}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Device\+Resources()}{DeviceResources()}}
+{\footnotesize\ttfamily D\+X\+::\+Device\+Resources\+::\+Device\+Resources (\begin{DoxyParamCaption}\item[{D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT}]{back\+Buffer\+Format = {\ttfamily DXGI\+\_\+FORMAT\+\_\+B8G8R8A8\+\_\+UNORM},  }\item[{D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT}]{depth\+Buffer\+Format = {\ttfamily DXGI\+\_\+FORMAT\+\_\+D32\+\_\+FLOAT} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_d_x_1_1_device_resources_a78141267b73a601408bf12f5090b25ca}{D\+X\+::\+Device\+Resources\+::\+Device\+Resources}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em back\+Buffer\+Format} & the format of the back buffer \\
+\hline
+{\em depth\+Buffer\+Format} & the format of the depth buffer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+11                                                                                              :
+12     \mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}(0),
+13     \mbox{\hyperlink{class_d_x_1_1_device_resources_a0118fbbdb43755f01b25ed6d2e9893fc}{m\_screenViewport}}(),
+14     \mbox{\hyperlink{class_d_x_1_1_device_resources_adc2a1e5cbd63c54ad5a2836348a33cb8}{m\_rtvDescriptorSize}}(0),
+15     \mbox{\hyperlink{class_d_x_1_1_device_resources_af3ecc18e8cf542dbcbd33872605e1b62}{m\_fenceEvent}}(0),
+16     \mbox{\hyperlink{class_d_x_1_1_device_resources_a9f23666e062bdebe694eb2dd7e454cba}{m\_backBufferFormat}}(backBufferFormat),
+17     \mbox{\hyperlink{class_d_x_1_1_device_resources_afb117f121edb8eb4df707d3f1b15445a}{m\_depthBufferFormat}}(depthBufferFormat),
+18     \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}\{\},
+19     \mbox{\hyperlink{class_d_x_1_1_device_resources_a8ee855b75ab68a9fcc5f3564403cf8f8}{m\_d3dRenderTargetSize}}(),
+20     \mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}}(),
+21     \mbox{\hyperlink{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}{m\_logicalSize}}(),
+22     \mbox{\hyperlink{class_d_x_1_1_device_resources_a1d146efc89ae892dbcd78045d493ff2a}{m\_dpi}}(-1.0f),
+23     \mbox{\hyperlink{class_d_x_1_1_device_resources_a0999b5522ac0a401e92b18db8f12a663}{m\_effectiveDpi}}(-1.0f),
+24     \mbox{\hyperlink{class_d_x_1_1_device_resources_af4d113c651dcae9a344094cfc02a6a09}{m\_deviceRemoved}}(\textcolor{keyword}{false})
+25 \{
+26     \mbox{\hyperlink{class_d_x_1_1_device_resources_a35d9d8e993551e6d5dd0ed2b7bc25806}{CreateDeviceIndependentResources}}();
+27     \mbox{\hyperlink{class_d_x_1_1_device_resources_abfbb8815f68e3b3f7d065c3679fbe58f}{CreateDeviceResources}}();
+28 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a35d9d8e993551e6d5dd0ed2b7bc25806}\label{class_d_x_1_1_device_resources_a35d9d8e993551e6d5dd0ed2b7bc25806}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Create\+Device\+Independent\+Resources@{Create\+Device\+Independent\+Resources}}
+\index{Create\+Device\+Independent\+Resources@{Create\+Device\+Independent\+Resources}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Create\+Device\+Independent\+Resources()}{CreateDeviceIndependentResources()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Create\+Device\+Independent\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 148 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+149 \{
+150 
+151 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_abfbb8815f68e3b3f7d065c3679fbe58f}\label{class_d_x_1_1_device_resources_abfbb8815f68e3b3f7d065c3679fbe58f}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Create\+Device\+Resources@{Create\+Device\+Resources}}
+\index{Create\+Device\+Resources@{Create\+Device\+Resources}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Create\+Device\+Resources()}{CreateDeviceResources()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Create\+Device\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+creates the resouces that make up the device and its requirements 
+
+
+
+Definition at line 157 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+158 \{
+159 \textcolor{preprocessor}{#if defined(\_DEBUG)}
+160     \textcolor{comment}{// If the project is in a debug build, enable debugging via SDK Layers.}
+161     \{
+162         Microsoft::WRL::ComPtr<ID3D12Debug> debugController;
+163         \textcolor{keywordflow}{if} (SUCCEEDED(D3D12GetDebugInterface(IID\_PPV\_ARGS(&debugController))))
+164         \{
+165             debugController->EnableDebugLayer();
+166         \}
+167     \}
+168 \textcolor{preprocessor}{#endif}
+169 
+170     \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(CreateDXGIFactory1(IID\_PPV\_ARGS(&\mbox{\hyperlink{class_d_x_1_1_device_resources_ab644f438ae69bde6c40c147dbda95928}{m\_dxgiFactory}})));
+171 
+172     Microsoft::WRL::ComPtr<IDXGIAdapter1> adapter;
+173     \mbox{\hyperlink{class_d_x_1_1_device_resources_a9d990146724d7f465b277c95675459bd}{GetHardwareAdapter}}(&adapter);
+174 
+175     \textcolor{comment}{// Create the Direct3D 12 API device object}
+176     HRESULT hr = D3D12CreateDevice(
+177         adapter.Get(),                  \textcolor{comment}{// The hardware adapter.}
+178         D3D\_FEATURE\_LEVEL\_11\_0,         \textcolor{comment}{// Minimum feature level this app can support.}
+179         IID\_PPV\_ARGS(&\mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}})       \textcolor{comment}{// Returns the Direct3D device created.}
+180     );
+181 
+182 \textcolor{preprocessor}{#if defined(\_DEBUG)}
+183     \textcolor{keywordflow}{if} (FAILED(hr))
+184     \{
+185         \textcolor{comment}{// If the initialization fails, fall back to the WARP device.}
+186         \textcolor{comment}{// For more information on WARP, see: }
+187         \textcolor{comment}{// https://go.microsoft.com/fwlink/?LinkId=286690}
+188 
+189         Microsoft::WRL::ComPtr<IDXGIAdapter> warpAdapter;
+190         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_ab644f438ae69bde6c40c147dbda95928}{m\_dxgiFactory}}->EnumWarpAdapter(IID\_PPV\_ARGS(&warpAdapter)))
+      ;
+191 
+192         hr = D3D12CreateDevice(warpAdapter.Get(), D3D\_FEATURE\_LEVEL\_11\_0, IID\_PPV\_ARGS(&
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}));
+193     \}
+194 \textcolor{preprocessor}{#endif}
+195 
+196     \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(hr);
+197 
+198     \textcolor{comment}{// Create the command queue.}
+199     D3D12\_COMMAND\_QUEUE\_DESC queueDesc = \{\};
+200     queueDesc.Flags = D3D12\_COMMAND\_QUEUE\_FLAG\_NONE;
+201     queueDesc.Type = D3D12\_COMMAND\_LIST\_TYPE\_DIRECT;
+202 
+203     \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}->CreateCommandQueue(&queueDesc, IID\_PPV\_ARGS(&
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_a0f0882523aa09b109f3a7bc05ff01f46}{m\_commandQueue}})));
+204     \mbox{\hyperlink{_direct_x_helper_8h_aac0bf77e771c5756a028295b6400839f}{NAME\_D3D12\_OBJECT}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_a0f0882523aa09b109f3a7bc05ff01f46}{m\_commandQueue}});
+205 
+206     \textcolor{comment}{// Create descriptor heaps for render target views and depth stencil views.}
+207     D3D12\_DESCRIPTOR\_HEAP\_DESC rtvHeapDesc = \{\};
+208     rtvHeapDesc.NumDescriptors = \mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\_frameCount}};
+209     rtvHeapDesc.Type = D3D12\_DESCRIPTOR\_HEAP\_TYPE\_RTV;
+210     rtvHeapDesc.Flags = D3D12\_DESCRIPTOR\_HEAP\_FLAG\_NONE;
+211     \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}->CreateDescriptorHeap(&rtvHeapDesc, IID\_PPV\_ARGS(&
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_a23433ca65c8264c961778b97a309ea6a}{m\_rtvHeap}})));
+212     \mbox{\hyperlink{_direct_x_helper_8h_aac0bf77e771c5756a028295b6400839f}{NAME\_D3D12\_OBJECT}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_a23433ca65c8264c961778b97a309ea6a}{m\_rtvHeap}});
+213 
+214     \mbox{\hyperlink{class_d_x_1_1_device_resources_adc2a1e5cbd63c54ad5a2836348a33cb8}{m\_rtvDescriptorSize}} = \mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}->GetDescriptorHandleIncrementSize(
+      D3D12\_DESCRIPTOR\_HEAP\_TYPE\_RTV);
+215 
+216     D3D12\_DESCRIPTOR\_HEAP\_DESC dsvHeapDesc = \{\};
+217     dsvHeapDesc.NumDescriptors = 1;
+218     dsvHeapDesc.Type = D3D12\_DESCRIPTOR\_HEAP\_TYPE\_DSV;
+219     dsvHeapDesc.Flags = D3D12\_DESCRIPTOR\_HEAP\_FLAG\_NONE;
+220     \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}->CreateDescriptorHeap(&dsvHeapDesc, IID\_PPV\_ARGS(&
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_a71a459331defc54ff1677609d8608997}{m\_dsvHeap}})));
+221     \mbox{\hyperlink{_direct_x_helper_8h_aac0bf77e771c5756a028295b6400839f}{NAME\_D3D12\_OBJECT}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_a71a459331defc54ff1677609d8608997}{m\_dsvHeap}});
+222 
+223     \textcolor{keywordflow}{for} (UINT n = 0; n < \mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\_frameCount}}; n++)
+224     \{
+225         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(
+226             \mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}->CreateCommandAllocator(D3D12\_COMMAND\_LIST\_TYPE\_DIRECT, IID\_PPV\_ARGS(&
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_afdaf82b33be14ee78ab6e540f4b63785}{m\_commandAllocators}}[n]))
+227         );
+228     \}
+229 
+230     \textcolor{comment}{// Create synchronization objects.}
+231     \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}->CreateFence(\mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}[
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}], D3D12\_FENCE\_FLAG\_NONE, IID\_PPV\_ARGS(&\mbox{\hyperlink{class_d_x_1_1_device_resources_a147e6a63f6a733dc64c766c472d29d20}{m\_fence}})));
+232     \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}[\mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}]++;
+233 
+234     \mbox{\hyperlink{class_d_x_1_1_device_resources_af3ecc18e8cf542dbcbd33872605e1b62}{m\_fenceEvent}} = CreateEvent(\textcolor{keyword}{nullptr}, FALSE, FALSE, \textcolor{keyword}{nullptr});
+235     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_d_x_1_1_device_resources_af3ecc18e8cf542dbcbd33872605e1b62}{m\_fenceEvent}} == \textcolor{keyword}{nullptr})
+236     \{
+237         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(HRESULT\_FROM\_WIN32(GetLastError()));
+238     \}
+239 
+240 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a9556306971d5484caaa5a2aac42f253e}\label{class_d_x_1_1_device_resources_a9556306971d5484caaa5a2aac42f253e}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Create\+Window\+Size\+Dependent\+Resources@{Create\+Window\+Size\+Dependent\+Resources}}
+\index{Create\+Window\+Size\+Dependent\+Resources@{Create\+Window\+Size\+Dependent\+Resources}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Create\+Window\+Size\+Dependent\+Resources()}{CreateWindowSizeDependentResources()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Create\+Window\+Size\+Dependent\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+creater the resources that require the wqindow size to be changed 
+
+
+
+Definition at line 245 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+246 \{
+247     \mbox{\hyperlink{class_d_x_1_1_device_resources_a53d3cb840dfc40ef2eecfd993740447f}{WaitForGpu}}();
+248 
+249     \textcolor{comment}{// Clear the previous window size specific content and update the tracked fence values.}
+250     \textcolor{keywordflow}{for} (UINT n = 0; n < \mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\_frameCount}}; n++)
+251     \{
+252         \mbox{\hyperlink{class_d_x_1_1_device_resources_aa96cf4622c1a948b53dfd6f1a08a24cd}{m\_renderTargets}}[n] = \textcolor{keyword}{nullptr};
+253         \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}[n] = \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}[
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}];
+254     \}
+255 
+256     \mbox{\hyperlink{class_d_x_1_1_device_resources_a7adaa47153e97fbbcc524013905635f0}{UpdateRenderTargetSize}}();
+257 
+258     \textcolor{comment}{// The width and height of the swap chain must be based on the window's}
+259     \textcolor{comment}{// natively-oriented width and height. If the window is not in the native}
+260     \textcolor{comment}{// orientation, the dimensions must be reversed.}
+261 
+262     \mbox{\hyperlink{class_d_x_1_1_device_resources_a8ee855b75ab68a9fcc5f3564403cf8f8}{m\_d3dRenderTargetSize}}.x = \mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}}.x;
+263     \mbox{\hyperlink{class_d_x_1_1_device_resources_a8ee855b75ab68a9fcc5f3564403cf8f8}{m\_d3dRenderTargetSize}}.y = \mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}}.y;
+264 
+265     UINT backBufferWidth = lround(\mbox{\hyperlink{class_d_x_1_1_device_resources_a8ee855b75ab68a9fcc5f3564403cf8f8}{m\_d3dRenderTargetSize}}.x);
+266     UINT backBufferHeight = lround(\mbox{\hyperlink{class_d_x_1_1_device_resources_a8ee855b75ab68a9fcc5f3564403cf8f8}{m\_d3dRenderTargetSize}}.y);
+267 
+268     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_d_x_1_1_device_resources_a8f067c81561cd51ac8e59a89e868571b}{m\_swapChain}} != \textcolor{keyword}{nullptr})
+269     \{
+270         \textcolor{comment}{// If the swap chain already exists, resize it.}
+271         HRESULT hr = \mbox{\hyperlink{class_d_x_1_1_device_resources_a8f067c81561cd51ac8e59a89e868571b}{m\_swapChain}}->ResizeBuffers(\mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\_frameCount}}, backBufferWidth, 
+      backBufferHeight, \mbox{\hyperlink{class_d_x_1_1_device_resources_a9f23666e062bdebe694eb2dd7e454cba}{m\_backBufferFormat}}, 0);
+272 
+273         \textcolor{keywordflow}{if} (hr == DXGI\_ERROR\_DEVICE\_REMOVED || hr == DXGI\_ERROR\_DEVICE\_RESET)
+274         \{
+275             \textcolor{comment}{// If the device was removed for any reason, a new device and swap chain will need to be
+       created.}
+276             \mbox{\hyperlink{class_d_x_1_1_device_resources_af4d113c651dcae9a344094cfc02a6a09}{m\_deviceRemoved}} = \textcolor{keyword}{true};
+277 
+278             \textcolor{comment}{// Do not continue execution of this method. DeviceResources will be destroyed and re-created.}
+279             \textcolor{keywordflow}{return};
+280         \}
+281         \textcolor{keywordflow}{else}
+282         \{
+283             \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(hr);
+284         \}
+285     \}
+286     \textcolor{keywordflow}{else}
+287     \{
+288         \textcolor{comment}{// Otherwise, create a new one using the same adapter as the existing Direct3D device.}
+289         DXGI\_SCALING scaling = DXGI\_SCALING\_NONE;
+290         DXGI\_SWAP\_CHAIN\_DESC1 swapChainDesc = \{\};
+291 
+292         swapChainDesc.Width = backBufferWidth;                      \textcolor{comment}{// Match the size of the window.}
+293         swapChainDesc.Height = backBufferHeight;
+294         swapChainDesc.Format = \mbox{\hyperlink{class_d_x_1_1_device_resources_a9f23666e062bdebe694eb2dd7e454cba}{m\_backBufferFormat}};
+295         swapChainDesc.Stereo = \textcolor{keyword}{false};
+296         swapChainDesc.SampleDesc.Count = 1;                         \textcolor{comment}{// Don't use multi-sampling.}
+297         swapChainDesc.SampleDesc.Quality = 0;
+298         swapChainDesc.BufferUsage = DXGI\_USAGE\_RENDER\_TARGET\_OUTPUT;
+299         swapChainDesc.BufferCount = \mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\_frameCount}};                   \textcolor{comment}{// Use triple-buffering to
+       minimize latency.}
+300         swapChainDesc.SwapEffect = DXGI\_SWAP\_EFFECT\_FLIP\_DISCARD;   \textcolor{comment}{// All Windows Universal apps must use
+       \_FLIP\_ SwapEffects.}
+301         swapChainDesc.Flags = 0;
+302         swapChainDesc.Scaling = scaling;
+303         swapChainDesc.AlphaMode = DXGI\_ALPHA\_MODE\_IGNORE;
+304 
+305         Microsoft::WRL::ComPtr<IDXGISwapChain1> swapChain;
+306         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(
+307             \mbox{\hyperlink{class_d_x_1_1_device_resources_ab644f438ae69bde6c40c147dbda95928}{m\_dxgiFactory}}->CreateSwapChainForHwnd(
+308                 \mbox{\hyperlink{class_d_x_1_1_device_resources_a0f0882523aa09b109f3a7bc05ff01f46}{m\_commandQueue}}.Get(),
+309                 \mbox{\hyperlink{class_d_x_1_1_device_resources_a71c1253aac157673ae385bf9d705584c}{m\_window}},
+310                 &swapChainDesc,
+311                 \textcolor{keyword}{nullptr},
+312                 \textcolor{keyword}{nullptr},
+313                 &swapChain
+314             )
+315         );
+316 
+317         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(swapChain.As(&\mbox{\hyperlink{class_d_x_1_1_device_resources_a8f067c81561cd51ac8e59a89e868571b}{m\_swapChain}}));
+318     \}
+319 
+320 
+321     \textcolor{comment}{// Create render target views of the swap chain back buffer.}
+322     \{
+323         \mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}} = \mbox{\hyperlink{class_d_x_1_1_device_resources_a8f067c81561cd51ac8e59a89e868571b}{m\_swapChain}}->GetCurrentBackBufferIndex();
+324         CD3DX12\_CPU\_DESCRIPTOR\_HANDLE rtvDescriptor(\mbox{\hyperlink{class_d_x_1_1_device_resources_a23433ca65c8264c961778b97a309ea6a}{m\_rtvHeap}}->GetCPUDescriptorHandleForHeapStart(
+      ));
+325         \textcolor{keywordflow}{for} (UINT n = 0; n < \mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\_frameCount}}; n++)
+326         \{
+327             \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_a8f067c81561cd51ac8e59a89e868571b}{m\_swapChain}}->GetBuffer(n, IID\_PPV\_ARGS(&
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_aa96cf4622c1a948b53dfd6f1a08a24cd}{m\_renderTargets}}[n])));
+328             \mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}->CreateRenderTargetView(\mbox{\hyperlink{class_d_x_1_1_device_resources_aa96cf4622c1a948b53dfd6f1a08a24cd}{m\_renderTargets}}[n].Get(), \textcolor{keyword}{nullptr}
+      , rtvDescriptor);
+329             rtvDescriptor.Offset(\mbox{\hyperlink{class_d_x_1_1_device_resources_adc2a1e5cbd63c54ad5a2836348a33cb8}{m\_rtvDescriptorSize}});
+330 
+331             WCHAR name[25];
+332             \textcolor{keywordflow}{if} (swprintf\_s(name, L\textcolor{stringliteral}{"m\_renderTargets[%u]"}, n) > 0)
+333             \{
+334                 \mbox{\hyperlink{_direct_x_helper_8h_acafb1288adc883ddbf58b09975dc16b5}{SetName}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_aa96cf4622c1a948b53dfd6f1a08a24cd}{m\_renderTargets}}[n].Get(), name);
+335             \}
+336         \}
+337     \}
+338 
+339     \textcolor{comment}{// Create a depth stencil and view.}
+340     \{
+341         D3D12\_HEAP\_PROPERTIES depthHeapProperties = CD3DX12\_HEAP\_PROPERTIES(D3D12\_HEAP\_TYPE\_DEFAULT);
+342 
+343         D3D12\_RESOURCE\_DESC depthResourceDesc = CD3DX12\_RESOURCE\_DESC::Tex2D(
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_afb117f121edb8eb4df707d3f1b15445a}{m\_depthBufferFormat}}, backBufferWidth, backBufferHeight, 1, 1);
+344         depthResourceDesc.Flags |= D3D12\_RESOURCE\_FLAG\_ALLOW\_DEPTH\_STENCIL;
+345 
+346         CD3DX12\_CLEAR\_VALUE depthOptimizedClearValue(\mbox{\hyperlink{class_d_x_1_1_device_resources_afb117f121edb8eb4df707d3f1b15445a}{m\_depthBufferFormat}}, 1.0f, 0);
+347 
+348         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}->CreateCommittedResource(
+349             &depthHeapProperties,
+350             D3D12\_HEAP\_FLAG\_NONE,
+351             &depthResourceDesc,
+352             D3D12\_RESOURCE\_STATE\_DEPTH\_WRITE,
+353             &depthOptimizedClearValue,
+354             IID\_PPV\_ARGS(&\mbox{\hyperlink{class_d_x_1_1_device_resources_a98406a085f056b96a7c60ad257598fd3}{m\_depthStencil}})
+355         ));
+356 
+357         \mbox{\hyperlink{_direct_x_helper_8h_aac0bf77e771c5756a028295b6400839f}{NAME\_D3D12\_OBJECT}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_a98406a085f056b96a7c60ad257598fd3}{m\_depthStencil}});
+358 
+359         D3D12\_DEPTH\_STENCIL\_VIEW\_DESC dsvDesc = \{\};
+360         dsvDesc.Format = \mbox{\hyperlink{class_d_x_1_1_device_resources_afb117f121edb8eb4df707d3f1b15445a}{m\_depthBufferFormat}};
+361         dsvDesc.ViewDimension = D3D12\_DSV\_DIMENSION\_TEXTURE2D;
+362         dsvDesc.Flags = D3D12\_DSV\_FLAG\_NONE;
+363 
+364         \mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}->CreateDepthStencilView(\mbox{\hyperlink{class_d_x_1_1_device_resources_a98406a085f056b96a7c60ad257598fd3}{m\_depthStencil}}.Get(), &dsvDesc, 
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_a71a459331defc54ff1677609d8608997}{m\_dsvHeap}}->GetCPUDescriptorHandleForHeapStart());
+365     \}
+366 
+367     \textcolor{comment}{// Set the 3D rendering viewport to target the entire window.}
+368     \mbox{\hyperlink{class_d_x_1_1_device_resources_a0118fbbdb43755f01b25ed6d2e9893fc}{m\_screenViewport}} = \{ 0.0f, 0.0f, \mbox{\hyperlink{class_d_x_1_1_device_resources_a8ee855b75ab68a9fcc5f3564403cf8f8}{m\_d3dRenderTargetSize}}.x, 
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_a8ee855b75ab68a9fcc5f3564403cf8f8}{m\_d3dRenderTargetSize}}.y, 0.0f, 1.0f \};
+369 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_aca67f798cb4669d889a24e48b1b53acc}\label{class_d_x_1_1_device_resources_aca67f798cb4669d889a24e48b1b53acc}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Back\+Buffer\+Format@{Get\+Back\+Buffer\+Format}}
+\index{Get\+Back\+Buffer\+Format@{Get\+Back\+Buffer\+Format}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Back\+Buffer\+Format()}{GetBackBufferFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT D\+X\+::\+Device\+Resources\+::\+Get\+Back\+Buffer\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 30 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+30 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_a9f23666e062bdebe694eb2dd7e454cba}{m\_backBufferFormat}}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a416ba6505eff4048099366721ec9fc1d}\label{class_d_x_1_1_device_resources_a416ba6505eff4048099366721ec9fc1d}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Command\+Allocator@{Get\+Command\+Allocator}}
+\index{Get\+Command\+Allocator@{Get\+Command\+Allocator}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Command\+Allocator()}{GetCommandAllocator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Command\+Allocator$\ast$ D\+X\+::\+Device\+Resources\+::\+Get\+Command\+Allocator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 29 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+29 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_afdaf82b33be14ee78ab6e540f4b63785}{m\_commandAllocators}}[\mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}].Get(); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_adabcf266dec101a537eebbce5f74cfdd}\label{class_d_x_1_1_device_resources_adabcf266dec101a537eebbce5f74cfdd}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Command\+Queue@{Get\+Command\+Queue}}
+\index{Get\+Command\+Queue@{Get\+Command\+Queue}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Command\+Queue()}{GetCommandQueue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Command\+Queue$\ast$ D\+X\+::\+Device\+Resources\+::\+Get\+Command\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 28 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+28 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_a0f0882523aa09b109f3a7bc05ff01f46}{m\_commandQueue}}.Get(); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_af83cb32755c057e0750edec07a8e95de}\label{class_d_x_1_1_device_resources_af83cb32755c057e0750edec07a8e95de}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Current\+Frame\+Index@{Get\+Current\+Frame\+Index}}
+\index{Get\+Current\+Frame\+Index@{Get\+Current\+Frame\+Index}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Current\+Frame\+Index()}{GetCurrentFrameIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} U\+I\+NT D\+X\+::\+Device\+Resources\+::\+Get\+Current\+Frame\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 33 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+33 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_ab453c5634e7cd987bee4a1819b78122a}\label{class_d_x_1_1_device_resources_ab453c5634e7cd987bee4a1819b78122a}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+D3\+D\+Device@{Get\+D3\+D\+Device}}
+\index{Get\+D3\+D\+Device@{Get\+D3\+D\+Device}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+D3\+D\+Device()}{GetD3DDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Device$\ast$ D\+X\+::\+Device\+Resources\+::\+Get\+D3\+D\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 24 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+24 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}.Get(); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a75ba016c43eba423ed0a6d9a3a60edf1}\label{class_d_x_1_1_device_resources_a75ba016c43eba423ed0a6d9a3a60edf1}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Depth\+Buffer\+Format@{Get\+Depth\+Buffer\+Format}}
+\index{Get\+Depth\+Buffer\+Format@{Get\+Depth\+Buffer\+Format}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Depth\+Buffer\+Format()}{GetDepthBufferFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT D\+X\+::\+Device\+Resources\+::\+Get\+Depth\+Buffer\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 31 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+31 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_afb117f121edb8eb4df707d3f1b15445a}{m\_depthBufferFormat}}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_abb849df3775f377ef3e3625b5b43fa5b}\label{class_d_x_1_1_device_resources_abb849df3775f377ef3e3625b5b43fa5b}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Depth\+Stencil@{Get\+Depth\+Stencil}}
+\index{Get\+Depth\+Stencil@{Get\+Depth\+Stencil}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Depth\+Stencil()}{GetDepthStencil()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Resource$\ast$ D\+X\+::\+Device\+Resources\+::\+Get\+Depth\+Stencil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 27 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+27 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_a98406a085f056b96a7c60ad257598fd3}{m\_depthStencil}}.Get(); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_ab2a956c30e147ba5f96f13aa13fbb25a}\label{class_d_x_1_1_device_resources_ab2a956c30e147ba5f96f13aa13fbb25a}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Depth\+Stencil\+View@{Get\+Depth\+Stencil\+View}}
+\index{Get\+Depth\+Stencil\+View@{Get\+Depth\+Stencil\+View}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Depth\+Stencil\+View()}{GetDepthStencilView()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} C\+D3\+D\+X12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE D\+X\+::\+Device\+Resources\+::\+Get\+Depth\+Stencil\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 39 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+40         \{
+41             \textcolor{keywordflow}{return} CD3DX12\_CPU\_DESCRIPTOR\_HANDLE(\mbox{\hyperlink{class_d_x_1_1_device_resources_a71a459331defc54ff1677609d8608997}{m\_dsvHeap}}->GetCPUDescriptorHandleForHeapStart());
+42         \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a3f921a0e44f6216b90114ba81305baf6}\label{class_d_x_1_1_device_resources_a3f921a0e44f6216b90114ba81305baf6}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Dpi@{Get\+Dpi}}
+\index{Get\+Dpi@{Get\+Dpi}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Dpi()}{GetDpi()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} float D\+X\+::\+Device\+Resources\+::\+Get\+Dpi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 21 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+21 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_a0999b5522ac0a401e92b18db8f12a663}{m\_effectiveDpi}}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a9d990146724d7f465b277c95675459bd}\label{class_d_x_1_1_device_resources_a9d990146724d7f465b277c95675459bd}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Hardware\+Adapter@{Get\+Hardware\+Adapter}}
+\index{Get\+Hardware\+Adapter@{Get\+Hardware\+Adapter}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Hardware\+Adapter()}{GetHardwareAdapter()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Get\+Hardware\+Adapter (\begin{DoxyParamCaption}\item[{I\+D\+X\+G\+I\+Adapter1 $\ast$$\ast$}]{pp\+Adapter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+get the G\+PU / Graphics card 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pp\+Adapter} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 418 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+419 \{
+420     Microsoft::WRL::ComPtr<IDXGIAdapter1> adapter;
+421     *ppAdapter = \textcolor{keyword}{nullptr};
+422     \textcolor{keyword}{auto} index = 0;
+423     \textcolor{keyword}{auto} heighestvRam = 0Ull;
+424     \textcolor{keywordflow}{for} (UINT adapterIndex = 0; DXGI\_ERROR\_NOT\_FOUND != \mbox{\hyperlink{class_d_x_1_1_device_resources_ab644f438ae69bde6c40c147dbda95928}{m\_dxgiFactory}}->EnumAdapters1(
+      adapterIndex, &adapter); adapterIndex++)
+425     \{
+426         DXGI\_ADAPTER\_DESC1 desc;
+427         adapter->GetDesc1(&desc);
+428         \textcolor{keywordflow}{if} (desc.Flags & DXGI\_ADAPTER\_FLAG\_SOFTWARE)
+429         \{
+430             \textcolor{comment}{// Don't select the Basic Render Driver adapter.}
+431             \textcolor{keywordflow}{continue};
+432         \}
+433 
+434         \textcolor{comment}{//look for card with most VRAM}
+435         \textcolor{keywordflow}{if} (heighestvRam < desc.DedicatedVideoMemory)
+436         \{
+437             index = adapterIndex;
+438             heighestvRam = desc.DedicatedVideoMemory;
+439         \}
+440     \}
+441     \textcolor{comment}{//Create the device}
+442     \mbox{\hyperlink{class_d_x_1_1_device_resources_ab644f438ae69bde6c40c147dbda95928}{m\_dxgiFactory}}->EnumAdapters1(index, &adapter);
+443     \textcolor{keywordflow}{if} (!SUCCEEDED(D3D12CreateDevice(adapter.Get(), D3D\_FEATURE\_LEVEL\_11\_0, \_uuidof(ID3D12Device), \textcolor{keyword}{nullptr})
+      )) \{
+444         \textcolor{keyword}{auto} a = 0;
+445     \}
+446     
+447     *ppAdapter = adapter.Detach();
+448 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a56ec7c2de3ad0d4c5c1447fdacbbdba1}\label{class_d_x_1_1_device_resources_a56ec7c2de3ad0d4c5c1447fdacbbdba1}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Logical\+Size@{Get\+Logical\+Size}}
+\index{Get\+Logical\+Size@{Get\+Logical\+Size}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Logical\+Size()}{GetLogicalSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2 D\+X\+::\+Device\+Resources\+::\+Get\+Logical\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+19 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}{m\_logicalSize}}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_afa4a123452c35ff6208aa97ecbb8a725}\label{class_d_x_1_1_device_resources_afa4a123452c35ff6208aa97ecbb8a725}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Output\+Size@{Get\+Output\+Size}}
+\index{Get\+Output\+Size@{Get\+Output\+Size}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Output\+Size()}{GetOutputSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2 D\+X\+::\+Device\+Resources\+::\+Get\+Output\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 17 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+17 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a8dd65cfba90dd43be6b43328985d6f75}\label{class_d_x_1_1_device_resources_a8dd65cfba90dd43be6b43328985d6f75}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Render\+Target@{Get\+Render\+Target}}
+\index{Get\+Render\+Target@{Get\+Render\+Target}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Render\+Target()}{GetRenderTarget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D3\+D12\+Resource$\ast$ D\+X\+::\+Device\+Resources\+::\+Get\+Render\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 26 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+26 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_aa96cf4622c1a948b53dfd6f1a08a24cd}{m\_renderTargets}}[\mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}].Get(); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a65919d934ad59f2c11df12f74a28b915}\label{class_d_x_1_1_device_resources_a65919d934ad59f2c11df12f74a28b915}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Render\+Target\+View@{Get\+Render\+Target\+View}}
+\index{Get\+Render\+Target\+View@{Get\+Render\+Target\+View}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Render\+Target\+View()}{GetRenderTargetView()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} C\+D3\+D\+X12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE D\+X\+::\+Device\+Resources\+::\+Get\+Render\+Target\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 35 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+36         \{
+37             \textcolor{keywordflow}{return} CD3DX12\_CPU\_DESCRIPTOR\_HANDLE(\mbox{\hyperlink{class_d_x_1_1_device_resources_a23433ca65c8264c961778b97a309ea6a}{m\_rtvHeap}}->GetCPUDescriptorHandleForHeapStart(), 
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}, \mbox{\hyperlink{class_d_x_1_1_device_resources_adc2a1e5cbd63c54ad5a2836348a33cb8}{m\_rtvDescriptorSize}});
+38         \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_ab27be35d21e48abd8c6205e87b6b9cb7}\label{class_d_x_1_1_device_resources_ab27be35d21e48abd8c6205e87b6b9cb7}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Screen\+Viewport@{Get\+Screen\+Viewport}}
+\index{Get\+Screen\+Viewport@{Get\+Screen\+Viewport}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Screen\+Viewport()}{GetScreenViewport()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} D3\+D12\+\_\+\+V\+I\+E\+W\+P\+O\+RT D\+X\+::\+Device\+Resources\+::\+Get\+Screen\+Viewport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 32 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+32 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_a0118fbbdb43755f01b25ed6d2e9893fc}{m\_screenViewport}}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a7a96c1ac092f671997e17f9078c409e3}\label{class_d_x_1_1_device_resources_a7a96c1ac092f671997e17f9078c409e3}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Get\+Swap\+Chain@{Get\+Swap\+Chain}}
+\index{Get\+Swap\+Chain@{Get\+Swap\+Chain}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Get\+Swap\+Chain()}{GetSwapChain()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} I\+D\+X\+G\+I\+Swap\+Chain3$\ast$ D\+X\+::\+Device\+Resources\+::\+Get\+Swap\+Chain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 25 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+25 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_a8f067c81561cd51ac8e59a89e868571b}{m\_swapChain}}.Get(); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_ac6034a7660faea0d269dbb0d325cb7cd}\label{class_d_x_1_1_device_resources_ac6034a7660faea0d269dbb0d325cb7cd}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Is\+Device\+Removed@{Is\+Device\+Removed}}
+\index{Is\+Device\+Removed@{Is\+Device\+Removed}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Is\+Device\+Removed()}{IsDeviceRemoved()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} bool D\+X\+::\+Device\+Resources\+::\+Is\+Device\+Removed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 22 of file Device\+Resources.\+h.
+
+
+\begin{DoxyCode}
+22 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_d_x_1_1_device_resources_af4d113c651dcae9a344094cfc02a6a09}{m\_deviceRemoved}}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_af7005ac5c0fb7c7582740d0a767398c6}\label{class_d_x_1_1_device_resources_af7005ac5c0fb7c7582740d0a767398c6}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Move\+To\+Next\+Frame@{Move\+To\+Next\+Frame}}
+\index{Move\+To\+Next\+Frame@{Move\+To\+Next\+Frame}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Move\+To\+Next\+Frame()}{MoveToNextFrame()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Move\+To\+Next\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+move the G\+PU to the next frame 
+
+
+
+Definition at line 394 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+395 \{
+396     \textcolor{keyword}{const} UINT64 currentFenceValue = \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}[\mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}];
+397     \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_a0f0882523aa09b109f3a7bc05ff01f46}{m\_commandQueue}}->Signal(\mbox{\hyperlink{class_d_x_1_1_device_resources_a147e6a63f6a733dc64c766c472d29d20}{m\_fence}}.Get(), currentFenceValue
+      ));
+398 
+399     \textcolor{comment}{// Advance the frame index.}
+400     \mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}} = \mbox{\hyperlink{class_d_x_1_1_device_resources_a8f067c81561cd51ac8e59a89e868571b}{m\_swapChain}}->GetCurrentBackBufferIndex();
+401 
+402     \textcolor{comment}{// Check to see if the next frame is ready to start.}
+403     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_d_x_1_1_device_resources_a147e6a63f6a733dc64c766c472d29d20}{m\_fence}}->GetCompletedValue() < \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}[
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}])
+404     \{
+405         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_a147e6a63f6a733dc64c766c472d29d20}{m\_fence}}->SetEventOnCompletion(
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}[\mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}], \mbox{\hyperlink{class_d_x_1_1_device_resources_af3ecc18e8cf542dbcbd33872605e1b62}{m\_fenceEvent}}));
+406         WaitForSingleObjectEx(\mbox{\hyperlink{class_d_x_1_1_device_resources_af3ecc18e8cf542dbcbd33872605e1b62}{m\_fenceEvent}}, INFINITE, FALSE);
+407     \}
+408 
+409     \textcolor{comment}{// Set the fence value for the next frame.}
+410     \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}[\mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}] = currentFenceValue + 1;
+411 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_aba74d5a48d23672e6963be1413b054d0}\label{class_d_x_1_1_device_resources_aba74d5a48d23672e6963be1413b054d0}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Present@{Present}}
+\index{Present@{Present}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Present()}{Present()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Present (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+presents everything to the swap chain checks the device is not ejected or broken 
+
+
+
+Definition at line 111 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+112 \{
+113     \textcolor{comment}{// The first argument instructs DXGI to block until VSync, putting the application}
+114     \textcolor{comment}{// to sleep until the next VSync. This ensures we don't waste any cycles rendering}
+115     \textcolor{comment}{// frames that will never be displayed to the screen.}
+116     HRESULT hr = \mbox{\hyperlink{class_d_x_1_1_device_resources_a8f067c81561cd51ac8e59a89e868571b}{m\_swapChain}}->Present(1, 0);
+117 
+118     \textcolor{comment}{// If the device was removed either by a disconnection or a driver upgrade, we }
+119     \textcolor{comment}{// must recreate all device resources.}
+120     \textcolor{keywordflow}{if} (hr == DXGI\_ERROR\_DEVICE\_REMOVED || hr == DXGI\_ERROR\_DEVICE\_RESET)
+121     \{
+122         \mbox{\hyperlink{class_d_x_1_1_device_resources_af4d113c651dcae9a344094cfc02a6a09}{m\_deviceRemoved}} = \textcolor{keyword}{true};
+123     \}
+124     \textcolor{keywordflow}{else}
+125     \{
+126         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(hr);
+127 
+128         \mbox{\hyperlink{class_d_x_1_1_device_resources_af7005ac5c0fb7c7582740d0a767398c6}{MoveToNextFrame}}();
+129     \}
+130 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a82722ab9c5a11d27664e89b6a375902e}\label{class_d_x_1_1_device_resources_a82722ab9c5a11d27664e89b6a375902e}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Set\+Dpi@{Set\+Dpi}}
+\index{Set\+Dpi@{Set\+Dpi}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Set\+Dpi()}{SetDpi()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Set\+Dpi (\begin{DoxyParamCaption}\item[{float}]{dpi }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}not used\mbox{]} 
+
+
+
+Definition at line 64 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+65 \{
+66 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a5a0453913627052d011544e4cff2f3e6}\label{class_d_x_1_1_device_resources_a5a0453913627052d011544e4cff2f3e6}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Set\+Logical\+Size@{Set\+Logical\+Size}}
+\index{Set\+Logical\+Size@{Set\+Logical\+Size}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Set\+Logical\+Size()}{SetLogicalSize()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Set\+Logical\+Size (\begin{DoxyParamCaption}\item[{Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2}]{logical\+Size }\end{DoxyParamCaption})}
+
+
+
+sets the logical size of the viewport 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logical\+Size} & tghe new size (x,y) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+52 \{
+53     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}{m\_logicalSize}}.x != logicalSize.x || \mbox{\hyperlink{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}{m\_logicalSize}}.y != logicalSize.y)
+54     \{
+55         \mbox{\hyperlink{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}{m\_logicalSize}} = logicalSize;
+56         \mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}} = logicalSize;
+57         \textcolor{comment}{// updates the window size dependent things}
+58         \mbox{\hyperlink{class_d_x_1_1_device_resources_a9556306971d5484caaa5a2aac42f253e}{CreateWindowSizeDependentResources}}();
+59     \}
+60 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a76181b89d31d8aef4c8397fcee2c3d61}\label{class_d_x_1_1_device_resources_a76181b89d31d8aef4c8397fcee2c3d61}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Set\+Window@{Set\+Window}}
+\index{Set\+Window@{Set\+Window}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Set\+Window()}{SetWindow()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Set\+Window (\begin{DoxyParamCaption}\item[{H\+W\+ND}]{window }\end{DoxyParamCaption})}
+
+
+
+sets the window (H\+W\+ND) to a new window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & the new window \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+36 \{
+37     \mbox{\hyperlink{class_d_x_1_1_device_resources_a71c1253aac157673ae385bf9d705584c}{m\_window}} = window;
+38     RECT rect;
+39     GetClientRect(window, &rect);
+40     \mbox{\hyperlink{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}{m\_logicalSize}} = DirectX::XMFLOAT2(\textcolor{keywordtype}{float}(rect.right), \textcolor{keywordtype}{float}(rect.bottom));
+41     \mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}} = \mbox{\hyperlink{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}{m\_logicalSize}};
+42     \textcolor{comment}{// updates the window size dependent things}
+43     \mbox{\hyperlink{class_d_x_1_1_device_resources_a9556306971d5484caaa5a2aac42f253e}{CreateWindowSizeDependentResources}}();
+44 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a7adaa47153e97fbbcc524013905635f0}\label{class_d_x_1_1_device_resources_a7adaa47153e97fbbcc524013905635f0}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Update\+Render\+Target\+Size@{Update\+Render\+Target\+Size}}
+\index{Update\+Render\+Target\+Size@{Update\+Render\+Target\+Size}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Update\+Render\+Target\+Size()}{UpdateRenderTargetSize()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Update\+Render\+Target\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+update the sie fo the render target 
+
+
+
+Definition at line 375 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+376 \{
+377     \mbox{\hyperlink{class_d_x_1_1_device_resources_a0999b5522ac0a401e92b18db8f12a663}{m\_effectiveDpi}} = \mbox{\hyperlink{class_d_x_1_1_device_resources_a1d146efc89ae892dbcd78045d493ff2a}{m\_dpi}};
+378 
+379     \textcolor{comment}{// To improve battery life on high resolution devices, render to a smaller render target}
+380     \textcolor{comment}{// and allow the GPU to scale the output when it is presented.}
+381     \textcolor{comment}{// Calculate the necessary render target size in pixels.}
+382     \mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}}.x = \mbox{\hyperlink{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}{m\_logicalSize}}.x;
+383         \mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}}.y = \mbox{\hyperlink{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}{m\_logicalSize}}.y;
+384 
+385     \textcolor{comment}{// Prevent zero size DirectX content from being created.}
+386     \mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}}.x = max(\mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}}.x, 1);
+387     \mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}}.y = max(\mbox{\hyperlink{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}{m\_outputSize}}.y, 1);
+388 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_ab6976bc6f653fab6899b53a4b5308b06}\label{class_d_x_1_1_device_resources_ab6976bc6f653fab6899b53a4b5308b06}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Validate\+Device@{Validate\+Device}}
+\index{Validate\+Device@{Validate\+Device}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Validate\+Device()}{ValidateDevice()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Validate\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+validate the d3d device 
+
+
+
+Definition at line 72 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+73 \{
+74     DXGI\_ADAPTER\_DESC previousDesc;
+75     \{
+76         Microsoft::WRL::ComPtr<IDXGIAdapter1> previousDefaultAdapter;
+77         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_ab644f438ae69bde6c40c147dbda95928}{m\_dxgiFactory}}->EnumAdapters1(0, &previousDefaultAdapter));
+78 
+79         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(previousDefaultAdapter->GetDesc(&previousDesc));
+80     \}
+81 
+82     \textcolor{comment}{// Next, get the information for the current default adapter.}
+83 
+84     DXGI\_ADAPTER\_DESC currentDesc;
+85     \{
+86         Microsoft::WRL::ComPtr<IDXGIFactory4> currentDxgiFactory;
+87         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(CreateDXGIFactory1(IID\_PPV\_ARGS(&currentDxgiFactory)));
+88 
+89         Microsoft::WRL::ComPtr<IDXGIAdapter1> currentDefaultAdapter;
+90         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(currentDxgiFactory->EnumAdapters1(0, &currentDefaultAdapter));
+91 
+92         \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(currentDefaultAdapter->GetDesc(&currentDesc));
+93     \}
+94 
+95     \textcolor{comment}{// If the adapter LUIDs don't match, or if the device reports that it has been removed,}
+96     \textcolor{comment}{// a new D3D device must be created.}
+97 
+98     \textcolor{keywordflow}{if} (previousDesc.AdapterLuid.LowPart != currentDesc.AdapterLuid.LowPart ||
+99         previousDesc.AdapterLuid.HighPart != currentDesc.AdapterLuid.HighPart ||
+100         FAILED(\mbox{\hyperlink{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}{m\_d3dDevice}}->GetDeviceRemovedReason()))
+101     \{
+102         \mbox{\hyperlink{class_d_x_1_1_device_resources_af4d113c651dcae9a344094cfc02a6a09}{m\_deviceRemoved}} = \textcolor{keyword}{true};
+103     \}
+104 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a53d3cb840dfc40ef2eecfd993740447f}\label{class_d_x_1_1_device_resources_a53d3cb840dfc40ef2eecfd993740447f}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!Wait\+For\+Gpu@{Wait\+For\+Gpu}}
+\index{Wait\+For\+Gpu@{Wait\+For\+Gpu}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{Wait\+For\+Gpu()}{WaitForGpu()}}
+{\footnotesize\ttfamily void D\+X\+::\+Device\+Resources\+::\+Wait\+For\+Gpu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+waits for the G\+PU to finish doing the processing 
+
+
+
+Definition at line 136 of file Device\+Resources.\+cpp.
+
+
+\begin{DoxyCode}
+137 \{
+138     \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_a0f0882523aa09b109f3a7bc05ff01f46}{m\_commandQueue}}->Signal(\mbox{\hyperlink{class_d_x_1_1_device_resources_a147e6a63f6a733dc64c766c472d29d20}{m\_fence}}.Get(), 
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}[\mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}]));
+139 
+140     \textcolor{comment}{// Wait until the fence has been crossed.}
+141     \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_d_x_1_1_device_resources_a147e6a63f6a733dc64c766c472d29d20}{m\_fence}}->SetEventOnCompletion(
+      \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}[\mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}], \mbox{\hyperlink{class_d_x_1_1_device_resources_af3ecc18e8cf542dbcbd33872605e1b62}{m\_fenceEvent}}));
+142     WaitForSingleObjectEx(\mbox{\hyperlink{class_d_x_1_1_device_resources_af3ecc18e8cf542dbcbd33872605e1b62}{m\_fenceEvent}}, INFINITE, FALSE);
+143 
+144     \textcolor{comment}{// Increment the fence value for the current frame.}
+145     \mbox{\hyperlink{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}{m\_fenceValues}}[\mbox{\hyperlink{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}{m\_currentFrame}}]++;
+146 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a9f23666e062bdebe694eb2dd7e454cba}\label{class_d_x_1_1_device_resources_a9f23666e062bdebe694eb2dd7e454cba}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+back\+Buffer\+Format@{m\+\_\+back\+Buffer\+Format}}
+\index{m\+\_\+back\+Buffer\+Format@{m\+\_\+back\+Buffer\+Format}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+back\+Buffer\+Format}{m\_backBufferFormat}}
+{\footnotesize\ttfamily D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT D\+X\+::\+Device\+Resources\+::m\+\_\+back\+Buffer\+Format\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 64 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_afdaf82b33be14ee78ab6e540f4b63785}\label{class_d_x_1_1_device_resources_afdaf82b33be14ee78ab6e540f4b63785}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+command\+Allocators@{m\+\_\+command\+Allocators}}
+\index{m\+\_\+command\+Allocators@{m\+\_\+command\+Allocators}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+command\+Allocators}{m\_commandAllocators}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D3\+D12\+Command\+Allocator$>$ D\+X\+::\+Device\+Resources\+::m\+\_\+command\+Allocators\mbox{[}\mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\+\_\+frame\+Count}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 63 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a0f0882523aa09b109f3a7bc05ff01f46}\label{class_d_x_1_1_device_resources_a0f0882523aa09b109f3a7bc05ff01f46}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+command\+Queue@{m\+\_\+command\+Queue}}
+\index{m\+\_\+command\+Queue@{m\+\_\+command\+Queue}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+command\+Queue}{m\_commandQueue}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D3\+D12\+Command\+Queue$>$ D\+X\+::\+Device\+Resources\+::m\+\_\+command\+Queue\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 62 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}\label{class_d_x_1_1_device_resources_ac5373e60722eaa25c1068aa754b501fa}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+current\+Frame@{m\+\_\+current\+Frame}}
+\index{m\+\_\+current\+Frame@{m\+\_\+current\+Frame}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+current\+Frame}{m\_currentFrame}}
+{\footnotesize\ttfamily U\+I\+NT D\+X\+::\+Device\+Resources\+::m\+\_\+current\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 52 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}\label{class_d_x_1_1_device_resources_ac883ca593d5c03fe20d5865cb033cee1}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+d3d\+Device@{m\+\_\+d3d\+Device}}
+\index{m\+\_\+d3d\+Device@{m\+\_\+d3d\+Device}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+d3d\+Device}{m\_d3dDevice}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D3\+D12\+Device$>$ D\+X\+::\+Device\+Resources\+::m\+\_\+d3d\+Device\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 55 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a8ee855b75ab68a9fcc5f3564403cf8f8}\label{class_d_x_1_1_device_resources_a8ee855b75ab68a9fcc5f3564403cf8f8}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+d3d\+Render\+Target\+Size@{m\+\_\+d3d\+Render\+Target\+Size}}
+\index{m\+\_\+d3d\+Render\+Target\+Size@{m\+\_\+d3d\+Render\+Target\+Size}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+d3d\+Render\+Target\+Size}{m\_d3dRenderTargetSize}}
+{\footnotesize\ttfamily Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2 D\+X\+::\+Device\+Resources\+::m\+\_\+d3d\+Render\+Target\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 79 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_afb117f121edb8eb4df707d3f1b15445a}\label{class_d_x_1_1_device_resources_afb117f121edb8eb4df707d3f1b15445a}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+depth\+Buffer\+Format@{m\+\_\+depth\+Buffer\+Format}}
+\index{m\+\_\+depth\+Buffer\+Format@{m\+\_\+depth\+Buffer\+Format}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+depth\+Buffer\+Format}{m\_depthBufferFormat}}
+{\footnotesize\ttfamily D\+X\+G\+I\+\_\+\+F\+O\+R\+M\+AT D\+X\+::\+Device\+Resources\+::m\+\_\+depth\+Buffer\+Format\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 65 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a98406a085f056b96a7c60ad257598fd3}\label{class_d_x_1_1_device_resources_a98406a085f056b96a7c60ad257598fd3}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+depth\+Stencil@{m\+\_\+depth\+Stencil}}
+\index{m\+\_\+depth\+Stencil@{m\+\_\+depth\+Stencil}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+depth\+Stencil}{m\_depthStencil}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D3\+D12\+Resource$>$ D\+X\+::\+Device\+Resources\+::m\+\_\+depth\+Stencil\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_af4d113c651dcae9a344094cfc02a6a09}\label{class_d_x_1_1_device_resources_af4d113c651dcae9a344094cfc02a6a09}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+device\+Removed@{m\+\_\+device\+Removed}}
+\index{m\+\_\+device\+Removed@{m\+\_\+device\+Removed}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+device\+Removed}{m\_deviceRemoved}}
+{\footnotesize\ttfamily bool D\+X\+::\+Device\+Resources\+::m\+\_\+device\+Removed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 68 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a1d146efc89ae892dbcd78045d493ff2a}\label{class_d_x_1_1_device_resources_a1d146efc89ae892dbcd78045d493ff2a}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+dpi@{m\+\_\+dpi}}
+\index{m\+\_\+dpi@{m\+\_\+dpi}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+dpi}{m\_dpi}}
+{\footnotesize\ttfamily float D\+X\+::\+Device\+Resources\+::m\+\_\+dpi\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 82 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a71a459331defc54ff1677609d8608997}\label{class_d_x_1_1_device_resources_a71a459331defc54ff1677609d8608997}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+dsv\+Heap@{m\+\_\+dsv\+Heap}}
+\index{m\+\_\+dsv\+Heap@{m\+\_\+dsv\+Heap}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+dsv\+Heap}{m\_dsvHeap}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D3\+D12\+Descriptor\+Heap$>$ D\+X\+::\+Device\+Resources\+::m\+\_\+dsv\+Heap\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 61 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_ab644f438ae69bde6c40c147dbda95928}\label{class_d_x_1_1_device_resources_ab644f438ae69bde6c40c147dbda95928}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+dxgi\+Factory@{m\+\_\+dxgi\+Factory}}
+\index{m\+\_\+dxgi\+Factory@{m\+\_\+dxgi\+Factory}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+dxgi\+Factory}{m\_dxgiFactory}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D\+X\+G\+I\+Factory4$>$ D\+X\+::\+Device\+Resources\+::m\+\_\+dxgi\+Factory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 56 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a0999b5522ac0a401e92b18db8f12a663}\label{class_d_x_1_1_device_resources_a0999b5522ac0a401e92b18db8f12a663}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+effective\+Dpi@{m\+\_\+effective\+Dpi}}
+\index{m\+\_\+effective\+Dpi@{m\+\_\+effective\+Dpi}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+effective\+Dpi}{m\_effectiveDpi}}
+{\footnotesize\ttfamily float D\+X\+::\+Device\+Resources\+::m\+\_\+effective\+Dpi\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 85 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a147e6a63f6a733dc64c766c472d29d20}\label{class_d_x_1_1_device_resources_a147e6a63f6a733dc64c766c472d29d20}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+fence@{m\+\_\+fence}}
+\index{m\+\_\+fence@{m\+\_\+fence}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+fence}{m\_fence}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D3\+D12\+Fence$>$ D\+X\+::\+Device\+Resources\+::m\+\_\+fence\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 71 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_af3ecc18e8cf542dbcbd33872605e1b62}\label{class_d_x_1_1_device_resources_af3ecc18e8cf542dbcbd33872605e1b62}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+fence\+Event@{m\+\_\+fence\+Event}}
+\index{m\+\_\+fence\+Event@{m\+\_\+fence\+Event}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+fence\+Event}{m\_fenceEvent}}
+{\footnotesize\ttfamily H\+A\+N\+D\+LE D\+X\+::\+Device\+Resources\+::m\+\_\+fence\+Event\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 73 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}\label{class_d_x_1_1_device_resources_a393281583e4e020d7a2d05c060c588a8}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+fence\+Values@{m\+\_\+fence\+Values}}
+\index{m\+\_\+fence\+Values@{m\+\_\+fence\+Values}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+fence\+Values}{m\_fenceValues}}
+{\footnotesize\ttfamily U\+I\+N\+T64 D\+X\+::\+Device\+Resources\+::m\+\_\+fence\+Values\mbox{[}\mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\+\_\+frame\+Count}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 72 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}\label{class_d_x_1_1_device_resources_a4689509084ecb52b9edf0f6e4ed886d9}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+logical\+Size@{m\+\_\+logical\+Size}}
+\index{m\+\_\+logical\+Size@{m\+\_\+logical\+Size}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+logical\+Size}{m\_logicalSize}}
+{\footnotesize\ttfamily Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2 D\+X\+::\+Device\+Resources\+::m\+\_\+logical\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 81 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}\label{class_d_x_1_1_device_resources_aa102e231efe8bb03f3a91728f8477d08}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+output\+Size@{m\+\_\+output\+Size}}
+\index{m\+\_\+output\+Size@{m\+\_\+output\+Size}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+output\+Size}{m\_outputSize}}
+{\footnotesize\ttfamily Direct\+X\+::\+X\+M\+F\+L\+O\+A\+T2 D\+X\+::\+Device\+Resources\+::m\+\_\+output\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 80 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_aa96cf4622c1a948b53dfd6f1a08a24cd}\label{class_d_x_1_1_device_resources_aa96cf4622c1a948b53dfd6f1a08a24cd}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+render\+Targets@{m\+\_\+render\+Targets}}
+\index{m\+\_\+render\+Targets@{m\+\_\+render\+Targets}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+render\+Targets}{m\_renderTargets}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D3\+D12\+Resource$>$ D\+X\+::\+Device\+Resources\+::m\+\_\+render\+Targets\mbox{[}\mbox{\hyperlink{namespace_d_x_a13eecb6f150dc97fc5c7c8597377d0fb}{c\+\_\+frame\+Count}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 58 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_adc2a1e5cbd63c54ad5a2836348a33cb8}\label{class_d_x_1_1_device_resources_adc2a1e5cbd63c54ad5a2836348a33cb8}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+rtv\+Descriptor\+Size@{m\+\_\+rtv\+Descriptor\+Size}}
+\index{m\+\_\+rtv\+Descriptor\+Size@{m\+\_\+rtv\+Descriptor\+Size}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+rtv\+Descriptor\+Size}{m\_rtvDescriptorSize}}
+{\footnotesize\ttfamily U\+I\+NT D\+X\+::\+Device\+Resources\+::m\+\_\+rtv\+Descriptor\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 67 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a23433ca65c8264c961778b97a309ea6a}\label{class_d_x_1_1_device_resources_a23433ca65c8264c961778b97a309ea6a}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+rtv\+Heap@{m\+\_\+rtv\+Heap}}
+\index{m\+\_\+rtv\+Heap@{m\+\_\+rtv\+Heap}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+rtv\+Heap}{m\_rtvHeap}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D3\+D12\+Descriptor\+Heap$>$ D\+X\+::\+Device\+Resources\+::m\+\_\+rtv\+Heap\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 60 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a0118fbbdb43755f01b25ed6d2e9893fc}\label{class_d_x_1_1_device_resources_a0118fbbdb43755f01b25ed6d2e9893fc}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+screen\+Viewport@{m\+\_\+screen\+Viewport}}
+\index{m\+\_\+screen\+Viewport@{m\+\_\+screen\+Viewport}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+screen\+Viewport}{m\_screenViewport}}
+{\footnotesize\ttfamily D3\+D12\+\_\+\+V\+I\+E\+W\+P\+O\+RT D\+X\+::\+Device\+Resources\+::m\+\_\+screen\+Viewport\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 66 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a8f067c81561cd51ac8e59a89e868571b}\label{class_d_x_1_1_device_resources_a8f067c81561cd51ac8e59a89e868571b}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+swap\+Chain@{m\+\_\+swap\+Chain}}
+\index{m\+\_\+swap\+Chain@{m\+\_\+swap\+Chain}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+swap\+Chain}{m\_swapChain}}
+{\footnotesize\ttfamily Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$I\+D\+X\+G\+I\+Swap\+Chain3$>$ D\+X\+::\+Device\+Resources\+::m\+\_\+swap\+Chain\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 57 of file Device\+Resources.\+h.
+
+\mbox{\Hypertarget{class_d_x_1_1_device_resources_a71c1253aac157673ae385bf9d705584c}\label{class_d_x_1_1_device_resources_a71c1253aac157673ae385bf9d705584c}} 
+\index{D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}!m\+\_\+window@{m\+\_\+window}}
+\index{m\+\_\+window@{m\+\_\+window}!D\+X\+::\+Device\+Resources@{D\+X\+::\+Device\+Resources}}
+\subsubsection{\texorpdfstring{m\+\_\+window}{m\_window}}
+{\footnotesize\ttfamily H\+W\+ND D\+X\+::\+Device\+Resources\+::m\+\_\+window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 76 of file Device\+Resources.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_device_resources_8h}{Device\+Resources.\+h}}\item 
+D3d\+Engine/\mbox{\hyperlink{_device_resources_8cpp}{Device\+Resources.\+cpp}}\end{DoxyCompactItemize}

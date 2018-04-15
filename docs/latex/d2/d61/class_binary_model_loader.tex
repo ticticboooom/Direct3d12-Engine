@@ -1,0 +1,158 @@
+\hypertarget{class_binary_model_loader}{}\section{Binary\+Model\+Loader Class Reference}
+\label{class_binary_model_loader}\index{Binary\+Model\+Loader@{Binary\+Model\+Loader}}
+
+
+{\ttfamily \#include $<$Binary\+Model\+Loader.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_binary_model_loader_a0594b3d1be895c53bb661e589afa80f7}{Binary\+Model\+Loader}} (const char $\ast$file\+Path, bool has\+Animations)
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_binary_model_loader_a68575fb4ad2b9dd0dc8845518917b2de}{$\sim$\+Binary\+Model\+Loader}} ()
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_structures_1_1_vertices_indices_from_bin}{Structures\+::\+Vertices\+Indices\+From\+Bin}} $>$ \mbox{\hyperlink{class_binary_model_loader_a8cc9581014e91f62f10e00c924fc8558}{Get\+Final\+Data}} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_structures_1_1_vertices_indices_from_bin}{Structures\+::\+Vertices\+Indices\+From\+Bin}} $>$ \mbox{\hyperlink{class_binary_model_loader_ad91d8149dfde26ed2949bd05b854974a}{m\+\_\+final\+Data}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Binary\+Model\+Loader.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_binary_model_loader_a0594b3d1be895c53bb661e589afa80f7}\label{class_binary_model_loader_a0594b3d1be895c53bb661e589afa80f7}} 
+\index{Binary\+Model\+Loader@{Binary\+Model\+Loader}!Binary\+Model\+Loader@{Binary\+Model\+Loader}}
+\index{Binary\+Model\+Loader@{Binary\+Model\+Loader}!Binary\+Model\+Loader@{Binary\+Model\+Loader}}
+\subsubsection{\texorpdfstring{Binary\+Model\+Loader()}{BinaryModelLoader()}}
+{\footnotesize\ttfamily Binary\+Model\+Loader\+::\+Binary\+Model\+Loader (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Path,  }\item[{bool}]{has\+Animations }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file Binary\+Model\+Loader.\+cpp.
+
+
+\begin{DoxyCode}
+7 \{
+8     std::ifstream input;
+9     input.open(filePath, std::ios::binary);
+10     input.seekg(0, std::ios::beg);
+11     \textcolor{keyword}{auto} size\_tSize = \textcolor{keyword}{sizeof}(size\_t);
+12     \textcolor{keywordtype}{size\_t} indsSize = 0;
+13     \textcolor{keywordtype}{size\_t} vertsSize = 0;
+14     \textcolor{keywordtype}{size\_t} animsCount = 0;
+15     \textcolor{keywordtype}{size\_t} boneCountsCount = 0;
+16     \textcolor{keywordtype}{size\_t} frameCountsCount = 0;
+17     std::vector<size\_t> boneCounts;
+18     \textcolor{keyword}{auto} frameCounts = std::vector<std::vector<size\_t>>();
+19 
+20     input.read(reinterpret\_cast<char*>(&vertsSize), size\_tSize);
+21     input.read(reinterpret\_cast<char*>(&indsSize), size\_tSize);
+22     input.read(reinterpret\_cast<char*>(&animsCount), size\_tSize);
+23     input.read(reinterpret\_cast<char*>(&boneCountsCount), size\_tSize);
+24     input.read(reinterpret\_cast<char*>(&frameCountsCount), size\_tSize);
+25     boneCounts = std::vector<size\_t>(boneCountsCount);
+26     input.read(reinterpret\_cast<char*>(boneCounts.data()), boneCountsCount * size\_tSize);
+27 
+28     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = 0; i < boneCounts.size(); i++) \{
+29         \textcolor{keyword}{auto} bones = boneCounts[i];
+30         frameCounts.push\_back(std::vector<size\_t>(bones));
+31         input.read(reinterpret\_cast<char*>(frameCounts[i].data()), bones * size\_tSize);
+32     \}
+33 
+34     \textcolor{keyword}{auto} verticesVector = std::make\_shared<std::vector<Structures::VertexTexCoordNormal>>(vertsSize);
+35     \textcolor{keyword}{auto} verticesBufferSize = vertsSize * \textcolor{keyword}{sizeof} 
+      \mbox{\hyperlink{struct_structures_1_1_vertex_tex_coord_normal}{Structures::VertexTexCoordNormal}};
+36     input.read(reinterpret\_cast<char*>(verticesVector->data()), verticesBufferSize);
+37 
+38     \textcolor{keyword}{auto} indicesVector = std::make\_shared<std::vector<unsigned long>>(indsSize);
+39     \textcolor{keyword}{auto} indicesBufferSize = indsSize * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} long);
+40     input.read(reinterpret\_cast<char*>(indicesVector->data()), indicesBufferSize);
+41 
+42     \textcolor{keyword}{auto} animations = std::make\_shared<std::vector<std::vector<std::vector<XMMATRIX>>>>();
+43     \textcolor{keywordflow}{if} (hasAnimations) \{
+44         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = 0; i < animsCount; i++) \{
+45             \textcolor{keyword}{auto} animation = std::vector<std::vector<XMMATRIX>>();
+46             animation.reserve(boneCounts[i]);
+47             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} frameCount : frameCounts[i]) \{
+48                 \textcolor{keyword}{auto} frames = std::vector<XMFLOAT4X4>(frameCount);
+49                 input.read(reinterpret\_cast<char*>(frames.data()), frameCount * \textcolor{keyword}{sizeof}(XMFLOAT4X4));
+50                 \textcolor{keyword}{auto} newFrames = std::vector<XMMATRIX>();
+51                 newFrames.reserve(frameCount);
+52                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} frame : frames) \{
+53                     newFrames.push\_back(XMLoadFloat4x4(&frame));
+54                 \}
+55                 animation.push\_back(newFrames);
+56             \}
+57             animations->push\_back(animation);
+58         \}
+59     \}
+60 
+61 
+62     input.close();
+63     \mbox{\hyperlink{class_binary_model_loader_ad91d8149dfde26ed2949bd05b854974a}{m\_finalData}} = std::make\_unique<Structures::VerticesIndicesFromBin>();
+64     \mbox{\hyperlink{class_binary_model_loader_ad91d8149dfde26ed2949bd05b854974a}{m\_finalData}}->vertices = verticesVector;
+65     \mbox{\hyperlink{class_binary_model_loader_ad91d8149dfde26ed2949bd05b854974a}{m\_finalData}}->indices = indicesVector;
+66     \textcolor{keywordflow}{if} (hasAnimations) \{
+67         \mbox{\hyperlink{class_binary_model_loader_ad91d8149dfde26ed2949bd05b854974a}{m\_finalData}}->animations = animations;
+68     \}
+69 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_binary_model_loader_a68575fb4ad2b9dd0dc8845518917b2de}\label{class_binary_model_loader_a68575fb4ad2b9dd0dc8845518917b2de}} 
+\index{Binary\+Model\+Loader@{Binary\+Model\+Loader}!````~Binary\+Model\+Loader@{$\sim$\+Binary\+Model\+Loader}}
+\index{````~Binary\+Model\+Loader@{$\sim$\+Binary\+Model\+Loader}!Binary\+Model\+Loader@{Binary\+Model\+Loader}}
+\subsubsection{\texorpdfstring{$\sim$\+Binary\+Model\+Loader()}{~BinaryModelLoader()}}
+{\footnotesize\ttfamily Binary\+Model\+Loader\+::$\sim$\+Binary\+Model\+Loader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 72 of file Binary\+Model\+Loader.\+cpp.
+
+
+\begin{DoxyCode}
+73 \{
+74 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_binary_model_loader_a8cc9581014e91f62f10e00c924fc8558}\label{class_binary_model_loader_a8cc9581014e91f62f10e00c924fc8558}} 
+\index{Binary\+Model\+Loader@{Binary\+Model\+Loader}!Get\+Final\+Data@{Get\+Final\+Data}}
+\index{Get\+Final\+Data@{Get\+Final\+Data}!Binary\+Model\+Loader@{Binary\+Model\+Loader}}
+\subsubsection{\texorpdfstring{Get\+Final\+Data()}{GetFinalData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{struct_structures_1_1_vertices_indices_from_bin}{Structures\+::\+Vertices\+Indices\+From\+Bin}}$>$ Binary\+Model\+Loader\+::\+Get\+Final\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 12 of file Binary\+Model\+Loader.\+h.
+
+
+\begin{DoxyCode}
+12 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_binary_model_loader_ad91d8149dfde26ed2949bd05b854974a}{m\_finalData}}; \};
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_binary_model_loader_ad91d8149dfde26ed2949bd05b854974a}\label{class_binary_model_loader_ad91d8149dfde26ed2949bd05b854974a}} 
+\index{Binary\+Model\+Loader@{Binary\+Model\+Loader}!m\+\_\+final\+Data@{m\+\_\+final\+Data}}
+\index{m\+\_\+final\+Data@{m\+\_\+final\+Data}!Binary\+Model\+Loader@{Binary\+Model\+Loader}}
+\subsubsection{\texorpdfstring{m\+\_\+final\+Data}{m\_finalData}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{struct_structures_1_1_vertices_indices_from_bin}{Structures\+::\+Vertices\+Indices\+From\+Bin}}$>$ Binary\+Model\+Loader\+::m\+\_\+final\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 12 of file Binary\+Model\+Loader.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_binary_model_loader_8h}{Binary\+Model\+Loader.\+h}}\item 
+D3d\+Engine/\mbox{\hyperlink{_binary_model_loader_8cpp}{Binary\+Model\+Loader.\+cpp}}\end{DoxyCompactItemize}

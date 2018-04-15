@@ -1,0 +1,230 @@
+\hypertarget{class_texture_resource_manager}{}\section{Texture\+Resource\+Manager Class Reference}
+\label{class_texture_resource_manager}\index{Texture\+Resource\+Manager@{Texture\+Resource\+Manager}}
+
+
+{\ttfamily \#include $<$Texture\+Resource\+Manager.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_texture_resource_manager_1_1_loaded_data}{Loaded\+Data}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_texture_resource_manager_ad6183400787dbb2be43b0cb31edd5650}{Texture\+Resource\+Manager}} (std\+::wstring file\+Name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$ device\+Resources, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}} $>$ command\+List\+Manager)
+\begin{DoxyCompactList}\small\item\em Construct a new Texture Resource Manager\+:\+: Texture Resource Manager object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_texture_resource_manager_ac83cdfafe8c418e18e26490b2b505ef5}{$\sim$\+Texture\+Resource\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Texture Resource Manager\+:\+: Texture Resource Manager object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_texture_resource_manager_ad7d780da205f6144058a3ba1882ad5de}{Create\+S\+R\+V\+From\+Texture\+Resource}} (Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Descriptor\+Heap $>$ srv\+Heap, const U\+I\+NT srv\+Heap\+Size, const int descriptor\+Slot) const
+\begin{DoxyCompactList}\small\item\em create the shader resource view from the texture \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_texture_resource_manager_1_1_loaded_data}{Loaded\+Data}} \mbox{\hyperlink{class_texture_resource_manager_ada862570ac9500e22a54662b781c9ec0}{Load\+Texture\+From\+File}} (std\+::wstring file\+Name)
+\begin{DoxyCompactList}\small\item\em load a texture from file and put data into a struct \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$ \mbox{\hyperlink{class_texture_resource_manager_a0f99144b70c779807f6f674b1ed5b9b7}{m\+\_\+device\+Resources}}
+\item 
+D3\+D12\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+D\+E\+SC \mbox{\hyperlink{class_texture_resource_manager_a9137a54de5e1a26cf0bb3d37b6b1af93}{m\+\_\+texture\+Desc}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_resource_manager}{Resource\+Manager}} $>$ \mbox{\hyperlink{class_texture_resource_manager_a789f95efcad1717efd90f7e6ec1ee0ea}{m\+\_\+resource\+Manager}}
+\begin{DoxyCompactList}\small\item\em descriptor of texture \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Texture\+Resource\+Manager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_texture_resource_manager_ad6183400787dbb2be43b0cb31edd5650}\label{class_texture_resource_manager_ad6183400787dbb2be43b0cb31edd5650}} 
+\index{Texture\+Resource\+Manager@{Texture\+Resource\+Manager}!Texture\+Resource\+Manager@{Texture\+Resource\+Manager}}
+\index{Texture\+Resource\+Manager@{Texture\+Resource\+Manager}!Texture\+Resource\+Manager@{Texture\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{Texture\+Resource\+Manager()}{TextureResourceManager()}}
+{\footnotesize\ttfamily Texture\+Resource\+Manager\+::\+Texture\+Resource\+Manager (\begin{DoxyParamCaption}\item[{std\+::wstring}]{file\+Name,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$}]{device\+Resources,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}} $>$}]{command\+List\+Manager }\end{DoxyParamCaption})}
+
+
+
+Construct a new Texture Resource Manager\+:\+: Texture Resource Manager object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & path and filename of the texture \\
+\hline
+{\em device\+Resources} & \\
+\hline
+{\em command\+List\+Manager} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file Texture\+Resource\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+12                                                                                                            
+       :
+13     \mbox{\hyperlink{class_texture_resource_manager_a0f99144b70c779807f6f674b1ed5b9b7}{m\_deviceResources}}(deviceResources)
+14 \{
+15     \textcolor{comment}{//load texture}
+16     \textcolor{keyword}{const} \textcolor{keyword}{auto} loadedData = \mbox{\hyperlink{class_texture_resource_manager_ada862570ac9500e22a54662b781c9ec0}{LoadTextureFromFile}}(fileName);
+17 
+18     \textcolor{keyword}{const} \textcolor{keyword}{auto} resourceDesc = \textcolor{keyword}{static\_cast<}CD3DX12\_RESOURCE\_DESC\textcolor{keyword}{>}(\mbox{\hyperlink{class_texture_resource_manager_a9137a54de5e1a26cf0bb3d37b6b1af93}{m\_textureDesc}});
+19     \textcolor{comment}{// create resource}
+20     \mbox{\hyperlink{class_texture_resource_manager_a789f95efcad1717efd90f7e6ec1ee0ea}{m\_resourceManager}} = std::make\_unique<ResourceManager>(
+      \mbox{\hyperlink{class_texture_resource_manager_a0f99144b70c779807f6f674b1ed5b9b7}{m\_deviceResources}}, commandListManager);
+21     \mbox{\hyperlink{class_texture_resource_manager_a789f95efcad1717efd90f7e6ec1ee0ea}{m\_resourceManager}}->DefaultHeapResource(\mbox{\hyperlink{class_texture_resource_manager_a9137a54de5e1a26cf0bb3d37b6b1af93}{m\_textureDesc}});
+22     \textcolor{comment}{// get the requires size}
+23     UINT size = \mbox{\hyperlink{class_texture_resource_manager_a789f95efcad1717efd90f7e6ec1ee0ea}{m\_resourceManager}}->GetRequiredIntermediateSizeForResource();
+24     \textcolor{comment}{// upload the resource / texture}
+25     \mbox{\hyperlink{class_texture_resource_manager_a789f95efcad1717efd90f7e6ec1ee0ea}{m\_resourceManager}}->UploadResource(CD3DX12\_RESOURCE\_DESC::Buffer(size));
+26     \mbox{\hyperlink{class_texture_resource_manager_a789f95efcad1717efd90f7e6ec1ee0ea}{m\_resourceManager}}->UpdateSubresource(loadedData.textureData, size, loadedData.
+      imageBytesPerRow, \mbox{\hyperlink{class_texture_resource_manager_a9137a54de5e1a26cf0bb3d37b6b1af93}{m\_textureDesc}}.Height, D3D12\_RESOURCE\_STATE\_PIXEL\_SHADER\_RESOURCE);
+27 
+28     \textcolor{keyword}{delete} loadedData.textureData;
+29 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_resource_manager_ac83cdfafe8c418e18e26490b2b505ef5}\label{class_texture_resource_manager_ac83cdfafe8c418e18e26490b2b505ef5}} 
+\index{Texture\+Resource\+Manager@{Texture\+Resource\+Manager}!````~Texture\+Resource\+Manager@{$\sim$\+Texture\+Resource\+Manager}}
+\index{````~Texture\+Resource\+Manager@{$\sim$\+Texture\+Resource\+Manager}!Texture\+Resource\+Manager@{Texture\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Texture\+Resource\+Manager()}{~TextureResourceManager()}}
+{\footnotesize\ttfamily Texture\+Resource\+Manager\+::$\sim$\+Texture\+Resource\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Texture Resource Manager\+:\+: Texture Resource Manager object. 
+
+
+
+Definition at line 35 of file Texture\+Resource\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+36 \{
+37     \mbox{\hyperlink{class_texture_resource_manager_a9137a54de5e1a26cf0bb3d37b6b1af93}{m\_textureDesc}} = \{\};
+38     \mbox{\hyperlink{class_texture_resource_manager_a789f95efcad1717efd90f7e6ec1ee0ea}{m\_resourceManager}}.release();
+39     \mbox{\hyperlink{class_texture_resource_manager_a789f95efcad1717efd90f7e6ec1ee0ea}{m\_resourceManager}} = \textcolor{keyword}{nullptr};
+40 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_texture_resource_manager_ad7d780da205f6144058a3ba1882ad5de}\label{class_texture_resource_manager_ad7d780da205f6144058a3ba1882ad5de}} 
+\index{Texture\+Resource\+Manager@{Texture\+Resource\+Manager}!Create\+S\+R\+V\+From\+Texture\+Resource@{Create\+S\+R\+V\+From\+Texture\+Resource}}
+\index{Create\+S\+R\+V\+From\+Texture\+Resource@{Create\+S\+R\+V\+From\+Texture\+Resource}!Texture\+Resource\+Manager@{Texture\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{Create\+S\+R\+V\+From\+Texture\+Resource()}{CreateSRVFromTextureResource()}}
+{\footnotesize\ttfamily void Texture\+Resource\+Manager\+::\+Create\+S\+R\+V\+From\+Texture\+Resource (\begin{DoxyParamCaption}\item[{Microsoft\+::\+W\+R\+L\+::\+Com\+Ptr$<$ I\+D3\+D12\+Descriptor\+Heap $>$}]{srv\+Heap,  }\item[{const U\+I\+NT}]{srv\+Heap\+Size,  }\item[{const int}]{descriptor\+Slot }\end{DoxyParamCaption}) const}
+
+
+
+create the shader resource view from the texture 
+
+
+\begin{DoxyParams}{Parameters}
+{\em srv\+Heap} & the descriptor heap which is used for the srv creation \\
+\hline
+{\em srv\+Heap\+Size} & the heap size \\
+\hline
+{\em descriptor\+Slot} & the slot of the texture resource \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file Texture\+Resource\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+51 \{
+52     \textcolor{keyword}{auto} d3dDevice = \mbox{\hyperlink{class_texture_resource_manager_a0f99144b70c779807f6f674b1ed5b9b7}{m\_deviceResources}}->GetD3DDevice();
+53     \textcolor{comment}{//describe and create the srv}
+54     \textcolor{keyword}{auto} srvDesc = D3D12\_SHADER\_RESOURCE\_VIEW\_DESC\{\};
+55     srvDesc.Shader4ComponentMapping = D3D12\_DEFAULT\_SHADER\_4\_COMPONENT\_MAPPING;
+56     srvDesc.Format = \mbox{\hyperlink{class_texture_resource_manager_a9137a54de5e1a26cf0bb3d37b6b1af93}{m\_textureDesc}}.Format;
+57     srvDesc.ViewDimension = D3D12\_SRV\_DIMENSION\_TEXTURE2D;
+58     srvDesc.Texture2D.MipLevels = 1;
+59     d3dDevice->CreateShaderResourceView(\mbox{\hyperlink{class_texture_resource_manager_a789f95efcad1717efd90f7e6ec1ee0ea}{m\_resourceManager}}->Get(), &srvDesc, 
+      CD3DX12\_CPU\_DESCRIPTOR\_HANDLE(srvHeap->GetCPUDescriptorHandleForHeapStart(), descriptorSlot, srvHeapSize));
+60 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_resource_manager_ada862570ac9500e22a54662b781c9ec0}\label{class_texture_resource_manager_ada862570ac9500e22a54662b781c9ec0}} 
+\index{Texture\+Resource\+Manager@{Texture\+Resource\+Manager}!Load\+Texture\+From\+File@{Load\+Texture\+From\+File}}
+\index{Load\+Texture\+From\+File@{Load\+Texture\+From\+File}!Texture\+Resource\+Manager@{Texture\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{Load\+Texture\+From\+File()}{LoadTextureFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_texture_resource_manager_1_1_loaded_data}{Texture\+Resource\+Manager\+::\+Loaded\+Data}} Texture\+Resource\+Manager\+::\+Load\+Texture\+From\+File (\begin{DoxyParamCaption}\item[{std\+::wstring}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+load a texture from file and put data into a struct 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & poath and filename of the texture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_texture_resource_manager_1_1_loaded_data}{Texture\+Resource\+Manager\+::\+Loaded\+Data}} the data that is loaded from the texture 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file Texture\+Resource\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+68 \{
+69     BYTE* textureData;
+70     \mbox{\hyperlink{class_texture_loader}{TextureLoader}}* tl = \textcolor{keyword}{new} \mbox{\hyperlink{class_texture_loader}{TextureLoader}}();
+71     \textcolor{keywordtype}{int} imageBytesPerRow;
+72     tl->\mbox{\hyperlink{class_texture_loader_a089f3c76583c3401fcadd85d26d65b31}{LoadImageDataFromFile}}(&textureData, \mbox{\hyperlink{class_texture_resource_manager_a9137a54de5e1a26cf0bb3d37b6b1af93}{m\_textureDesc}}, fileName.c\_str
+      (), imageBytesPerRow);
+73     \textcolor{keyword}{delete} tl;
+74     \textcolor{keywordflow}{return} \{ textureData, imageBytesPerRow \};
+75 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_texture_resource_manager_a0f99144b70c779807f6f674b1ed5b9b7}\label{class_texture_resource_manager_a0f99144b70c779807f6f674b1ed5b9b7}} 
+\index{Texture\+Resource\+Manager@{Texture\+Resource\+Manager}!m\+\_\+device\+Resources@{m\+\_\+device\+Resources}}
+\index{m\+\_\+device\+Resources@{m\+\_\+device\+Resources}!Texture\+Resource\+Manager@{Texture\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+device\+Resources}{m\_deviceResources}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}}$>$ Texture\+Resource\+Manager\+::m\+\_\+device\+Resources\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 22 of file Texture\+Resource\+Manager.\+h.
+
+\mbox{\Hypertarget{class_texture_resource_manager_a789f95efcad1717efd90f7e6ec1ee0ea}\label{class_texture_resource_manager_a789f95efcad1717efd90f7e6ec1ee0ea}} 
+\index{Texture\+Resource\+Manager@{Texture\+Resource\+Manager}!m\+\_\+resource\+Manager@{m\+\_\+resource\+Manager}}
+\index{m\+\_\+resource\+Manager@{m\+\_\+resource\+Manager}!Texture\+Resource\+Manager@{Texture\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+resource\+Manager}{m\_resourceManager}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_resource_manager}{Resource\+Manager}}$>$ Texture\+Resource\+Manager\+::m\+\_\+resource\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+descriptor of texture 
+
+
+
+Definition at line 24 of file Texture\+Resource\+Manager.\+h.
+
+\mbox{\Hypertarget{class_texture_resource_manager_a9137a54de5e1a26cf0bb3d37b6b1af93}\label{class_texture_resource_manager_a9137a54de5e1a26cf0bb3d37b6b1af93}} 
+\index{Texture\+Resource\+Manager@{Texture\+Resource\+Manager}!m\+\_\+texture\+Desc@{m\+\_\+texture\+Desc}}
+\index{m\+\_\+texture\+Desc@{m\+\_\+texture\+Desc}!Texture\+Resource\+Manager@{Texture\+Resource\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+texture\+Desc}{m\_textureDesc}}
+{\footnotesize\ttfamily D3\+D12\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+D\+E\+SC Texture\+Resource\+Manager\+::m\+\_\+texture\+Desc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 23 of file Texture\+Resource\+Manager.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_texture_resource_manager_8h}{Texture\+Resource\+Manager.\+h}}\item 
+D3d\+Engine/\mbox{\hyperlink{_texture_resource_manager_8cpp}{Texture\+Resource\+Manager.\+cpp}}\end{DoxyCompactItemize}

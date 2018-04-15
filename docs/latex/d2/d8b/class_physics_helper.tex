@@ -1,0 +1,211 @@
+\hypertarget{class_physics_helper}{}\section{Physics\+Helper Class Reference}
+\label{class_physics_helper}\index{Physics\+Helper@{Physics\+Helper}}
+
+
+{\ttfamily \#include $<$Physics\+Helper.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_physics_helper_a10d1d4db3800e658fc8bbd718fb6080a}{Physics\+Helper}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Physics Helper\+:\+: Physics Helper object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_physics_helper_a1cbbe3db0c995d8a45436cbdf4271563}{$\sim$\+Physics\+Helper}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Physics Helper\+:\+: Physics Helper object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} void \mbox{\hyperlink{class_physics_helper_a9a1738f377db71f239d55ce65ba8f442}{Update}} (float minY, X\+M\+V\+E\+C\+T\+OR $\ast$object\+Position, bool is\+Rising, Bounding\+Box collider)
+\begin{DoxyCompactList}\small\item\em Update the position of a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_physics_helper_a49302833da6c4ac21bf17891de2c696e}{previously\+Rising}} = false
+\item 
+float \mbox{\hyperlink{class_physics_helper_a8d1eda19cdbede456e4fb973a19802a4}{y\+Pos}}
+\begin{DoxyCompactList}\small\item\em was the vector previsouly rising \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_physics_helper_a0c1293f0d07c93ffa688f67285327d35}{y\+Pos\+Fall\+Diff}} = \mbox{\hyperlink{class_physics_helper_a11582a39916e5ec33325d99d1d67235a}{y\+Pos\+Fall\+Start}}
+\begin{DoxyCompactList}\small\item\em the current y position \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{class_physics_helper_a20ab7f606d89b0b12ffdd0a68136da2e}{y\+Pos\+Fall\+Multiplyer}} = 1.\+05f
+\begin{DoxyCompactList}\small\item\em fall distance each tick \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{class_physics_helper_a11582a39916e5ec33325d99d1d67235a}{y\+Pos\+Fall\+Start}} = 0.\+3f
+\begin{DoxyCompactList}\small\item\em fall speed multiplyer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3 of file Physics\+Helper.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_physics_helper_a10d1d4db3800e658fc8bbd718fb6080a}\label{class_physics_helper_a10d1d4db3800e658fc8bbd718fb6080a}} 
+\index{Physics\+Helper@{Physics\+Helper}!Physics\+Helper@{Physics\+Helper}}
+\index{Physics\+Helper@{Physics\+Helper}!Physics\+Helper@{Physics\+Helper}}
+\subsubsection{\texorpdfstring{Physics\+Helper()}{PhysicsHelper()}}
+{\footnotesize\ttfamily Physics\+Helper\+::\+Physics\+Helper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Physics Helper\+:\+: Physics Helper object. 
+
+
+
+Definition at line 9 of file Physics\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+10 \{
+11     \mbox{\hyperlink{class_physics_helper_a8d1eda19cdbede456e4fb973a19802a4}{yPos}} = 0;
+12     \mbox{\hyperlink{class_physics_helper_a0c1293f0d07c93ffa688f67285327d35}{yPosFallDiff}} = \mbox{\hyperlink{class_physics_helper_a11582a39916e5ec33325d99d1d67235a}{yPosFallStart}};
+13 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_physics_helper_a1cbbe3db0c995d8a45436cbdf4271563}\label{class_physics_helper_a1cbbe3db0c995d8a45436cbdf4271563}} 
+\index{Physics\+Helper@{Physics\+Helper}!````~Physics\+Helper@{$\sim$\+Physics\+Helper}}
+\index{````~Physics\+Helper@{$\sim$\+Physics\+Helper}!Physics\+Helper@{Physics\+Helper}}
+\subsubsection{\texorpdfstring{$\sim$\+Physics\+Helper()}{~PhysicsHelper()}}
+{\footnotesize\ttfamily Physics\+Helper\+::$\sim$\+Physics\+Helper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Physics Helper\+:\+: Physics Helper object. 
+
+
+
+Definition at line 19 of file Physics\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+20 \{
+21 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_physics_helper_a9a1738f377db71f239d55ce65ba8f442}\label{class_physics_helper_a9a1738f377db71f239d55ce65ba8f442}} 
+\index{Physics\+Helper@{Physics\+Helper}!Update@{Update}}
+\index{Update@{Update}!Physics\+Helper@{Physics\+Helper}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Physics\+Helper\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{minY,  }\item[{X\+M\+V\+E\+C\+T\+OR $\ast$}]{object\+Position,  }\item[{bool}]{is\+Rising,  }\item[{Bounding\+Box}]{collider }\end{DoxyParamCaption})}
+
+
+
+Update the position of a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em minY} & the minimum y location that a vector can be at \\
+\hline
+{\em object\+Position} & the vector that the physics is being applied to \\
+\hline
+{\em is\+Rising} & is the vector going up \\
+\hline
+{\em collider} & the bounding box collider that will control the offset of the vector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file Physics\+Helper.\+cpp.
+
+
+\begin{DoxyCode}
+32 \{
+33     \textcolor{comment}{// if above minY }
+34     \textcolor{keywordflow}{if} (XMVectorGetY(*objectPosition) - collider.Extents.y >= minY && !isRising) \{
+35         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_physics_helper_a49302833da6c4ac21bf17891de2c696e}{previouslyRising}}) \{
+36             \mbox{\hyperlink{class_physics_helper_a49302833da6c4ac21bf17891de2c696e}{previouslyRising}} = \textcolor{keyword}{false};
+37             \mbox{\hyperlink{class_physics_helper_a8d1eda19cdbede456e4fb973a19802a4}{yPos}} = XMVectorGetY(*objectPosition);
+38         \}
+39         \textcolor{comment}{// fall down}
+40         \mbox{\hyperlink{class_physics_helper_a0c1293f0d07c93ffa688f67285327d35}{yPosFallDiff}} *= \mbox{\hyperlink{class_physics_helper_a20ab7f606d89b0b12ffdd0a68136da2e}{yPosFallMultiplyer}};
+41         \mbox{\hyperlink{class_physics_helper_a8d1eda19cdbede456e4fb973a19802a4}{yPos}} -= \mbox{\hyperlink{class_physics_helper_a0c1293f0d07c93ffa688f67285327d35}{yPosFallDiff}};
+42         *objectPosition = XMVectorSetY(*objectPosition, \mbox{\hyperlink{class_physics_helper_a8d1eda19cdbede456e4fb973a19802a4}{yPos}});
+43     \}
+44     \textcolor{comment}{// is going up}
+45     \textcolor{keywordflow}{if} (isRising) \{
+46         \mbox{\hyperlink{class_physics_helper_a8d1eda19cdbede456e4fb973a19802a4}{yPos}} = XMVectorGetY(*objectPosition);
+47         \mbox{\hyperlink{class_physics_helper_a0c1293f0d07c93ffa688f67285327d35}{yPosFallDiff}} = \mbox{\hyperlink{class_physics_helper_a11582a39916e5ec33325d99d1d67235a}{yPosFallStart}};
+48         \mbox{\hyperlink{class_physics_helper_a49302833da6c4ac21bf17891de2c696e}{previouslyRising}} = \textcolor{keyword}{true};
+49     \}
+50 
+51     \textcolor{comment}{// is under minY}
+52     \textcolor{keywordflow}{if} (XMVectorGetY(*objectPosition) - collider.Extents.y <= minY) \{
+53         \mbox{\hyperlink{class_physics_helper_a8d1eda19cdbede456e4fb973a19802a4}{yPos}} = minY;
+54         \textcolor{comment}{//put on top of minY}
+55         \mbox{\hyperlink{class_physics_helper_a0c1293f0d07c93ffa688f67285327d35}{yPosFallDiff}} = \mbox{\hyperlink{class_physics_helper_a11582a39916e5ec33325d99d1d67235a}{yPosFallStart}};
+56         *objectPosition = XMVectorSetY(*objectPosition, minY + collider.Extents.y);
+57     \}
+58 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_physics_helper_a49302833da6c4ac21bf17891de2c696e}\label{class_physics_helper_a49302833da6c4ac21bf17891de2c696e}} 
+\index{Physics\+Helper@{Physics\+Helper}!previously\+Rising@{previously\+Rising}}
+\index{previously\+Rising@{previously\+Rising}!Physics\+Helper@{Physics\+Helper}}
+\subsubsection{\texorpdfstring{previously\+Rising}{previouslyRising}}
+{\footnotesize\ttfamily bool Physics\+Helper\+::previously\+Rising = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 10 of file Physics\+Helper.\+h.
+
+\mbox{\Hypertarget{class_physics_helper_a8d1eda19cdbede456e4fb973a19802a4}\label{class_physics_helper_a8d1eda19cdbede456e4fb973a19802a4}} 
+\index{Physics\+Helper@{Physics\+Helper}!y\+Pos@{y\+Pos}}
+\index{y\+Pos@{y\+Pos}!Physics\+Helper@{Physics\+Helper}}
+\subsubsection{\texorpdfstring{y\+Pos}{yPos}}
+{\footnotesize\ttfamily float Physics\+Helper\+::y\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+was the vector previsouly rising 
+
+
+
+Definition at line 11 of file Physics\+Helper.\+h.
+
+\mbox{\Hypertarget{class_physics_helper_a0c1293f0d07c93ffa688f67285327d35}\label{class_physics_helper_a0c1293f0d07c93ffa688f67285327d35}} 
+\index{Physics\+Helper@{Physics\+Helper}!y\+Pos\+Fall\+Diff@{y\+Pos\+Fall\+Diff}}
+\index{y\+Pos\+Fall\+Diff@{y\+Pos\+Fall\+Diff}!Physics\+Helper@{Physics\+Helper}}
+\subsubsection{\texorpdfstring{y\+Pos\+Fall\+Diff}{yPosFallDiff}}
+{\footnotesize\ttfamily float Physics\+Helper\+::y\+Pos\+Fall\+Diff = \mbox{\hyperlink{class_physics_helper_a11582a39916e5ec33325d99d1d67235a}{y\+Pos\+Fall\+Start}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the current y position 
+
+
+
+Definition at line 12 of file Physics\+Helper.\+h.
+
+\mbox{\Hypertarget{class_physics_helper_a20ab7f606d89b0b12ffdd0a68136da2e}\label{class_physics_helper_a20ab7f606d89b0b12ffdd0a68136da2e}} 
+\index{Physics\+Helper@{Physics\+Helper}!y\+Pos\+Fall\+Multiplyer@{y\+Pos\+Fall\+Multiplyer}}
+\index{y\+Pos\+Fall\+Multiplyer@{y\+Pos\+Fall\+Multiplyer}!Physics\+Helper@{Physics\+Helper}}
+\subsubsection{\texorpdfstring{y\+Pos\+Fall\+Multiplyer}{yPosFallMultiplyer}}
+{\footnotesize\ttfamily const float Physics\+Helper\+::y\+Pos\+Fall\+Multiplyer = 1.\+05f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+fall distance each tick 
+
+
+
+Definition at line 13 of file Physics\+Helper.\+h.
+
+\mbox{\Hypertarget{class_physics_helper_a11582a39916e5ec33325d99d1d67235a}\label{class_physics_helper_a11582a39916e5ec33325d99d1d67235a}} 
+\index{Physics\+Helper@{Physics\+Helper}!y\+Pos\+Fall\+Start@{y\+Pos\+Fall\+Start}}
+\index{y\+Pos\+Fall\+Start@{y\+Pos\+Fall\+Start}!Physics\+Helper@{Physics\+Helper}}
+\subsubsection{\texorpdfstring{y\+Pos\+Fall\+Start}{yPosFallStart}}
+{\footnotesize\ttfamily const float Physics\+Helper\+::y\+Pos\+Fall\+Start = 0.\+3f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+fall speed multiplyer 
+
+
+
+Definition at line 14 of file Physics\+Helper.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_physics_helper_8h}{Physics\+Helper.\+h}}\item 
+D3d\+Engine/\mbox{\hyperlink{_physics_helper_8cpp}{Physics\+Helper.\+cpp}}\end{DoxyCompactItemize}

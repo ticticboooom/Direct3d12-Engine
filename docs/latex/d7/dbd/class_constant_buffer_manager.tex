@@ -1,0 +1,381 @@
+\hypertarget{class_constant_buffer_manager}{}\section{Constant\+Buffer\+Manager$<$ T\+Data $>$ Class Template Reference}
+\label{class_constant_buffer_manager}\index{Constant\+Buffer\+Manager$<$ T\+Data $>$@{Constant\+Buffer\+Manager$<$ T\+Data $>$}}
+
+
+{\ttfamily \#include $<$Constant\+Buffer\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_constant_buffer_manager_a1b7d5f45ddc84402db2ba342d3e3b277}{Constant\+Buffer\+Manager}} (const U\+I\+NT size, const U\+I\+NT count, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$ \&device\+Resources, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}} $>$ command\+List\+Manager)
+\begin{DoxyCompactList}\small\item\em Construct a new Constant Buffer Manager$<$ T Data$>$\+:\+: Constant Buffer Manager object constant buffers are for setting constant data inside of a shader (per frame) do that they can use the data without passing in seperate data every vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_constant_buffer_manager_a837ca267d583694e3641997f0b611b30}{$\sim$\+Constant\+Buffer\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Constant Buffer Manager$<$ T Data$>$\+:\+: Constant Buffer Manager object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_constant_buffer_manager_ae2b99485f70df0dd8056164be91cc368}{Create\+Buffer\+Desc}} (const U\+I\+NT size, U\+I\+NT heap\+Index, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_descriptor_heap_manager}{Descriptor\+Heap\+Manager}} $>$ heap\+Manager, U\+I\+NT Descriptor\+Size)
+\begin{DoxyCompactList}\small\item\em Creater the buffer view for the constant buffer. \end{DoxyCompactList}\item 
+U\+I\+NT \mbox{\hyperlink{class_constant_buffer_manager_a1b2f4c04b281c3b47fd543d1bcb7a178}{Get\+Buffer\+Address}} () const
+\item 
+U\+I\+N\+T8 $\ast$ \mbox{\hyperlink{class_constant_buffer_manager_a431be2aa715a8605587a5aed489ffff8}{Get\+Mapped\+Data}} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static U\+I\+NT \mbox{\hyperlink{class_constant_buffer_manager_a422de25f4764115e3bb1a747f231c7bd}{Get\+Aligned\+Size}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_resource_manager}{Resource\+Manager}} $>$ \mbox{\hyperlink{class_constant_buffer_manager_a8302ee559cb53baaf2233fcb20b867b4}{m\+\_\+resource\+Manager}}
+\item 
+U\+I\+N\+T8 $\ast$ \mbox{\hyperlink{class_constant_buffer_manager_a35b50fb75b21a3b98adca908b5c144c6}{m\+\_\+mapped\+Buffer\+Data}}
+\begin{DoxyCompactList}\small\item\em resource manager \end{DoxyCompactList}\item 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$ \& \mbox{\hyperlink{class_constant_buffer_manager_a9514f5810d4492698ed04c48e67ef7e0}{m\+\_\+device\+Resources}}
+\begin{DoxyCompactList}\small\item\em the data mapped to the resource \end{DoxyCompactList}\item 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}} $>$ \mbox{\hyperlink{class_constant_buffer_manager_aae03042ae999bf171e8dcffefdd4be63}{m\+\_\+command\+List\+Manager}}
+\begin{DoxyCompactList}\small\item\em device resources \end{DoxyCompactList}\item 
+C\+D3\+D\+X12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE \mbox{\hyperlink{class_constant_buffer_manager_a93a791fc03c70ddfbdcd59ce0e207c7a}{cbv\+Cpu\+Handle}}
+\begin{DoxyCompactList}\small\item\em command list manager \end{DoxyCompactList}\item 
+D3\+D12\+\_\+\+G\+P\+U\+\_\+\+V\+I\+R\+T\+U\+A\+L\+\_\+\+A\+D\+D\+R\+E\+SS \mbox{\hyperlink{class_constant_buffer_manager_a557ea9cd543fc35337b1e3118fa6356a}{cbv\+Gpu\+Address}}
+\begin{DoxyCompactList}\small\item\em the constant buffer view cpu handle \end{DoxyCompactList}\item 
+U\+I\+NT \mbox{\hyperlink{class_constant_buffer_manager_a727c8f79fb25e932dbe2034762282d41}{size\+In\+Bytes}}
+\begin{DoxyCompactList}\small\item\em the gpu address of the resource \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_constant_buffer_manager_aa97b17dea313afa154a39709d3b30d06}{has\+Created}} = false
+\begin{DoxyCompactList}\small\item\em the size of the resourc ein bytes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const U\+I\+NT \mbox{\hyperlink{class_constant_buffer_manager_ac646a2089c56b988b2bac5aa9a1de723}{c\+\_\+aligned\+Buffer\+Size}} = (sizeof(T\+Data) + 255) \& $\sim$255
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T\+Data$>$\newline
+class Constant\+Buffer\+Manager$<$ T\+Data $>$}
+
+
+
+Definition at line 7 of file Constant\+Buffer\+Manager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_constant_buffer_manager_a1b7d5f45ddc84402db2ba342d3e3b277}\label{class_constant_buffer_manager_a1b7d5f45ddc84402db2ba342d3e3b277}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{Constant\+Buffer\+Manager()}{ConstantBufferManager()}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+\mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::\mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}} (\begin{DoxyParamCaption}\item[{const U\+I\+NT}]{size,  }\item[{const U\+I\+NT}]{count,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$ \&}]{device\+Resources,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}} $>$}]{command\+List\+Manager }\end{DoxyParamCaption})}
+
+
+
+Construct a new Constant Buffer Manager$<$ T Data$>$\+:\+: Constant Buffer Manager object constant buffers are for setting constant data inside of a shader (per frame) do that they can use the data without passing in seperate data every vertex. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+Data} & the data of the constant buffer \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em size} & the size of the constant buffer data \\
+\hline
+{\em count} & the count of how many to use (usually for multi-\/buffering) \\
+\hline
+{\em device\+Resources} & \\
+\hline
+{\em command\+List\+Manager} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file Constant\+Buffer\+Manager.\+h.
+
+
+\begin{DoxyCode}
+41                                                                 :
+42     \mbox{\hyperlink{class_constant_buffer_manager_a9514f5810d4492698ed04c48e67ef7e0}{m\_deviceResources}}(deviceResources),
+43     \mbox{\hyperlink{class_constant_buffer_manager_aae03042ae999bf171e8dcffefdd4be63}{m\_commandListManager}}(commandListManager)
+44 \{
+45     \textcolor{comment}{// creates resource description from sixe and count}
+46     \textcolor{keyword}{const} CD3DX12\_RESOURCE\_DESC bufferDesc = CD3DX12\_RESOURCE\_DESC::Buffer(size * count);
+47 
+48     \textcolor{comment}{// creates the reousce and gives it an upload buffer}
+49     \mbox{\hyperlink{class_constant_buffer_manager_a8302ee559cb53baaf2233fcb20b867b4}{m\_resourceManager}} = std::make\_unique<ResourceManager>(
+      \mbox{\hyperlink{class_constant_buffer_manager_a9514f5810d4492698ed04c48e67ef7e0}{m\_deviceResources}}, \mbox{\hyperlink{class_constant_buffer_manager_aae03042ae999bf171e8dcffefdd4be63}{m\_commandListManager}});
+50     \mbox{\hyperlink{class_constant_buffer_manager_a8302ee559cb53baaf2233fcb20b867b4}{m\_resourceManager}}->UploadResource(bufferDesc);
+51 
+52     \textcolor{comment}{// map the buffer to a variable to change the data}
+53     CD3DX12\_RANGE readRange(0, 0);
+54     \mbox{\hyperlink{_direct_x_helper_8h_abca3eeca6b5772a1112e0a9a9e3d9013}{ThrowIfFailed}}(\mbox{\hyperlink{class_constant_buffer_manager_a8302ee559cb53baaf2233fcb20b867b4}{m\_resourceManager}}->Get()->Map(0, &readRange, 
+      reinterpret\_cast<void**>(&\mbox{\hyperlink{class_constant_buffer_manager_a35b50fb75b21a3b98adca908b5c144c6}{m\_mappedBufferData}})));
+55     ZeroMemory(\mbox{\hyperlink{class_constant_buffer_manager_a35b50fb75b21a3b98adca908b5c144c6}{m\_mappedBufferData}}, size * count);
+56 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_constant_buffer_manager_a837ca267d583694e3641997f0b611b30}\label{class_constant_buffer_manager_a837ca267d583694e3641997f0b611b30}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!````~Constant\+Buffer\+Manager@{$\sim$\+Constant\+Buffer\+Manager}}
+\index{````~Constant\+Buffer\+Manager@{$\sim$\+Constant\+Buffer\+Manager}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Constant\+Buffer\+Manager()}{~ConstantBufferManager()}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+\mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::$\sim$\mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Constant Buffer Manager$<$ T Data$>$\+:\+: Constant Buffer Manager object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+Data} & the data of the constant buffer \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 64 of file Constant\+Buffer\+Manager.\+h.
+
+
+\begin{DoxyCode}
+65 \{
+66 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_constant_buffer_manager_ae2b99485f70df0dd8056164be91cc368}\label{class_constant_buffer_manager_ae2b99485f70df0dd8056164be91cc368}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!Create\+Buffer\+Desc@{Create\+Buffer\+Desc}}
+\index{Create\+Buffer\+Desc@{Create\+Buffer\+Desc}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{Create\+Buffer\+Desc()}{CreateBufferDesc()}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+void \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::Create\+Buffer\+Desc (\begin{DoxyParamCaption}\item[{const U\+I\+NT}]{size,  }\item[{U\+I\+NT}]{heap\+Index,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_descriptor_heap_manager}{Descriptor\+Heap\+Manager}} $>$}]{heap\+Manager,  }\item[{U\+I\+NT}]{Descriptor\+Size }\end{DoxyParamCaption})}
+
+
+
+Creater the buffer view for the constant buffer. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+Data} & the data of the constant buffer \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em size} & the size of the buffer view (usually the aligned size of the buffer view) \\
+\hline
+{\em heap\+Index} & the index on the descriptor heap to use \\
+\hline
+{\em heap\+Manager} & the \mbox{\hyperlink{class_descriptor_heap_manager}{Descriptor\+Heap\+Manager}} class for the buffer to use \\
+\hline
+{\em Descriptor\+Size} & the size of the descriptor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file Constant\+Buffer\+Manager.\+h.
+
+
+\begin{DoxyCode}
+79 \{
+80     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_constant_buffer_manager_aa97b17dea313afa154a39709d3b30d06}{hasCreated}}) \{
+81         \textcolor{comment}{// Gets the CPU habdle for the start of the descirptor heap}
+82         \textcolor{keyword}{auto} start = heapManager->GetCPUDescriptorHandleForHeapStart();
+83         \textcolor{comment}{// Creates a CPU handle using the heap index, start and descitpor size}
+84         CD3DX12\_CPU\_DESCRIPTOR\_HANDLE CpuHandle(start, heapIndex, DescriptorSize);
+85         \textcolor{comment}{// gets buffer GPU address}
+86         D3D12\_GPU\_VIRTUAL\_ADDRESS GpuAddress(this->\mbox{\hyperlink{class_constant_buffer_manager_a1b2f4c04b281c3b47fd543d1bcb7a178}{GetBufferAddress}}());
+87         \textcolor{comment}{// sets the corresponding member variables }
+88         \mbox{\hyperlink{class_constant_buffer_manager_a93a791fc03c70ddfbdcd59ce0e207c7a}{cbvCpuHandle}} = CpuHandle;
+89         \mbox{\hyperlink{class_constant_buffer_manager_a557ea9cd543fc35337b1e3118fa6356a}{cbvGpuAddress}} = GpuAddress;
+90         \mbox{\hyperlink{class_constant_buffer_manager_aa97b17dea313afa154a39709d3b30d06}{hasCreated}} = \textcolor{keyword}{true};
+91     \}
+92     \textcolor{keywordflow}{else} \{
+93         \textcolor{comment}{// ofsets the cpu handle}
+94         \mbox{\hyperlink{class_constant_buffer_manager_a93a791fc03c70ddfbdcd59ce0e207c7a}{cbvCpuHandle}}.Offset(DescriptorSize);
+95         \mbox{\hyperlink{class_constant_buffer_manager_a557ea9cd543fc35337b1e3118fa6356a}{cbvGpuAddress}} += \mbox{\hyperlink{class_constant_buffer_manager_a727c8f79fb25e932dbe2034762282d41}{sizeInBytes}};
+96     \}
+97     \textcolor{comment}{// describes and creates the cbv (constant buffer view)}
+98     D3D12\_CONSTANT\_BUFFER\_VIEW\_DESC desc = \{\};
+99     desc.BufferLocation = \mbox{\hyperlink{class_constant_buffer_manager_a557ea9cd543fc35337b1e3118fa6356a}{cbvGpuAddress}};
+100     desc.SizeInBytes = size;
+101     \mbox{\hyperlink{class_constant_buffer_manager_a9514f5810d4492698ed04c48e67ef7e0}{m\_deviceResources}}->GetD3DDevice()->CreateConstantBufferView(&desc, 
+      \mbox{\hyperlink{class_constant_buffer_manager_a93a791fc03c70ddfbdcd59ce0e207c7a}{cbvCpuHandle}});
+102     \mbox{\hyperlink{class_constant_buffer_manager_a727c8f79fb25e932dbe2034762282d41}{sizeInBytes}} = desc.SizeInBytes;
+103 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_constant_buffer_manager_a422de25f4764115e3bb1a747f231c7bd}\label{class_constant_buffer_manager_a422de25f4764115e3bb1a747f231c7bd}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!Get\+Aligned\+Size@{Get\+Aligned\+Size}}
+\index{Get\+Aligned\+Size@{Get\+Aligned\+Size}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Aligned\+Size()}{GetAlignedSize()}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+static U\+I\+NT \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::Get\+Aligned\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 14 of file Constant\+Buffer\+Manager.\+h.
+
+
+\begin{DoxyCode}
+14 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_constant_buffer_manager_ac646a2089c56b988b2bac5aa9a1de723}{c\_alignedBufferSize}}; \};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_constant_buffer_manager_a1b2f4c04b281c3b47fd543d1bcb7a178}\label{class_constant_buffer_manager_a1b2f4c04b281c3b47fd543d1bcb7a178}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!Get\+Buffer\+Address@{Get\+Buffer\+Address}}
+\index{Get\+Buffer\+Address@{Get\+Buffer\+Address}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Buffer\+Address()}{GetBufferAddress()}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+U\+I\+NT \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::Get\+Buffer\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 15 of file Constant\+Buffer\+Manager.\+h.
+
+
+\begin{DoxyCode}
+15 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_constant_buffer_manager_a8302ee559cb53baaf2233fcb20b867b4}{m\_resourceManager}}->Get()->GetGPUVirtualAddress(); \};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_constant_buffer_manager_a431be2aa715a8605587a5aed489ffff8}\label{class_constant_buffer_manager_a431be2aa715a8605587a5aed489ffff8}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!Get\+Mapped\+Data@{Get\+Mapped\+Data}}
+\index{Get\+Mapped\+Data@{Get\+Mapped\+Data}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Mapped\+Data()}{GetMappedData()}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+U\+I\+N\+T8$\ast$ \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::Get\+Mapped\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 16 of file Constant\+Buffer\+Manager.\+h.
+
+
+\begin{DoxyCode}
+16 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_constant_buffer_manager_a35b50fb75b21a3b98adca908b5c144c6}{m\_mappedBufferData}}; \};
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_constant_buffer_manager_ac646a2089c56b988b2bac5aa9a1de723}\label{class_constant_buffer_manager_ac646a2089c56b988b2bac5aa9a1de723}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!c\+\_\+aligned\+Buffer\+Size@{c\+\_\+aligned\+Buffer\+Size}}
+\index{c\+\_\+aligned\+Buffer\+Size@{c\+\_\+aligned\+Buffer\+Size}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{c\+\_\+aligned\+Buffer\+Size}{c\_alignedBufferSize}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+const U\+I\+NT \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::c\+\_\+aligned\+Buffer\+Size = (sizeof(T\+Data) + 255) \& $\sim$255\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 19 of file Constant\+Buffer\+Manager.\+h.
+
+\mbox{\Hypertarget{class_constant_buffer_manager_a93a791fc03c70ddfbdcd59ce0e207c7a}\label{class_constant_buffer_manager_a93a791fc03c70ddfbdcd59ce0e207c7a}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!cbv\+Cpu\+Handle@{cbv\+Cpu\+Handle}}
+\index{cbv\+Cpu\+Handle@{cbv\+Cpu\+Handle}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{cbv\+Cpu\+Handle}{cbvCpuHandle}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+C\+D3\+D\+X12\+\_\+\+C\+P\+U\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+O\+R\+\_\+\+H\+A\+N\+D\+LE \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::cbv\+Cpu\+Handle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+command list manager 
+
+
+
+Definition at line 24 of file Constant\+Buffer\+Manager.\+h.
+
+\mbox{\Hypertarget{class_constant_buffer_manager_a557ea9cd543fc35337b1e3118fa6356a}\label{class_constant_buffer_manager_a557ea9cd543fc35337b1e3118fa6356a}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!cbv\+Gpu\+Address@{cbv\+Gpu\+Address}}
+\index{cbv\+Gpu\+Address@{cbv\+Gpu\+Address}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{cbv\+Gpu\+Address}{cbvGpuAddress}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+D3\+D12\+\_\+\+G\+P\+U\+\_\+\+V\+I\+R\+T\+U\+A\+L\+\_\+\+A\+D\+D\+R\+E\+SS \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::cbv\+Gpu\+Address\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the constant buffer view cpu handle 
+
+
+
+Definition at line 25 of file Constant\+Buffer\+Manager.\+h.
+
+\mbox{\Hypertarget{class_constant_buffer_manager_aa97b17dea313afa154a39709d3b30d06}\label{class_constant_buffer_manager_aa97b17dea313afa154a39709d3b30d06}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!has\+Created@{has\+Created}}
+\index{has\+Created@{has\+Created}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{has\+Created}{hasCreated}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+bool \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::has\+Created = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the size of the resourc ein bytes 
+
+
+
+Definition at line 27 of file Constant\+Buffer\+Manager.\+h.
+
+\mbox{\Hypertarget{class_constant_buffer_manager_aae03042ae999bf171e8dcffefdd4be63}\label{class_constant_buffer_manager_aae03042ae999bf171e8dcffefdd4be63}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!m\+\_\+command\+List\+Manager@{m\+\_\+command\+List\+Manager}}
+\index{m\+\_\+command\+List\+Manager@{m\+\_\+command\+List\+Manager}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+command\+List\+Manager}{m\_commandListManager}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+const std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}}$>$ \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::m\+\_\+command\+List\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+device resources 
+
+
+
+Definition at line 23 of file Constant\+Buffer\+Manager.\+h.
+
+\mbox{\Hypertarget{class_constant_buffer_manager_a9514f5810d4492698ed04c48e67ef7e0}\label{class_constant_buffer_manager_a9514f5810d4492698ed04c48e67ef7e0}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!m\+\_\+device\+Resources@{m\+\_\+device\+Resources}}
+\index{m\+\_\+device\+Resources@{m\+\_\+device\+Resources}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+device\+Resources}{m\_deviceResources}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+const std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}}$>$\& \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::m\+\_\+device\+Resources\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the data mapped to the resource 
+
+
+
+Definition at line 22 of file Constant\+Buffer\+Manager.\+h.
+
+\mbox{\Hypertarget{class_constant_buffer_manager_a35b50fb75b21a3b98adca908b5c144c6}\label{class_constant_buffer_manager_a35b50fb75b21a3b98adca908b5c144c6}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!m\+\_\+mapped\+Buffer\+Data@{m\+\_\+mapped\+Buffer\+Data}}
+\index{m\+\_\+mapped\+Buffer\+Data@{m\+\_\+mapped\+Buffer\+Data}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+mapped\+Buffer\+Data}{m\_mappedBufferData}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+U\+I\+N\+T8$\ast$ \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::m\+\_\+mapped\+Buffer\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+resource manager 
+
+
+
+Definition at line 21 of file Constant\+Buffer\+Manager.\+h.
+
+\mbox{\Hypertarget{class_constant_buffer_manager_a8302ee559cb53baaf2233fcb20b867b4}\label{class_constant_buffer_manager_a8302ee559cb53baaf2233fcb20b867b4}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!m\+\_\+resource\+Manager@{m\+\_\+resource\+Manager}}
+\index{m\+\_\+resource\+Manager@{m\+\_\+resource\+Manager}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+resource\+Manager}{m\_resourceManager}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_resource_manager}{Resource\+Manager}}$>$ \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::m\+\_\+resource\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file Constant\+Buffer\+Manager.\+h.
+
+\mbox{\Hypertarget{class_constant_buffer_manager_a727c8f79fb25e932dbe2034762282d41}\label{class_constant_buffer_manager_a727c8f79fb25e932dbe2034762282d41}} 
+\index{Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}!size\+In\+Bytes@{size\+In\+Bytes}}
+\index{size\+In\+Bytes@{size\+In\+Bytes}!Constant\+Buffer\+Manager@{Constant\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{size\+In\+Bytes}{sizeInBytes}}
+{\footnotesize\ttfamily template$<$class T\+Data $>$ \\
+U\+I\+NT \mbox{\hyperlink{class_constant_buffer_manager}{Constant\+Buffer\+Manager}}$<$ T\+Data $>$\+::size\+In\+Bytes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the gpu address of the resource 
+
+
+
+Definition at line 26 of file Constant\+Buffer\+Manager.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_constant_buffer_manager_8h}{Constant\+Buffer\+Manager.\+h}}\end{DoxyCompactItemize}

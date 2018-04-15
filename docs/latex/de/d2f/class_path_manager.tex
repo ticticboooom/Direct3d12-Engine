@@ -1,0 +1,143 @@
+\hypertarget{class_path_manager}{}\section{Path\+Manager Class Reference}
+\label{class_path_manager}\index{Path\+Manager@{Path\+Manager}}
+
+
+{\ttfamily \#include $<$Path\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_path_manager_a9d91d6b3fcb797f77e7eace2bbf798bd}{Path\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Path Manager\+:\+: Path Manager object sets the paths up with the correct value to use later. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_path_manager_ac666917e7caaa1e4a56e5eab764b3ec7}{$\sim$\+Path\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Path Manager\+:\+: Path Manager object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} const wchar\+\_\+t $\ast$ \mbox{\hyperlink{class_path_manager_a959fe4866fb2388dd46eaf872a1a15ce}{Get\+Asset\+Path}} ()
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} const char $\ast$ \mbox{\hyperlink{class_path_manager_aa66f8bb5f729328242e7386babc1ff22}{Get\+Asset\+Path\+Str}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ std\+::wstring $>$ \mbox{\hyperlink{class_path_manager_aa10cc8c03331c77828bf9e155644d018}{Asset\+Path}}
+\item 
+std\+::shared\+\_\+ptr$<$ std\+::string $>$ \mbox{\hyperlink{class_path_manager_ad037448c8b23e1c60c89ad7d3e188d3a}{Asset\+Path\+Str}}
+\begin{DoxyCompactList}\small\item\em the wstring asset path \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 4 of file Path\+Manager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_path_manager_a9d91d6b3fcb797f77e7eace2bbf798bd}\label{class_path_manager_a9d91d6b3fcb797f77e7eace2bbf798bd}} 
+\index{Path\+Manager@{Path\+Manager}!Path\+Manager@{Path\+Manager}}
+\index{Path\+Manager@{Path\+Manager}!Path\+Manager@{Path\+Manager}}
+\subsubsection{\texorpdfstring{Path\+Manager()}{PathManager()}}
+{\footnotesize\ttfamily Path\+Manager\+::\+Path\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Path Manager\+:\+: Path Manager object sets the paths up with the correct value to use later. 
+
+
+
+Definition at line 7 of file Path\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+8 \{
+9     WCHAR path[MAX\_PATH];
+10     \mbox{\hyperlink{_direct_x_helper_8h_ae43aaa2c2b87c4e0260c082d56ab3477}{GetAssetsPath}}(path, MAX\_PATH);
+11     \mbox{\hyperlink{class_path_manager_aa10cc8c03331c77828bf9e155644d018}{AssetPath}} = std::make\_shared<std::wstring>(path);
+12     \mbox{\hyperlink{class_path_manager_ad037448c8b23e1c60c89ad7d3e188d3a}{AssetPathStr}} = std::make\_shared<std::string>(\mbox{\hyperlink{class_path_manager_aa10cc8c03331c77828bf9e155644d018}{AssetPath}}->begin(), 
+      \mbox{\hyperlink{class_path_manager_aa10cc8c03331c77828bf9e155644d018}{AssetPath}}->end());
+13     \textcolor{keyword}{auto} lastSlash = wcsrchr(\mbox{\hyperlink{class_path_manager_aa10cc8c03331c77828bf9e155644d018}{AssetPath}}->c\_str(), L\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});
+14     (*AssetPath)[(wcslen(\mbox{\hyperlink{class_path_manager_aa10cc8c03331c77828bf9e155644d018}{AssetPath}}->c\_str()) - wcslen(lastSlash) + 1)] = \textcolor{charliteral}{'\(\backslash\)0'};
+15 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_path_manager_ac666917e7caaa1e4a56e5eab764b3ec7}\label{class_path_manager_ac666917e7caaa1e4a56e5eab764b3ec7}} 
+\index{Path\+Manager@{Path\+Manager}!````~Path\+Manager@{$\sim$\+Path\+Manager}}
+\index{````~Path\+Manager@{$\sim$\+Path\+Manager}!Path\+Manager@{Path\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Path\+Manager()}{~PathManager()}}
+{\footnotesize\ttfamily Path\+Manager\+::$\sim$\+Path\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Path Manager\+:\+: Path Manager object. 
+
+
+
+Definition at line 21 of file Path\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+22 \{
+23 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_path_manager_a959fe4866fb2388dd46eaf872a1a15ce}\label{class_path_manager_a959fe4866fb2388dd46eaf872a1a15ce}} 
+\index{Path\+Manager@{Path\+Manager}!Get\+Asset\+Path@{Get\+Asset\+Path}}
+\index{Get\+Asset\+Path@{Get\+Asset\+Path}!Path\+Manager@{Path\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Asset\+Path()}{GetAssetPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} const wchar\+\_\+t$\ast$ Path\+Manager\+::\+Get\+Asset\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 9 of file Path\+Manager.\+h.
+
+
+\begin{DoxyCode}
+9 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_path_manager_aa10cc8c03331c77828bf9e155644d018}{AssetPath}}->c\_str(); \};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_path_manager_aa66f8bb5f729328242e7386babc1ff22}\label{class_path_manager_aa66f8bb5f729328242e7386babc1ff22}} 
+\index{Path\+Manager@{Path\+Manager}!Get\+Asset\+Path\+Str@{Get\+Asset\+Path\+Str}}
+\index{Get\+Asset\+Path\+Str@{Get\+Asset\+Path\+Str}!Path\+Manager@{Path\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Asset\+Path\+Str()}{GetAssetPathStr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} const char$\ast$ Path\+Manager\+::\+Get\+Asset\+Path\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 10 of file Path\+Manager.\+h.
+
+
+\begin{DoxyCode}
+10 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_path_manager_ad037448c8b23e1c60c89ad7d3e188d3a}{AssetPathStr}}->c\_str(); \};
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_path_manager_aa10cc8c03331c77828bf9e155644d018}\label{class_path_manager_aa10cc8c03331c77828bf9e155644d018}} 
+\index{Path\+Manager@{Path\+Manager}!Asset\+Path@{Asset\+Path}}
+\index{Asset\+Path@{Asset\+Path}!Path\+Manager@{Path\+Manager}}
+\subsubsection{\texorpdfstring{Asset\+Path}{AssetPath}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$std\+::wstring$>$ Path\+Manager\+::\+Asset\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 10 of file Path\+Manager.\+h.
+
+\mbox{\Hypertarget{class_path_manager_ad037448c8b23e1c60c89ad7d3e188d3a}\label{class_path_manager_ad037448c8b23e1c60c89ad7d3e188d3a}} 
+\index{Path\+Manager@{Path\+Manager}!Asset\+Path\+Str@{Asset\+Path\+Str}}
+\index{Asset\+Path\+Str@{Asset\+Path\+Str}!Path\+Manager@{Path\+Manager}}
+\subsubsection{\texorpdfstring{Asset\+Path\+Str}{AssetPathStr}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$std\+::string$>$ Path\+Manager\+::\+Asset\+Path\+Str\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the wstring asset path 
+
+
+
+Definition at line 13 of file Path\+Manager.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_path_manager_8h}{Path\+Manager.\+h}}\item 
+D3d\+Engine/\mbox{\hyperlink{_path_manager_8cpp}{Path\+Manager.\+cpp}}\end{DoxyCompactItemize}

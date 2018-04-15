@@ -1,0 +1,159 @@
+\hypertarget{class_index_buffer_manager}{}\section{Index\+Buffer\+Manager Class Reference}
+\label{class_index_buffer_manager}\index{Index\+Buffer\+Manager@{Index\+Buffer\+Manager}}
+
+
+{\ttfamily \#include $<$Index\+Buffer\+Manager.\+h$>$}
+
+Inheritance diagram for Index\+Buffer\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/d4b/class_index_buffer_manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_index_buffer_manager_a58352b8fc2032a4e29faed7fbe249ea0}{Index\+Buffer\+Manager}} (std\+::shared\+\_\+ptr$<$ std\+::vector$<$ unsigned int $>$$>$ vertices, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$ device\+Resources, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}} $>$ command\+List\+Manager)
+\begin{DoxyCompactList}\small\item\em Construct a new Index Buffer Manager\+:\+: Index Buffer Manager object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} \mbox{\hyperlink{class_index_buffer_manager_af5f43b500ab9536bb2b598e94b7951b9}{$\sim$\+Index\+Buffer\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Index Buffer Manager\+:\+: Index Buffer Manager object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stdafx_8h_a8ee2d990c5dfba7794dd2b60741d7722}{D3\+D\+E\+N\+G\+I\+N\+E\+\_\+\+A\+PI}} D3\+D12\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+V\+I\+EW \mbox{\hyperlink{class_index_buffer_manager_a061f4f1d39af54908dbd31eb9afa03fa}{Create\+Index\+Buffer\+View}} ()
+\begin{DoxyCompactList}\small\item\em creates the index bufer view which can be used by the command list to add it to rendering \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ std\+::vector$<$ unsigned int $>$ $>$ \mbox{\hyperlink{class_index_buffer_manager_ade308a27ee394d550f91c919411df37b}{m\+\_\+indices}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_index_buffer_manager_ae21d575fdd0af30b3050c5747f20ad66}{m\+\_\+indices\+Size}}
+\begin{DoxyCompactList}\small\item\em The index data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 5 of file Index\+Buffer\+Manager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_index_buffer_manager_a58352b8fc2032a4e29faed7fbe249ea0}\label{class_index_buffer_manager_a58352b8fc2032a4e29faed7fbe249ea0}} 
+\index{Index\+Buffer\+Manager@{Index\+Buffer\+Manager}!Index\+Buffer\+Manager@{Index\+Buffer\+Manager}}
+\index{Index\+Buffer\+Manager@{Index\+Buffer\+Manager}!Index\+Buffer\+Manager@{Index\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{Index\+Buffer\+Manager()}{IndexBufferManager()}}
+{\footnotesize\ttfamily Index\+Buffer\+Manager\+::\+Index\+Buffer\+Manager (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ std\+::vector$<$ unsigned int $>$$>$}]{indices,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_d_x_1_1_device_resources}{D\+X\+::\+Device\+Resources}} $>$}]{device\+Resources,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_command_list_manager}{Command\+List\+Manager}} $>$}]{command\+List\+Manager }\end{DoxyParamCaption})}
+
+
+
+Construct a new Index Buffer Manager\+:\+: Index Buffer Manager object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indices} & the vector of indices to be added to the buffer \\
+\hline
+{\em device\+Resources} & \\
+\hline
+{\em command\+List\+Manager} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file Index\+Buffer\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+13                                                                 :
+14     \mbox{\hyperlink{class_buffer_manager_base_a9cec2f80ae72dc972ef6d18ab075ab6c}{BufferManagerBase}}(indices->size() * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} int),
+15         reinterpret\_cast<BYTE*>(indices->data()),
+16         D3D12\_RESOURCE\_STATE\_INDEX\_BUFFER,
+17         deviceResources,
+18         commandListManager),
+19     \mbox{\hyperlink{class_index_buffer_manager_ade308a27ee394d550f91c919411df37b}{m\_indices}}(indices)
+20 \{
+21     \mbox{\hyperlink{class_index_buffer_manager_ae21d575fdd0af30b3050c5747f20ad66}{m\_indicesSize}} = \mbox{\hyperlink{class_index_buffer_manager_ade308a27ee394d550f91c919411df37b}{m\_indices}}->size();
+22 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_index_buffer_manager_af5f43b500ab9536bb2b598e94b7951b9}\label{class_index_buffer_manager_af5f43b500ab9536bb2b598e94b7951b9}} 
+\index{Index\+Buffer\+Manager@{Index\+Buffer\+Manager}!````~Index\+Buffer\+Manager@{$\sim$\+Index\+Buffer\+Manager}}
+\index{````~Index\+Buffer\+Manager@{$\sim$\+Index\+Buffer\+Manager}!Index\+Buffer\+Manager@{Index\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+Index\+Buffer\+Manager()}{~IndexBufferManager()}}
+{\footnotesize\ttfamily Index\+Buffer\+Manager\+::$\sim$\+Index\+Buffer\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Index Buffer Manager\+:\+: Index Buffer Manager object. 
+
+
+
+Definition at line 27 of file Index\+Buffer\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+28 \{
+29     \mbox{\hyperlink{class_index_buffer_manager_ade308a27ee394d550f91c919411df37b}{m\_indices}}->clear();
+30 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_index_buffer_manager_a061f4f1d39af54908dbd31eb9afa03fa}\label{class_index_buffer_manager_a061f4f1d39af54908dbd31eb9afa03fa}} 
+\index{Index\+Buffer\+Manager@{Index\+Buffer\+Manager}!Create\+Index\+Buffer\+View@{Create\+Index\+Buffer\+View}}
+\index{Create\+Index\+Buffer\+View@{Create\+Index\+Buffer\+View}!Index\+Buffer\+Manager@{Index\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{Create\+Index\+Buffer\+View()}{CreateIndexBufferView()}}
+{\footnotesize\ttfamily D3\+D12\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+V\+I\+EW Index\+Buffer\+Manager\+::\+Create\+Index\+Buffer\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+creates the index bufer view which can be used by the command list to add it to rendering 
+
+\begin{DoxyReturn}{Returns}
+D3\+D12\+\_\+\+I\+N\+D\+E\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+V\+I\+EW the view 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file Index\+Buffer\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{comment}{//describe and create index buffer view}
+39     D3D12\_INDEX\_BUFFER\_VIEW vertexBufferView;
+40     vertexBufferView.BufferLocation = \mbox{\hyperlink{class_buffer_manager_base_afa03f652ef76e70618f7f112b7da48c5}{GetResource}}()->GetGPUVirtualAddress();
+41     vertexBufferView.Format = DXGI\_FORMAT\_R32\_UINT;
+42     vertexBufferView.SizeInBytes = \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} int) * \mbox{\hyperlink{class_index_buffer_manager_ae21d575fdd0af30b3050c5747f20ad66}{m\_indicesSize}};
+43 
+44     \textcolor{keywordflow}{return} vertexBufferView;
+45 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_index_buffer_manager_ade308a27ee394d550f91c919411df37b}\label{class_index_buffer_manager_ade308a27ee394d550f91c919411df37b}} 
+\index{Index\+Buffer\+Manager@{Index\+Buffer\+Manager}!m\+\_\+indices@{m\+\_\+indices}}
+\index{m\+\_\+indices@{m\+\_\+indices}!Index\+Buffer\+Manager@{Index\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+indices}{m\_indices}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$std\+::vector$<$unsigned int$>$ $>$ Index\+Buffer\+Manager\+::m\+\_\+indices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 13 of file Index\+Buffer\+Manager.\+h.
+
+\mbox{\Hypertarget{class_index_buffer_manager_ae21d575fdd0af30b3050c5747f20ad66}\label{class_index_buffer_manager_ae21d575fdd0af30b3050c5747f20ad66}} 
+\index{Index\+Buffer\+Manager@{Index\+Buffer\+Manager}!m\+\_\+indices\+Size@{m\+\_\+indices\+Size}}
+\index{m\+\_\+indices\+Size@{m\+\_\+indices\+Size}!Index\+Buffer\+Manager@{Index\+Buffer\+Manager}}
+\subsubsection{\texorpdfstring{m\+\_\+indices\+Size}{m\_indicesSize}}
+{\footnotesize\ttfamily size\+\_\+t Index\+Buffer\+Manager\+::m\+\_\+indices\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The index data. 
+
+
+
+Definition at line 14 of file Index\+Buffer\+Manager.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D3d\+Engine/\mbox{\hyperlink{_index_buffer_manager_8h}{Index\+Buffer\+Manager.\+h}}\item 
+D3d\+Engine/\mbox{\hyperlink{_index_buffer_manager_8cpp}{Index\+Buffer\+Manager.\+cpp}}\end{DoxyCompactItemize}
