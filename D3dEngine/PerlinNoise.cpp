@@ -2,7 +2,15 @@
 #include "PerlinNoise.h"
 
 
-
+/**
+ * @brief Construct a new Perlin Noise:: Perlin Noise object
+ * @detail assigns the private members with the passed parameters
+ * @param _persistence
+ * @param _frequency 
+ * @param _amplitude 
+ * @param _octaves 
+ * @param _randomseed 
+ */
 PerlinNoise::PerlinNoise(double _persistence, double _frequency, double _amplitude, int _octaves, int _randomseed)
 {
 	persistence = _persistence;
@@ -12,16 +20,33 @@ PerlinNoise::PerlinNoise(double _persistence, double _frequency, double _amplitu
 	randomseed = _randomseed;
 }
 
-
+/**
+ * @brief Destroy the Perlin Noise:: Perlin Noise object
+ * 
+ */
 PerlinNoise::~PerlinNoise()
 {
 }
 
+/**
+ * @brief Gtes the height of a given coordinate with the noise
+ * 
+ * @param x the x position
+ * @param z the yposition
+ * @return double the height
+ */
 double PerlinNoise::GetHeight(double x, double y) const
 {
 	return Total(x, y);
 }
 
+/**
+ * @brief Gets the total of the given coordinates using perlin noise
+ * 
+ * @param i x position 
+ * @param j z position
+ * @return double the height
+ */
 double PerlinNoise::Total(double i, double j) const
 {
 	double t = 0.0f;
@@ -38,6 +63,13 @@ double PerlinNoise::Total(double i, double j) const
 	return t;
 }
 
+/**
+ * @brief Calculates the noise 
+ * 
+ * @param x position of x
+ * @param y position of z
+ * @return double the value of the generated noise
+ */
 double PerlinNoise::GetValue(double x, double y) const
 {
 	int Xint = (int)x;

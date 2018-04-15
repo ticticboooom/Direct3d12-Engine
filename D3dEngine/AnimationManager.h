@@ -14,5 +14,5 @@ public:
 	D3DENGINE_API UINT GetFrameCount(int animIndex, int index) { return (*m_animations)[animIndex][index].size(); }
 
 private:
-	std::shared_ptr<std::vector<std::vector<std::vector<XMMATRIX>>>> m_animations;
+	std::shared_ptr<std::vector<std::vector<std::vector<XMMATRIX>>>> m_animations; /// the animations per bone
 };

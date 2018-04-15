@@ -7,7 +7,12 @@
 #include "DirectXHelper.h"
 #include "AnimationManager.h"
 #include <iostream>
-
+/**
+ * @brief The general rule is that you should not use this as it is for debug cases only (incase the COXL loader fails or is broken)
+ * 
+ * @param fileName 
+ * @return Structures::VerticesIndices 
+ */
 Structures::VerticesIndices ModelLoader::LoadModelFromFile(std::string fileName) {
 
 	Assimp::Importer importer;

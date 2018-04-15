@@ -2,7 +2,12 @@
 #include "DeviceResources.h"
 #include "DirectXHelper.h"
 
-
+/**
+ * @brief Construct a new DX::DeviceResources::DeviceResources object
+ * 
+ * @param backBufferFormat the format of the back buffer
+ * @param depthBufferFormat the format of the depth buffer
+ */
 DX::DeviceResources::DeviceResources(DXGI_FORMAT backBufferFormat, DXGI_FORMAT depthBufferFormat):
 	m_currentFrame(0),
 	m_screenViewport(),
@@ -22,6 +27,11 @@ DX::DeviceResources::DeviceResources(DXGI_FORMAT backBufferFormat, DXGI_FORMAT d
 	CreateDeviceResources();
 }
 
+/**
+ * @brief sets the window (HWND) to a new window
+ * 
+ * @param window the new window
+ */
 void DX::DeviceResources::SetWindow(HWND window)
 {
 	m_window = window;
@@ -29,23 +39,36 @@ void DX::DeviceResources::SetWindow(HWND window)
 	GetClientRect(window, &rect);
 	m_logicalSize = DirectX::XMFLOAT2(float(rect.right), float(rect.bottom));
 	m_outputSize = m_logicalSize;
+	// updates the window size dependent things
 	CreateWindowSizeDependentResources();
 }
 
+/**
+ * @brief sets the logical size of the viewport
+ * 
+ * @param logicalSize tghe new size (x,y)
+ */
 void DX::DeviceResources::SetLogicalSize(DirectX::XMFLOAT2 logicalSize)
 {
 	if (m_logicalSize.x != logicalSize.x || m_logicalSize.y != logicalSize.y)
 	{
 		m_logicalSize = logicalSize;
 		m_outputSize = logicalSize;
+		// updates the window size dependent things
 		CreateWindowSizeDependentResources();
 	}
 }
-
+/**
+ * @brief [not used]
+ */
 void DX::DeviceResources::SetDpi(float dpi)
 {
 }
 
+/**
+ * @brief validate the d3d device
+ * 
+ */
 void DX::DeviceResources::ValidateDevice()
 {
 	DXGI_ADAPTER_DESC previousDesc;
@@ -80,6 +103,11 @@ void DX::DeviceResources::ValidateDevice()
 	}
 }
 
+/**
+ * @brief presents everything to the swap chain
+ * @detail checks the device is not ejected or broken
+ * 
+ */
 void DX::DeviceResources::Present()
 {
 	// The first argument instructs DXGI to block until VSync, putting the application
@@ -101,6 +129,10 @@ void DX::DeviceResources::Present()
 	}
 }
 
+/**
+ * @brief waits for the GPU to finish doing the processing
+ * 
+ */
 void DX::DeviceResources::WaitForGpu()
 {
 	ThrowIfFailed(m_commandQueue->Signal(m_fence.Get(), m_fenceValues[m_currentFrame]));
@@ -118,6 +150,10 @@ void DX::DeviceResources::CreateDeviceIndependentResources()
 
 }
 
+/**
+ * @brief creates the resouces that make up the device and its requirements
+ * 
+ */
 void DX::DeviceResources::CreateDeviceResources()
 {
 #if defined(_DEBUG)
@@ -202,7 +238,10 @@ void DX::DeviceResources::CreateDeviceResources()
 	}
 
 }
-
+/**
+ * @brief creater the resources that require the wqindow size to be changed
+ * 
+ */
 void DX::DeviceResources::CreateWindowSizeDependentResources()
 {
 	WaitForGpu();
@@ -329,6 +368,10 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 	m_screenViewport = { 0.0f, 0.0f, m_d3dRenderTargetSize.x, m_d3dRenderTargetSize.y, 0.0f, 1.0f };
 }
 
+/**
+ * @brief update the sie fo the render target
+ * 
+ */
 void DX::DeviceResources::UpdateRenderTargetSize()
 {
 	m_effectiveDpi = m_dpi;
@@ -344,6 +387,10 @@ void DX::DeviceResources::UpdateRenderTargetSize()
 	m_outputSize.y = max(m_outputSize.y, 1);
 }
 
+/**
+ * @brief move the GPU to the next frame
+ * 
+ */
 void DX::DeviceResources::MoveToNextFrame()
 {
 	const UINT64 currentFenceValue = m_fenceValues[m_currentFrame];
@@ -363,7 +410,11 @@ void DX::DeviceResources::MoveToNextFrame()
 	m_fenceValues[m_currentFrame] = currentFenceValue + 1;
 }
 
-
+/**
+ * @brief get the GPU / Graphics card
+ * 
+ * @param ppAdapter 
+ */
 void DX::DeviceResources::GetHardwareAdapter(IDXGIAdapter1** ppAdapter)
 {
 	Microsoft::WRL::ComPtr<IDXGIAdapter1> adapter;
@@ -380,17 +431,18 @@ void DX::DeviceResources::GetHardwareAdapter(IDXGIAdapter1** ppAdapter)
 			continue;
 		}
 
-
+		//look for card with most VRAM
 		if (heighestvRam < desc.DedicatedVideoMemory)
 		{
 			index = adapterIndex;
 			heighestvRam = desc.DedicatedVideoMemory;
 		}
 	}
+	//Create the device
 	m_dxgiFactory->EnumAdapters1(index, &adapter);
 	if (!SUCCEEDED(D3D12CreateDevice(adapter.Get(), D3D_FEATURE_LEVEL_11_0, _uuidof(ID3D12Device), nullptr))) {
 		auto a = 0;
 	}
-
+	
 	*ppAdapter = adapter.Detach();
 }

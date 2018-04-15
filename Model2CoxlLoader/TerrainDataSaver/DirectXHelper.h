@@ -11,13 +11,7 @@
 
 #pragma once
 #include "stdafx.h"
-/**
- * @brief throw exception if failed
- * 
- * @param hr 
- * @return D3DENGINE_API ThrowIfFailed 
- */
-D3DENGINE_API inline void ThrowIfFailed(HRESULT hr)
+inline void ThrowIfFailed(HRESULT hr)
 {
 	if (FAILED(hr))
 	{
@@ -25,15 +19,7 @@ D3DENGINE_API inline void ThrowIfFailed(HRESULT hr)
 	}
 }
 
-
-
-/**
- * @brief get the path that the current EXE is in.
- * 
- * @param pathSize 
- * @return D3DENGINE_API GetAssetsPath 
- */
-D3DENGINE_API inline void GetAssetsPath(_Out_writes_(pathSize) WCHAR* path, UINT pathSize)
+inline void GetAssetsPath(_Out_writes_(pathSize) WCHAR* path, UINT pathSize)
 {
 	if (path == nullptr)
 	{
@@ -54,14 +40,7 @@ D3DENGINE_API inline void GetAssetsPath(_Out_writes_(pathSize) WCHAR* path, UINT
 	}
 }
 
-/**
- * @brief read the byte data from a file at a give directory
- * 
- * @param filename the path and name of the file
- * @param data the data that will be assigned to at the end (this will constain data after the function has finished kinda)
- * @param size the size of the file again given value inside this function
- */
-D3DENGINE_API inline HRESULT ReadDataFromFile(LPCWSTR filename, byte** data, UINT* size)
+inline HRESULT ReadDataFromFile(LPCWSTR filename, byte** data, UINT* size)
 {
 	using namespace Microsoft::WRL;
 
@@ -101,16 +80,13 @@ D3DENGINE_API inline HRESULT ReadDataFromFile(LPCWSTR filename, byte** data, UIN
 	return S_OK;
 }
 
-/**
- * @brief assign a debug name to object
- * 
- */
+// Assign a name to the object to aid with debugging.
 #if defined(_DEBUG)
-D3DENGINE_API inline void SetName(ID3D12Object* pObject, LPCWSTR name)
+inline void SetName(ID3D12Object* pObject, LPCWSTR name)
 {
 	pObject->SetName(name);
 }
-D3DENGINE_API inline void SetNameIndexed(ID3D12Object* pObject, LPCWSTR name, UINT index)
+inline void SetNameIndexed(ID3D12Object* pObject, LPCWSTR name, UINT index)
 {
 	WCHAR fullName[50];
 	if (swprintf_s(fullName, L"%s[%u]", name, index) > 0)
@@ -119,10 +95,10 @@ D3DENGINE_API inline void SetNameIndexed(ID3D12Object* pObject, LPCWSTR name, UI
 	}
 }
 #else
-D3DENGINE_API inline void SetName(ID3D12Object*, LPCWSTR)
+inline void SetName(ID3D12Object*, LPCWSTR)
 {
 }
-D3DENGINE_API inline void SetNameIndexed(ID3D12Object*, LPCWSTR, UINT)
+inline void SetNameIndexed(ID3D12Object*, LPCWSTR, UINT)
 {
 }
 #endif

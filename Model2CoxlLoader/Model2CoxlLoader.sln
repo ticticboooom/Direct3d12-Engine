@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Model2CoxlLoader", "TerrainDataSaver\TerrainDataSaver.vcxproj", "{C6164F52-BDE6-42A4-8E8D-AAB54F113189}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6164F52-BDE6-42A4-8E8D-AAB54F113189}.Debug|x64.ActiveCfg = Debug|x64
+		{C6164F52-BDE6-42A4-8E8D-AAB54F113189}.Debug|x64.Build.0 = Debug|x64
+		{C6164F52-BDE6-42A4-8E8D-AAB54F113189}.Debug|x86.ActiveCfg = Debug|Win32
+		{C6164F52-BDE6-42A4-8E8D-AAB54F113189}.Debug|x86.Build.0 = Debug|Win32
+		{C6164F52-BDE6-42A4-8E8D-AAB54F113189}.Release|x64.ActiveCfg = Release|x64
+		{C6164F52-BDE6-42A4-8E8D-AAB54F113189}.Release|x64.Build.0 = Release|x64
+		{C6164F52-BDE6-42A4-8E8D-AAB54F113189}.Release|x86.ActiveCfg = Release|Win32
+		{C6164F52-BDE6-42A4-8E8D-AAB54F113189}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BD8F392-6613-4AD1-B9BF-93B71CE74ED9}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://kylebc.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = TerrainDataSaver\\TerrainDataSaver.vcxproj
+		SccProjectName0 = TerrainDataSaver
+		SccLocalPath0 = TerrainDataSaver
+		SccLocalPath1 = .
+	EndGlobalSection
+EndGlobal
