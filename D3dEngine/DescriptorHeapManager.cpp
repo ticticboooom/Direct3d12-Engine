@@ -6,7 +6,7 @@
 
 /**
  * @brief Construct a new Descriptor Heap Manager:: Descriptor Heap Manager object
- * @detail the descriptor heap stores the descriptors of the resources used in heap which is used to get the resourc on rendering along with the root signature to give the GPU resources to render
+ *  the descriptor heap stores the descriptors of the resources used in heap which is used to get the resourc on rendering along with the root signature to give the GPU resources to render
  * @param numDescriptors the number of descriptors to be created
  * @param type the type of descriptor heap that is used
  * @param flags the flags to be used on creation

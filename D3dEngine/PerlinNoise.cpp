@@ -4,7 +4,7 @@
 
 /**
  * @brief Construct a new Perlin Noise:: Perlin Noise object
- * @detail assigns the private members with the passed parameters
+ *  assigns the private members with the passed parameters
  * @param _persistence
  * @param _frequency 
  * @param _amplitude 

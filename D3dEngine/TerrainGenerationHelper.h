@@ -18,7 +18,7 @@ private:
 	void GenNormalsPerTri(Structures::VertexTexCoordNormal* v0, Structures::VertexTexCoordNormal* v1, Structures::VertexTexCoordNormal* v2);
 	std::shared_ptr<std::vector<std::shared_ptr<std::vector<std::vector<float>>>>> m_chunks; /// chunks of the terrain
 	std::shared_ptr<std::vector<XMFLOAT4>> m_chunkOrigins; /// chunk origins
-	const int c_size = 250; // constant size of chunk
+	const int c_size = 250; /// constant size of chunk
 	ULONG m_index; /// vertex index 
 };
 

@@ -34,5 +34,5 @@ private:
 	void ClearDepthStencilView(const D3D12_CPU_DESCRIPTOR_HANDLE& depth_stencil_view, enum D3D12_CLEAR_FLAGS d3_d12_clear_flags, int depth, int stencil, int rects, D3D12_RECT* pRects);
 
 	std::shared_ptr<DX::DeviceResources> m_deviceResources;
-	Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> m_commandList;
+	Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> m_commandList; /// command list
 };

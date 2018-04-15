@@ -4,7 +4,7 @@
 
 /**
  * @brief Construct a new Model View Projection Manager:: Model View Projection Manager object
- * @detail This will store the Model View and Perspective Matrices and will convert them to Constant buffer safe Data 
+ *  This will store the Model View and Perspective Matrices and will convert them to Constant buffer safe Data 
  * 
  */
 ModelViewProjectionManager::ModelViewProjectionManager()

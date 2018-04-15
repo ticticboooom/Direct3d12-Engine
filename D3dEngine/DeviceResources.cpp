@@ -105,7 +105,7 @@ void DX::DeviceResources::ValidateDevice()
 
 /**
  * @brief presents everything to the swap chain
- * @detail checks the device is not ejected or broken
+ *   checks the device is not ejected or broken
  * 
  */
 void DX::DeviceResources::Present()

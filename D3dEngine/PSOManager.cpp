@@ -5,7 +5,7 @@
 
 /**
  * @brief Construct a new PSOManager::PSOManager object
- * @detail init with default values, this stores the shaders and renderer pipeline data
+ *  init with default values, this stores the shaders and renderer pipeline data
  * @param deviceResources 
  */
 PSOManager::PSOManager(const std::shared_ptr<DX::DeviceResources> deviceResources) :

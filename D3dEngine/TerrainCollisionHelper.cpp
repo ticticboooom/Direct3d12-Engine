@@ -7,7 +7,7 @@ std::shared_ptr<std::vector<XMFLOAT4>> TerrainCollisionHelper::m_chunkOrigins = 
 XMFLOAT3 TerrainCollisionHelper::m_terrainPos{};
 /**
  * @brief Construct a new Terrain Collision Helper:: Terrain Collision Helper object
- * @detail controls the collision of any object with terrain
+ *  controls the collision of any object with terrain
  */
 TerrainCollisionHelper::TerrainCollisionHelper() :
 	prevYPos(0)

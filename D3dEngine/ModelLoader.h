@@ -23,7 +23,7 @@ private:
 	int FindBoneWithKeys(std::vector<Structures::AnimBone> bones, std::string name);
 
 	std::vector<Structures::AnimBone> GetNodes(aiNode * node, std::vector<Structures::AnimBone> list);
-	std::vector<Structures::VertexTexCoordNormalBones> m_vertices;
+	std::vector<Structures::VertexTexCoordNormalBones> m_vertices; 
 	std::vector<unsigned> m_indices;
 	std::vector<Structures::Animation> m_animations;
 	XMMATRIX aiToXmmatrix(aiMatrix4x4 mat);

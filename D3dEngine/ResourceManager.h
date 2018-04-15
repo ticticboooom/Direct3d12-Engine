@@ -26,5 +26,5 @@ private:
 	std::shared_ptr<CommandListManager> m_commandListManager; 
 	Microsoft::WRL::ComPtr<ID3D12Resource> m_resourceUpload; /// upload resource
 	Microsoft::WRL::ComPtr<ID3D12Resource> m_resource; /// defualt resource 
-	bool m_hasDefaultHeap = false; // has default resource 
+	bool m_hasDefaultHeap = false; /// has default resource 
 };

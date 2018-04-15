@@ -5,7 +5,7 @@
 
 /**
  * @brief Construct a new Command List Manager:: Command List Manager object
- * @detail creates a command list and gives it a debug name
+ *  creates a command list and gives it a debug name
  * @param deviceResources 
  * @param pipelineState PSO (Pipeline state object)
  * @param type the type of command list that will be created
@@ -50,7 +50,7 @@ void CommandListManager::UpdateSubresource(ID3D12Resource* resource, ID3D12Resou
 
 /**
  * @brief Creates a resource barrier
- * @detail Which notifies a driver that it needs to synchronise multiple accesses to a resource
+ *  Which notifies a driver that it needs to synchronise multiple accesses to a resource
  * 
  * @param numBarriers count / number of barriers to be made
  * @param resource The resourcebarrier to be made
@@ -62,7 +62,7 @@ void CommandListManager::CreateResourceBarrier(int numBarriers, CD3DX12_RESOURCE
 
 /**
  * @brief closes and executes the command list
- * @detail This ensures that the next command list can be added to and the commands stored inside will be able to be rendered
+ *  This ensures that the next command list can be added to and the commands stored inside will be able to be rendered
  * 
  */
 void CommandListManager::CloseAndExcecute()
@@ -74,7 +74,7 @@ void CommandListManager::CloseAndExcecute()
 
 /**
  * @brief renderers a vertex buffer
- * @detail this renders vertices in a 3D space
+ *  this renders vertices in a 3D space
  * @param StartSlot The start of the vertex buffer
  * @param Count The number of vertex buffers
  * @param VBViews The vewrtex Buffer views to be rendered
@@ -86,7 +86,7 @@ void CommandListManager::SetVertexBuffers(UINT StartSlot, UINT Count, const D3D1
 
 /**
  * @brief Use an index buffer for the vertices
- * @detail index buffers are an index of which vertices to show in an order so that you don't need to repeat vertices
+ *  index buffers are an index of which vertices to show in an order so that you don't need to repeat vertices
  * @param IBView the index buffer view that the vertices will use.
  */
 void CommandListManager::SetIndexBuffer(const D3D12_INDEX_BUFFER_VIEW* IBView)
@@ -174,7 +174,7 @@ void CommandListManager::ClearDepthStencilView(const D3D12_CPU_DESCRIPTOR_HANDLE
 
 /**
  * @brief Set the scissor rect to be used
- * @detail anything outside of the scissor rect will not be displayed and will be cut off.
+ *  anything outside of the scissor rect will not be displayed and will be cut off.
  * @param numRects the number of rects to use
  * @param rect the rects to use
  */

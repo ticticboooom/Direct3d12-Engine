@@ -4,7 +4,7 @@
 #include "DeviceResources.h"
 /**
  * @brief Construct a new Root Signature:: Root Signature object
- * @detail this is a signature for what resources will be rendered
+ *  this is a signature for what resources will be rendered
  * @param deviceResources 
  */
 RootSignature::RootSignature(const std::shared_ptr<DX::DeviceResources> deviceResources):
@@ -77,7 +77,7 @@ void RootSignature::Finalize(const std::wstring& name, D3D12_ROOT_SIGNATURE_FLAG
 
 /**
  * @brief Construct a new Root Signature Manager:: Root Signature Manager object
- * @detail stores the root signature managers
+ *  stores the root signature managers
  */
 RootSignatureManager::RootSignatureManager()
 {

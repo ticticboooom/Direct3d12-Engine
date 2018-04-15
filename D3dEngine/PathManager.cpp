@@ -2,7 +2,7 @@
 #include "PathManager.h"
 /**
  * @brief Construct a new Path Manager:: Path Manager object
- * @detail sets the paths up with the correct value to use later
+ *  sets the paths up with the correct value to use later
  */
 PathManager::PathManager()
 {

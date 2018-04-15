@@ -25,6 +25,6 @@ public:
 
 private:
 	D3D12_GRAPHICS_PIPELINE_STATE_DESC m_desc; /// pso descriptor 
-	Microsoft::WRL::ComPtr<ID3D12PipelineState>	m_pipelineState;// the pso
-	std::shared_ptr<DX::DeviceResources> m_deviceResources
+	Microsoft::WRL::ComPtr<ID3D12PipelineState>	m_pipelineState;/// the pso
+	std::shared_ptr<DX::DeviceResources> m_deviceResources;
 };

@@ -215,7 +215,7 @@ void CameraHelper::OnMouseMoved(float x, float y)
 
 /**
 @brief Called when the window size is changed
-@details Sets the perspective matrix from the ModelViewProjectionManager and the m_scissorRect
+s Sets the perspective matrix from the ModelViewProjectionManager and the m_scissorRect
 */
 void CameraHelper::OnWindowSizeChanged()
 {

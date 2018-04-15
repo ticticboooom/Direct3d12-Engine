@@ -29,7 +29,7 @@ private:
 
 /**
  * @brief Construct a new Constant Buffer Manager< T Data>:: Constant Buffer Manager object
- * @detail constant buffers are for setting constant data inside of a shader (per frame) do that they can use the data without passing in seperate data every vertex
+ *  constant buffers are for setting constant data inside of a shader (per frame) do that they can use the data without passing in seperate data every vertex
  * @tparam TData the data of the constant buffer
  * @param size the size of the constant buffer data
  * @param count the count of how many to use (usually for multi-buffering)

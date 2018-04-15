@@ -3,7 +3,7 @@
 
 /**
  * @brief Construct a new Terrain Generation Helper:: Terrain Generation Helper object
- * @detail this used the PerlinNoise class to generate terrian based on a random seed
+ *  this used the PerlinNoise class to generate terrian based on a random seed
  */
 TerrainGenerationHelper::TerrainGenerationHelper()
 {
