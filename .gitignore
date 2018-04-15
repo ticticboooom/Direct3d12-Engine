@@ -361,7 +361,7 @@ ASALocalRun/
 *.app
 
 #assets
-*.coxl
-*.png
-*.jpg
-*.dds
+Assets/*.coxl
+Assets/*.png
+Assets/*.jpg
+Assets/*.dds
