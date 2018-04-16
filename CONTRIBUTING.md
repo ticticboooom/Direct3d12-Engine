@@ -1,8 +1,8 @@
 # How to Contribute effectively and efficently
 The below areas will be covered:
-- [Reporting Bugs / Issues](#Reporting-Bugs-/-Issues)
-- [Requesting to Add Functionality](#Requesting-to-Add-Functionality)
-- [Communicating](#Communicating)
+- [Reporting Bugs / Issues](#reporting-bugs-issues)
+- [Adding Functionality](#adding-functionality)
+- [Communicating](#communicating)
 
 ## Reporting Bugs / Issues
 Be sure to create **1 bug per issue**, this means that if you have discovered multiple bugs in the code you should make them all into seperate issues in GitHub.
@@ -59,4 +59,4 @@ Code should be documented with these rules:
 
 ## Communicating
 There is a developer discord chat which you can use to send messages to everyone. It is located here:
-
+https://discord.gg/V9JQB69
