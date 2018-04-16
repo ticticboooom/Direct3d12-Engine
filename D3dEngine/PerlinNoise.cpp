@@ -5,6 +5,7 @@
 /**
  * @brief Construct a new Perlin Noise:: Perlin Noise object
  *  assigns the private members with the passed parameters
+ * Perlin noise creates 2D wave-like noise which is used for terrain generation and more
  * @param _persistence
  * @param _frequency 
  * @param _amplitude 

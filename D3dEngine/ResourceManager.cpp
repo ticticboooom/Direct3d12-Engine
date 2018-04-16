@@ -3,7 +3,7 @@
 #include "DirectXHelper.h"
 /**
  * @brief Destroy the Resource Manager:: Resource Manager object
- * 
+ * used to upload and store data onto the GPU
  */
 ResourceManager::~ResourceManager()
 {
