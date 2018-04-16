@@ -1,10 +1,10 @@
 # How to Contribute effectively and efficently
 The below areas will be covered:
-- [Reporting Bugs / Issues](#reporting-bugs-issues)
+- [Reporting Bugs / Issues](#reporting-bugs-or-issues)
 - [Adding Functionality](#adding-functionality)
 - [Communicating](#communicating)
 
-## Reporting Bugs / Issues
+## Reporting Bugs or Issues
 Be sure to create **1 bug per issue**, this means that if you have discovered multiple bugs in the code you should make them all into seperate issues in GitHub.
 
 #### Look with your eyes
