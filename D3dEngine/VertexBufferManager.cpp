@@ -4,7 +4,7 @@
 
 /**
  * @brief Construct a new Vertex Buffer Manager:: Vertex Buffer Manager object
- * 
+ * 	Vertices make up the shapes that are visible inside the 3d render space
  * @param vertices the vertex vector thjat will become the resource
  * @param deviceResources 
  * @param commandListManager 

@@ -1,5 +1,9 @@
 #pragma once
 #include "stdafx.h"
+/**
+ * @brief controls the falling of objects
+ * 
+ */
 class PhysicsHelper
 {
 public:

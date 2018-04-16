@@ -3,7 +3,12 @@
 #include "stdafx.h"
 #include <vector>
 #include "Structures.h"
-
+/**
+ * @brief Manages animations
+ *		Gets the animation frames for each bone
+ * 		Usually passed in from a model loaded with BinaryModelLoader
+ * 
+ */
 class AnimationManager
 {
 public:

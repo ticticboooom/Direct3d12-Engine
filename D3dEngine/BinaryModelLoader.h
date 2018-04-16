@@ -4,6 +4,11 @@
 #include<fstream>
 #include "Structures.h"
 
+/**
+ * @brief loads a file from a given directory
+ * Used with coxl files as this is what it is set up to do
+ * 
+ */
 class BinaryModelLoader
 {
 public:

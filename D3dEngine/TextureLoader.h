@@ -1,5 +1,8 @@
 ﻿#pragma once
-
+/**
+ * @brief loads a texture from a WIC compatable file
+ * 
+ */
 class TextureLoader
 {
 public:

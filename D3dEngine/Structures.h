@@ -6,6 +6,10 @@
 #include <assimp/mesh.h>
 
 using namespace DirectX;
+/**
+ * @brief the common structures required in the engine
+ * 
+ */
 namespace Structures
 {
 	struct AnimFrameBone

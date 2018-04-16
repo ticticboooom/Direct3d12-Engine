@@ -3,7 +3,8 @@
 
 /**
  * @brief Construct a new Buffer Manager Base:: Buffer Manager Base object
- * 
+ *		A base class for common data buffers (vertex and index buffers) 
+ 
  * @param size size of the buffer
  * @param data the data that will be sent to the GPU 
  * @param state the resource state

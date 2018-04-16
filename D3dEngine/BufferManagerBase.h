@@ -3,7 +3,10 @@
 #include "DeviceResources.h"
 #include "CommandListManager.h"
 #include "ResourceManager.h"
-
+/**
+ * @brief A base class for common data buffers (vertex and index buffers) 
+ * 
+ */
 class BufferManagerBase
 {
 public:

@@ -2,7 +2,10 @@
 #include "stdafx.h"
 namespace DX {
 	static const UINT c_frameCount = 3;		// Use triple buffering.
-
+	/**
+	 * @brief the resources required for the D3D device
+	 * 
+	 */
 	class DeviceResources
 	{
 	public:

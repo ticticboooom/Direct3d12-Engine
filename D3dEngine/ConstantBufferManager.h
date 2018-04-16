@@ -2,7 +2,11 @@
 #include "stdafx.h"
 #include "ResourceManager.h"
 #include "DirectXHelper.h"
-
+/**
+ * @brief constant buffers are for setting constant data inside of a shader (per frame) do that they can use the data without passing in seperate data every vertex
+ * 
+ * @tparam TData The type of data being passed as the shader constant
+ */
 template <class TData>
 class ConstantBufferManager
 {
@@ -16,7 +20,7 @@ public:
 	UINT8* GetMappedData() const { return m_mappedBufferData; };
 
 private:
-	static const UINT c_alignedBufferSize = (sizeof(TData) + 255) & ~255;
+	static const UINT c_alignedBufferSize = (sizeof(TData) + 255) & ~255; /// The aligned size of the buffer
 	std::unique_ptr<ResourceManager> m_resourceManager; /// resource manager
 	UINT8* m_mappedBufferData; /// the data mapped to the resource
 	const std::shared_ptr<DX::DeviceResources>& m_deviceResources; /// device resources

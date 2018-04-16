@@ -1,5 +1,9 @@
 #pragma once
 #include "stdafx.h"
+/**
+ * @brief controls the collision of any object with terrain
+ * 
+ */
 class TerrainCollisionHelper
 {
 public:

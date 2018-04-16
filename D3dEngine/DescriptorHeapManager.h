@@ -4,6 +4,10 @@
 #include <memory>
 #include "CommandListManager.h"
 
+/**
+ * @brief  the descriptor heap stores the descriptors of the resources used in heap which is used to get the resourc on rendering along with the root signature to give the GPU resources to render
+ * 
+ */
 class DescriptorHeapManager
 {
 public:

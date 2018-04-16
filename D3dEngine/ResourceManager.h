@@ -2,7 +2,10 @@
 #include <memory>
 #include "DeviceResources.h"
 #include "CommandListManager.h"
-
+/**
+ * @brief used to upload and store data onto the GPU
+ * 
+ */
 class ResourceManager
 {
 public:

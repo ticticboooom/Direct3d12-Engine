@@ -1,6 +1,10 @@
 #pragma once
 #include "stdafx.h"
 #include "DirectXHelper.h"
+/**
+ * @brief sets the paths up with the correct value to use later
+ * 
+ */
 class PathManager
 {
 public:

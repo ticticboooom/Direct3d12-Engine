@@ -1,7 +1,10 @@
 ﻿#pragma once
 #include "stdafx.h"
 #include "DeviceResources.h"
-
+/**
+ * @brief stores the shaders and renderer pipeline data
+ * 
+ */
 class PSOManager
 {
 public:

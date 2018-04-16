@@ -1,6 +1,10 @@
 #pragma once
 #include "stdafx.h"
 #include "Structures.h"
+/**
+ * @brief This will store the Model View and Perspective Matrices and will convert them to Constant buffer safe Data 
+ * 
+ */
 class ModelViewProjectionManager
 {
 public:

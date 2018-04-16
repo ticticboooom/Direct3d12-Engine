@@ -1,14 +1,11 @@
 #include "stdafx.h"
 #include "CameraHelper.h"
-/** @file CameraHelper.cpp
-	A helper class which puts the camera at an offset to the player
-*/
 
 /**
-The Constructor
-Creates and initialises members of the class
-@param deviceResources the Direct3D Device manager
-*/
+ * @brief Construct a new Camera Helper:: Camera Helper object
+ * 	Creates and initialises the helper which controls the camera's movement and positioning around the player
+ * @param deviceResources 
+ */
 CameraHelper::CameraHelper(std::shared_ptr<DX::DeviceResources> deviceResources)
 	: m_deviceResources(deviceResources),
 	m_pitch(0),

@@ -1,4 +1,8 @@
 #pragma once
+/**
+ * @brief Perlin noise creates 2D wave-like noise which is used for terrain generation and more
+ * 
+ */
 class PerlinNoise
 {
 public:

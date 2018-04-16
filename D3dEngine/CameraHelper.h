@@ -4,6 +4,10 @@
 #include "Structures.h"
 #include "ModelViewProjectionManager.h"
 #include "TerrainCollisionHelper.h"
+/**
+ * @brief The helper which controls the camera's movement and positioning around the player
+ * 
+ */
 class CameraHelper
 {
 public:

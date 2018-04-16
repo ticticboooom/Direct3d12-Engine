@@ -3,7 +3,10 @@
 #include "DeviceResources.h"
 #include <memory>
 #include <vector>
-
+/**
+ * @brief a signature for what resources will be rendered
+ * 
+ */
 class RootParameter
 {
 	friend class RootSignature;

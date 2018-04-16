@@ -2,7 +2,10 @@
 #include "stdafx.h"
 #include "DeviceResources.h"
 #include <memory>
-
+/**
+ * @brief A command list is what commands (things for the GPU to do) are sent to and executed through
+ * 
+ */
 class CommandListManager
 {
 public:

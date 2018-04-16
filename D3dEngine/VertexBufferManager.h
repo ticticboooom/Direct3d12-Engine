@@ -1,7 +1,10 @@
 ﻿#pragma once
 #include "BufferManagerBase.h"
 #include "Structures.h"
-
+/**
+ * @brief Vertices make up the shapes that are visible inside the 3d render space
+ * 
+ */
 class VertexBufferManager : public BufferManagerBase
 {
 public:

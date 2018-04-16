@@ -19,7 +19,7 @@ AnimationManager::~AnimationManager() {
 
 }
 /**
- * @brief Gets the final transform of animation
+ * @brief Gets the final transform of animation per bone for a given animation and time of that animation
  * 
  * @param index the bone index
  * @param time the time in animation

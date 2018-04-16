@@ -122,7 +122,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_root_signature_manager_8h_source.html#l00219">219</a> of file <a class="el" href="_root_signature_manager_8h_source.html">RootSignatureManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_root_signature_manager_8h_source.html#l00222">222</a> of file <a class="el" href="_root_signature_manager_8h_source.html">RootSignatureManager.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a21d3c6836d4876126278a0a697261e8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21d3c6836d4876126278a0a697261e8a">&#9670;&nbsp;</a></span>RootSignatureManager()</h2>
@@ -210,9 +210,9 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_root_signature_manager_8cpp_source.html#l00100">100</a> of file <a class="el" href="_root_signature_manager_8cpp_source.html">RootSignatureManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="class_root_signature.html">RootSignature</a>* signature = <span class="keyword">new</span> <a class="code" href="class_root_signature.html">RootSignature</a>(deviceResources);</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    signature-&gt;<a class="code" href="class_root_signature.html#adf2d07ea00480100b1504fa9f759712b">Reset</a>(NumRootParams, NumStaticSamplers);</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">m_Signatures</a>.push_back(signature);</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div><div class="ttc" id="class_root_signature_html"><div class="ttname"><a href="class_root_signature.html">RootSignature</a></div><div class="ttdef"><b>Definition:</b> <a href="_root_signature_manager_8h_source.html#l00150">RootSignatureManager.h:150</a></div></div>
-<div class="ttc" id="class_root_signature_manager_html_a7d766443fb0a3ba77585fc0a08cfee07"><div class="ttname"><a href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">RootSignatureManager::m_Signatures</a></div><div class="ttdeci">std::vector&lt; RootSignature * &gt; m_Signatures</div><div class="ttdef"><b>Definition:</b> <a href="_root_signature_manager_8h_source.html#l00239">RootSignatureManager.h:239</a></div></div>
-<div class="ttc" id="class_root_signature_html_adf2d07ea00480100b1504fa9f759712b"><div class="ttname"><a href="class_root_signature.html#adf2d07ea00480100b1504fa9f759712b">RootSignature::Reset</a></div><div class="ttdeci">D3DENGINE_API void Reset(UINT NumRootParams, UINT NumStaticSamplers=0)</div><div class="ttdoc">reset teh root signature </div><div class="ttdef"><b>Definition:</b> <a href="_root_signature_manager_8h_source.html#l00164">RootSignatureManager.h:164</a></div></div>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="class_root_signature.html">RootSignature</a>* signature = <span class="keyword">new</span> <a class="code" href="class_root_signature.html">RootSignature</a>(deviceResources);</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    signature-&gt;<a class="code" href="class_root_signature.html#adf2d07ea00480100b1504fa9f759712b">Reset</a>(NumRootParams, NumStaticSamplers);</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">m_Signatures</a>.push_back(signature);</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div><div class="ttc" id="class_root_signature_html"><div class="ttname"><a href="class_root_signature.html">RootSignature</a></div><div class="ttdef"><b>Definition:</b> <a href="_root_signature_manager_8h_source.html#l00153">RootSignatureManager.h:153</a></div></div>
+<div class="ttc" id="class_root_signature_manager_html_a7d766443fb0a3ba77585fc0a08cfee07"><div class="ttname"><a href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">RootSignatureManager::m_Signatures</a></div><div class="ttdeci">std::vector&lt; RootSignature * &gt; m_Signatures</div><div class="ttdef"><b>Definition:</b> <a href="_root_signature_manager_8h_source.html#l00242">RootSignatureManager.h:242</a></div></div>
+<div class="ttc" id="class_root_signature_html_adf2d07ea00480100b1504fa9f759712b"><div class="ttname"><a href="class_root_signature.html#adf2d07ea00480100b1504fa9f759712b">RootSignature::Reset</a></div><div class="ttdeci">D3DENGINE_API void Reset(UINT NumRootParams, UINT NumStaticSamplers=0)</div><div class="ttdoc">reset teh root signature </div><div class="ttdef"><b>Definition:</b> <a href="_root_signature_manager_8h_source.html#l00167">RootSignatureManager.h:167</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -241,8 +241,8 @@ Private Attributes</h2></td></tr>
 
 <p>get count of signatures </p>
 
-<p class="definition">Definition at line <a class="el" href="_root_signature_manager_8h_source.html#l00237">237</a> of file <a class="el" href="_root_signature_manager_8h_source.html">RootSignatureManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">m_Signatures</a>.size(); };</div><div class="ttc" id="class_root_signature_manager_html_a7d766443fb0a3ba77585fc0a08cfee07"><div class="ttname"><a href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">RootSignatureManager::m_Signatures</a></div><div class="ttdeci">std::vector&lt; RootSignature * &gt; m_Signatures</div><div class="ttdef"><b>Definition:</b> <a href="_root_signature_manager_8h_source.html#l00239">RootSignatureManager.h:239</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_root_signature_manager_8h_source.html#l00240">240</a> of file <a class="el" href="_root_signature_manager_8h_source.html">RootSignatureManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">m_Signatures</a>.size(); };</div><div class="ttc" id="class_root_signature_manager_html_a7d766443fb0a3ba77585fc0a08cfee07"><div class="ttname"><a href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">RootSignatureManager::m_Signatures</a></div><div class="ttdeci">std::vector&lt; RootSignature * &gt; m_Signatures</div><div class="ttdef"><b>Definition:</b> <a href="_root_signature_manager_8h_source.html#l00242">RootSignatureManager.h:242</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -278,8 +278,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_root_signature_manager_8h_source.html#l00230">230</a> of file <a class="el" href="_root_signature_manager_8h_source.html">RootSignatureManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    {</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">m_Signatures</a>[EntryIndex];</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    }</div><div class="ttc" id="class_root_signature_manager_html_a7d766443fb0a3ba77585fc0a08cfee07"><div class="ttname"><a href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">RootSignatureManager::m_Signatures</a></div><div class="ttdeci">std::vector&lt; RootSignature * &gt; m_Signatures</div><div class="ttdef"><b>Definition:</b> <a href="_root_signature_manager_8h_source.html#l00239">RootSignatureManager.h:239</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_root_signature_manager_8h_source.html#l00233">233</a> of file <a class="el" href="_root_signature_manager_8h_source.html">RootSignatureManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    {</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">m_Signatures</a>[EntryIndex];</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div><div class="ttc" id="class_root_signature_manager_html_a7d766443fb0a3ba77585fc0a08cfee07"><div class="ttname"><a href="class_root_signature_manager.html#a7d766443fb0a3ba77585fc0a08cfee07">RootSignatureManager::m_Signatures</a></div><div class="ttdeci">std::vector&lt; RootSignature * &gt; m_Signatures</div><div class="ttdef"><b>Definition:</b> <a href="_root_signature_manager_8h_source.html#l00242">RootSignatureManager.h:242</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,7 +304,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_root_signature_manager_8h_source.html#l00239">239</a> of file <a class="el" href="_root_signature_manager_8h_source.html">RootSignatureManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_root_signature_manager_8h_source.html#l00242">242</a> of file <a class="el" href="_root_signature_manager_8h_source.html">RootSignatureManager.h</a>.</p>
 
 </div>
 </div>

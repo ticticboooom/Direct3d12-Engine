@@ -4,7 +4,7 @@
 
 /**
  * @brief Construct a new Physics Helper:: Physics Helper object
- * 
+ * controls the falling of objects
  */
 PhysicsHelper::PhysicsHelper()
 {

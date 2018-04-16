@@ -3,6 +3,10 @@
 #include "PerlinNoise.h"
 #include "Structures.h"
 #define TERRAIN_STEP_SIZE 5
+/**
+ * @brief uses the PerlinNoise class to generate terrian based on a random seed
+ * 
+ */
 class TerrainGenerationHelper
 {
 public:

@@ -3,7 +3,7 @@
 #include "VertexBufferManager.h"
 /**
  * @brief Construct a new Index Buffer Manager:: Index Buffer Manager object
- * 
+ * 	 Index beffers are for the indices which are what tell the order of the vertices should be usually so there doesn't need to be more vertices than needed
  * @param indices the vector of indices to be added to the buffer
  * @param deviceResources 
  * @param commandListManager 

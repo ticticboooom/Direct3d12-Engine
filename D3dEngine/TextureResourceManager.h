@@ -3,7 +3,10 @@
 #include "DeviceResources.h"
 #include "CommandListManager.h"
 #include "ResourceManager.h"
-
+/**
+ * @brief Creates the resource for putting the texture onto the graphics card
+ * 
+ */
 class TextureResourceManager
 {
 public:

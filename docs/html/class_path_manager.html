@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('class_path_manager.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>sets the paths up with the correct value to use later  
+ <a href="class_path_manager.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_path_manager_8h_source.html">PathManager.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -119,8 +122,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ad037448c8b23e1c60c89ad7d3e188d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_path_manager_8h_source.html#l00004">4</a> of file <a class="el" href="_path_manager_8h_source.html">PathManager.h</a>.</p>
+<div class="textblock"><p>sets the paths up with the correct value to use later </p>
+
+<p class="definition">Definition at line <a class="el" href="_path_manager_8h_source.html#l00008">8</a> of file <a class="el" href="_path_manager_8h_source.html">PathManager.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9d91d6b3fcb797f77e7eace2bbf798bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d91d6b3fcb797f77e7eace2bbf798bd">&#9670;&nbsp;</a></span>PathManager()</h2>
@@ -140,9 +144,9 @@ Private Attributes</h2></td></tr>
 <p>Construct a new Path Manager:: Path Manager object sets the paths up with the correct value to use later. </p>
 
 <p class="definition">Definition at line <a class="el" href="_path_manager_8cpp_source.html#l00007">7</a> of file <a class="el" href="_path_manager_8cpp_source.html">PathManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    WCHAR path[MAX_PATH];</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="_direct_x_helper_8h.html#ae43aaa2c2b87c4e0260c082d56ab3477">GetAssetsPath</a>(path, MAX_PATH);</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a> = std::make_shared&lt;std::wstring&gt;(path);</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_path_manager.html#ad037448c8b23e1c60c89ad7d3e188d3a">AssetPathStr</a> = std::make_shared&lt;std::string&gt;(<a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a>-&gt;begin(), <a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a>-&gt;end());</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">auto</span> lastSlash = wcsrchr(<a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a>-&gt;c_str(), L<span class="charliteral">&#39;\\&#39;</span>);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    (*AssetPath)[(wcslen(<a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a>-&gt;c_str()) - wcslen(lastSlash) + 1)] = <span class="charliteral">&#39;\0&#39;</span>;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div><div class="ttc" id="class_path_manager_html_aa10cc8c03331c77828bf9e155644d018"><div class="ttname"><a href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">PathManager::AssetPath</a></div><div class="ttdeci">std::shared_ptr&lt; std::wstring &gt; AssetPath</div><div class="ttdef"><b>Definition:</b> <a href="_path_manager_8h_source.html#l00010">PathManager.h:10</a></div></div>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    WCHAR path[MAX_PATH];</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="_direct_x_helper_8h.html#ae43aaa2c2b87c4e0260c082d56ab3477">GetAssetsPath</a>(path, MAX_PATH);</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a> = std::make_shared&lt;std::wstring&gt;(path);</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_path_manager.html#ad037448c8b23e1c60c89ad7d3e188d3a">AssetPathStr</a> = std::make_shared&lt;std::string&gt;(<a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a>-&gt;begin(), <a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a>-&gt;end());</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">auto</span> lastSlash = wcsrchr(<a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a>-&gt;c_str(), L<span class="charliteral">&#39;\\&#39;</span>);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    (*AssetPath)[(wcslen(<a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a>-&gt;c_str()) - wcslen(lastSlash) + 1)] = <span class="charliteral">&#39;\0&#39;</span>;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div><div class="ttc" id="class_path_manager_html_aa10cc8c03331c77828bf9e155644d018"><div class="ttname"><a href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">PathManager::AssetPath</a></div><div class="ttdeci">std::shared_ptr&lt; std::wstring &gt; AssetPath</div><div class="ttdef"><b>Definition:</b> <a href="_path_manager_8h_source.html#l00014">PathManager.h:14</a></div></div>
 <div class="ttc" id="_direct_x_helper_8h_html_ae43aaa2c2b87c4e0260c082d56ab3477"><div class="ttname"><a href="_direct_x_helper_8h.html#ae43aaa2c2b87c4e0260c082d56ab3477">GetAssetsPath</a></div><div class="ttdeci">D3DENGINE_API void GetAssetsPath(_Out_writes_(pathSize) WCHAR *path, UINT pathSize)</div><div class="ttdoc">get the path that the current EXE is in. </div><div class="ttdef"><b>Definition:</b> <a href="_direct_x_helper_8h_source.html#l00036">DirectXHelper.h:36</a></div></div>
-<div class="ttc" id="class_path_manager_html_ad037448c8b23e1c60c89ad7d3e188d3a"><div class="ttname"><a href="class_path_manager.html#ad037448c8b23e1c60c89ad7d3e188d3a">PathManager::AssetPathStr</a></div><div class="ttdeci">std::shared_ptr&lt; std::string &gt; AssetPathStr</div><div class="ttdoc">the wstring asset path </div><div class="ttdef"><b>Definition:</b> <a href="_path_manager_8h_source.html#l00013">PathManager.h:13</a></div></div>
+<div class="ttc" id="class_path_manager_html_ad037448c8b23e1c60c89ad7d3e188d3a"><div class="ttname"><a href="class_path_manager.html#ad037448c8b23e1c60c89ad7d3e188d3a">PathManager::AssetPathStr</a></div><div class="ttdeci">std::shared_ptr&lt; std::string &gt; AssetPathStr</div><div class="ttdoc">the wstring asset path </div><div class="ttdef"><b>Definition:</b> <a href="_path_manager_8h_source.html#l00017">PathManager.h:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -191,8 +195,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_path_manager_8h_source.html#l00009">9</a> of file <a class="el" href="_path_manager_8h_source.html">PathManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a>-&gt;c_str(); };</div><div class="ttc" id="class_path_manager_html_aa10cc8c03331c77828bf9e155644d018"><div class="ttname"><a href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">PathManager::AssetPath</a></div><div class="ttdeci">std::shared_ptr&lt; std::wstring &gt; AssetPath</div><div class="ttdef"><b>Definition:</b> <a href="_path_manager_8h_source.html#l00010">PathManager.h:10</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_path_manager_8h_source.html#l00013">13</a> of file <a class="el" href="_path_manager_8h_source.html">PathManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">AssetPath</a>-&gt;c_str(); };</div><div class="ttc" id="class_path_manager_html_aa10cc8c03331c77828bf9e155644d018"><div class="ttname"><a href="class_path_manager.html#aa10cc8c03331c77828bf9e155644d018">PathManager::AssetPath</a></div><div class="ttdeci">std::shared_ptr&lt; std::wstring &gt; AssetPath</div><div class="ttdef"><b>Definition:</b> <a href="_path_manager_8h_source.html#l00014">PathManager.h:14</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -219,8 +223,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_path_manager_8h_source.html#l00010">10</a> of file <a class="el" href="_path_manager_8h_source.html">PathManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="class_path_manager.html#ad037448c8b23e1c60c89ad7d3e188d3a">AssetPathStr</a>-&gt;c_str(); };</div><div class="ttc" id="class_path_manager_html_ad037448c8b23e1c60c89ad7d3e188d3a"><div class="ttname"><a href="class_path_manager.html#ad037448c8b23e1c60c89ad7d3e188d3a">PathManager::AssetPathStr</a></div><div class="ttdeci">std::shared_ptr&lt; std::string &gt; AssetPathStr</div><div class="ttdoc">the wstring asset path </div><div class="ttdef"><b>Definition:</b> <a href="_path_manager_8h_source.html#l00013">PathManager.h:13</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_path_manager_8h_source.html#l00014">14</a> of file <a class="el" href="_path_manager_8h_source.html">PathManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="class_path_manager.html#ad037448c8b23e1c60c89ad7d3e188d3a">AssetPathStr</a>-&gt;c_str(); };</div><div class="ttc" id="class_path_manager_html_ad037448c8b23e1c60c89ad7d3e188d3a"><div class="ttname"><a href="class_path_manager.html#ad037448c8b23e1c60c89ad7d3e188d3a">PathManager::AssetPathStr</a></div><div class="ttdeci">std::shared_ptr&lt; std::string &gt; AssetPathStr</div><div class="ttdoc">the wstring asset path </div><div class="ttdef"><b>Definition:</b> <a href="_path_manager_8h_source.html#l00017">PathManager.h:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -245,7 +249,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_path_manager_8h_source.html#l00010">10</a> of file <a class="el" href="_path_manager_8h_source.html">PathManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_path_manager_8h_source.html#l00014">14</a> of file <a class="el" href="_path_manager_8h_source.html">PathManager.h</a>.</p>
 
 </div>
 </div>
@@ -271,7 +275,7 @@ Private Attributes</h2></td></tr>
 
 <p>the wstring asset path </p>
 
-<p class="definition">Definition at line <a class="el" href="_path_manager_8h_source.html#l00013">13</a> of file <a class="el" href="_path_manager_8h_source.html">PathManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_path_manager_8h_source.html#l00017">17</a> of file <a class="el" href="_path_manager_8h_source.html">PathManager.h</a>.</p>
 
 </div>
 </div>

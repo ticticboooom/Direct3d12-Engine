@@ -3,7 +3,7 @@
 #include "TextureLoader.h"
 /**
  * @brief Construct a new Texture Resource Manager:: Texture Resource Manager object
- * 
+ * 	Creates the resource for putting the texture onto the graphics card
  * @param fileName path and filename of the texture
  * @param deviceResources 
  * @param commandListManager 

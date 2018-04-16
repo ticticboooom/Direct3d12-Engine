@@ -1,7 +1,10 @@
 ﻿#pragma once
 #include "BufferManagerBase.h"
 
-
+/**
+ * @brief  Index beffers are for the indices which are what tell the order of the vertices should be usually so there doesn't need to be more vertices than needed
+ * 
+ */
 class IndexBufferManager : public BufferManagerBase
 {
 public:

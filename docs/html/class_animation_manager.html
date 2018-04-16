@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('class_animation_manager.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>Manages animations Gets the animation frames for each bone Usually passed in from a model loaded with <a class="el" href="class_binary_model_loader.html" title="loads a file from a given directory Used with coxl files as this is what it is set up to do ...">BinaryModelLoader</a>.  
+ <a href="class_animation_manager.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_animation_manager_8h_source.html">AnimationManager.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -108,7 +111,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3a8c725f2aa41692ed7ec4ef0957c365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Animation Manager:: Animation Manager object.  <a href="#a3a8c725f2aa41692ed7ec4ef0957c365">More...</a><br /></td></tr>
 <tr class="separator:a3a8c725f2aa41692ed7ec4ef0957c365"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ec02b034f66a7e6b1e4ebdc1db64db3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="stdafx_8h.html#a8ee2d990c5dfba7794dd2b60741d7722">D3DENGINE_API</a> std::vector&lt; XMFLOAT4X4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_manager.html#a7ec02b034f66a7e6b1e4ebdc1db64db3">GetPositioninAnim</a> (const int index, int time)</td></tr>
-<tr class="memdesc:a7ec02b034f66a7e6b1e4ebdc1db64db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the final transform of animation.  <a href="#a7ec02b034f66a7e6b1e4ebdc1db64db3">More...</a><br /></td></tr>
+<tr class="memdesc:a7ec02b034f66a7e6b1e4ebdc1db64db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the final transform of animation per bone for a given animation and time of that animation.  <a href="#a7ec02b034f66a7e6b1e4ebdc1db64db3">More...</a><br /></td></tr>
 <tr class="separator:a7ec02b034f66a7e6b1e4ebdc1db64db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a200eb95bbc5285bfc9531e482d5f5259"><td class="memItemLeft" align="right" valign="top"><a class="el" href="stdafx_8h.html#a8ee2d990c5dfba7794dd2b60741d7722">D3DENGINE_API</a> UINT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animation_manager.html#a200eb95bbc5285bfc9531e482d5f5259">GetFrameCount</a> (int animIndex, int index)</td></tr>
 <tr class="separator:a200eb95bbc5285bfc9531e482d5f5259"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,8 +122,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a30d55ef88d1fcea24ba39a254a84b56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_animation_manager_8h_source.html#l00007">7</a> of file <a class="el" href="_animation_manager_8h_source.html">AnimationManager.h</a>.</p>
+<div class="textblock"><p>Manages animations Gets the animation frames for each bone Usually passed in from a model loaded with <a class="el" href="class_binary_model_loader.html" title="loads a file from a given directory Used with coxl files as this is what it is set up to do ...">BinaryModelLoader</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_animation_manager_8h_source.html#l00012">12</a> of file <a class="el" href="_animation_manager_8h_source.html">AnimationManager.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae635935a07faf7523ac765e90720befd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae635935a07faf7523ac765e90720befd">&#9670;&nbsp;</a></span>AnimationManager() <span class="overload">[1/2]</span></h2>
@@ -165,7 +169,7 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_animation_manager_8cpp_source.html#l00009">9</a> of file <a class="el" href="_animation_manager_8cpp_source.html">AnimationManager.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    : <a class="code" href="class_animation_manager.html#a30d55ef88d1fcea24ba39a254a84b56a">m_animations</a>(animations)</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    </div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div><div class="ttc" id="class_animation_manager_html_a30d55ef88d1fcea24ba39a254a84b56a"><div class="ttname"><a href="class_animation_manager.html#a30d55ef88d1fcea24ba39a254a84b56a">AnimationManager::m_animations</a></div><div class="ttdeci">std::shared_ptr&lt; std::vector&lt; std::vector&lt; std::vector&lt; XMMATRIX &gt; &gt; &gt; &gt; m_animations</div><div class="ttdef"><b>Definition:</b> <a href="_animation_manager_8h_source.html#l00017">AnimationManager.h:17</a></div></div>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    : <a class="code" href="class_animation_manager.html#a30d55ef88d1fcea24ba39a254a84b56a">m_animations</a>(animations)</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    </div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div><div class="ttc" id="class_animation_manager_html_a30d55ef88d1fcea24ba39a254a84b56a"><div class="ttname"><a href="class_animation_manager.html#a30d55ef88d1fcea24ba39a254a84b56a">AnimationManager::m_animations</a></div><div class="ttdeci">std::shared_ptr&lt; std::vector&lt; std::vector&lt; std::vector&lt; XMMATRIX &gt; &gt; &gt; &gt; m_animations</div><div class="ttdef"><b>Definition:</b> <a href="_animation_manager_8h_source.html#l00022">AnimationManager.h:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -225,8 +229,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_animation_manager_8h_source.html#l00014">14</a> of file <a class="el" href="_animation_manager_8h_source.html">AnimationManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{ <span class="keywordflow">return</span> (*<a class="code" href="class_animation_manager.html#a30d55ef88d1fcea24ba39a254a84b56a">m_animations</a>)[animIndex][index].size(); }</div><div class="ttc" id="class_animation_manager_html_a30d55ef88d1fcea24ba39a254a84b56a"><div class="ttname"><a href="class_animation_manager.html#a30d55ef88d1fcea24ba39a254a84b56a">AnimationManager::m_animations</a></div><div class="ttdeci">std::shared_ptr&lt; std::vector&lt; std::vector&lt; std::vector&lt; XMMATRIX &gt; &gt; &gt; &gt; m_animations</div><div class="ttdef"><b>Definition:</b> <a href="_animation_manager_8h_source.html#l00017">AnimationManager.h:17</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_animation_manager_8h_source.html#l00019">19</a> of file <a class="el" href="_animation_manager_8h_source.html">AnimationManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{ <span class="keywordflow">return</span> (*<a class="code" href="class_animation_manager.html#a30d55ef88d1fcea24ba39a254a84b56a">m_animations</a>)[animIndex][index].size(); }</div><div class="ttc" id="class_animation_manager_html_a30d55ef88d1fcea24ba39a254a84b56a"><div class="ttname"><a href="class_animation_manager.html#a30d55ef88d1fcea24ba39a254a84b56a">AnimationManager::m_animations</a></div><div class="ttdeci">std::shared_ptr&lt; std::vector&lt; std::vector&lt; std::vector&lt; XMMATRIX &gt; &gt; &gt; &gt; m_animations</div><div class="ttdef"><b>Definition:</b> <a href="_animation_manager_8h_source.html#l00022">AnimationManager.h:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -256,7 +260,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the final transform of animation. </p>
+<p>Gets the final transform of animation per bone for a given animation and time of that animation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>the bone index </td></tr>
@@ -291,7 +295,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_animation_manager_8h_source.html#l00017">17</a> of file <a class="el" href="_animation_manager_8h_source.html">AnimationManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_animation_manager_8h_source.html#l00022">22</a> of file <a class="el" href="_animation_manager_8h_source.html">AnimationManager.h</a>.</p>
 
 </div>
 </div>

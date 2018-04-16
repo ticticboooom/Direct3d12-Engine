@@ -6,6 +6,7 @@
 /**
  * @brief Construct a new Command List Manager:: Command List Manager object
  *  creates a command list and gives it a debug name
+ * 	A command list is what commands (things for the GPU to do) are sent to and executed through
  * @param deviceResources 
  * @param pipelineState PSO (Pipeline state object)
  * @param type the type of command list that will be created

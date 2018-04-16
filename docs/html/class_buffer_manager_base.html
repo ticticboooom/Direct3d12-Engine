@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('class_buffer_manager_base.html','');})
 </div><!--header-->
 <div class="contents">
 
+<p>A base class for common data buffers (vertex and index buffers)  
+ <a href="class_buffer_manager_base.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_buffer_manager_base_8h_source.html">BufferManagerBase.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for BufferManagerBase:</div>
@@ -102,15 +105,15 @@ Inheritance diagram for BufferManagerBase:</div>
  <div class="center">
   <img src="class_buffer_manager_base.png" usemap="#BufferManagerBase_map" alt=""/>
   <map id="BufferManagerBase_map" name="BufferManagerBase_map">
-<area href="class_index_buffer_manager.html" alt="IndexBufferManager" shape="rect" coords="0,56,135,80"/>
-<area href="class_vertex_buffer_manager.html" alt="VertexBufferManager" shape="rect" coords="145,56,280,80"/>
+<area href="class_index_buffer_manager.html" title="Index beffers are for the indices which are what tell the order of the vertices should be usually so ..." alt="IndexBufferManager" shape="rect" coords="0,56,135,80"/>
+<area href="class_vertex_buffer_manager.html" title="Vertices make up the shapes that are visible inside the 3d render space. " alt="VertexBufferManager" shape="rect" coords="145,56,280,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9cec2f80ae72dc972ef6d18ab075ab6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="stdafx_8h.html#a8ee2d990c5dfba7794dd2b60741d7722">D3DENGINE_API</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_buffer_manager_base.html#a9cec2f80ae72dc972ef6d18ab075ab6c">BufferManagerBase</a> (UINT size, BYTE *data, D3D12_RESOURCE_STATES state, std::shared_ptr&lt; <a class="el" href="class_d_x_1_1_device_resources.html">DX::DeviceResources</a> &gt; deviceResources, std::shared_ptr&lt; <a class="el" href="class_command_list_manager.html">CommandListManager</a> &gt; commandListManager)</td></tr>
-<tr class="memdesc:a9cec2f80ae72dc972ef6d18ab075ab6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Buffer Manager Base:: Buffer Manager Base object.  <a href="#a9cec2f80ae72dc972ef6d18ab075ab6c">More...</a><br /></td></tr>
+<tr class="memdesc:a9cec2f80ae72dc972ef6d18ab075ab6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Buffer Manager Base:: Buffer Manager Base object A base class for common data buffers (vertex and index buffers)  <a href="#a9cec2f80ae72dc972ef6d18ab075ab6c">More...</a><br /></td></tr>
 <tr class="separator:a9cec2f80ae72dc972ef6d18ab075ab6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af579a9443cc34b2526a38b87b437c895"><td class="memItemLeft" align="right" valign="top"><a class="el" href="stdafx_8h.html#a8ee2d990c5dfba7794dd2b60741d7722">D3DENGINE_API</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_buffer_manager_base.html#af579a9443cc34b2526a38b87b437c895">~BufferManagerBase</a> ()</td></tr>
 <tr class="separator:af579a9443cc34b2526a38b87b437c895"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,8 +126,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a1477064838478bbbf233da29598a2352"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_buffer_manager_base_8h_source.html#l00007">7</a> of file <a class="el" href="_buffer_manager_base_8h_source.html">BufferManagerBase.h</a>.</p>
+<div class="textblock"><p>A base class for common data buffers (vertex and index buffers) </p>
+
+<p class="definition">Definition at line <a class="el" href="_buffer_manager_base_8h_source.html#l00010">10</a> of file <a class="el" href="_buffer_manager_base_8h_source.html">BufferManagerBase.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9cec2f80ae72dc972ef6d18ab075ab6c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9cec2f80ae72dc972ef6d18ab075ab6c">&#9670;&nbsp;</a></span>BufferManagerBase()</h2>
@@ -170,7 +174,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Buffer Manager Base:: Buffer Manager Base object. </p>
+<p>Construct a new Buffer Manager Base:: Buffer Manager Base object A base class for common data buffers (vertex and index buffers) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">size</td><td>size of the buffer </td></tr>
@@ -182,9 +186,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_buffer_manager_base_8cpp_source.html#l00013">13</a> of file <a class="el" href="_buffer_manager_base_8cpp_source.html">BufferManagerBase.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">const</span> CD3DX12_RESOURCE_DESC bufferDesc = CD3DX12_RESOURCE_DESC::Buffer(size);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a> = std::make_unique&lt;ResourceManager&gt;(</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_resource_manager.html">ResourceManager</a>(deviceResources, commandListManager));</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a>-&gt;DefaultHeapResource(bufferDesc);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a>-&gt;UploadResource(bufferDesc);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a>-&gt;UpdateSubresource(data, size, size, size, state);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div><div class="ttc" id="class_buffer_manager_base_html_a1477064838478bbbf233da29598a2352"><div class="ttname"><a href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">BufferManagerBase::m_resourceManager</a></div><div class="ttdeci">std::unique_ptr&lt; ResourceManager &gt; m_resourceManager</div><div class="ttdef"><b>Definition:</b> <a href="_buffer_manager_base_8h_source.html#l00014">BufferManagerBase.h:14</a></div></div>
-<div class="ttc" id="class_resource_manager_html"><div class="ttname"><a href="class_resource_manager.html">ResourceManager</a></div><div class="ttdef"><b>Definition:</b> <a href="_resource_manager_8h_source.html#l00006">ResourceManager.h:6</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_buffer_manager_base_8cpp_source.html#l00014">14</a> of file <a class="el" href="_buffer_manager_base_8cpp_source.html">BufferManagerBase.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> CD3DX12_RESOURCE_DESC bufferDesc = CD3DX12_RESOURCE_DESC::Buffer(size);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a> = std::make_unique&lt;ResourceManager&gt;(</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_resource_manager.html">ResourceManager</a>(deviceResources, commandListManager));</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a>-&gt;DefaultHeapResource(bufferDesc);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a>-&gt;UploadResource(bufferDesc);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a>-&gt;UpdateSubresource(data, size, size, size, state);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div><div class="ttc" id="class_buffer_manager_base_html_a1477064838478bbbf233da29598a2352"><div class="ttname"><a href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">BufferManagerBase::m_resourceManager</a></div><div class="ttdeci">std::unique_ptr&lt; ResourceManager &gt; m_resourceManager</div><div class="ttdef"><b>Definition:</b> <a href="_buffer_manager_base_8h_source.html#l00017">BufferManagerBase.h:17</a></div></div>
+<div class="ttc" id="class_resource_manager_html"><div class="ttname"><a href="class_resource_manager.html">ResourceManager</a></div><div class="ttdoc">used to upload and store data onto the GPU </div><div class="ttdef"><b>Definition:</b> <a href="_resource_manager_8h_source.html#l00009">ResourceManager.h:9</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -203,8 +207,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_buffer_manager_base_8cpp_source.html#l00025">25</a> of file <a class="el" href="_buffer_manager_base_8cpp_source.html">BufferManagerBase.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a>.release();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a> = <span class="keyword">nullptr</span>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div><div class="ttc" id="class_buffer_manager_base_html_a1477064838478bbbf233da29598a2352"><div class="ttname"><a href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">BufferManagerBase::m_resourceManager</a></div><div class="ttdeci">std::unique_ptr&lt; ResourceManager &gt; m_resourceManager</div><div class="ttdef"><b>Definition:</b> <a href="_buffer_manager_base_8h_source.html#l00014">BufferManagerBase.h:14</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_buffer_manager_base_8cpp_source.html#l00026">26</a> of file <a class="el" href="_buffer_manager_base_8cpp_source.html">BufferManagerBase.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a>.release();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a> = <span class="keyword">nullptr</span>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div><div class="ttc" id="class_buffer_manager_base_html_a1477064838478bbbf233da29598a2352"><div class="ttname"><a href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">BufferManagerBase::m_resourceManager</a></div><div class="ttdeci">std::unique_ptr&lt; ResourceManager &gt; m_resourceManager</div><div class="ttdef"><b>Definition:</b> <a href="_buffer_manager_base_8h_source.html#l00017">BufferManagerBase.h:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -232,8 +236,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_buffer_manager_base_8h_source.html#l00014">14</a> of file <a class="el" href="_buffer_manager_base_8h_source.html">BufferManagerBase.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a>-&gt;Get(); };</div><div class="ttc" id="class_buffer_manager_base_html_a1477064838478bbbf233da29598a2352"><div class="ttname"><a href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">BufferManagerBase::m_resourceManager</a></div><div class="ttdeci">std::unique_ptr&lt; ResourceManager &gt; m_resourceManager</div><div class="ttdef"><b>Definition:</b> <a href="_buffer_manager_base_8h_source.html#l00014">BufferManagerBase.h:14</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_buffer_manager_base_8h_source.html#l00017">17</a> of file <a class="el" href="_buffer_manager_base_8h_source.html">BufferManagerBase.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">m_resourceManager</a>-&gt;Get(); };</div><div class="ttc" id="class_buffer_manager_base_html_a1477064838478bbbf233da29598a2352"><div class="ttname"><a href="class_buffer_manager_base.html#a1477064838478bbbf233da29598a2352">BufferManagerBase::m_resourceManager</a></div><div class="ttdeci">std::unique_ptr&lt; ResourceManager &gt; m_resourceManager</div><div class="ttdef"><b>Definition:</b> <a href="_buffer_manager_base_8h_source.html#l00017">BufferManagerBase.h:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -258,7 +262,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_buffer_manager_base_8h_source.html#l00014">14</a> of file <a class="el" href="_buffer_manager_base_8h_source.html">BufferManagerBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_buffer_manager_base_8h_source.html#l00017">17</a> of file <a class="el" href="_buffer_manager_base_8h_source.html">BufferManagerBase.h</a>.</p>
 
 </div>
 </div>
