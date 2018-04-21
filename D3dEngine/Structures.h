@@ -102,4 +102,10 @@ namespace Structures
 		int terrainHeight;        // Height (Length) of heightmap
 		XMFLOAT3* heightMap;    // Array to store terrain's vertex positions
 	};
+
+	struct Transform {
+		XMVECTOR position;
+		XMVECTOR rotationQuat;
+		XMVECTOR scale;
+	};
 }

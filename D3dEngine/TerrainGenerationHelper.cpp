@@ -27,7 +27,7 @@ TerrainGenerationHelper::~TerrainGenerationHelper()
  * @param originZ the start point
  * @return Structures::VerticesIndicesFromBin the vertices and indices from the terrain
  */
-Structures::VerticesIndicesFromBin TerrainGenerationHelper::GenTerrain(float originX, float originZ)
+std::shared_ptr<Structures::VerticesIndicesFromBin>  TerrainGenerationHelper::GenTerrain(float originX, float originZ)
 {
 	// fill 2D vector with 0s 
 	auto heights = std::make_shared<std::vector<std::vector<float>>>(c_size / TERRAIN_STEP_SIZE + 1);
@@ -51,11 +51,12 @@ Structures::VerticesIndicesFromBin TerrainGenerationHelper::GenTerrain(float ori
  * @param originZ the start point
  * @return Structures::VerticesIndicesFromBin the vertex data
  */
-Structures::VerticesIndicesFromBin TerrainGenerationHelper::GenVertices(std::shared_ptr<std::vector<std::vector<float>>> heights, float originX, float originZ)
+std::shared_ptr<Structures::VerticesIndicesFromBin> TerrainGenerationHelper::GenVertices(std::shared_ptr<std::vector<std::vector<float>>> heights, float originX, float originZ)
 {
+	std::shared_ptr<Structures::VerticesIndicesFromBin> values = std::make_shared<Structures::VerticesIndicesFromBin>();
 	// create the required vectors
-	auto vertices = std::make_shared<std::vector<Structures::VertexTexCoordNormal>>();
-	auto indices = std::make_shared<std::vector<unsigned long>>();
+	values->vertices = std::make_unique<std::vector<Structures::VertexTexCoordNormal>>();
+	values->indices = std::make_unique<std::vector<unsigned long>>();
 	auto index = m_index;
 	auto deltaIndex = 0;
 	// create the 2D plane of heights and triangles
@@ -80,52 +81,53 @@ Structures::VerticesIndicesFromBin TerrainGenerationHelper::GenVertices(std::sha
 			// triangle 1
 
 			//bottom right
-			vertices->push_back(GenVertex(bottomRight, x + TERRAIN_STEP_SIZE, z));
-			indices->push_back(index);
+			values->vertices->push_back(GenVertex(bottomRight, x + TERRAIN_STEP_SIZE, z));
+			values->indices->push_back(index);
 			index++;
 			deltaIndex++;
 
 			//top left
-			vertices->push_back(GenVertex(topLeft, x, z + TERRAIN_STEP_SIZE));
-			indices->push_back(index);
+			values->vertices->push_back(GenVertex(topLeft, x, z + TERRAIN_STEP_SIZE));
+			values->indices->push_back(index);
 			index++;
 			deltaIndex++;
 
 			// bottm left
-			vertices->push_back(GenVertex(bottomLeft, x, z));
-			indices->push_back(index);
+			values->vertices->push_back(GenVertex(bottomLeft, x, z));
+			values->indices->push_back(index);
 			index++;
 			deltaIndex++;
 			
-			GenNormalsPerTri(&(*vertices)[deltaIndex - 1], &(*vertices)[deltaIndex - 2], &(*vertices)[deltaIndex - 3]);
+			GenNormalsPerTri(&(*values->vertices)[deltaIndex - 1], &(*values->vertices)[deltaIndex - 2], &(*values->vertices)[deltaIndex - 3]);
 
 			// triangle 2
 
 			//bottom right
-			vertices->push_back(GenVertex(bottomRight, x + TERRAIN_STEP_SIZE, z));
-			indices->push_back(index);
+			values->vertices->push_back(GenVertex(bottomRight, x + TERRAIN_STEP_SIZE, z));
+			values->indices->push_back(index);
 			index++;
 			deltaIndex++;
 			
 			// top right
-			vertices->push_back(GenVertex(topRight, x + TERRAIN_STEP_SIZE, z + TERRAIN_STEP_SIZE));
-			indices->push_back(index);
+			values->vertices->push_back(GenVertex(topRight, x + TERRAIN_STEP_SIZE, z + TERRAIN_STEP_SIZE));
+			values->indices->push_back(index);
 			index++;
 			deltaIndex++;
 
 			// top left
-			vertices->push_back(GenVertex(topLeft, x,z + TERRAIN_STEP_SIZE));
-			indices->push_back(index);
+			values->vertices->push_back(GenVertex(topLeft, x,z + TERRAIN_STEP_SIZE));
+			values->indices->push_back(index);
 			index++;
 			deltaIndex++;
 
 			
 
-			GenNormalsPerTri(&(*vertices)[deltaIndex - 1], &(*vertices)[deltaIndex - 2], &(*vertices)[deltaIndex - 3]);
+			GenNormalsPerTri(&(*values->vertices)[deltaIndex - 1], &(*values->vertices)[deltaIndex - 2], &(*values->vertices)[deltaIndex - 3]);
 		}
 	}
 	m_index = index;
-	return { vertices, indices };
+
+	return values;
 }
 /**
  * @brief Initialise the vertex with basic data like the position and isAnimated flag
