@@ -147,9 +147,6 @@
     <ClInclude Include="Mesh.h">
       <Filter>Components\Mesh</Filter>
     </ClInclude>
-    <ClInclude Include="RequiredComponentObjects.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="IGameBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>

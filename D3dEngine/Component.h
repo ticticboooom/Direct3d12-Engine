@@ -1,7 +1,8 @@
 #pragma once
 #include "stdafx.h"
 #include "IGameBase.h"
-#include "RequiredComponentObjects.h"
+#include "Structures.h"
+#include "ModelViewProjectionManager.h"
 /**
  * @brief the base class for anything that runs the required functions for the game engine
  * 

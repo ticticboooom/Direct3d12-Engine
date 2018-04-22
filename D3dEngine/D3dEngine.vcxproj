@@ -178,7 +178,6 @@
     <ClInclude Include="PSOManager.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RendererManager.h" />
-    <ClInclude Include="RequiredComponentObjects.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="RootSignatureManager.h" />
