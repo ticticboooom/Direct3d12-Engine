@@ -6,6 +6,7 @@
 #include "UtilityRenderer.h"
 
 bool Mesh::m_isRootSignatureInitialised = false;
+UINT Mesh::m_textureRootSigIndex = 0;
 Mesh::Mesh(std::string filename, bool isAnimated, bool isZUp) : Component(), m_isZUp(isZUp)
 {
 	auto modelLoader = std::make_unique<BinaryModelLoader>(filename.c_str(), isAnimated);

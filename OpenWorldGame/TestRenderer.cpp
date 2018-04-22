@@ -21,7 +21,7 @@ TestRenderer::TestRenderer() : Renderer()
 
 	auto physicsComponent = std::make_shared<PhysicsComponent>();
 	m_playerNode->AddComponent(physicsComponent);
-
+	
 	auto camera = std::make_shared<CameraComponent>();
 	m_playerNode->AddComponent(camera);
 
@@ -37,6 +37,7 @@ TestRenderer::TestRenderer() : Renderer()
 	m_nodeManager.AddComponent(m_terrainNode);
 	auto terrain = std::make_shared<TerrainComponent>();
 	m_terrainNode->AddComponent(terrain);
+	terrain->UseTexture(L"terrain.png");
 }
 
 

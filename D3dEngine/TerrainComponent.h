@@ -19,6 +19,7 @@ public:
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
+	void UseTexture(std::wstring filename);
 private:
 	std::unique_ptr<TerrainGenerationHelper> m_terrainGenerator;
 	D3D12_VERTEX_BUFFER_VIEW m_terrainVertexBufferView;
@@ -26,7 +27,10 @@ private:
 	D3D12_INDEX_BUFFER_VIEW m_terrainIndexBufferView;
 	std::unique_ptr<IndexBufferManager> m_terrainIndexBufferManager;
 	UINT m_indexCount;
-private:
 	static bool m_isRootSignatureInitialised;
+	std::wstring m_texturePath;
+	bool m_usingTexture;
+	static UINT m_textureRootSigIndex;
+	UINT m_textureDescHeapIndex;
 };
 

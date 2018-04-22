@@ -24,12 +24,15 @@ public:
 	virtual void CreateDeviceDependentResoures() override;
 
 	void UseTexture(std::wstring filename);
-	
+	static bool GetIsRootSignatureInisialised() { return m_isRootSignatureInitialised; };
+	static UINT GetTextureRootSignatureIndex() { return m_textureRootSigIndex; };
+	static void SetIsRootSignatureInisialised(bool value) { m_isRootSignatureInitialised = value; };
+	static void SetTextureRootSignatureIndex(bool value) { m_textureRootSigIndex = value; };
 	Structures::Transform transform;
 protected:
 	std::shared_ptr<Structures::VerticesIndicesFromBin> m_meshData;
 	std::shared_ptr<TextureResourceManager> m_textureManager;
-	UINT m_textureRootSigIndex;
+	static UINT m_textureRootSigIndex;
 	UINT m_textureDescHeapIndex;
 	std::wstring m_texturePath;
 	bool m_usingTexture;

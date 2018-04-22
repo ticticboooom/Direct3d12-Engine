@@ -2,7 +2,12 @@
 #include "TerrainComponent.h"
 #include "PathManager.h"
 #include "CommonObjects.h"
+#include "TextureResourceManager.h"
+#include "Mesh.h"
+#include "ComponentManager.h"
 
+bool TerrainComponent::m_isRootSignatureInitialised = false;
+UINT TerrainComponent::m_textureRootSigIndex = 0;
 TerrainComponent::TerrainComponent()
 {
 
@@ -15,7 +20,23 @@ TerrainComponent::~TerrainComponent()
 
 int TerrainComponent::InitRootSignatureParameters(int indexOffset)
 {
-	return 0;
+
+	if (m_usingTexture && !m_isRootSignatureInitialised && !Mesh::GetIsRootSignatureInisialised())
+	{
+		std::shared_ptr<RootParameter> param = std::make_shared<RootParameter>();
+		param->InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 0, 1, D3D12_SHADER_VISIBILITY_PIXEL);
+		(*CommonObjects::m_rootSignatureManager)[0]->AddNewParameter(param);
+		m_textureRootSigIndex = indexOffset;
+		indexOffset++;
+		m_isRootSignatureInitialised = true;
+
+		Mesh::SetIsRootSignatureInisialised(true);
+		Mesh::SetTextureRootSignatureIndex(m_textureRootSigIndex);
+	}
+	else if (m_usingTexture && Mesh::GetIsRootSignatureInisialised()) {
+		m_textureRootSigIndex = Mesh::GetTextureRootSignatureIndex();
+	}
+	return indexOffset;
 }
 
 void TerrainComponent::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
@@ -50,9 +71,21 @@ void TerrainComponent::Init(std::shared_ptr<CommandListManager>* commandListMana
 	m_terrainIndexBufferManager = std::make_unique<IndexBufferManager>(terrainInds, CommonObjects::m_deviceResources, m_commandListManager);
 	m_indexCount = terrainInds->size();
 
-
 	m_terrainVertexBufferView = m_terrainVertexBufferManager->CreateVertexBufferView();
 	m_terrainIndexBufferView = m_terrainIndexBufferManager->CreateIndexBufferView();
+
+	m_descHeapOffset = *descOffset;
+	m_cbvSrvHeapManager = descriptorHeapManager;
+	m_cbvDescriptorSize = descriptorHeapManager->GetDescriptorSize();
+	if (m_usingTexture) {
+		const auto textureManager = new TextureResourceManager(std::wstring(pathManager.GetAssetPath() + m_texturePath).c_str(), CommonObjects::m_deviceResources, m_commandListManager);
+		textureManager->CreateSRVFromTextureResource(m_cbvSrvHeapManager->Get(), m_cbvDescriptorSize, m_descHeapOffset);
+		m_textureDescHeapIndex = m_descHeapOffset;
+		m_rootSignInds.push_back(m_textureRootSigIndex);
+		m_heapInds.push_back(m_descHeapOffset);
+		m_descHeapOffset++;
+		(*descOffset)++;
+	}
 
 	m_commandListManager = *commandListManager;
 }
@@ -63,6 +96,7 @@ void TerrainComponent::Update()
 
 void TerrainComponent::Render()
 {
+	m_cbvSrvHeapManager->Render(m_rootSignInds.size(), m_rootSignInds.data(), m_heapInds.data(), m_commandListManager);
 
 	m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
 
@@ -96,4 +130,10 @@ void TerrainComponent::CreateWindowSizeDependentResources()
 
 void TerrainComponent::CreateDeviceDependentResoures()
 {
+}
+
+void TerrainComponent::UseTexture(std::wstring filename)
+{
+	m_usingTexture = true;
+	m_texturePath = filename;
 }
