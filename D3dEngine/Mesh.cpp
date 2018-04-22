@@ -7,7 +7,15 @@
 
 bool Mesh::m_isRootSignatureInitialised = false;
 UINT Mesh::m_textureRootSigIndex = 0;
-Mesh::Mesh(std::string filename, bool isAnimated, bool isZUp) : Component(), m_isZUp(isZUp)
+/**
+ * @brief Construct a new Mesh:: Mesh object
+ *  base class for  model / 3d object (coxl)
+ * 
+ * @param filename the filename of the model to load
+ * @param isAnimated is the model animated
+ * @param isZUp is 
+ */
+Mesh::Mesh(std::string filename, bool isAnimated) : Component()
 {
 	auto modelLoader = std::make_unique<BinaryModelLoader>(filename.c_str(), isAnimated);
 	m_meshData = modelLoader->GetFinalData();
@@ -20,7 +28,12 @@ Mesh::~Mesh()
 {
 
 }
-
+/**
+ * @brief adds texture root signature parameter
+ * 
+ * @param indexOffset 
+ * @return int 
+ */
 int Mesh::InitRootSignatureParameters(int indexOffset)
 {
 	if (m_usingTexture && !m_isRootSignatureInitialised)
@@ -35,6 +48,14 @@ int Mesh::InitRootSignatureParameters(int indexOffset)
 	return indexOffset;
 }
 
+/**
+ * @brief loads texture and mesh into GPU
+ * 
+ * @param commandListManager 
+ * @param descriptorHeapManager 
+ * @param descOffset 
+ * @param pso 
+ */
 void Mesh::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
 {
 	m_descHeapOffset = *descOffset;
@@ -66,7 +87,10 @@ void Mesh::Update()
 {
 
 }
-
+/**
+ * @brief renders mesh with texture
+ * 
+ */
 void Mesh::Render()
 {
 	m_cbvSrvHeapManager->Render(m_rootSignInds.size(), m_rootSignInds.data(), m_heapInds.data(), m_commandListManager);
@@ -107,6 +131,11 @@ void Mesh::CreateDeviceDependentResoures()
 {
 }
 
+/**
+ * @brief defines whether and where to load texture on Init
+ * 
+ * @param filename 
+ */
 void Mesh::UseTexture(std::wstring filename)
 {
 	m_usingTexture = true;

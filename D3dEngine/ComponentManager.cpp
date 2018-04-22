@@ -1,12 +1,19 @@
 #include "stdafx.h"
 #include "ComponentManager.h"
 
-
+/**
+ * @brief Construct a new Component Manager:: Component Manager object
+ * 	 calls all the required functions when they need to be called
+ * @param passTransform 
+ */
 ComponentManager::ComponentManager(bool passTransform) : passTransform(passTransform)
 {
 	m_components = std::vector<std::shared_ptr<Component>>();
 }
-
+/**
+ * @brief Destroy the Component Manager:: Component Manager object
+ * 
+ */
 ComponentManager::~ComponentManager()
 {
 }
@@ -84,16 +91,32 @@ void ComponentManager::CreateDeviceDependentResoures()
 		comp->CreateDeviceDependentResoures();
 	}
 }
-
+/**
+ * @brief adds a component to the manager (component must inherit from Componment)
+ * 
+ * @param comp componment
+ */
 void ComponentManager::AddComponent(std::shared_ptr<Component> comp)
 {
 	comp->owner = this;
 	m_components.push_back(comp);
 }
+/**
+ * @brief gets gets the owner ComponentManager from  the IGameBase interface
+ * 
+ * @param ownerBase IGameBase interface instance
+ * @return ComponentManager* the owner
+ */
 ComponentManager * ComponentManager::GetOwner(IGameBase * ownerBase)
 {
 	return dynamic_cast<ComponentManager*>(ownerBase);
 }
+/**
+ * @brief gets a component that is stored in a manager
+ * 
+ * @param componentName the typeid() name of the component
+ * @return std::shared_ptr<Component> the component found or nullptr if not found
+ */
 std::shared_ptr<Component> ComponentManager::GetComponent(std::string componentName)
 {
 	for (auto& comp : m_components) {

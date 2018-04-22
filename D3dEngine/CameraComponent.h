@@ -1,5 +1,6 @@
 #pragma once
 #include "Component.h"
+#include "TerrainCollisionHelper.h"
 class D3DENGINE_API CameraComponent : public Component
 {
 public:

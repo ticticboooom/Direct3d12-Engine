@@ -14,7 +14,7 @@ TestRenderer::TestRenderer() : Renderer()
 	m_nodeManager.AddComponent(m_playerNode);
 
 	auto pathManager = PathManager();
-	auto playerMesh = std::make_shared<SkeletalMeshComponent>(pathManager.GetAssetPathStr() + std::string("Character.coxl"), true);
+	auto playerMesh = std::make_shared<SkeletalMeshComponent>(pathManager.GetAssetPathStr() + std::string("Character.coxl"));
 	playerMesh->UseTexture(L"Character.png");
 	m_playerNode->AddComponent(playerMesh);
 

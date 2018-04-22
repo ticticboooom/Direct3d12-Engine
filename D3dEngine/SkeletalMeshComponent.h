@@ -5,7 +5,7 @@
 class D3DENGINE_API SkeletalMeshComponent : public Mesh
 {
 public:
-	SkeletalMeshComponent(std::string filename, bool isZUp);
+	SkeletalMeshComponent(std::string filename);
 	~SkeletalMeshComponent();
 
 	virtual int InitRootSignatureParameters(int indexOffset) override;

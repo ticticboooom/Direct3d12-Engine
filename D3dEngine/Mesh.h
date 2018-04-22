@@ -8,7 +8,7 @@
 class D3DENGINE_API Mesh : public Component
 {
 public:
-	Mesh(std::string filename, bool isAnimated, bool isZUp);
+	Mesh(std::string filename, bool isAnimated);
 	~Mesh();
 	
 	// Inherited via Component

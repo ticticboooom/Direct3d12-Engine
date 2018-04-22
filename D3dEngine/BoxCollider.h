@@ -20,6 +20,6 @@ public:
 	void InitCollider(BoundingBox collider);
 	BoundingBox GetCollider() const { return m_collider; };
 private:
-	BoundingBox m_collider;
+	BoundingBox m_collider; /// The collider
 };
 

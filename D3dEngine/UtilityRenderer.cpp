@@ -7,6 +7,11 @@
 bool UtilityRenderer::m_isRootSignatureInitialised = false;
 UINT UtilityRenderer::m_rotRootSigIndex = 0;
 UINT UtilityRenderer::m_rotHeapIndex = 0;
+/**
+ * @brief Construct a new Utility Renderer:: Utility Renderer object
+ * 	some required things are done
+ * 
+ */
 UtilityRenderer::UtilityRenderer() : Renderer()
 {
 }
@@ -20,6 +25,14 @@ int UtilityRenderer::InitRootSignatureParameters(int indexOffset)
 	return indexOffset;
 }
 
+/**
+ * @brief create pso and command list 
+ * 
+ * @param commandListManager 
+ * @param descriptorHeapManager 
+ * @param descOffset 
+ * @param pso 
+ */
 void UtilityRenderer::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
 {
 	m_cbvSrvHeapManager = descriptorHeapManager;
@@ -62,6 +75,10 @@ void UtilityRenderer::Update()
 {
 }
 
+/**
+ * @brief open command list to render commands and do required tasks for the render process
+ * 
+ */
 void UtilityRenderer::Render()
 {
 	CommonObjects::m_deviceResources->WaitForGpu();
@@ -100,6 +117,10 @@ void UtilityRenderer::OnDeviceRemoved()
 {
 }
 
+/**
+ * @brief configure the projection matrix for all objects to use
+ * 
+ */
 void UtilityRenderer::CreateWindowSizeDependentResources()
 {
 	// Gets thye inner window (output size) form \class DeviceResources

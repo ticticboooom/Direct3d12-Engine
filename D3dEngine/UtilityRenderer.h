@@ -21,7 +21,6 @@ public:
 	static UINT m_rotHeapIndex;
 protected:
 	D3D12_RECT m_scissorRect;
-	std::unique_ptr<ConstantBufferManager<XMFLOAT4X4>> m_rotatorConstantBufferManager;
 	static bool m_isRootSignatureInitialised;
 };
 

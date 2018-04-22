@@ -5,19 +5,34 @@
 #include "TextureResourceManager.h"
 #include "Mesh.h"
 #include "ComponentManager.h"
+#include "TerrainCollisionHelper.h"
 
 bool TerrainComponent::m_isRootSignatureInitialised = false;
 UINT TerrainComponent::m_textureRootSigIndex = 0;
+/**
+ * @brief Construct a new Terrain Component:: Terrain Component object
+ * creates a terrain and all required to render it
+ * 
+ */
 TerrainComponent::TerrainComponent()
 {
 
 }
 
-
+/**
+ * @brief Destroy the Terrain Component:: Terrain Component object
+ * 
+ */
 TerrainComponent::~TerrainComponent()
 {
 }
 
+/**
+ * @brief adds the texture root signature parameter
+ * 
+ * @param indexOffset 
+ * @return int 
+ */
 int TerrainComponent::InitRootSignatureParameters(int indexOffset)
 {
 
@@ -39,6 +54,14 @@ int TerrainComponent::InitRootSignatureParameters(int indexOffset)
 	return indexOffset;
 }
 
+/**
+ * @brief creates the terrain and required buffers on GPU (and texture)
+ *	Creates texture and puts
+ * @param commandListManager 
+ * @param descriptorHeapManager 
+ * @param descOffset 
+ * @param pso 
+ */
 void TerrainComponent::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
 {
 	m_commandListManager = *commandListManager;
@@ -94,6 +117,10 @@ void TerrainComponent::Update()
 {
 }
 
+/**
+ * @brief renders texture and terrain
+ * 
+ */
 void TerrainComponent::Render()
 {
 	m_cbvSrvHeapManager->Render(m_rootSignInds.size(), m_rootSignInds.data(), m_heapInds.data(), m_commandListManager);
@@ -132,6 +159,11 @@ void TerrainComponent::CreateDeviceDependentResoures()
 {
 }
 
+/**
+ * @brief defines whether and what texture to use
+ * 
+ * @param filename the filename to the texture file
+ */
 void TerrainComponent::UseTexture(std::wstring filename)
 {
 	m_usingTexture = true;

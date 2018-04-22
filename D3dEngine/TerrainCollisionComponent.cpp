@@ -2,14 +2,23 @@
 #include "TerrainCollisionComponent.h"
 #include "ComponentManager.h"
 #include "TerrainComponent.h"
+#include "TerrainCollisionHelper.h"
 #include "PhysicsComponent.h"
 
-
+/**
+ * @brief Construct a new Terrain Collision Component:: Terrain Collision Component object
+ * 	controls collisions with terrain
+ * 
+ */
 TerrainCollisionComponent::TerrainCollisionComponent()
 {
 	m_terrainCollisionHelper = std::make_unique<TerrainCollisionHelper>();
 }
 
+/**
+ * @brief Destroy the Terrain Collision Component:: Terrain Collision Component object
+ * 
+ */
 
 TerrainCollisionComponent::~TerrainCollisionComponent()
 {
@@ -24,6 +33,10 @@ void TerrainCollisionComponent::Init(std::shared_ptr<CommandListManager>* comman
 {
 }
 
+/**
+ * @brief run s the collision checks of the nodes transform and uses physics if the node has the component
+ * 
+ */
 void TerrainCollisionComponent::Update()
 {
 	auto float3Pos = XMFLOAT3{};

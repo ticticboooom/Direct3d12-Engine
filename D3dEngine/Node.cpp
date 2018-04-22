@@ -3,6 +3,12 @@
 #include "CommonObjects.h"
 UINT Node::m_mvpRootSigIndex = 0;
 bool Node::m_isRootSignatureInitialised = false;
+/**
+ * @brief Construct a new Node:: Node object
+ * 	stores components and has transform 
+ * 	used for each thing that can be moved seperately
+ * 
+ */
 Node::Node() : Component(), m_compManager(true)
 {
 	m_transform = std::make_shared<Structures::Transform>();
@@ -12,7 +18,12 @@ Node::Node() : Component(), m_compManager(true)
 Node::~Node()
 {
 }
-
+/**
+ * @brief adds mvp root signature index parameter
+ * 
+ * @param indexOffset 
+ * @return int 
+ */
 int Node::InitRootSignatureParameters(int indexOffset)
 {
 	if (!m_isRootSignatureInitialised) {
@@ -27,6 +38,14 @@ int Node::InitRootSignatureParameters(int indexOffset)
 	return m_compManager.InitRootSignatureParameters(indexOffset);
 }
 
+/**
+ * @brief loads the mvp into GPU
+ * 
+ * @param commandListManager 
+ * @param descriptorHeapManager 
+ * @param descOffset 
+ * @param pso 
+ */
 void Node::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
 {
 	m_commandListManager = *commandListManager;
@@ -41,7 +60,10 @@ void Node::Init(std::shared_ptr<CommandListManager>* commandListManager, std::sh
 	(*descOffset)++;
 	m_compManager.Init(commandListManager, descriptorHeapManager, descOffset, pso);
 }
-
+/**
+ * @brief sets the mvp data to mapped GPU address
+ * 
+ */
 void Node::Update()
 {
 	m_compManager.m_transform = m_transform;
@@ -56,6 +78,10 @@ void Node::Update()
 	std::memcpy(destination, &cbvData, sizeof(cbvData));
 }
 
+/**
+ * @brief renders the mvp to be used by node
+ * 
+ */
 void Node::Render()
 {
 	m_cbvSrvHeapManager->Render(m_rootSignInds.size(), m_rootSignInds.data(), m_heapInds.data(), m_commandListManager);

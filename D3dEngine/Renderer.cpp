@@ -1,7 +1,10 @@
 #include "stdafx.h"
 #include "Renderer.h"
 
-
+/**
+ * @brief Construct a new Renderer:: Renderer object
+ * 	stores nodes and runs them when reequired
+ */
 Renderer::Renderer() : Component(), m_nodeManager(false)
 {
 }

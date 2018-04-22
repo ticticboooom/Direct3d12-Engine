@@ -3,16 +3,30 @@
 #include "CommonObjects.h"
 
 bool SkeletalMeshComponent::m_isRootSignatureInitialised = false;
-SkeletalMeshComponent::SkeletalMeshComponent(std::string filename, bool isZUp) : Mesh(filename, true, isZUp)
+/**
+ * @brief Construct a new Skeletal Mesh Component:: Skeletal Mesh Component object
+ * creates a mesh that is animated with skel;etal animation (skinning)
+ * 
+ * @param filename name of file to load as mesh
+ */
+SkeletalMeshComponent::SkeletalMeshComponent(std::string filename) : Mesh(filename, true)
 {
 
 }
 
-
+/**
+ * @brief Destroy the Skeletal Mesh Component:: Skeletal Mesh Component object
+ * 
+ */
 SkeletalMeshComponent::~SkeletalMeshComponent()
 {
 }
-
+/**
+ * @brief creates the root signature parameter for the animation constant buffer
+ * 
+ * @param indexOffset 
+ * @return int 
+ */
 int SkeletalMeshComponent::InitRootSignatureParameters(int indexOffset)
 {
 	if (!m_isRootSignatureInitialised) {
@@ -25,6 +39,14 @@ int SkeletalMeshComponent::InitRootSignatureParameters(int indexOffset)
 	}
 	return Mesh::InitRootSignatureParameters(indexOffset);
 }
+/**
+ * @brief creates the constant buffer for the animation of the mesh
+ * 
+ * @param commandListManager 
+ * @param descriptorHeapManager 
+ * @param descOffset 
+ * @param pso 
+ */
 
 void SkeletalMeshComponent::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
 {
@@ -45,7 +67,10 @@ void SkeletalMeshComponent::Init(std::shared_ptr<CommandListManager>* commandLis
 	(*descOffset)++;
 	Mesh::Init(commandListManager, descriptorHeapManager, descOffset, pso);
 }
-
+/**
+ * @brief runs the animations
+ * 
+ */
 void SkeletalMeshComponent::Update()
 {
 	m_frame++;

@@ -3,7 +3,6 @@
 #include <vector>
 #include "RootSignatureManager.h"
 #include "ModelViewProjectionManager.h"
-#include "CameraHelper.h"
 namespace Structures {
 	struct RequiredComponentObjects
 	{

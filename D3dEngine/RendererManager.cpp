@@ -3,16 +3,27 @@
 #include "UtilityRenderer.h"
 #include "CommonObjects.h"
 
+/**
+ * @brief Construct a new Renderer Manager:: Renderer Manager object
+ * 	runs the renderers when required
+ * 
+ */
 RendererManager::RendererManager() : m_renderers(false)
 {
 	AddRenderer(std::make_shared<UtilityRenderer>());
 }
 
-
+/**
+ * @brief Destroy the Renderer Manager:: Renderer Manager object
+ * 
+ */
 RendererManager::~RendererManager()
 {
 }
-
+/**
+ * @brief creates the renderers and kicks off the init function and init rootsignatures function
+ * 
+ */
 void RendererManager::CreateRenderers()
 {
 	auto indexOffset = 0u;
@@ -23,7 +34,12 @@ void RendererManager::CreateRenderers()
 	std::shared_ptr<CommandListManager> cmdManager;
 	Init(&cmdManager, descHeapManager, &heapOffset, &pso);
 }
-
+/**
+ * @brief gets all the root signature parameters then serialises and creates the root signature from them
+ * 
+ * @param indexOffset 
+ * @return int 
+ */
 int RendererManager::InitRootSignatureParameters(int indexOffset)
 {
 	auto signatureManager = CreateRootSignatures(CommonObjects::m_deviceResources);
@@ -42,6 +58,14 @@ int RendererManager::InitRootSignatureParameters(int indexOffset)
 	}
 	return indexOffset;
 }
+/**
+ * @brief loads thing to the GPU
+ * 
+ * @param commandListManager 
+ * @param descriptorHeapManager 
+ * @param descOffset 
+ * @param pso 
+ */
 
 void RendererManager::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
 {
@@ -55,7 +79,10 @@ void RendererManager::Update()
 {
 	m_renderers.Update();
 }
-
+/**
+ * @brief renders the renderers and then closes and executes the command list to run things on the GPU
+ * 
+ */
 void RendererManager::Render()
 {
 	m_renderers.Render();
@@ -98,6 +125,12 @@ void RendererManager::AddRenderer(std::shared_ptr<Renderer> renderer)
 	m_renderers.AddComponent(renderer);
 }
 
+/**
+ * @brief creates the root signature manager ans initialises a static sampler
+ * 
+ * @param deviceResources 
+ * @return std::shared_ptr<RootSignatureManager> 
+ */
 std::shared_ptr<RootSignatureManager> RendererManager::CreateRootSignatures(
 	const std::shared_ptr<DX::DeviceResources>& deviceResources) const
 {

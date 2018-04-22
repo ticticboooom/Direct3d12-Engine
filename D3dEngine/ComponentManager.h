@@ -25,6 +25,6 @@ public:
 
 	std::shared_ptr<Component> GetComponent(std::string componentName);
 private:
-	bool passTransform;
-	std::vector<std::shared_ptr<Component>> m_components;
+	bool passTransform; // whether the manage rneeds to pass on the transform
+	std::vector<std::shared_ptr<Component>> m_components; /// the components for the manager to call
 };

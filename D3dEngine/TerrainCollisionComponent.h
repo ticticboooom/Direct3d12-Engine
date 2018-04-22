@@ -1,5 +1,6 @@
 #pragma once
 #include "Component.h"
+#include "TerrainCollisionHelper.h"
 class D3DENGINE_API TerrainCollisionComponent : public Component
 {
 public:
@@ -17,6 +18,6 @@ public:
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
 private:
-	std::unique_ptr<TerrainCollisionHelper> m_terrainCollisionHelper;
+	std::unique_ptr<TerrainCollisionHelper> m_terrainCollisionHelper; /// helper for the collision 
 };
 

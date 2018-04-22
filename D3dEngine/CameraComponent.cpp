@@ -3,7 +3,10 @@
 #include "ComponentManager.h"
 #include "PhysicsComponent.h"
 
-
+/**
+ * @brief Construct a new Camera Component:: Camera Component object
+ * Controls the camera movement with keypresses and mouse movement also orbits around the node position
+ */
 CameraComponent::CameraComponent() :
 m_pitch(0),
 m_yaw(0),
@@ -17,6 +20,10 @@ m_isUnderGround(false)
 	m_terrainCollider = std::make_unique<TerrainCollisionHelper>();
 }
 
+/**
+ * @brief Destroy the Camera Component:: Camera Component object
+ * 
+ */
 CameraComponent::~CameraComponent()
 {
 }
@@ -29,9 +36,13 @@ int CameraComponent::InitRootSignatureParameters(int indexOffset)
 void CameraComponent::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
 {
 }
-
+/**
+ * @brief calculates the matrices required to move the camera
+ * 
+ */
 void CameraComponent::Update()
 {
+	// Getting the component from the parent manager
 	ComponentManager* fullOwner = ComponentManager::GetOwner(owner);
 	auto physicsComp = fullOwner->GetComponent(typeid(PhysicsComponent).name());
 	if (physicsComp) {
@@ -108,7 +119,11 @@ void CameraComponent::Update()
 void CameraComponent::Render()
 {
 }
-
+/**
+ * @brief gets the key presses
+ * 
+ * @param key 
+ */
 void CameraComponent::OnKeyDown(UINT key)
 {
 	if (key == 0x57)
@@ -142,7 +157,11 @@ void CameraComponent::OnKeyDown(UINT key)
 		m_direction.v = XMVectorSetY(m_direction, -1);
 	}
 }
-
+/**
+ * @brief get the key releases
+ * 
+ * @param key 
+ */
 void CameraComponent::OnKeyUp(UINT key)
 {
 	// Set \property m_direction to forward on "W" pressed
@@ -177,7 +196,12 @@ void CameraComponent::OnKeyUp(UINT key)
 		m_direction.v = XMVectorSetY(m_direction, 0);
 	}
 }
-
+/**
+ * @brief gets the movement of the mouse
+ * 
+ * @param x horizontal movement
+ * @param y vertical movement
+ */
 void CameraComponent::OnMouseMoved(float x, float y)
 {
 	// Multiplyer of the relative \param x  \param y;

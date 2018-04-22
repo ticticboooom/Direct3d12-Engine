@@ -2,10 +2,14 @@
 #include "stdafx.h"
 #include "IGameBase.h"
 #include "RequiredComponentObjects.h"
-
+/**
+ * @brief the base class for anything that runs the required functions for the game engine
+ * 
+ */
 class D3DENGINE_API Component : public IGameBase
 {
 public:
+
 	Component();
 	~Component();
 

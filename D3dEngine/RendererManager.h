@@ -24,7 +24,7 @@ protected:
 	void AddRenderer(std::shared_ptr<Renderer> renderer);
 private:
 	std::shared_ptr<RootSignatureManager> CreateRootSignatures(const std::shared_ptr<DX::DeviceResources>& deviceResources) const;
-	ComponentManager m_renderers;
+	ComponentManager m_renderers; /// renderers to be run
 	std::shared_ptr<CommandListManager> m_commandListManager;
 };
 

@@ -1,12 +1,18 @@
 #include "stdafx.h"
 #include "BoxCollider.h"
 
-
+/**
+ * @brief Construct a new Box Collider:: Box Collider object
+ * stores a BoundingBox structure for other components to access and use
+ * 
+ */
 BoxCollider::BoxCollider()
 {
 }
-
-
+/**
+ * @brief Destroy the Box Collider:: Box Collider object
+ * 
+ */
 BoxCollider::~BoxCollider()
 {
 }
@@ -51,7 +57,11 @@ void BoxCollider::CreateWindowSizeDependentResources()
 void BoxCollider::CreateDeviceDependentResoures()
 {
 }
-
+/**
+ * @brief stores the box collider  in the class
+ * 
+ * @param collider the initialised BoundingBox to use
+ */
 void BoxCollider::InitCollider(BoundingBox collider)
 {
 	m_collider = collider;

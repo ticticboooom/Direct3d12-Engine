@@ -1,7 +1,13 @@
 #include "stdafx.h"
 #include "StaticMeshComponent.h"
 
-StaticMeshComponent::StaticMeshComponent(std::string filename, bool isZUp) : Mesh(filename, false, isZUp)
+/**
+ * @brief Construct a new Static Mesh Component:: Static Mesh Component object
+ * 	creates a non-animated mesh
+ * 
+ * @param filename 
+ */
+StaticMeshComponent::StaticMeshComponent(std::string filename) : Mesh(filename, false)
 {
 }
 

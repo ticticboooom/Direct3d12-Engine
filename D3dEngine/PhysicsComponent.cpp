@@ -2,7 +2,11 @@
 #include "PhysicsComponent.h"
 #include "ComponentManager.h"
 #include "BoxCollider.h"
-
+/**
+ * @brief Construct a new Physics Component:: Physics Component object
+ * 	controls physics movements in the world
+ * 
+ */
 PhysicsComponent::PhysicsComponent() :
 	minY(0),
 	isRising(false)
@@ -22,7 +26,10 @@ int PhysicsComponent::InitRootSignatureParameters(int indexOffset)
 void PhysicsComponent::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
 {
 }
-
+/**
+ * @brief updates the node position with physics movements
+ * 
+ */
 void PhysicsComponent::Update()
 {
 	ComponentManager* fullOwner = ComponentManager::GetOwner(owner);
