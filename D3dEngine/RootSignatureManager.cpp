@@ -29,7 +29,7 @@ RootSignature::~RootSignature()
 void RootSignature::InitStaticSampler(UINT Register, const D3D12_SAMPLER_DESC& NonStaticSamplerDesc,
 	D3D12_SHADER_VISIBILITY Visibility)
 {
-	D3D12_STATIC_SAMPLER_DESC& StaticSamplerDesc = m_SamplerArray[m_NumInitializedStaticSamplers++];
+	D3D12_STATIC_SAMPLER_DESC& StaticSamplerDesc = (*m_SamplerArray)[m_NumInitializedStaticSamplers++];
 
 	StaticSamplerDesc.Filter = NonStaticSamplerDesc.Filter;
 	StaticSamplerDesc.AddressU = NonStaticSamplerDesc.AddressU;
@@ -47,6 +47,11 @@ void RootSignature::InitStaticSampler(UINT Register, const D3D12_SAMPLER_DESC& N
 
 }
 
+void RootSignature::AddNewParameter(std::shared_ptr<RootParameter> param)
+{
+	m_ParamArray->push_back(param);
+}
+
 /**
  * @brief finalise, serialise and create the root signature
  * 
@@ -58,11 +63,16 @@ void RootSignature::Finalize(const std::wstring& name, D3D12_ROOT_SIGNATURE_FLAG
 	if (m_Finalized)
 		return;
 	
+	auto params = std::vector<D3D12_ROOT_PARAMETER>();
+	for (auto& param : *m_ParamArray) {
+		params.push_back(*param->m_RootParam.get());
+	}
 	CD3DX12_ROOT_SIGNATURE_DESC RootDesc;
-	RootDesc.Init(m_NumParameters,
-		(const D3D12_ROOT_PARAMETER*)m_ParamArray.get(),
-		m_NumSamplers,
-		(const D3D12_STATIC_SAMPLER_DESC*)m_SamplerArray.get(), Flags);
+	RootDesc.Init(m_ParamArray->size(),
+		(const D3D12_ROOT_PARAMETER*)params.data(),
+		m_SamplerArray->size(),
+		(const D3D12_STATIC_SAMPLER_DESC*)m_SamplerArray->data(), Flags);
+
 	Microsoft::WRL::ComPtr<ID3DBlob> pOutBlob, pErrorBlob;
 
 	ThrowIfFailed(D3D12SerializeRootSignature(&RootDesc, D3D_ROOT_SIGNATURE_VERSION_1,

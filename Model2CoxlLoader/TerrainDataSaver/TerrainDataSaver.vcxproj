@@ -156,6 +156,7 @@
     <ClInclude Include="DirectXHelper.h" />
     <ClInclude Include="HeightPlaneConverter.h" />
     <ClInclude Include="ModelLoader.h" />
+    <ClInclude Include="Rotator.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Structures.h" />
     <ClInclude Include="targetver.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="BinaryConverter.cpp" />
     <ClCompile Include="HeightPlaneConverter.cpp" />
     <ClCompile Include="ModelLoader.cpp" />
+    <ClCompile Include="Rotator.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

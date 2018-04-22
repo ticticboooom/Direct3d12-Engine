@@ -16,43 +16,20 @@
     <Filter Include="Source Files\Renderers">
       <UniqueIdentifier>{f93e5799-f9c7-4b77-9e2c-779409990a40}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Renderers\Manager">
+      <UniqueIdentifier>{294a07e8-9271-4479-8a4d-2d9c91162e50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="App.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameMain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerRenderer.cpp">
+    <ClCompile Include="GameRendererManager.cpp">
+      <Filter>Source Files\Renderers\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TestRenderer.cpp">
       <Filter>Source Files\Renderers</Filter>
     </ClCompile>
-    <ClCompile Include="TerrainRenderer.cpp">
-      <Filter>Source Files\Renderers</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="App.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameMain.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerRenderer.h">
-      <Filter>Source Files\Renderers</Filter>
-    </ClInclude>
-    <ClInclude Include="IGameBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RendererRequiredStructures.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TerrainRenderer.h">
-      <Filter>Source Files\Renderers</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -71,5 +48,13 @@
     <FxCompile Include="TerrainPixelShader.hlsl">
       <Filter>Resource Files</Filter>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameRendererManager.h">
+      <Filter>Source Files\Renderers\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TestRenderer.h">
+      <Filter>Source Files\Renderers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

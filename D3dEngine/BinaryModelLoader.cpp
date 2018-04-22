@@ -25,7 +25,6 @@ BinaryModelLoader::BinaryModelLoader(const char* filePath, bool hasAnimations)
 	size_t frameCountsCount = 0;
 	std::vector<size_t> boneCounts;
 	auto frameCounts = std::vector<std::vector<size_t>>();
-
 	// Load the sizes 
 	input.read(reinterpret_cast<char*>(&vertsSize), size_tSize);
 	input.read(reinterpret_cast<char*>(&indsSize), size_tSize);
@@ -34,26 +33,23 @@ BinaryModelLoader::BinaryModelLoader(const char* filePath, bool hasAnimations)
 	input.read(reinterpret_cast<char*>(&frameCountsCount), size_tSize);
 	boneCounts = std::vector<size_t>(boneCountsCount);
 	input.read(reinterpret_cast<char*>(boneCounts.data()), boneCountsCount * size_tSize);
-
+	m_finalData = std::make_shared<Structures::VerticesIndicesFromBin>();
 	// load the bones sizes
 	for (auto i = 0; i < boneCounts.size(); i++) {
 		auto bones = boneCounts[i];
 		frameCounts.push_back(std::vector<size_t>(bones));
 		input.read(reinterpret_cast<char*>(frameCounts[i].data()), bones * size_tSize);
 	}
-
 	// get vertices
-	auto verticesVector = std::make_shared<std::vector<Structures::VertexTexCoordNormal>>(vertsSize);
+	m_finalData->vertices = std::make_shared<std::vector<Structures::VertexTexCoordNormal>>(vertsSize);
 	auto verticesBufferSize = vertsSize * sizeof Structures::VertexTexCoordNormal;
-	input.read(reinterpret_cast<char*>(verticesVector->data()), verticesBufferSize);
-
+	input.read(reinterpret_cast<char*>(m_finalData->vertices->data()), verticesBufferSize);
 	// get indices
-	auto indicesVector = std::make_shared<std::vector<unsigned long>>(indsSize);
+	m_finalData->indices = std::make_shared<std::vector<unsigned long>>(indsSize);
 	auto indicesBufferSize = indsSize * sizeof(unsigned long);
-	input.read(reinterpret_cast<char*>(indicesVector->data()), indicesBufferSize);
-
+	input.read(reinterpret_cast<char*>(m_finalData->indices->data()), indicesBufferSize);
 	// get animations
-	auto animations = std::make_shared<std::vector<std::vector<std::vector<XMMATRIX>>>>();
+	m_finalData->animations = std::make_shared<std::vector<std::vector<std::vector<XMMATRIX>>>>(animsCount);
 	if (hasAnimations) {
 		for (auto i = 0; i < animsCount; i++) {
 			auto animation = std::vector<std::vector<XMMATRIX>>();
@@ -68,18 +64,10 @@ BinaryModelLoader::BinaryModelLoader(const char* filePath, bool hasAnimations)
 				}
 				animation.push_back(newFrames);
 			}
-			animations->push_back(animation);
+			(*m_finalData->animations)[i].swap(animation);
 		}
 	}
-
-	// close and return the file and its data
-	input.close();
-	m_finalData = std::make_unique<Structures::VerticesIndicesFromBin>();
-	m_finalData->vertices = verticesVector;
-	m_finalData->indices = indicesVector;
-	if (hasAnimations) {
-		m_finalData->animations = animations;
-	}
+	assert(_CrtCheckMemory());
 }
 
 

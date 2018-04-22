@@ -1,10 +1,13 @@
 var searchData=
 [
   ['readdatafromfile',['ReadDataFromFile',['../_direct_x_helper_8h.html#a0ae920cd8d8c647c6e7c9cb2d3b6c4ba',1,'DirectXHelper.h']]],
-  ['render',['Render',['../class_descriptor_heap_manager.html#af5ad3ea476bd56e9f9b8d37e2c3a452d',1,'DescriptorHeapManager']]],
-  ['reset',['Reset',['../class_command_list_manager.html#a7106132e048a3f62f97bf62f98e81588',1,'CommandListManager::Reset()'],['../class_root_signature.html#adf2d07ea00480100b1504fa9f759712b',1,'RootSignature::Reset()']]],
+  ['render',['Render',['../class_box_collider.html#adcdde4dd592529c71455fe1d407b528b',1,'BoxCollider::Render()'],['../class_camera_component.html#a923f30f16764d820c7a66ed0c846548d',1,'CameraComponent::Render()'],['../class_component.html#a2b451bc8118403f0660a979865cd1f10',1,'Component::Render()'],['../class_component_manager.html#aeff11dc715de907b1001c6962eba27ce',1,'ComponentManager::Render()'],['../class_descriptor_heap_manager.html#af5ad3ea476bd56e9f9b8d37e2c3a452d',1,'DescriptorHeapManager::Render()'],['../class_i_game_base.html#a489916e712740752acb7ca4b9c8c6dad',1,'IGameBase::Render()'],['../class_mesh.html#aeedf38e938c009b6a8c765c3b40a9909',1,'Mesh::Render()'],['../class_node.html#ab0dad4ff920c690c40ade725711d0821',1,'Node::Render()'],['../class_physics_component.html#a8c17152282598c152426c550e8ccbd39',1,'PhysicsComponent::Render()'],['../class_renderer.html#a382136f85905d9c898cd16a1d2ef343d',1,'Renderer::Render()'],['../class_renderer_manager.html#a8ba3e1ed3e94ec737a7a5f70152431a2',1,'RendererManager::Render()'],['../class_skeletal_mesh_component.html#a6d1ea24db118aebd74ea991bc971d49d',1,'SkeletalMeshComponent::Render()'],['../class_static_mesh_component.html#adc569463dfafcd05d840f86062ceaa6b',1,'StaticMeshComponent::Render()'],['../class_terrain_collision_component.html#a2234a71e4dd7a789f1ba8c63c85ef2e0',1,'TerrainCollisionComponent::Render()'],['../class_terrain_component.html#aabd57a575d329e3d98b6dec9a45d4e2b',1,'TerrainComponent::Render()'],['../class_utility_renderer.html#a8f0c0654e7fb8bb3ae4d8cbad7e38a7f',1,'UtilityRenderer::Render()']]],
+  ['renderer',['Renderer',['../class_renderer.html#a7ebf46f54dab9905f79b80f7fddb76a6',1,'Renderer']]],
+  ['renderermanager',['RendererManager',['../class_renderer_manager.html#aa2df79496b39151a1a1ccd5676d08a80',1,'RendererManager']]],
+  ['reset',['Reset',['../class_command_list_manager.html#a7106132e048a3f62f97bf62f98e81588',1,'CommandListManager::Reset()'],['../class_root_signature.html#a17339ff998efb87c4c63898b09f58a98',1,'RootSignature::Reset()']]],
   ['resourcemanager',['ResourceManager',['../class_resource_manager.html#a5705bb19a33d73b09888aa2f119105fe',1,'ResourceManager']]],
-  ['rootparameter',['RootParameter',['../class_root_parameter.html#ab1b513666b2c4c57e10423e8502e356f',1,'RootParameter']]],
+  ['rootparameter',['RootParameter',['../class_root_parameter.html#a37c55cc2f2d2fee114357ebb316b5d58',1,'RootParameter']]],
   ['rootsignature',['RootSignature',['../class_root_signature.html#a63dcaba2a8dfab28c0eb3fc6b72669ba',1,'RootSignature']]],
-  ['rootsignaturemanager',['RootSignatureManager',['../class_root_signature_manager.html#a21d3c6836d4876126278a0a697261e8a',1,'RootSignatureManager']]]
+  ['rootsignaturemanager',['RootSignatureManager',['../class_root_signature_manager.html#a21d3c6836d4876126278a0a697261e8a',1,'RootSignatureManager']]],
+  ['run',['Run',['../class_app.html#a405c77c2608db9de3f8e5d1fbca004e2',1,'App']]]
 ];

@@ -28,6 +28,30 @@
     <Filter Include="Util\Helpers">
       <UniqueIdentifier>{8a57e312-2c9c-4ded-9519-48550aac93e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{d38438ac-d89c-4c43-abd1-8010892534fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{8345a5e4-1311-4df2-bbec-138d2ca41494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Mesh">
+      <UniqueIdentifier>{b345264b-0d17-439f-9c88-88025a22480a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Managers">
+      <UniqueIdentifier>{95b1f930-c6d7-4250-8716-443949d0c74e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Renderers">
+      <UniqueIdentifier>{8d71d468-fb6f-43e4-aa7e-4830fee0018e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Camera">
+      <UniqueIdentifier>{51274c59-3ae8-49b6-89fe-fccb8db1d381}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Terrain">
+      <UniqueIdentifier>{8ee0a975-92e3-49e9-98df-76a6f4fb45b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Colliders">
+      <UniqueIdentifier>{963305d9-936f-4174-8ce5-091334953027}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -47,9 +71,6 @@
     </ClInclude>
     <ClInclude Include="Structures.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraHelper.h">
-      <Filter>Util\Helpers</Filter>
     </ClInclude>
     <ClInclude Include="BinaryModelLoader.h">
       <Filter>Util\Loaders</Filter>
@@ -84,9 +105,6 @@
     <ClInclude Include="PerlinNoise.h">
       <Filter>Util\Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="PhysicsHelper.h">
-      <Filter>Util\Helpers</Filter>
-    </ClInclude>
     <ClInclude Include="TerrainCollisionHelper.h">
       <Filter>Util\Helpers</Filter>
     </ClInclude>
@@ -114,6 +132,60 @@
     <ClInclude Include="TextureLoader.h">
       <Filter>Util\Loaders</Filter>
     </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticMeshComponent.h">
+      <Filter>Components\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Components\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalMeshComponent.h">
+      <Filter>Components\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentManager.h">
+      <Filter>Base\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererManager.h">
+      <Filter>Base\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonObjects.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="UtilityRenderer.h">
+      <Filter>Components\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraComponent.h">
+      <Filter>Components\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainCollisionComponent.h">
+      <Filter>Components\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainComponent.h">
+      <Filter>Components\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxCollider.h">
+      <Filter>Components\Colliders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -127,9 +199,6 @@
     </ClCompile>
     <ClCompile Include="DeviceResources.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CameraHelper.cpp">
-      <Filter>Util\Helpers</Filter>
     </ClCompile>
     <ClCompile Include="BinaryModelLoader.cpp">
       <Filter>Util\Loaders</Filter>
@@ -161,9 +230,6 @@
     <ClCompile Include="PerlinNoise.cpp">
       <Filter>Util\Helpers</Filter>
     </ClCompile>
-    <ClCompile Include="PhysicsHelper.cpp">
-      <Filter>Util\Helpers</Filter>
-    </ClCompile>
     <ClCompile Include="TerrainCollisionHelper.cpp">
       <Filter>Util\Helpers</Filter>
     </ClCompile>
@@ -190,6 +256,57 @@
     </ClCompile>
     <ClCompile Include="PSOManager.cpp">
       <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMeshComponent.cpp">
+      <Filter>Components\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Components\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalMeshComponent.cpp">
+      <Filter>Components\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentManager.cpp">
+      <Filter>Base\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="RendererManager.cpp">
+      <Filter>Base\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonObjects.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="UtilityRenderer.cpp">
+      <Filter>Components\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraComponent.cpp">
+      <Filter>Components\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="IGameBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainCollisionComponent.cpp">
+      <Filter>Components\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainComponent.cpp">
+      <Filter>Components\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxCollider.cpp">
+      <Filter>Components\Colliders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

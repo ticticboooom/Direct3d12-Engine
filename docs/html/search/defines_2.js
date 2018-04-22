@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['terrain_5fstep_5fsize',['TERRAIN_STEP_SIZE',['../_terrain_generation_helper_8h.html#ad04a251ab3e1323474688977de1579e4',1,'TerrainGenerationHelper.h']]]
+  ['name_5fd3d12_5fobject',['NAME_D3D12_OBJECT',['../_direct_x_helper_8h.html#aac0bf77e771c5756a028295b6400839f',1,'DirectXHelper.h']]],
+  ['name_5fd3d12_5fobject_5findexed',['NAME_D3D12_OBJECT_INDEXED',['../_direct_x_helper_8h.html#a79a58dc06babec29638083e2d6cab28a',1,'DirectXHelper.h']]]
 ];

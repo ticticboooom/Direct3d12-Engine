@@ -27,13 +27,13 @@ ModelViewProjectionManager::~ModelViewProjectionManager()
  */
 void ModelViewProjectionManager::SetMatrix(UINT type, XMMATRIX mat)
 {
-	if (type == 0) {
+	if (type == MATKEY_MODEL) {
 		m_model = mat;
 	}
-	else if (type == 1) {
+	else if (type == MATKEY_VIEW) {
 		m_view = mat;
 	}
-	else if (type == 2) {
+	else if (type == MATKEY_PROJECTION) {
 		m_projection = mat;
 	}
 }
@@ -45,13 +45,13 @@ void ModelViewProjectionManager::SetMatrix(UINT type, XMMATRIX mat)
  */
 XMMATRIX ModelViewProjectionManager::GetMatrix(UINT type)
 {
-	if (type == 0) {
+	if (type == MATKEY_MODEL) {
 		return m_model;
 	}
-	else if (type == 1) {
+	else if (type == MATKEY_VIEW) {
 		return m_view;
 	}
-	else if (type == 2) {
+	else if (type == MATKEY_PROJECTION) {
 		return m_projection;
 	}
 }
