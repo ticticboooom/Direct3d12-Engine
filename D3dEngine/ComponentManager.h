@@ -19,8 +19,11 @@ public:
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
 	void AddComponent(std::shared_ptr<Component> comp);
-	std::shared_ptr<Structures::Transform> m_transform;
 
+	std::shared_ptr<Structures::Transform> m_transform;
+	static ComponentManager* GetOwner(IGameBase* ownerBase);
+
+	std::shared_ptr<Component> GetComponent(std::string componentName);
 private:
 	bool passTransform;
 	std::vector<std::shared_ptr<Component>> m_components;

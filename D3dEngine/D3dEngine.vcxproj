@@ -154,6 +154,7 @@
     <ClInclude Include="AnimationManager.h" />
     <ClInclude Include="App.h" />
     <ClInclude Include="BinaryModelLoader.h" />
+    <ClInclude Include="BoxCollider.h" />
     <ClInclude Include="BufferManagerBase.h" />
     <ClInclude Include="CameraComponent.h" />
     <ClInclude Include="CameraHelper.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="PerlinNoise.h" />
+    <ClInclude Include="PhysicsComponent.h" />
     <ClInclude Include="PhysicsHelper.h" />
     <ClInclude Include="PSOManager.h" />
     <ClInclude Include="Renderer.h" />
@@ -188,6 +190,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Structures.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TerrainCollisionComponent.h" />
     <ClInclude Include="TerrainCollisionHelper.h" />
     <ClInclude Include="TerrainComponent.h" />
     <ClInclude Include="TerrainGenerationHelper.h" />
@@ -200,6 +203,7 @@
     <ClCompile Include="AnimationManager.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="BinaryModelLoader.cpp" />
+    <ClCompile Include="BoxCollider.cpp" />
     <ClCompile Include="BufferManagerBase.cpp" />
     <ClCompile Include="CameraComponent.cpp" />
     <ClCompile Include="CameraHelper.cpp" />
@@ -219,6 +223,7 @@
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="PerlinNoise.cpp" />
+    <ClCompile Include="PhysicsComponent.cpp" />
     <ClCompile Include="PhysicsHelper.cpp" />
     <ClCompile Include="PSOManager.cpp" />
     <ClCompile Include="Renderer.cpp" />
@@ -234,6 +239,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TerrainCollisionComponent.cpp" />
     <ClCompile Include="TerrainCollisionHelper.cpp" />
     <ClCompile Include="TerrainComponent.cpp" />
     <ClCompile Include="TerrainGenerationHelper.cpp" />

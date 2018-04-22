@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "CameraComponent.h"
+#include "ComponentManager.h"
+#include "PhysicsComponent.h"
 
 
 CameraComponent::CameraComponent() :
@@ -30,6 +32,11 @@ void CameraComponent::Init(std::shared_ptr<CommandListManager>* commandListManag
 
 void CameraComponent::Update()
 {
+	ComponentManager* fullOwner = ComponentManager::GetOwner(owner);
+	auto physicsComp = fullOwner->GetComponent(typeid(PhysicsComponent).name());
+	if (physicsComp) {
+		auto collider = ((PhysicsComponent*)physicsComp.get())->isRising = isJumping;
+	}
 	// The vector that is facing up
 	DirectX::XMVECTORF32 up = { 0.0f, 1.0f, 0.0f, 0.0f };
 

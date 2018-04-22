@@ -3,6 +3,9 @@
 #include "PathManager.h"
 #include "CameraComponent.h"
 #include "TerrainComponent.h"
+#include "TerrainCollisionComponent.h"
+#include "BoxCollider.h"
+#include "PhysicsComponent.h"
 
 
 TestRenderer::TestRenderer() : Renderer()
@@ -15,9 +18,21 @@ TestRenderer::TestRenderer() : Renderer()
 	playerMesh->UseTexture(L"Character.png");
 	m_playerNode->AddComponent(playerMesh);
 
+
+	auto physicsComponent = std::make_shared<PhysicsComponent>();
+	m_playerNode->AddComponent(physicsComponent);
+
 	auto camera = std::make_shared<CameraComponent>();
 	m_playerNode->AddComponent(camera);
 
+	auto terrainCollisionComponent = std::make_shared<TerrainCollisionComponent>();
+	m_playerNode->AddComponent(terrainCollisionComponent);
+
+	auto boxCollider = std::make_shared<BoxCollider>();
+	m_playerNode->AddComponent(boxCollider);
+	boxCollider->InitCollider(BoundingBox{ XMFLOAT3{0,0,0}, XMFLOAT3{1,2.4f,1} });
+
+	
 	m_terrainNode = std::make_shared<Node>();
 	m_nodeManager.AddComponent(m_terrainNode);
 	auto terrain = std::make_shared<TerrainComponent>();

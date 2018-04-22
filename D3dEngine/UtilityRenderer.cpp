@@ -17,14 +17,6 @@ UtilityRenderer::~UtilityRenderer()
 
 int UtilityRenderer::InitRootSignatureParameters(int indexOffset)
 {
-	if (!m_isRootSignatureInitialised) {
-		std::shared_ptr<RootParameter> param = std::make_shared<RootParameter>();
-		param->InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_CBV, 2, 1, D3D12_SHADER_VISIBILITY_VERTEX);
-		(*CommonObjects::m_rootSignatureManager)[0]->AddNewParameter(param);
-		m_rotRootSigIndex = indexOffset;
-		indexOffset++;
-		m_isRootSignatureInitialised = true;
-	}
 	return indexOffset;
 }
 
@@ -63,26 +55,11 @@ void UtilityRenderer::Init(std::shared_ptr<CommandListManager>* commandListManag
 	m_psoManager->Finalise();
 
 	m_commandListManager = std::make_shared<CommandListManager>(CommonObjects::m_deviceResources, m_psoManager->GetState(), D3D12_COMMAND_LIST_TYPE_DIRECT);
-
-	m_rotatorConstantBufferManager = std::make_unique<ConstantBufferManager<XMFLOAT4X4>>(1,
-		m_rotatorConstantBufferManager->GetAlignedSize(),
-		CommonObjects::m_deviceResources,
-		m_commandListManager);
-
-	m_descHeapOffset = *descOffset;
-	m_rotatorConstantBufferManager->CreateBufferDesc(m_rotatorConstantBufferManager->GetAlignedSize(), m_descHeapOffset, m_cbvSrvHeapManager, m_cbvDescriptorSize);
-	m_rotHeapIndex = m_descHeapOffset;
-	m_rootSignInds.push_back(m_rotRootSigIndex);
-	m_heapInds.push_back(m_rotHeapIndex);
-	(*descOffset)++;
 	*commandListManager = m_commandListManager;
 }
 
 void UtilityRenderer::Update()
 {
-	auto rotator = XMFLOAT4X4{};
-	XMStoreFloat4x4(&rotator, XMMatrixTranspose(XMMatrixAffineTransformation(XMVectorSet(1, 1, 1, 0), { 0,0,0,1 }, XMQuaternionRotationAxis(XMVectorSet(1, 0, 0, 0), -1.59), XMVectorSet(0, 0, 0, 0))));
-	std::memcpy(m_rotatorConstantBufferManager->GetMappedData(), &rotator, sizeof(XMFLOAT4X4));
 }
 
 void UtilityRenderer::Render()

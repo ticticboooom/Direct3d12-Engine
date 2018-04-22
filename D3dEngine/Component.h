@@ -21,6 +21,7 @@ public:
 	virtual void CreateWindowSizeDependentResources() override = 0;
 	virtual void CreateDeviceDependentResoures() override = 0;
 	std::shared_ptr<Structures::Transform> m_transform;
+	IGameBase* owner;
 protected:
 	std::shared_ptr<PSOManager> m_psoManager;
 	std::shared_ptr<CommandListManager> m_commandListManager;

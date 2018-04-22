@@ -46,6 +46,12 @@
     <Filter Include="Components\Camera">
       <UniqueIdentifier>{51274c59-3ae8-49b6-89fe-fccb8db1d381}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components\Terrain">
+      <UniqueIdentifier>{8ee0a975-92e3-49e9-98df-76a6f4fb45b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Colliders">
+      <UniqueIdentifier>{963305d9-936f-4174-8ce5-091334953027}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -177,8 +183,17 @@
     <ClInclude Include="CameraComponent.h">
       <Filter>Components\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="TerrainCollisionComponent.h">
+      <Filter>Components\Terrain</Filter>
+    </ClInclude>
     <ClInclude Include="TerrainComponent.h">
+      <Filter>Components\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxCollider.h">
+      <Filter>Components\Colliders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -293,11 +308,20 @@
     <ClCompile Include="CameraComponent.cpp">
       <Filter>Components\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="TerrainComponent.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
     <ClCompile Include="IGameBase.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainCollisionComponent.cpp">
+      <Filter>Components\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainComponent.cpp">
+      <Filter>Components\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxCollider.cpp">
+      <Filter>Components\Colliders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -20,10 +20,10 @@ cbuffer AnimationFrame : register(b1)
 };
 
 
-cbuffer Rotator : register(b2)
-{
-	matrix rotator;
-};
+//cbuffer Rotator : register(b2)
+//{
+//	matrix rotator;
+//};
 
 struct VertexShaderInput
 {
@@ -82,7 +82,7 @@ PixelShaderInput main(VertexShaderInput input)
 		pos = mul(pos, transform);
 	}
 
-	pos = mul(pos, rotator);
+	//pos = mul(pos, rotator);
 	pos = mul(pos, model);
 	pos = mul(pos, view);
 	pos = mul(pos, projection);
@@ -91,7 +91,7 @@ PixelShaderInput main(VertexShaderInput input)
 	if (input.isAnimated == 1) {
 		output.normal = normalize(mul(input.normal, transform));
 	}
-	output.normal = normalize(mul(input.normal, rotator));
-	output.normal = normalize(mul(output.normal, model));
+	//output.normal = normalize(mul(input.normal, rotator));
+	output.normal = normalize(mul(input.normal, model));
 	return output;
 }

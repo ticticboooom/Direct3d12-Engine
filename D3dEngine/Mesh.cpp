@@ -59,12 +59,6 @@ void Mesh::Init(std::shared_ptr<CommandListManager>* commandListManager, std::sh
 		m_vertexBufferView = m_vertexBufferManager->CreateVertexBufferView();
 		m_indexBufferView = m_indexBufferManager->CreateIndexBufferView();
 	}
-	if (m_isZUp) {
-		m_rootSignInds.push_back(UtilityRenderer::m_rotRootSigIndex);
-		m_heapInds.push_back(UtilityRenderer::m_rotHeapIndex);
-		m_rotSigInd = m_rootSignInds.size() - 1;
-		m_rotHeapInd = m_heapInds.size() - 1;
-	}
 }
 
 void Mesh::Update()

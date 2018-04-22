@@ -87,6 +87,19 @@ void ComponentManager::CreateDeviceDependentResoures()
 
 void ComponentManager::AddComponent(std::shared_ptr<Component> comp)
 {
+	comp->owner = this;
 	m_components.push_back(comp);
-
+}
+ComponentManager * ComponentManager::GetOwner(IGameBase * ownerBase)
+{
+	return dynamic_cast<ComponentManager*>(ownerBase);
+}
+std::shared_ptr<Component> ComponentManager::GetComponent(std::string componentName)
+{
+	for (auto& comp : m_components) {
+		if (typeid(*comp.get()).name() == componentName) {
+			return comp;
+		}
+	}
+	return nullptr;
 }
