@@ -149,13 +149,11 @@ void InputMovementComponent::OnMouseMoved(float x, float y)
 {
 	// Multiplyer of the relative \param x  \param y;
 	const auto multiplyer = 0.003f;
-	// is touching or under the terrain (see \fn void CameraHelper::Update(XMVECTOR* pos) )
-	if (m_canRotatePitch) {
+
+	if ((y < 0 && !m_canRotatePitch) || m_canRotatePitch) {
 		m_pitch -= y * multiplyer;
 	}
 
-
-	// subtracts negative \param x multiplied by \var multiplyer to get the new \property m_yaw
 	if (m_canRotateYaw) {
 		m_yaw -= -x * multiplyer;
 	}

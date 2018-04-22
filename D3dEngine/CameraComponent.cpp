@@ -49,10 +49,10 @@ void CameraComponent::Update()
 	// sets the \var newYPos if it is above terrain and the camera is not (\property c_cameraGroundOffset is the constant offset of how much the camera should be above ground)
 	if (m_minY > fullNewPosFloat3.y - c_cameraGroundOffset) {
 		fullNewPosFloat3.y = m_minY + c_cameraGroundOffset;
-		m_isUnderGround = true;
+		m_movementComponent->SetRotationAbilities(false, true);
 	}
 	else {
-		m_isUnderGround = false;
+		m_movementComponent->SetRotationAbilities(true, true);
 	}
 	m_transform->rotationQuat = XMQuaternionRotationRollPitchYaw(0, yaw - XM_PI / 2, 0);
 	// Puts the new pos (after orbitting and terrain collision) in to an XMVECTOR structure

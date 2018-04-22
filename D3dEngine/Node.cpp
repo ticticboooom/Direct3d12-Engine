@@ -67,7 +67,6 @@ void Node::Init(std::shared_ptr<CommandListManager>* commandListManager, std::sh
 void Node::Update()
 {
 	m_compManager.m_transform = m_transform;
-	m_compManager.Update();
 
 	m_mvpManager->SetMatrix(MATKEY_MODEL, XMMatrixTranspose(XMMatrixAffineTransformation(m_transform->scale, XMVectorSet(0, 0, 0, 0), m_transform->rotationQuat, m_transform->position)));
 	m_mvpManager->SetMatrix(MATKEY_VIEW, XMLoadFloat4x4(&m_view));
@@ -76,6 +75,7 @@ void Node::Update()
 	auto cbvData = m_mvpManager->GetCbvData();
 	UINT8* destination = m_mvpConstantBufferManager->GetMappedData();
 	std::memcpy(destination, &cbvData, sizeof(cbvData));
+	m_compManager.Update();
 }
 
 /**

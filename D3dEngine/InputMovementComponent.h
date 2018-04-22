@@ -20,6 +20,7 @@ public:
 	XMVECTOR GetPos() const { return m_position; };
 	float GetPitch() const { return m_pitch; };
 	float GetYaw() const { return m_yaw; };
+	void SetRotationAbilities(bool allowPitch, bool allowYaw) { m_canRotatePitch = allowPitch; m_canRotateYaw = allowYaw; };
 private:
 	float m_pitch; /// The pitch of the mouse movement
 	float m_yaw; /// The yaw of the mouse movement

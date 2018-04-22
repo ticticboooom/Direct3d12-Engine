@@ -19,12 +19,13 @@ TestRenderer::TestRenderer() : Renderer()
 	playerMesh->UseTexture(L"Character.png");
 	m_playerNode->AddComponent(playerMesh);
 
-	auto movementComponent = std::make_shared<InputMovementComponent>();
-	m_playerNode->AddComponent(movementComponent);
+
 
 	auto physicsComponent = std::make_shared<PhysicsComponent>();
 	m_playerNode->AddComponent(physicsComponent);
 	
+	auto movementComponent = std::make_shared<InputMovementComponent>();
+	m_playerNode->AddComponent(movementComponent);
 
 	auto terrainCollisionComponent = std::make_shared<TerrainCollisionComponent>();
 	m_playerNode->AddComponent(terrainCollisionComponent);
@@ -32,6 +33,9 @@ TestRenderer::TestRenderer() : Renderer()
 	auto boxCollider = std::make_shared<BoxCollider>();
 	m_playerNode->AddComponent(boxCollider);
 	boxCollider->InitCollider(BoundingBox{ XMFLOAT3{0,0,0}, XMFLOAT3{1,2.4f,1} });
+
+
+
 	//camera
 	m_cameraNode = std::make_shared<Node>();
 	m_nodeManager.AddComponent(m_cameraNode);
