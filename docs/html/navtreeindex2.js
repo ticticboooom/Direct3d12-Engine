@@ -1,7 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"class_p_s_o_manager.html#a3132d5f40a8a9ddde43be8e30b35d7a6":[1,0,23,10],
-"class_p_s_o_manager.html#a41cbdf6b07c2dcbc9c740c9bc116adc5":[1,0,23,9],
 "class_p_s_o_manager.html#a4f35a02a56881d6624f36c916d4dface":[1,0,23,1],
 "class_p_s_o_manager.html#a959ea6b1f4a67e00c77ed6281154f80a":[1,0,23,11],
 "class_p_s_o_manager.html#aa34b6aa764012d33591474b456d1bfb7":[1,0,23,17],
@@ -249,5 +247,7 @@ var NAVTREEINDEX2 =
 "class_texture_loader.html#aee3a49f73e5f88890658b17e9896c4f2":[1,0,37,1],
 "class_texture_resource_manager.html":[1,0,38],
 "class_texture_resource_manager.html#a0f99144b70c779807f6f674b1ed5b9b7":[1,0,38,5],
-"class_texture_resource_manager.html#a789f95efcad1717efd90f7e6ec1ee0ea":[1,0,38,6]
+"class_texture_resource_manager.html#a789f95efcad1717efd90f7e6ec1ee0ea":[1,0,38,6],
+"class_texture_resource_manager.html#a9137a54de5e1a26cf0bb3d37b6b1af93":[1,0,38,7],
+"class_texture_resource_manager.html#ac83cdfafe8c418e18e26490b2b505ef5":[1,0,38,2]
 };

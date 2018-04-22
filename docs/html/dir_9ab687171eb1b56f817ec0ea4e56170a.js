@@ -99,9 +99,6 @@ var dir_9ab687171eb1b56f817ec0ea4e56170a =
     [ "RendererManager.h", "_renderer_manager_8h.html", [
       [ "RendererManager", "class_renderer_manager.html", "class_renderer_manager" ]
     ] ],
-    [ "RequiredComponentObjects.h", "_required_component_objects_8h.html", [
-      [ "RequiredComponentObjects", "struct_structures_1_1_required_component_objects.html", "struct_structures_1_1_required_component_objects" ]
-    ] ],
     [ "resource.h", "resource_8h.html", null ],
     [ "ResourceManager.cpp", "_resource_manager_8cpp.html", null ],
     [ "ResourceManager.h", "_resource_manager_8h.html", [

@@ -9,7 +9,6 @@ var namespace_structures =
     [ "Bone", "struct_structures_1_1_bone.html", "struct_structures_1_1_bone" ],
     [ "HeightMapInfo", "struct_structures_1_1_height_map_info.html", "struct_structures_1_1_height_map_info" ],
     [ "ModelViewProjectionConstantBuffer", "struct_structures_1_1_model_view_projection_constant_buffer.html", "struct_structures_1_1_model_view_projection_constant_buffer" ],
-    [ "RequiredComponentObjects", "struct_structures_1_1_required_component_objects.html", "struct_structures_1_1_required_component_objects" ],
     [ "ShaderData", "struct_structures_1_1_shader_data.html", "struct_structures_1_1_shader_data" ],
     [ "Transform", "struct_structures_1_1_transform.html", "struct_structures_1_1_transform" ],
     [ "VertexTexCoordNormal", "struct_structures_1_1_vertex_tex_coord_normal.html", "struct_structures_1_1_vertex_tex_coord_normal" ],

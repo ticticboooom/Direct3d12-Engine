@@ -46,7 +46,6 @@ var hierarchy =
     [ "PathManager", "class_path_manager.html", null ],
     [ "PerlinNoise", "class_perlin_noise.html", null ],
     [ "PSOManager", "class_p_s_o_manager.html", null ],
-    [ "Structures::RequiredComponentObjects", "struct_structures_1_1_required_component_objects.html", null ],
     [ "ResourceManager", "class_resource_manager.html", null ],
     [ "RootParameter", "class_root_parameter.html", null ],
     [ "RootSignature", "class_root_signature.html", null ],
