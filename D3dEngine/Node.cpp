@@ -3,10 +3,9 @@
 #include "CommonObjects.h"
 UINT Node::m_mvpRootSigIndex = 0;
 bool Node::m_isRootSignatureInitialised = false;
-Node::Node() : Component()
+Node::Node() : Component(), m_compManager(true)
 {
-	m_compManager = ComponentManager();
-
+	m_transform = std::make_shared<Structures::Transform>();
 	m_mvpManager = std::make_shared<ModelViewProjectionManager>();
 }
 
@@ -46,14 +45,15 @@ void Node::Init(std::shared_ptr<CommandListManager>* commandListManager, std::sh
 void Node::Update()
 {
 	m_compManager.m_transform = m_transform;
-	m_mvpManager->SetMatrix(MATKEY_MODEL, XMMatrixAffineTransformation(m_transform.scale, XMVectorSet(0, 0, 0, 1), m_transform.rotationQuat, m_transform.position));
+	m_compManager.Update();
+
+	m_mvpManager->SetMatrix(MATKEY_MODEL, XMMatrixTranspose(XMMatrixAffineTransformation(m_transform->scale, XMVectorSet(0, 0, 0, 0), m_transform->rotationQuat, m_transform->position)));
 	m_mvpManager->SetMatrix(MATKEY_VIEW, XMLoadFloat4x4(&m_view));
 	m_mvpManager->SetMatrix(MATKEY_PROJECTION, XMLoadFloat4x4(&m_projection));
 
 	auto cbvData = m_mvpManager->GetCbvData();
 	UINT8* destination = m_mvpConstantBufferManager->GetMappedData();
 	std::memcpy(destination, &cbvData, sizeof(cbvData));
-	m_compManager.Update();
 }
 
 void Node::Render()

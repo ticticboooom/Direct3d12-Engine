@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "StaticMeshComponent.h"
 
-StaticMeshComponent::StaticMeshComponent(std::string filename) : Mesh(filename, false)
+StaticMeshComponent::StaticMeshComponent(std::string filename, bool isZUp) : Mesh(filename, false, isZUp)
 {
 }
 

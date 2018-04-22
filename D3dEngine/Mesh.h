@@ -8,7 +8,7 @@
 class D3DENGINE_API Mesh : public Component
 {
 public:
-	Mesh(std::string filename, bool isAnimated);
+	Mesh(std::string filename, bool isAnimated, bool isZUp);
 	~Mesh();
 	
 	// Inherited via Component
@@ -41,6 +41,9 @@ protected:
 	D3D12_INDEX_BUFFER_VIEW m_indexBufferView;
 	std::unique_ptr<IndexBufferManager> m_indexBufferManager;
 	UINT m_indexCount;
+	bool m_isZUp;
+	UINT m_rotSigInd;
+	UINT m_rotHeapInd;
 private:
 	static bool m_isRootSignatureInitialised;
 

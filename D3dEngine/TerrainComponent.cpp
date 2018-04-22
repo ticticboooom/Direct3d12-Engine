@@ -63,7 +63,6 @@ void TerrainComponent::Update()
 
 void TerrainComponent::Render()
 {
-	//m_cbvSrvHeapManager->Render(m_rootSignInds.size(), m_rootSignInds.data(), m_heapInds.data(), m_commandListManager);
 
 	m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
 

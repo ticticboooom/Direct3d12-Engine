@@ -3,7 +3,7 @@
 class D3DENGINE_API StaticMeshComponent : public Mesh
 {
 public:
-	StaticMeshComponent(std::string filename);
+	StaticMeshComponent(std::string filename, bool isZUp);
 	~StaticMeshComponent();
 
 	virtual int InitRootSignatureParameters(int indexOffset) override;

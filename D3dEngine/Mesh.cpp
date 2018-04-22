@@ -3,9 +3,10 @@
 #include "BinaryModelLoader.h"
 #include "PathManager.h"
 #include "CommonObjects.h"
+#include "UtilityRenderer.h"
 
 bool Mesh::m_isRootSignatureInitialised = false;
-Mesh::Mesh(std::string filename, bool isAnimated) : Component()
+Mesh::Mesh(std::string filename, bool isAnimated, bool isZUp) : Component(), m_isZUp(isZUp)
 {
 	auto modelLoader = std::make_unique<BinaryModelLoader>(filename.c_str(), isAnimated);
 	m_meshData = modelLoader->GetFinalData();
@@ -35,15 +36,16 @@ int Mesh::InitRootSignatureParameters(int indexOffset)
 
 void Mesh::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
 {
+	m_descHeapOffset = *descOffset;
 	auto pathManager = PathManager();
 	if (m_usingTexture) {
 		const auto textureManager = new TextureResourceManager(std::wstring(pathManager.GetAssetPath() + m_texturePath).c_str(), CommonObjects::m_deviceResources, m_commandListManager);
 		textureManager->CreateSRVFromTextureResource(m_cbvSrvHeapManager->Get(), m_cbvDescriptorSize, m_descHeapOffset);
 		m_textureDescHeapIndex = m_descHeapOffset;
-		(*descOffset)++;
-		m_descHeapOffset++;
 		m_rootSignInds.push_back(m_textureRootSigIndex);
 		m_heapInds.push_back(m_descHeapOffset);
+		m_descHeapOffset++;
+		(*descOffset)++;
 	}
 	if (m_meshLoaded) {
 		auto inds = std::make_shared<std::vector<unsigned int>>(m_meshData->indices->begin(), m_meshData->indices->end());
@@ -57,8 +59,12 @@ void Mesh::Init(std::shared_ptr<CommandListManager>* commandListManager, std::sh
 		m_vertexBufferView = m_vertexBufferManager->CreateVertexBufferView();
 		m_indexBufferView = m_indexBufferManager->CreateIndexBufferView();
 	}
-
-	m_descHeapOffset++;
+	if (m_isZUp) {
+		m_rootSignInds.push_back(UtilityRenderer::m_rotRootSigIndex);
+		m_heapInds.push_back(UtilityRenderer::m_rotHeapIndex);
+		m_rotSigInd = m_rootSignInds.size() - 1;
+		m_rotHeapInd = m_heapInds.size() - 1;
+	}
 }
 
 void Mesh::Update()

@@ -3,9 +3,8 @@
 #include "UtilityRenderer.h"
 #include "CommonObjects.h"
 
-RendererManager::RendererManager()
+RendererManager::RendererManager() : m_renderers(false)
 {
-	m_renderers = ComponentManager();
 	AddRenderer(std::make_shared<UtilityRenderer>());
 }
 

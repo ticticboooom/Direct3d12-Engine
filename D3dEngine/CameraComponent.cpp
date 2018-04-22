@@ -67,16 +67,16 @@ void CameraComponent::Update()
 	const auto yAxisMovement = XMVectorMultiply(XMVectorSet(y, y, y, y), up);
 
 	// Add the movement vectors (\var xAxisMovement \var zAxisMovement \var yAxisMovement) to the position (\var pos) of the camera
-	m_transform.position = XMVectorAdd(m_transform.position, xAxisMovement);
-	m_transform.position = XMVectorAdd(m_transform.position, zAxisMovement);
-	m_transform.position = XMVectorAdd(m_transform.position, yAxisMovement);
+	m_transform->position = XMVectorAdd(m_transform->position, xAxisMovement);
+	m_transform->position = XMVectorAdd(m_transform->position, zAxisMovement);
+	m_transform->position = XMVectorAdd(m_transform->position, yAxisMovement);
 
 	// Creates the variable which will be passed to the XMStoreFloat3 function to store the final vector as a XMFLOAT3 structure
 	XMFLOAT3 fullNewPosFloat3;
 	// Creates the multiplyer / offset for the camera orbitting the player.
 	const auto camMultiplyer = 10;
 	// Orbits the camera around the player (research sin waves and cos waves to understand more)
-	XMStoreFloat3(&fullNewPosFloat3, XMVectorSet(sin(m_yaw) * camMultiplyer, sin(m_pitch) * camMultiplyer, cos(m_yaw) * camMultiplyer, 1) + m_transform.position);
+	XMStoreFloat3(&fullNewPosFloat3, XMVectorSet(sin(m_yaw) * camMultiplyer, sin(m_pitch) * camMultiplyer, cos(m_yaw) * camMultiplyer, 1) + m_transform->position);
 	// the new position of Y for the cameras position (to be passed into the \fn bool TerrainCollisionHelper::GetNewYPos(XMFLOAT3 position, float* yOut) )
 	float newYPos;
 
@@ -91,11 +91,11 @@ void CameraComponent::Update()
 	else {
 		m_isUnderGround = false;
 	}
-
+	m_transform->rotationQuat = XMQuaternionRotationRollPitchYaw(0, m_yaw - XM_PI / 2, 0);
 	// Puts the new pos (after orbitting and terrain collision) in to an XMVECTOR structure
 	auto newPos = XMLoadFloat3(&fullNewPosFloat3);
 	// Creates the View Matrix and adds it to the \class ModelViewProjectionManager helper class
-	XMStoreFloat4x4(&m_view, XMMatrixTranspose(XMMatrixLookAtRH(newPos, m_transform.position, up.v)));
+	XMStoreFloat4x4(&m_view, XMMatrixTranspose(XMMatrixLookAtRH(newPos, m_transform->position, up.v)));
 }
 
 void CameraComponent::Render()

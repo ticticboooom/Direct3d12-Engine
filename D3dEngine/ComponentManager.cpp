@@ -2,7 +2,7 @@
 #include "ComponentManager.h"
 
 
-ComponentManager::ComponentManager()
+ComponentManager::ComponentManager(bool passTransform) : passTransform(passTransform)
 {
 	m_components = std::vector<std::shared_ptr<Component>>();
 }
@@ -29,7 +29,9 @@ void ComponentManager::Init(std::shared_ptr<CommandListManager>* commandListMana
 void ComponentManager::Update()
 {
 	for (auto& comp : m_components) {
-		comp->m_transform = m_transform;
+		if (passTransform) {
+			comp->m_transform = m_transform;
+		}
 		comp->Update();
 	}
 }

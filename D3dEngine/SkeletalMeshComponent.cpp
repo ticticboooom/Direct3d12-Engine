@@ -3,7 +3,7 @@
 #include "CommonObjects.h"
 
 bool SkeletalMeshComponent::m_isRootSignatureInitialised = false;
-SkeletalMeshComponent::SkeletalMeshComponent(std::string filename) : Mesh(filename, true)
+SkeletalMeshComponent::SkeletalMeshComponent(std::string filename, bool isZUp) : Mesh(filename, true, isZUp)
 {
 
 }
@@ -54,7 +54,7 @@ void SkeletalMeshComponent::Update()
 	}
 	auto cbvData = m_animationManager->GetPositioninAnim(0, m_frame);
 	UINT8* destination = m_animationConstantBufferManager->GetMappedData();
-	std::memcpy(destination, &cbvData, sizeof(cbvData));
+	std::memcpy(destination, cbvData.data(), sizeof(XMFLOAT4X4) * cbvData.size());
 	Mesh::Update();
 }
 

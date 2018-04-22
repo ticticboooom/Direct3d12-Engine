@@ -4,7 +4,7 @@
 class D3DENGINE_API ComponentManager : public IGameBase
 {
 public:
-	ComponentManager();
+	ComponentManager(bool passTransform);
 	~ComponentManager();
 	
 	// Inherited via IGameBase
@@ -19,7 +19,9 @@ public:
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
 	void AddComponent(std::shared_ptr<Component> comp);
-	Structures::Transform m_transform;
+	std::shared_ptr<Structures::Transform> m_transform;
+
 private:
+	bool passTransform;
 	std::vector<std::shared_ptr<Component>> m_components;
 };

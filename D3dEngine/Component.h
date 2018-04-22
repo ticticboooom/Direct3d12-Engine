@@ -20,7 +20,7 @@ public:
 	virtual void OnDeviceRemoved() override = 0;
 	virtual void CreateWindowSizeDependentResources() override = 0;
 	virtual void CreateDeviceDependentResoures() override = 0;
-	Structures::Transform m_transform;
+	std::shared_ptr<Structures::Transform> m_transform;
 protected:
 	std::shared_ptr<PSOManager> m_psoManager;
 	std::shared_ptr<CommandListManager> m_commandListManager;

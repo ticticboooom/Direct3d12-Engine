@@ -2,9 +2,8 @@
 #include "Renderer.h"
 
 
-Renderer::Renderer() : Component()
+Renderer::Renderer() : Component(), m_nodeManager(false)
 {
-	m_nodeManager = ComponentManager();
 }
 
 

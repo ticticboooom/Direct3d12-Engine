@@ -107,5 +107,10 @@ namespace Structures
 		XMVECTOR position;
 		XMVECTOR rotationQuat;
 		XMVECTOR scale;
+		Transform() {
+			position = XMVectorSet(0, 0, 0, 1);
+			rotationQuat = XMQuaternionIdentity();
+			scale = XMVectorSet(1, 1, 1, 1);
+		}
 	};
 }

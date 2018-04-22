@@ -1,5 +1,6 @@
 #pragma once
 #include "Renderer.h"
+#include "ConstantBufferManager.h"
 class D3DENGINE_API UtilityRenderer : public Renderer
 {
 public:
@@ -16,7 +17,11 @@ public:
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
+	static UINT m_rotRootSigIndex;
+	static UINT m_rotHeapIndex;
 protected:
 	D3D12_RECT m_scissorRect;
+	std::unique_ptr<ConstantBufferManager<XMFLOAT4X4>> m_rotatorConstantBufferManager;
+	static bool m_isRootSignatureInitialised;
 };
 
