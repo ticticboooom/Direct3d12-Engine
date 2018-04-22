@@ -72,9 +72,6 @@
     <ClInclude Include="Structures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CameraHelper.h">
-      <Filter>Util\Helpers</Filter>
-    </ClInclude>
     <ClInclude Include="BinaryModelLoader.h">
       <Filter>Util\Loaders</Filter>
     </ClInclude>
@@ -106,9 +103,6 @@
       <Filter>Util\Loaders</Filter>
     </ClInclude>
     <ClInclude Include="PerlinNoise.h">
-      <Filter>Util\Helpers</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsHelper.h">
       <Filter>Util\Helpers</Filter>
     </ClInclude>
     <ClInclude Include="TerrainCollisionHelper.h">
@@ -209,9 +203,6 @@
     <ClCompile Include="DeviceResources.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CameraHelper.cpp">
-      <Filter>Util\Helpers</Filter>
-    </ClCompile>
     <ClCompile Include="BinaryModelLoader.cpp">
       <Filter>Util\Loaders</Filter>
     </ClCompile>
@@ -240,9 +231,6 @@
       <Filter>Util\Loaders</Filter>
     </ClCompile>
     <ClCompile Include="PerlinNoise.cpp">
-      <Filter>Util\Helpers</Filter>
-    </ClCompile>
-    <ClCompile Include="PhysicsHelper.cpp">
       <Filter>Util\Helpers</Filter>
     </ClCompile>
     <ClCompile Include="TerrainCollisionHelper.cpp">

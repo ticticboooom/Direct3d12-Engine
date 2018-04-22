@@ -157,7 +157,6 @@
     <ClInclude Include="BoxCollider.h" />
     <ClInclude Include="BufferManagerBase.h" />
     <ClInclude Include="CameraComponent.h" />
-    <ClInclude Include="CameraHelper.h" />
     <ClInclude Include="CommandListManager.h" />
     <ClInclude Include="CommonObjects.h" />
     <ClInclude Include="Component.h" />
@@ -176,7 +175,6 @@
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="PerlinNoise.h" />
     <ClInclude Include="PhysicsComponent.h" />
-    <ClInclude Include="PhysicsHelper.h" />
     <ClInclude Include="PSOManager.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RendererManager.h" />
@@ -206,7 +204,6 @@
     <ClCompile Include="BoxCollider.cpp" />
     <ClCompile Include="BufferManagerBase.cpp" />
     <ClCompile Include="CameraComponent.cpp" />
-    <ClCompile Include="CameraHelper.cpp" />
     <ClCompile Include="CommandListManager.cpp" />
     <ClCompile Include="CommonObjects.cpp" />
     <ClCompile Include="Component.cpp" />
@@ -224,7 +221,6 @@
     <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="PerlinNoise.cpp" />
     <ClCompile Include="PhysicsComponent.cpp" />
-    <ClCompile Include="PhysicsHelper.cpp" />
     <ClCompile Include="PSOManager.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="RendererManager.cpp" />
