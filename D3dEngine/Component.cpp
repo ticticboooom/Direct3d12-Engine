@@ -3,6 +3,7 @@
 
 XMFLOAT4X4 Component::m_projection = {};
 XMFLOAT4X4 Component::m_view = {};
+UINT Component::m_descriptorCount = 0u;
 /**
  * @brief Construct a new Component:: Component object
  *  the base class for anything that runs the required functions for the game engine

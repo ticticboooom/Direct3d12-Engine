@@ -150,9 +150,6 @@
     <ClInclude Include="Mesh.h">
       <Filter>Components\Mesh</Filter>
     </ClInclude>
-    <ClInclude Include="IGameBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SkeletalMeshComponent.h">
       <Filter>Components\Mesh</Filter>
     </ClInclude>
@@ -191,6 +188,9 @@
     </ClInclude>
     <ClInclude Include="InputMovementComponent.h">
       <Filter>Components\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameBase.h">
+      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

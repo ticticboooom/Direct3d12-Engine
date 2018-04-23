@@ -21,9 +21,9 @@ int Renderer::InitRootSignatureParameters(int indexOffset)
 	return indexOffset;
 }
 
-void Renderer::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void Renderer::Init()
 {
-	m_nodeManager.Init(commandListManager, descriptorHeapManager, descOffset, pso);
+	m_nodeManager.Init();
 }
 
 void Renderer::Update()

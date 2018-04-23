@@ -112,9 +112,9 @@ int App::Run(HINSTANCE hInstance, int nCmdShow, std::shared_ptr<RendererManager>
 			m_rendererManager->Update();
 			m_rendererManager->Render();
 			GetDeviceResources()->Present();
-
 		}
 	}
+	CommonObjects::Reset();
 	ClipCursor(nullptr);
 	m_rendererManager->OnDeviceRemoved();
 

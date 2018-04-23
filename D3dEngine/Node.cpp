@@ -13,6 +13,7 @@ Node::Node() : Component(), m_compManager(true)
 {
 	m_transform = std::make_shared<Structures::Transform>();
 	m_mvpManager = std::make_shared<ModelViewProjectionManager>();
+	m_descriptorCount += 1;
 }
 
 Node::~Node()
@@ -46,19 +47,17 @@ int Node::InitRootSignatureParameters(int indexOffset)
  * @param descOffset 
  * @param pso 
  */
-void Node::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void Node::Init()
 {
-	m_commandListManager = *commandListManager;
-	m_cbvSrvHeapManager = descriptorHeapManager;
-	m_cbvDescriptorSize = descriptorHeapManager->GetDescriptorSize();
+	m_cbvDescriptorSize = CommonObjects::m_descriptorHeapManager->GetDescriptorSize();
 
-	m_mvpConstantBufferManager = std::make_unique<ConstantBufferManager<Structures::ModelViewProjectionConstantBuffer>>(1, m_mvpConstantBufferManager->GetAlignedSize(), CommonObjects::m_deviceResources, m_commandListManager);
-	m_mvpConstantBufferManager->CreateBufferDesc(m_mvpConstantBufferManager->GetAlignedSize(), *descOffset, descriptorHeapManager, m_cbvDescriptorSize);
-	m_mvpDescHeapIndex = *descOffset;
+	m_mvpConstantBufferManager = std::make_unique<ConstantBufferManager<Structures::ModelViewProjectionConstantBuffer>>(1, m_mvpConstantBufferManager->GetAlignedSize(), CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
+	m_mvpConstantBufferManager->CreateBufferDesc(m_mvpConstantBufferManager->GetAlignedSize(), CommonObjects::m_descriptorHeapIndexOffset, CommonObjects::m_descriptorHeapManager, m_cbvDescriptorSize);
+	m_mvpDescHeapIndex = CommonObjects::m_descriptorHeapIndexOffset;
 	m_rootSignInds.push_back(m_mvpRootSigIndex);
 	m_heapInds.push_back(m_mvpDescHeapIndex);
-	(*descOffset)++;
-	m_compManager.Init(commandListManager, descriptorHeapManager, descOffset, pso);
+	CommonObjects::m_descriptorHeapIndexOffset++;
+	m_compManager.Init();
 }
 /**
  * @brief sets the mvp data to mapped GPU address
@@ -84,7 +83,7 @@ void Node::Update()
  */
 void Node::Render()
 {
-	m_cbvSrvHeapManager->Render(m_rootSignInds.size(), m_rootSignInds.data(), m_heapInds.data(), m_commandListManager);
+	CommonObjects::m_descriptorHeapManager->Render(m_rootSignInds.size(), m_rootSignInds.data(), m_heapInds.data(), CommonObjects::m_commandListManager);
 	m_compManager.Render();
 }
 

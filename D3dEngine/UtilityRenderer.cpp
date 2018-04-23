@@ -33,9 +33,8 @@ int UtilityRenderer::InitRootSignatureParameters(int indexOffset)
  * @param descOffset 
  * @param pso 
  */
-void UtilityRenderer::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void UtilityRenderer::Init()
 {
-	m_cbvSrvHeapManager = descriptorHeapManager;
 	auto pathManager = PathManager();
 	const auto assetPath = std::wstring(pathManager.GetAssetPath());
 	auto VSName = L"PlayerVertexShader.cso";
@@ -56,19 +55,18 @@ void UtilityRenderer::Init(std::shared_ptr<CommandListManager>* commandListManag
 	{ "TEXCOORD",	4,	DXGI_FORMAT_R32G32B32A32_FLOAT,	0, 80,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
 	{ "TEXCOORD",	5,	DXGI_FORMAT_R32_SINT,			0, 96,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 }
 	};
-	m_psoManager = std::make_unique<PSOManager>(CommonObjects::m_deviceResources);
-	m_psoManager->SetInputLayout({ inputLayout, _countof(inputLayout) });
-	m_psoManager->SetSignature((*CommonObjects::m_rootSignatureManager)[0]->GetSignature());
-	m_psoManager->SetVS(CD3DX12_SHADER_BYTECODE(vertexShader.shader, vertexShader.size));
-	m_psoManager->SetPS(CD3DX12_SHADER_BYTECODE(pixelShader.shader, pixelShader.size));
-	m_psoManager->SetPrimitiveTopologyType(D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE);
-	m_psoManager->SetNumRenderTargets(1);
-	m_psoManager->SetRTVFormats(CommonObjects::m_deviceResources->GetBackBufferFormat(), 0);
-	m_psoManager->SetDSVFormat(CommonObjects::m_deviceResources->GetDepthBufferFormat());
-	m_psoManager->Finalise();
-
-	m_commandListManager = std::make_shared<CommandListManager>(CommonObjects::m_deviceResources, m_psoManager->GetState(), D3D12_COMMAND_LIST_TYPE_DIRECT);
-	*commandListManager = m_commandListManager;
+	CommonObjects::m_psoManager = std::make_unique<PSOManager>(CommonObjects::m_deviceResources);
+	CommonObjects::m_psoManager->SetInputLayout({ inputLayout, _countof(inputLayout) });
+	CommonObjects::m_psoManager->SetSignature((*CommonObjects::m_rootSignatureManager)[0]->GetSignature());
+	CommonObjects::m_psoManager->SetVS(CD3DX12_SHADER_BYTECODE(vertexShader.shader, vertexShader.size));
+	CommonObjects::m_psoManager->SetPS(CD3DX12_SHADER_BYTECODE(pixelShader.shader, pixelShader.size));
+	CommonObjects::m_psoManager->SetPrimitiveTopologyType(D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE);
+	CommonObjects::m_psoManager->SetNumRenderTargets(1);
+	CommonObjects::m_psoManager->SetRTVFormats(CommonObjects::m_deviceResources->GetBackBufferFormat(), 0);
+	CommonObjects::m_psoManager->SetDSVFormat(CommonObjects::m_deviceResources->GetDepthBufferFormat());
+	CommonObjects::m_psoManager->Finalise();
+	
+	CommonObjects::m_commandListManager = std::make_shared<CommandListManager>(CommonObjects::m_deviceResources, CommonObjects::m_psoManager->GetState(), D3D12_COMMAND_LIST_TYPE_DIRECT);
 }
 
 void UtilityRenderer::Update()
@@ -83,22 +81,22 @@ void UtilityRenderer::Render()
 {
 	CommonObjects::m_deviceResources->WaitForGpu();
 	ThrowIfFailed(CommonObjects::m_deviceResources->GetCommandAllocator()->Reset());
-	ThrowIfFailed(m_commandListManager->Reset(CommonObjects::m_deviceResources->GetCommandAllocator(), m_psoManager->GetState()));
+	ThrowIfFailed(CommonObjects::m_commandListManager->Reset(CommonObjects::m_deviceResources->GetCommandAllocator(), CommonObjects::m_psoManager->GetState()));
 
-	m_commandListManager->SetGraphicsRootSignature((*CommonObjects::m_rootSignatureManager)[0]->GetSignature());
-	ID3D12DescriptorHeap* ppHeaps[] = { m_cbvSrvHeapManager->Get() };
-	m_commandListManager->SetDescriptorHeaps(_countof(ppHeaps), ppHeaps);
+	CommonObjects::m_commandListManager->SetGraphicsRootSignature((*CommonObjects::m_rootSignatureManager)[0]->GetSignature());
+	ID3D12DescriptorHeap* ppHeaps[] = { CommonObjects::m_descriptorHeapManager->Get() };
+	CommonObjects::m_commandListManager->SetDescriptorHeaps(_countof(ppHeaps), ppHeaps);
 
 	D3D12_VIEWPORT viewport = CommonObjects::m_deviceResources->GetScreenViewport();
 
-	m_commandListManager->SetViewports(1, &viewport);
-	m_commandListManager->SetScissorRects(1, &m_scissorRect);
+	CommonObjects::m_commandListManager->SetViewports(1, &viewport);
+	CommonObjects::m_commandListManager->SetScissorRects(1, &m_scissorRect);
 
-	m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
+	CommonObjects::m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
 
-	m_commandListManager->ClearSetRenderTargets();
+	CommonObjects::m_commandListManager->ClearSetRenderTargets();
 
-	m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);
+	CommonObjects::m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);
 }
 
 void UtilityRenderer::OnKeyDown(UINT key)

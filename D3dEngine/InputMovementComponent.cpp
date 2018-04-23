@@ -23,7 +23,7 @@ int InputMovementComponent::InitRootSignatureParameters(int indexOffset)
 	return 0;
 }
 
-void InputMovementComponent::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void InputMovementComponent::Init()
 {
 }
 

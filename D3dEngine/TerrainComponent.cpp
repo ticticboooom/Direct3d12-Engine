@@ -16,7 +16,7 @@ UINT TerrainComponent::m_textureRootSigIndex = 0;
  */
 TerrainComponent::TerrainComponent()
 {
-
+	m_descriptorCount += 1;
 }
 
 /**
@@ -62,9 +62,8 @@ int TerrainComponent::InitRootSignatureParameters(int indexOffset)
  * @param descOffset 
  * @param pso 
  */
-void TerrainComponent::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void TerrainComponent::Init()
 {
-	m_commandListManager = *commandListManager;
 	auto pathManager = PathManager();
 
 	m_terrainGenerator = std::make_unique<TerrainGenerationHelper>();
@@ -90,27 +89,22 @@ void TerrainComponent::Init(std::shared_ptr<CommandListManager>* commandListMana
 	terrainInds->insert(terrainInds->end(), terrainInds2->begin(), terrainInds2->end());
 	terrainInds->insert(terrainInds->end(), terrainInds3->begin(), terrainInds3->end());
 
-	m_terrainVertexBufferManager = std::make_unique<VertexBufferManager>(terrainData->vertices, CommonObjects::m_deviceResources, m_commandListManager);
-	m_terrainIndexBufferManager = std::make_unique<IndexBufferManager>(terrainInds, CommonObjects::m_deviceResources, m_commandListManager);
+	m_terrainVertexBufferManager = std::make_unique<VertexBufferManager>(terrainData->vertices, CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
+	m_terrainIndexBufferManager = std::make_unique<IndexBufferManager>(terrainInds, CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
 	m_indexCount = terrainInds->size();
 
 	m_terrainVertexBufferView = m_terrainVertexBufferManager->CreateVertexBufferView();
 	m_terrainIndexBufferView = m_terrainIndexBufferManager->CreateIndexBufferView();
 
-	m_descHeapOffset = *descOffset;
-	m_cbvSrvHeapManager = descriptorHeapManager;
-	m_cbvDescriptorSize = descriptorHeapManager->GetDescriptorSize();
+	m_cbvDescriptorSize = CommonObjects::m_descriptorHeapManager->GetDescriptorSize();
 	if (m_usingTexture) {
-		const auto textureManager = new TextureResourceManager(std::wstring(pathManager.GetAssetPath() + m_texturePath).c_str(), CommonObjects::m_deviceResources, m_commandListManager);
-		textureManager->CreateSRVFromTextureResource(m_cbvSrvHeapManager->Get(), m_cbvDescriptorSize, m_descHeapOffset);
-		m_textureDescHeapIndex = m_descHeapOffset;
+		const auto textureManager = new TextureResourceManager(std::wstring(pathManager.GetAssetPath() + m_texturePath).c_str(), CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
+		textureManager->CreateSRVFromTextureResource(CommonObjects::m_descriptorHeapManager->Get(), m_cbvDescriptorSize, CommonObjects::m_descriptorHeapIndexOffset);
+		m_textureDescHeapIndex = CommonObjects::m_descriptorHeapIndexOffset;
 		m_rootSignInds.push_back(m_textureRootSigIndex);
-		m_heapInds.push_back(m_descHeapOffset);
-		m_descHeapOffset++;
-		(*descOffset)++;
+		m_heapInds.push_back(m_textureDescHeapIndex);
+		CommonObjects::m_descriptorHeapIndexOffset++;
 	}
-
-	m_commandListManager = *commandListManager;
 }
 
 void TerrainComponent::Update()
@@ -123,16 +117,16 @@ void TerrainComponent::Update()
  */
 void TerrainComponent::Render()
 {
-	m_cbvSrvHeapManager->Render(m_rootSignInds.size(), m_rootSignInds.data(), m_heapInds.data(), m_commandListManager);
+	CommonObjects::m_descriptorHeapManager->Render(m_rootSignInds.size(), m_rootSignInds.data(), m_heapInds.data(), CommonObjects::m_commandListManager);
 
-	m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
+	CommonObjects::m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
 
-	m_commandListManager->SetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-	m_commandListManager->SetVertexBuffers(0, 1, &m_terrainVertexBufferView);
-	m_commandListManager->SetIndexBuffer(&m_terrainIndexBufferView);
-	m_commandListManager->DrawIndexedInstanced(m_indexCount, 1, 0, 0, 0);
+	CommonObjects::m_commandListManager->SetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	CommonObjects::m_commandListManager->SetVertexBuffers(0, 1, &m_terrainVertexBufferView);
+	CommonObjects::m_commandListManager->SetIndexBuffer(&m_terrainIndexBufferView);
+	CommonObjects::m_commandListManager->DrawIndexedInstanced(m_indexCount, 1, 0, 0, 0);
 
-	m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);
+	CommonObjects::m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);
 }
 
 void TerrainComponent::OnKeyDown(UINT key)

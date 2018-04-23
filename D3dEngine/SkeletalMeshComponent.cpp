@@ -11,7 +11,7 @@ bool SkeletalMeshComponent::m_isRootSignatureInitialised = false;
  */
 SkeletalMeshComponent::SkeletalMeshComponent(std::string filename) : Mesh(filename, true)
 {
-
+	m_descriptorCount += 1;
 }
 
 /**
@@ -48,24 +48,21 @@ int SkeletalMeshComponent::InitRootSignatureParameters(int indexOffset)
  * @param pso 
  */
 
-void SkeletalMeshComponent::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void SkeletalMeshComponent::Init()
 {
 	m_animationManager = std::make_unique<AnimationManager>(m_meshData->animations);
-	m_commandListManager = *commandListManager;
-	m_cbvSrvHeapManager = descriptorHeapManager;
-	m_descHeapOffset = *descOffset;
 	m_animationConstantBufferManager = std::make_unique<ConstantBufferManager<XMFLOAT4X4>>(1,
 		m_animationConstantBufferManager->GetAlignedSize() * m_animationManager->GetPositioninAnim(0, 0).size(),
 		CommonObjects::m_deviceResources,
-		m_commandListManager);
-	m_cbvDescriptorSize = m_cbvSrvHeapManager->GetDescriptorSize();
-	m_animationConstantBufferManager->CreateBufferDesc(m_animationConstantBufferManager->GetAlignedSize() * m_animationManager->GetPositioninAnim(0, 0).size(), m_descHeapOffset, m_cbvSrvHeapManager, m_cbvDescriptorSize);
-	m_animDescHeapIndex = m_descHeapOffset;
+		CommonObjects::m_commandListManager);
+	m_cbvDescriptorSize = CommonObjects::m_descriptorHeapManager->GetDescriptorSize();
+	m_animationConstantBufferManager->CreateBufferDesc(m_animationConstantBufferManager->GetAlignedSize() * m_animationManager->GetPositioninAnim(0, 0).size(), CommonObjects::m_descriptorHeapIndexOffset, CommonObjects::m_descriptorHeapManager, m_cbvDescriptorSize);
+	m_animDescHeapIndex = CommonObjects::m_descriptorHeapIndexOffset;
 
 	m_rootSignInds.push_back(m_animRootSigIndex);
 	m_heapInds.push_back(m_animDescHeapIndex);
-	(*descOffset)++;
-	Mesh::Init(commandListManager, descriptorHeapManager, descOffset, pso);
+	CommonObjects::m_descriptorHeapIndexOffset++;
+	Mesh::Init();
 }
 /**
  * @brief runs the animations

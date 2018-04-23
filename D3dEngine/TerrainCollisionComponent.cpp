@@ -30,7 +30,7 @@ int TerrainCollisionComponent::InitRootSignatureParameters(int indexOffset)
 	return indexOffset;
 }
 
-void TerrainCollisionComponent::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void TerrainCollisionComponent::Init()
 {
 }
 

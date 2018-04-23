@@ -62,9 +62,9 @@ int TestRenderer::InitRootSignatureParameters(int indexOffset)
 	return Renderer::InitRootSignatureParameters(indexOffset);
 }
 
-void TestRenderer::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void TestRenderer::Init()
 {
-	Renderer::Init(commandListManager, descriptorHeapManager, descOffset, pso);
+	Renderer::Init();
 }
 
 void TestRenderer::Update()
