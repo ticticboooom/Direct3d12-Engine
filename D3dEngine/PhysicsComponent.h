@@ -24,7 +24,7 @@ private:
 	bool previouslyRising = false; /// was the vector previsouly rising
 	float yPos; /// the current y position
 	float yPosFallDiff = yPosFallStart; /// fall distance each tick
-	const float yPosFallMultiplyer = 1.05f; ///fall speed multiplyer 
-	const float yPosFallStart = 0.3f; /// fall speed start
+	const float yPosFallMultiplyer = 1.02f; ///fall speed multiplyer 
+	const float yPosFallStart = 0.2f; /// fall speed start
 };
 

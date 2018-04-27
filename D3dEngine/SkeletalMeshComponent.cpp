@@ -3,6 +3,7 @@
 #include "CommonObjects.h"
 
 bool SkeletalMeshComponent::m_isRootSignatureInitialised = false;
+UINT SkeletalMeshComponent::m_animRootSigIndex = 0u;
 /**
  * @brief Construct a new Skeletal Mesh Component:: Skeletal Mesh Component object
  * creates a mesh that is animated with skel;etal animation (skinning)

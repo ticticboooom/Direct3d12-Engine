@@ -22,7 +22,7 @@ public:
 protected:
 	std::unique_ptr<AnimationManager> m_animationManager;
 	std::unique_ptr<ConstantBufferManager<XMFLOAT4X4>> m_animationConstantBufferManager;
-	UINT m_animRootSigIndex;
+	static UINT m_animRootSigIndex;
 	UINT m_animDescHeapIndex;
 	UINT m_frame;
 private:

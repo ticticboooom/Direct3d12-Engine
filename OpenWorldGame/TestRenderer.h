@@ -19,6 +19,7 @@ public:
 	virtual void CreateDeviceDependentResoures() override;
 private:
 	std::shared_ptr<Node> m_playerNode;
+	std::shared_ptr<Node> m_otherNode;
 	std::shared_ptr<Node> m_cameraNode;
 	std::shared_ptr<Node> m_terrainNode;
 };

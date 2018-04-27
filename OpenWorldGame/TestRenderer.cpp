@@ -50,6 +50,24 @@ TestRenderer::TestRenderer() : Renderer()
 	auto terrain = std::make_shared<TerrainComponent>();
 	m_terrainNode->AddComponent(terrain);
 	terrain->UseTexture(L"terrain.png");
+
+	m_otherNode = std::make_shared<Node>();
+	m_nodeManager.AddComponent(m_otherNode);
+	auto skeletalMeshComponent = std::make_shared<SkeletalMeshComponent>(pathManager.GetAssetPathStr() + std::string("Character.coxl"));
+	skeletalMeshComponent->UseTexture(L"Character.png");
+	m_otherNode->AddComponent(skeletalMeshComponent);
+
+
+	auto physicsComponent1 = std::make_shared<PhysicsComponent>();
+	m_otherNode->AddComponent(physicsComponent1);
+	
+
+	auto terrainCollisionComponent1 = std::make_shared<TerrainCollisionComponent>();
+	m_otherNode->AddComponent(terrainCollisionComponent1);
+
+	auto boxCollider1 = std::make_shared<BoxCollider>();
+	m_otherNode->AddComponent(boxCollider1);
+	boxCollider1->InitCollider(BoundingBox{ XMFLOAT3{ 0,0,0 }, XMFLOAT3{ 1,2.4f,1 } });
 }
 
 
