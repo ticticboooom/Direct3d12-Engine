@@ -16,7 +16,7 @@ public:
 
 	// Inherited via IGameBase
 	virtual int InitRootSignatureParameters(int indexOffset) override = 0;
-	virtual void Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso) override = 0;
+	virtual void Init() override = 0;
 	virtual void Update() override = 0;
 	virtual void Render() override = 0;
 	virtual void OnKeyDown(UINT key) override = 0;
@@ -27,12 +27,9 @@ public:
 	virtual void CreateDeviceDependentResoures() override = 0;
 	std::shared_ptr<Structures::Transform> m_transform;
 	IGameBase* owner;
+	static UINT m_descriptorCount;
 protected:
-	std::shared_ptr<PSOManager> m_psoManager;
-	std::shared_ptr<CommandListManager> m_commandListManager;
-	std::shared_ptr<DescriptorHeapManager> m_cbvSrvHeapManager;
 	UINT m_cbvDescriptorSize;
-	UINT m_descHeapOffset;
 	static XMFLOAT4X4 m_projection;
 	static XMFLOAT4X4 m_view;
 

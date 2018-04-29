@@ -20,9 +20,9 @@ int StaticMeshComponent::InitRootSignatureParameters(int indexOffset)
 {
 	return Mesh::InitRootSignatureParameters(indexOffset);
 }
-void StaticMeshComponent::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void StaticMeshComponent::Init()
 {
-	Mesh::Init(commandListManager, descriptorHeapManager, descOffset, pso);
+	Mesh::Init();
 }
 
 void StaticMeshComponent::Update()

@@ -2,7 +2,7 @@
 #include "PSOManager.h"
 #include "DirectXHelper.h"
 #include "DeviceResources.h"
-
+#define _ATL_DEBUG_INTERFACES
 /**
  * @brief Construct a new PSOManager::PSOManager object
  *  init with default values, this stores the shaders and renderer pipeline data
@@ -32,5 +32,4 @@ PSOManager::~PSOManager()
 void PSOManager::Finalise()
 {
 	ThrowIfFailed(m_deviceResources->GetD3DDevice()->CreateGraphicsPipelineState(&m_desc, IID_PPV_ARGS(&m_pipelineState)));
-
 }

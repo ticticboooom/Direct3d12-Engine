@@ -4,11 +4,12 @@
 #include "TerrainComponent.h"
 #include "TerrainCollisionHelper.h"
 #include "PhysicsComponent.h"
-
+#include "BoxCollider.h"
+#include "CameraComponent.h"
 /**
  * @brief Construct a new Terrain Collision Component:: Terrain Collision Component object
  * 	controls collisions with terrain
- * 
+ *
  */
 TerrainCollisionComponent::TerrainCollisionComponent()
 {
@@ -17,7 +18,7 @@ TerrainCollisionComponent::TerrainCollisionComponent()
 
 /**
  * @brief Destroy the Terrain Collision Component:: Terrain Collision Component object
- * 
+ *
  */
 
 TerrainCollisionComponent::~TerrainCollisionComponent()
@@ -29,13 +30,13 @@ int TerrainCollisionComponent::InitRootSignatureParameters(int indexOffset)
 	return indexOffset;
 }
 
-void TerrainCollisionComponent::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void TerrainCollisionComponent::Init()
 {
 }
 
 /**
  * @brief run s the collision checks of the nodes transform and uses physics if the node has the component
- * 
+ *
  */
 void TerrainCollisionComponent::Update()
 {
@@ -46,15 +47,28 @@ void TerrainCollisionComponent::Update()
 
 	ComponentManager* fullOwner = ComponentManager::GetOwner(owner);
 	auto physicsComp = fullOwner->GetComponent(typeid(PhysicsComponent).name());
-
-	if (physicsComp) {
+	auto cameraComp = fullOwner->GetComponent(typeid(CameraComponent).name());
+	if (physicsComp != nullptr) {
 		auto physicsComponent = (PhysicsComponent*)physicsComp.get();
 		physicsComponent->minY = newYPos;
 	}
 	else {
-		if (XMVectorGetY(m_transform->position) < newYPos) {
-			XMVectorSetY(m_transform->position, newYPos);
+		auto colliderComp = fullOwner->GetComponent(typeid(BoxCollider).name());
+		if (colliderComp != nullptr) {
+			auto collider = ((BoxCollider*)colliderComp.get())->GetCollider();
+			if (XMVectorGetY(m_transform->position) - collider.Extents.y < newYPos) {
+				m_transform->position = XMVectorSetY(m_transform->position, newYPos + collider.Extents.y);
+			}
 		}
+		else {
+			if (XMVectorGetY(m_transform->position) < newYPos) {
+				m_transform->position = XMVectorSetY(m_transform->position, newYPos);
+			}
+		}
+	}
+	if (cameraComp != nullptr) {
+		auto camera = (CameraComponent*)cameraComp.get();
+		camera->m_minY = newYPos;
 	}
 }
 

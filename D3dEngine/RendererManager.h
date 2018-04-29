@@ -11,7 +11,7 @@ public:
 	void CreateRenderers();
 	// Inherited via IGameBase
 	virtual int InitRootSignatureParameters(int indexOffset) override;
-	virtual void Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso) override;
+	virtual void Init() override;
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void OnKeyDown(UINT key) override;
@@ -25,6 +25,5 @@ protected:
 private:
 	std::shared_ptr<RootSignatureManager> CreateRootSignatures(const std::shared_ptr<DX::DeviceResources>& deviceResources) const;
 	ComponentManager m_renderers; /// renderers to be run
-	std::shared_ptr<CommandListManager> m_commandListManager;
 };
 

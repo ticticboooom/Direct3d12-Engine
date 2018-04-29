@@ -9,7 +9,7 @@ public:
 	~SkeletalMeshComponent();
 
 	virtual int InitRootSignatureParameters(int indexOffset) override;
-	virtual void Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso) override;
+	virtual void Init() override;
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void OnKeyDown(UINT key) override;
@@ -18,13 +18,16 @@ public:
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
-
+	void SetAnimInUse(UINT index);
 protected:
 	std::unique_ptr<AnimationManager> m_animationManager;
 	std::unique_ptr<ConstantBufferManager<XMFLOAT4X4>> m_animationConstantBufferManager;
-	UINT m_animRootSigIndex;
-	UINT m_animDescHeapIndex;
+	static UINT m_animRootSigIndex;
+	std::vector<UINT> m_animDescHeapIndicies;
 	UINT m_frame;
+	UINT m_anim;
+	std::vector<UINT> m_perAnimBufferOffset;
+	UINT m_animHeapIndex;
 private:
 	static bool m_isRootSignatureInitialised;
 };

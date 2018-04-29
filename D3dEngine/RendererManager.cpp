@@ -28,11 +28,8 @@ void RendererManager::CreateRenderers()
 {
 	auto indexOffset = 0u;
 	InitRootSignatureParameters(indexOffset);
-	auto heapOffset = 0u;
-	auto descHeapManager = std::make_shared<DescriptorHeapManager>(DX::c_frameCount * 2 + 5, D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV, D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE, CommonObjects::m_deviceResources);
-	std::shared_ptr<PSOManager> pso;
-	std::shared_ptr<CommandListManager> cmdManager;
-	Init(&cmdManager, descHeapManager, &heapOffset, &pso);
+	CommonObjects::m_descriptorHeapManager = std::make_shared<DescriptorHeapManager>(Component::m_descriptorCount, D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV, D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE, CommonObjects::m_deviceResources);
+	Init();
 }
 /**
  * @brief gets all the root signature parameters then serialises and creates the root signature from them
@@ -67,11 +64,10 @@ int RendererManager::InitRootSignatureParameters(int indexOffset)
  * @param pso 
  */
 
-void RendererManager::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void RendererManager::Init()
 {
-	m_renderers.Init(commandListManager, descriptorHeapManager, descOffset, pso);
-	m_commandListManager = *commandListManager;
-	(*commandListManager)->CloseAndExcecute();
+	m_renderers.Init();
+	CommonObjects::m_commandListManager->CloseAndExcecute();
 	CommonObjects::m_deviceResources->WaitForGpu();
 }
 
@@ -86,7 +82,7 @@ void RendererManager::Update()
 void RendererManager::Render()
 {
 	m_renderers.Render();
-	m_commandListManager->CloseAndExcecute();
+	CommonObjects::m_commandListManager->CloseAndExcecute();
 	CommonObjects::m_deviceResources->WaitForGpu();
 }
 

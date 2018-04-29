@@ -168,6 +168,7 @@
     <ClInclude Include="DirectXHelper.h" />
     <ClInclude Include="IGameBase.h" />
     <ClInclude Include="IndexBufferManager.h" />
+    <ClInclude Include="InputMovementComponent.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="ModelLoader.h" />
     <ClInclude Include="ModelViewProjectionManager.h" />
@@ -213,6 +214,7 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="IGameBase.cpp" />
     <ClCompile Include="IndexBufferManager.cpp" />
+    <ClCompile Include="InputMovementComponent.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="ModelLoader.cpp" />
     <ClCompile Include="ModelViewProjectionManager.cpp" />

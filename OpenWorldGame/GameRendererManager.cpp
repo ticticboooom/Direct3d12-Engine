@@ -19,9 +19,9 @@ int GameRendererManager::InitRootSignatureParameters(int indexOffset)
 	return RendererManager::InitRootSignatureParameters(indexOffset);
 }
 
-void GameRendererManager::Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso)
+void GameRendererManager::Init()
 {
-	RendererManager::Init(commandListManager, descriptorHeapManager, descOffset, pso);
+	RendererManager::Init();
 }
 
 void GameRendererManager::Update()

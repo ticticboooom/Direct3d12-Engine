@@ -8,7 +8,7 @@ public:
 	~TestRenderer();
 
 	virtual int InitRootSignatureParameters(int indexOffset) override;
-	virtual void Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso) override;
+	virtual void Init() override;
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void OnKeyDown(UINT key) override;
@@ -19,7 +19,11 @@ public:
 	virtual void CreateDeviceDependentResoures() override;
 private:
 	std::shared_ptr<Node> m_playerNode;
+	std::shared_ptr<Node> m_otherNode;
 	std::shared_ptr<Node> m_cameraNode;
 	std::shared_ptr<Node> m_terrainNode;
+
+	UINT counter;
+	UINT animation;
 };
 

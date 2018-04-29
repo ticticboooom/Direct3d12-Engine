@@ -9,7 +9,7 @@ public:
 
 	// Inherited via Component
 	virtual int InitRootSignatureParameters(int indexOffset) override;
-	virtual void Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso) override;
+	virtual void Init() override;
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void OnKeyDown(UINT key) override;
@@ -24,7 +24,7 @@ private:
 	bool previouslyRising = false; /// was the vector previsouly rising
 	float yPos; /// the current y position
 	float yPosFallDiff = yPosFallStart; /// fall distance each tick
-	const float yPosFallMultiplyer = 1.05f; ///fall speed multiplyer 
-	const float yPosFallStart = 0.3f; /// fall speed start
+	const float yPosFallMultiplyer = 1.02f; ///fall speed multiplyer 
+	const float yPosFallStart = 0.2f; /// fall speed start
 };
 

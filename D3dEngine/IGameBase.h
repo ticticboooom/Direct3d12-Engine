@@ -8,7 +8,7 @@ class D3DENGINE_API IGameBase
 public:
 	virtual ~IGameBase() = default;
 	virtual int InitRootSignatureParameters(int indexOffset) = 0;
-	virtual void Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT* descOffset, std::shared_ptr<PSOManager>* pso) = 0;
+	virtual void Init() = 0;
 	virtual void Update() = 0;
 	virtual void Render() = 0;
 	virtual void OnKeyDown(UINT key) = 0;

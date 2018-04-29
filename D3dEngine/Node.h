@@ -9,7 +9,7 @@ public:
 	~Node();
 
 	virtual int InitRootSignatureParameters(int indexOffset) override;
-	virtual void Init(std::shared_ptr<CommandListManager>* commandListManager, std::shared_ptr<DescriptorHeapManager> descriptorHeapManager, UINT * descOffset, std::shared_ptr<PSOManager>* pso) override;
+	virtual void Init() override;
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void OnKeyDown(UINT key) override;
@@ -19,6 +19,7 @@ public:
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
 	void AddComponent(std::shared_ptr<Component> comp);
+	std::shared_ptr<ComponentManager> GetComponentManager() { return std::make_shared<ComponentManager>(m_compManager); };
 protected:
 	ComponentManager m_compManager; /// The manager of the copmponents used by the node
 	std::shared_ptr<ModelViewProjectionManager> m_mvpManager; 

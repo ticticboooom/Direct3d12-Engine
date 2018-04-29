@@ -19,7 +19,6 @@ Structures::VerticesIndices ModelLoader::LoadModelFromFile(std::string fileName)
 	{
 		auto err = importer.GetErrorString();
 		return {};
-
 	}
 
 	InitFromScene(scene);
@@ -60,6 +59,7 @@ void ModelLoader::InitFromScene(const aiScene * scene)
 
 void ModelLoader::LoadAnimations(const aiScene * scene)
 {
+	m_maxFrameCountPerAnim = std::vector<UINT>();
 	for (auto i = 0; i < scene->mNumAnimations; i++) {
 		auto animation = Structures::Animation{};
 
@@ -67,6 +67,7 @@ void ModelLoader::LoadAnimations(const aiScene * scene)
 		for (auto j = 0; j < scene->mAnimations[i]->mNumChannels; j++) {
 			auto channel = scene->mAnimations[i]->mChannels[j];
 			auto transforms = std::vector<XMMATRIX>();
+			auto times = std::vector<float>();
 			for (auto key = 0; key < channel->mNumPositionKeys; key++) {
 				auto translation = XMVectorSet(
 					channel->mPositionKeys[key].mValue.x,
@@ -83,17 +84,25 @@ void ModelLoader::LoadAnimations(const aiScene * scene)
 					channel->mScalingKeys[key].mValue.z, 1);
 				auto zero = XMVectorSet(0, 0, 0, 1);
 
+				times.push_back(channel->mPositionKeys[key].mTime);
+
 				auto transform = XMMatrixAffineTransformation(scaling, zero, rotation, translation);
 				transforms.push_back(transform);
 			}
-			if (std::string(channel->mNodeName.data) == "Cube") {
+			if (std::string(channel->mNodeName.data) == "Cube" || std::string(channel->mNodeName.data) == "Armature") {
 				continue;
 			}
 			auto animBone = Structures::AnimBone{ channel->mNodeName.data, transforms };
+			animBone.times = times;
 			animation.bonesWithKeys.push_back(animBone);
-			animation.frameCount = scene->mAnimations[i]->mDuration * 24;
+			animation.frameCount = scene->mAnimations[i]->mDuration;
 		}
 		m_animations.push_back(animation);
+		auto maxFrameCount = 0u;
+		for (auto bone : animation.bonesWithKeys) {
+			maxFrameCount = (bone.transforms.size()) > maxFrameCount ? bone.transforms.size() : maxFrameCount;
+		}
+		m_maxFrameCountPerAnim.push_back(maxFrameCount);
 	}
 
 
@@ -105,6 +114,9 @@ void ModelLoader::ReadBoneHierarchy(const aiScene* scene) {
 	root = root->FindNode("Armature");
 	for (auto anim = 0; anim < m_animations.size(); anim++)
 	{
+		m_animations[anim].bonesWithKeys = FillTimes(root, m_animations[anim].bonesWithKeys, anim);
+		m_animations[anim].bonesWithKeys = FillMissingMappedTransforms(root, m_animations[anim].bonesWithKeys, anim);
+
 		for (auto i = 0; i < root->mNumChildren; i++) {
 			auto childBoneId = FindBoneWithKeys(m_animations[anim].bonesWithKeys, root->mChildren[i]->mName.data);
 			auto childTransform = m_animations[anim].bonesWithKeys[childBoneId];
@@ -114,7 +126,7 @@ void ModelLoader::ReadBoneHierarchy(const aiScene* scene) {
 				childTransform.finalTransforms.push_back(XMMatrixTranspose(offset) * childTransform.transforms[i]);
 			}
 			m_animations[anim].bonesWithKeys[childBoneId] = childTransform;
-			m_animations[anim].bonesWithKeys = GetNodes(root->mChildren[i], m_animations[anim].bonesWithKeys);
+			m_animations[anim].bonesWithKeys = GetNodes(root->mChildren[i], m_animations[anim].bonesWithKeys, anim);
 
 		}
 	}
@@ -349,23 +361,91 @@ int ModelLoader::FindBoneWithKeys(std::vector<Structures::AnimBone> bones, std::
 	return -1;
 }
 
-std::vector<Structures::AnimBone>  ModelLoader::GetNodes(aiNode * node, std::vector<Structures::AnimBone> list) {
+std::vector<Structures::AnimBone>  ModelLoader::GetNodes(aiNode * node, std::vector<Structures::AnimBone> list, UINT animI) {
 	if (node->mNumChildren > 0) {
 		for (auto i = 0; i < node->mNumChildren; i++) {
 			auto childBoneId = FindBoneWithKeys(list, node->mChildren[i]->mName.data);
 			auto childTransform = list[childBoneId];
 			auto parentTransform = list[FindBoneWithKeys(list, node->mName.data)];
 			auto trans = aiToXmmatrix(node->mChildren[i]->mTransformation);
+
 			for (auto i = 0; i < childTransform.transforms.size(); i++) {
 				childTransform.transforms[i] = (childTransform.transforms[i] * parentTransform.transforms[i]);
 				auto offset = childTransform.offsetMatrix;
 				childTransform.finalTransforms.push_back(XMMatrixTranspose(offset) * ((childTransform.transforms[i])));
 			}
 			list[childBoneId] = childTransform;
-			list = GetNodes(node->mChildren[i], list);
+			list = GetNodes(node->mChildren[i], list, animI);
 		}
 	}
 	return list;
+}
+
+std::vector<Structures::AnimBone> ModelLoader::FillTimes(aiNode * node, std::vector<Structures::AnimBone> list, UINT animI)
+{
+	for (auto& bone : list) {
+		bone.mappedTransforms = std::vector<XMMATRIX>(m_maxFrameCountPerAnim[animI]);
+		std::fill(bone.mappedTransforms.begin(), bone.mappedTransforms.end(), XMMatrixIdentity());
+		for (auto i = 0; i < m_maxFrameCountPerAnim[animI]; i++) {
+			for (auto j = 0; j < bone.times.size(); j++) {
+				if (bone.times[j] == m_maxFrameCountPerAnim[animI] / m_animations[animI].frameCount * i) {
+					bone.mappedTransforms[i] = bone.transforms[j];
+					break;
+				}
+			}
+		}
+	}
+	return list;
+}
+
+std::vector<Structures::AnimBone> ModelLoader::FillMissingMappedTransforms(aiNode * node, std::vector<Structures::AnimBone> list, UINT animI)
+{
+	for (auto& bone : list) {
+		for (auto i = 1; i < bone.mappedTransforms.size(); i++) {
+			if (XMMatrixIsIdentity(bone.mappedTransforms[i])) {
+				auto prev = bone.mappedTransforms[i - 1];
+				auto nextIndex = GetNextNoneIdentity(bone.mappedTransforms, i);
+
+				float f = (float)((i)-(i - 1)) / (float)(nextIndex - (i));
+				auto matrix = InterpMatrix(prev, bone.mappedTransforms[nextIndex], f);
+				bone.mappedTransforms[i] = matrix;
+			}
+		}
+		bone.transforms = bone.mappedTransforms;
+	}
+	return list;
+}
+
+UINT ModelLoader::GetNextNoneIdentity(std::vector<XMMATRIX> list, UINT current)
+{
+	for (auto i = current + 1; i < list.size(); i++) {
+		if (XMMatrixIsIdentity(list[i])) {
+			continue;
+		}
+		else {
+			return i;
+		}
+	}
+}
+
+XMMATRIX ModelLoader::InterpMatrix(XMMATRIX m0, XMMATRIX m1, float f)
+{
+	XMVECTOR pos0;
+	XMVECTOR rot0;
+	XMVECTOR scale0;
+	XMMatrixDecompose(&scale0, &rot0, &pos0, m0);
+	
+	XMVECTOR pos1;
+	XMVECTOR rot1;
+	XMVECTOR scale1;
+	XMMatrixDecompose(&scale1, &rot1, &pos1, m1);
+
+	auto newPos = XMVectorLerp(pos0, pos1, f);
+	auto newRot = XMQuaternionSlerp(rot0, rot1, f);
+	auto newScale = XMVectorLerp(scale0, scale1, f);
+
+	auto outMat = XMMatrixAffineTransformation(newScale, {0,0,0,0}, newRot, newPos);
+	return outMat;
 }
 
 XMMATRIX ModelLoader::aiToXmmatrix(aiMatrix4x4 mat)

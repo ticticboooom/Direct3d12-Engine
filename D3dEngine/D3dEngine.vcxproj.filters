@@ -40,9 +40,6 @@
     <Filter Include="Base\Managers">
       <UniqueIdentifier>{95b1f930-c6d7-4250-8716-443949d0c74e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\Renderers">
-      <UniqueIdentifier>{8d71d468-fb6f-43e4-aa7e-4830fee0018e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Components\Camera">
       <UniqueIdentifier>{51274c59-3ae8-49b6-89fe-fccb8db1d381}</UniqueIdentifier>
     </Filter>
@@ -51,6 +48,12 @@
     </Filter>
     <Filter Include="Components\Colliders">
       <UniqueIdentifier>{963305d9-936f-4174-8ce5-091334953027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Player">
+      <UniqueIdentifier>{b5aa9f8a-fc19-46eb-850e-76e1fdb4b548}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Renderers">
+      <UniqueIdentifier>{8d71d468-fb6f-43e4-aa7e-4830fee0018e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -147,9 +150,6 @@
     <ClInclude Include="Mesh.h">
       <Filter>Components\Mesh</Filter>
     </ClInclude>
-    <ClInclude Include="IGameBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SkeletalMeshComponent.h">
       <Filter>Components\Mesh</Filter>
     </ClInclude>
@@ -185,6 +185,12 @@
     </ClInclude>
     <ClInclude Include="BoxCollider.h">
       <Filter>Components\Colliders</Filter>
+    </ClInclude>
+    <ClInclude Include="InputMovementComponent.h">
+      <Filter>Components\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameBase.h">
+      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +313,9 @@
     </ClCompile>
     <ClCompile Include="BoxCollider.cpp">
       <Filter>Components\Colliders</Filter>
+    </ClCompile>
+    <ClCompile Include="InputMovementComponent.cpp">
+      <Filter>Components\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
