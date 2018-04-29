@@ -7,26 +7,27 @@ UINT SkeletalMeshComponent::m_animRootSigIndex = 0u;
 /**
  * @brief Construct a new Skeletal Mesh Component:: Skeletal Mesh Component object
  * creates a mesh that is animated with skel;etal animation (skinning)
- * 
+ *
  * @param filename name of file to load as mesh
  */
-SkeletalMeshComponent::SkeletalMeshComponent(std::string filename) : Mesh(filename, true)
+SkeletalMeshComponent::SkeletalMeshComponent(std::string filename) : Mesh(filename, true),
+m_anim(0)
 {
-	m_descriptorCount += 1;
+	m_descriptorCount += m_meshData->animations->size();
 }
 
 /**
  * @brief Destroy the Skeletal Mesh Component:: Skeletal Mesh Component object
- * 
+ *
  */
 SkeletalMeshComponent::~SkeletalMeshComponent()
 {
 }
 /**
  * @brief creates the root signature parameter for the animation constant buffer
- * 
- * @param indexOffset 
- * @return int 
+ *
+ * @param indexOffset
+ * @return int
  */
 int SkeletalMeshComponent::InitRootSignatureParameters(int indexOffset)
 {
@@ -42,41 +43,52 @@ int SkeletalMeshComponent::InitRootSignatureParameters(int indexOffset)
 }
 /**
  * @brief creates the constant buffer for the animation of the mesh
- * 
- * @param commandListManager 
- * @param descriptorHeapManager 
- * @param descOffset 
- * @param pso 
+ *
+ * @param commandListManager
+ * @param descriptorHeapManager
+ * @param descOffset
+ * @param pso
  */
 
 void SkeletalMeshComponent::Init()
 {
+	m_cbvDescriptorSize = CommonObjects::m_descriptorHeapManager->GetDescriptorSize();
+
 	m_animationManager = std::make_unique<AnimationManager>(m_meshData->animations);
+	auto animCount = m_animationManager->GetAnimCount();
+	auto bufferSize = 0u;
+	for (auto i = 0; i < animCount; i++) {
+		m_perAnimBufferOffset.push_back(bufferSize);
+		bufferSize += m_animationManager->GetFrameCount(i, 0);
+	}
 	m_animationConstantBufferManager = std::make_unique<ConstantBufferManager<XMFLOAT4X4>>(1,
-		m_animationConstantBufferManager->GetAlignedSize() * m_animationManager->GetPositioninAnim(0, 0).size(),
+		m_animationConstantBufferManager->GetAlignedSize() * bufferSize,
 		CommonObjects::m_deviceResources,
 		CommonObjects::m_commandListManager);
-	m_cbvDescriptorSize = CommonObjects::m_descriptorHeapManager->GetDescriptorSize();
-	m_animationConstantBufferManager->CreateBufferDesc(m_animationConstantBufferManager->GetAlignedSize() * m_animationManager->GetPositioninAnim(0, 0).size(), CommonObjects::m_descriptorHeapIndexOffset, CommonObjects::m_descriptorHeapManager, m_cbvDescriptorSize);
-	m_animDescHeapIndex = CommonObjects::m_descriptorHeapIndexOffset;
 
+	for (auto i = 0; i < animCount; i++) {
+		m_animationConstantBufferManager->CreateBufferDesc(m_animationConstantBufferManager->GetAlignedSize() * m_animationManager->GetFrameCount(i, 0), CommonObjects::m_descriptorHeapIndexOffset, CommonObjects::m_descriptorHeapManager, m_cbvDescriptorSize);
+		m_animDescHeapIndicies.push_back(CommonObjects::m_descriptorHeapIndexOffset);
+		CommonObjects::m_descriptorHeapIndexOffset++;
+	}
+	m_heapInds.push_back(CommonObjects::m_descriptorHeapIndexOffset);
 	m_rootSignInds.push_back(m_animRootSigIndex);
-	m_heapInds.push_back(m_animDescHeapIndex);
-	CommonObjects::m_descriptorHeapIndexOffset++;
+	m_animHeapIndex = m_heapInds.size() - 1;
 	Mesh::Init();
 }
 /**
  * @brief runs the animations
- * 
+ *
  */
 void SkeletalMeshComponent::Update()
 {
+
 	m_frame++;
-	if (m_frame >= m_animationManager->GetFrameCount(0, 0)) {
+	if (m_frame >= m_animationManager->GetFrameCount(m_anim, 0)) {
 		m_frame = 0;
 	}
-	auto cbvData = m_animationManager->GetPositioninAnim(0, m_frame);
-	UINT8* destination = m_animationConstantBufferManager->GetMappedData();
+	auto cbvData = m_animationManager->GetPositioninAnim(m_anim, m_frame);
+	UINT8* destination = m_animationConstantBufferManager->GetMappedData() + (m_perAnimBufferOffset[m_anim] * m_animationConstantBufferManager->GetAlignedSize());
 	std::memcpy(destination, cbvData.data(), sizeof(XMFLOAT4X4) * cbvData.size());
 	Mesh::Update();
 }
@@ -114,4 +126,12 @@ void SkeletalMeshComponent::CreateWindowSizeDependentResources()
 void SkeletalMeshComponent::CreateDeviceDependentResoures()
 {
 	Mesh::CreateDeviceDependentResoures();
+}
+
+void SkeletalMeshComponent::SetAnimInUse(UINT index)
+{
+	if (m_animDescHeapIndicies.size() > index) {
+		m_anim = index;
+		m_heapInds[m_animHeapIndex] = m_animDescHeapIndicies[index];
+	}
 }

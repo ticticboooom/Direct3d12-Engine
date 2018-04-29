@@ -8,7 +8,8 @@
 #include "PhysicsComponent.h"
 
 
-TestRenderer::TestRenderer() : Renderer()
+TestRenderer::TestRenderer() : Renderer(),
+counter(0)
 {
 	m_playerNode = std::make_shared<Node>();
 	m_nodeManager.AddComponent(m_playerNode);
@@ -23,7 +24,7 @@ TestRenderer::TestRenderer() : Renderer()
 
 	auto physicsComponent = std::make_shared<PhysicsComponent>();
 	m_playerNode->AddComponent(physicsComponent);
-	
+
 	auto movementComponent = std::make_shared<InputMovementComponent>();
 	m_playerNode->AddComponent(movementComponent);
 
@@ -60,7 +61,7 @@ TestRenderer::TestRenderer() : Renderer()
 
 	auto physicsComponent1 = std::make_shared<PhysicsComponent>();
 	m_otherNode->AddComponent(physicsComponent1);
-	
+
 
 	auto terrainCollisionComponent1 = std::make_shared<TerrainCollisionComponent>();
 	m_otherNode->AddComponent(terrainCollisionComponent1);
@@ -87,6 +88,14 @@ void TestRenderer::Init()
 
 void TestRenderer::Update()
 {
+	if (counter == 0) {
+		counter = 100;
+		auto meshComp = m_playerNode->GetComponentManager()->GetComponent(typeid(SkeletalMeshComponent).name());
+		auto skeletalMesh = (SkeletalMeshComponent*)meshComp.get();
+		skeletalMesh->SetAnimInUse(animation);
+		animation = !animation;
+	}
+	counter--;
 	Renderer::Update();
 }
 

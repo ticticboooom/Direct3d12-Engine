@@ -54,7 +54,7 @@ void CameraComponent::Update()
 	else {
 		m_movementComponent->SetRotationAbilities(true, true);
 	}
-	m_transform->rotationQuat = XMQuaternionRotationRollPitchYaw(0, yaw - XM_PI / 2, 0);
+	m_transform->rotationQuat = XMQuaternionRotationRollPitchYaw(0, yaw, 0);
 	// Puts the new pos (after orbitting and terrain collision) in to an XMVECTOR structure
 	auto newPos = XMLoadFloat3(&fullNewPosFloat3);
 

@@ -21,6 +21,8 @@ namespace Structures
 	{
 		std::string name;
 		std::vector<XMMATRIX> transforms;
+		std::vector<float> times;
+		std::vector<XMMATRIX> mappedTransforms;
 		std::vector<XMMATRIX> finalTransforms = std::vector<XMMATRIX>();
 		XMMATRIX offsetMatrix;
 		XMMATRIX mtrans;
