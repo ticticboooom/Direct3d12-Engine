@@ -192,6 +192,9 @@
     <ClInclude Include="IGameBase.h">
       <Filter>Base</Filter>
     </ClInclude>
+    <ClInclude Include="CylinderCollider.h">
+      <Filter>Components\Colliders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -316,6 +319,9 @@
     </ClCompile>
     <ClCompile Include="InputMovementComponent.cpp">
       <Filter>Components\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CylinderCollider.cpp">
+      <Filter>Components\Colliders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

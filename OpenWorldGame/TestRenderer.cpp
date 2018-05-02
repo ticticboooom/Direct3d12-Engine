@@ -6,6 +6,7 @@
 #include "TerrainCollisionComponent.h"
 #include "BoxCollider.h"
 #include "PhysicsComponent.h"
+#include "CylinderCollider.h"
 
 
 TestRenderer::TestRenderer() : Renderer(),
@@ -31,10 +32,9 @@ counter(0)
 	auto terrainCollisionComponent = std::make_shared<TerrainCollisionComponent>();
 	m_playerNode->AddComponent(terrainCollisionComponent);
 
-	auto boxCollider = std::make_shared<BoxCollider>();
+	auto boxCollider = std::make_shared<CylinderCollider>();
 	m_playerNode->AddComponent(boxCollider);
-	boxCollider->InitCollider(BoundingBox{ XMFLOAT3{0,0,0}, XMFLOAT3{1,2.4f,1} });
-
+	boxCollider->InitCollider(Structures::BoundingCylinder({0,0,0}, 1, 2));
 
 
 	//camera
@@ -66,9 +66,9 @@ counter(0)
 	auto terrainCollisionComponent1 = std::make_shared<TerrainCollisionComponent>();
 	m_otherNode->AddComponent(terrainCollisionComponent1);
 
-	auto boxCollider1 = std::make_shared<BoxCollider>();
+	auto boxCollider1 = std::make_shared<CylinderCollider>();
 	m_otherNode->AddComponent(boxCollider1);
-	boxCollider1->InitCollider(BoundingBox{ XMFLOAT3{ 0,0,0 }, XMFLOAT3{ 1,2.4f,1 } });
+	boxCollider1->InitCollider(Structures::BoundingCylinder({ 0,0,0 }, 1, 2));
 }
 
 

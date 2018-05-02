@@ -8,7 +8,7 @@
 using namespace DirectX;
 /**
  * @brief the common structures required in the engine
- * 
+ *
  */
 namespace Structures
 {
@@ -111,6 +111,31 @@ namespace Structures
 			position = XMVectorSet(0, 0, 0, 1);
 			rotationQuat = XMQuaternionIdentity();
 			scale = XMVectorSet(1, 1, 1, 1);
+		}
+	};
+	struct BoundingCylinder {
+		XMFLOAT3 Center;
+		float radius;
+		float extentY;
+		BoundingCylinder(XMFLOAT3 cen, float rad, float extY) :
+			Center(cen), radius(rad), extentY(extY) {}
+
+		BoundingCylinder() {
+			Center = { 0.f, 0.f, 0.f };
+			radius = 0.0f;
+			extentY = 0.0f;
+		}
+
+		bool Intersects(BoundingCylinder otherCylinder) {
+			auto diff = XMFLOAT3{};
+			XMStoreFloat3(&diff, XMLoadFloat3(&Center) - XMLoadFloat3(&otherCylinder.Center));
+			auto length = XMVectorGetX(XMVector3Length(XMVectorSet(diff.x, 0, diff.z, 0)));
+			auto collideY = ((diff.y - (extentY * 2) < 0 && diff.y > 0) || (diff.y + (extentY * 2) > 0 && diff.y < 0));
+			if (length < radius + otherCylinder.radius && collideY)
+			{
+				return true;
+			}
+			return false;
 		}
 	};
 }

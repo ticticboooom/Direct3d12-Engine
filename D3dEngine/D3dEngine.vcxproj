@@ -162,6 +162,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentManager.h" />
     <ClInclude Include="ConstantBufferManager.h" />
+    <ClInclude Include="CylinderCollider.h" />
     <ClInclude Include="d3dx12.h" />
     <ClInclude Include="DescriptorHeapManager.h" />
     <ClInclude Include="DeviceResources.h" />
@@ -208,6 +209,7 @@
     <ClCompile Include="CommonObjects.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ComponentManager.cpp" />
+    <ClCompile Include="CylinderCollider.cpp" />
     <ClCompile Include="D3dEngine.cpp" />
     <ClCompile Include="DescriptorHeapManager.cpp" />
     <ClCompile Include="DeviceResources.cpp" />
