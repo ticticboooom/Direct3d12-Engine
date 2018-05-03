@@ -86,7 +86,7 @@ XMVECTOR CylinderCollider::GetPushBack(Structures::BoundingCylinder coll)
 	auto length = XMVectorGetX(XMVector3Length(XMVectorSetY(diff, 0)));
 	auto push = XMVectorSet(0, 0, 0, 0);
 	if (XMVector3Equal(direction, XMVectorSet(0, XMVectorGetY(direction), 0, 0))) {
-		push = XMVectorSet(0, -1, 0, 0) * m_collider.radius;
+		push = XMVectorSet(1, 0, 0, 0) * m_collider.radius;
 	}
 	else {
 		push = direction * XMVectorSet(1, 0, 1, 1) * (m_collider.radius + coll.radius - length);

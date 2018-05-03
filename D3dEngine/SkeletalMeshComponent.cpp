@@ -73,7 +73,7 @@ void SkeletalMeshComponent::Init()
 	}
 	m_heapInds.push_back(CommonObjects::m_descriptorHeapIndexOffset);
 	m_rootSignInds.push_back(m_animRootSigIndex);
-	m_animHeapIndex = m_heapInds.size() - 1;
+	m_animHeapIndex = CommonObjects::m_descriptorHeapIndexOffset;
 	Mesh::Init();
 }
 /**
