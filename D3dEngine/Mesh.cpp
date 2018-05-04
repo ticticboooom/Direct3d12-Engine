@@ -73,6 +73,8 @@ void Mesh::Init()
 		m_vertexBufferManager = std::make_unique<VertexBufferManager>(m_meshData->vertices, CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
 		m_indexBufferManager = std::make_unique<IndexBufferManager>(inds, CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
 
+		m_meshData->indices->clear();
+		m_meshData->vertices->clear();
 		inds->clear();
 
 		m_vertexBufferView = m_vertexBufferManager->CreateVertexBufferView();

@@ -3,7 +3,7 @@
 
 
 PlayerNode::PlayerNode() : Node(),
-counter(0)
+counter(0), animation(0)
 {
 	//player
 	auto pathManager = PathManager();

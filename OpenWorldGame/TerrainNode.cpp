@@ -5,7 +5,6 @@ TerrainNode::TerrainNode() : Node()
 	auto terrain = std::make_shared<TerrainComponent>();
 	AddComponent(terrain);
 	terrain->UseTexture(L"terrain.png");
-
 }
 
 

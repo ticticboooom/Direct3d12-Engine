@@ -11,11 +11,11 @@ TestRenderer::TestRenderer() : Renderer()
 	m_playerNode = std::make_shared<PlayerNode>();
 	m_nodeManager.AddComponent(m_playerNode);
 
-	auto playerMovementComp = (InputMovementComponent*)(m_playerNode->GetComponentManager()->GetComponent(typeid(InputMovementComponent).name()).get());
-	auto playerMovementComponent = std::shared_ptr<InputMovementComponent>(playerMovementComp);
+	auto playerMovementComp = (m_playerNode->GetComponentManager()->GetComponent(typeid(InputMovementComponent).name()));
+	auto playerMovementComponent = std::dynamic_pointer_cast<InputMovementComponent>(playerMovementComp);
 
 	m_cameraNode = std::make_shared<PlayerCameraNode>(playerMovementComponent);
-	m_nodeManager.AddComponent(m_playerNode);
+	m_nodeManager.AddComponent(m_cameraNode);
 	
 	m_terrainNode = std::make_shared<TerrainNode>();
 	m_nodeManager.AddComponent(m_terrainNode);

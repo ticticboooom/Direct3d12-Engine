@@ -14,6 +14,7 @@ class PlayerNode : public Node
 public:
 	PlayerNode();
 	~PlayerNode();
+
 	virtual int InitRootSignatureParameters(int indexOffset) override;
 	virtual void Init() override;
 	virtual void Update() override;
