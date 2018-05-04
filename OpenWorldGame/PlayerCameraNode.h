@@ -1,12 +1,19 @@
 #pragma once
-#include "Renderer.h"
 #include "Node.h"
-class TestRenderer : public Renderer
+#include "SkeletalMeshComponent.h"
+#include "PathManager.h"
+#include "CameraComponent.h"
+#include "TerrainComponent.h"
+#include "TerrainCollisionComponent.h"
+#include "BoxCollider.h"
+#include "PhysicsComponent.h"
+#include "CylinderCollider.h"
+
+class PlayerCameraNode : public Node
 {
 public:
-	TestRenderer();
-	~TestRenderer();
-
+	PlayerCameraNode(std::shared_ptr<InputMovementComponent> movementComponent);
+	~PlayerCameraNode();
 	virtual int InitRootSignatureParameters(int indexOffset) override;
 	virtual void Init() override;
 	virtual void Update() override;
@@ -17,11 +24,5 @@ public:
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
-private:
-	std::shared_ptr<Node> m_playerNode;
-	std::shared_ptr<Node> m_otherNode;
-	std::shared_ptr<Node> m_cameraNode;
-	std::shared_ptr<Node> m_terrainNode;
-
 };
 

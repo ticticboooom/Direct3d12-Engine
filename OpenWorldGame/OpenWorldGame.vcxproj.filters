@@ -19,6 +19,9 @@
     <Filter Include="Source Files\Renderers\Manager">
       <UniqueIdentifier>{294a07e8-9271-4479-8a4d-2d9c91162e50}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Nodes">
+      <UniqueIdentifier>{88059a6b-51e0-46bc-819c-121333eeba51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -29,6 +32,18 @@
     </ClCompile>
     <ClCompile Include="TestRenderer.cpp">
       <Filter>Source Files\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerNode.cpp">
+      <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerCameraNode.cpp">
+      <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainNode.cpp">
+      <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyNode.cpp">
+      <Filter>Source Files\Nodes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +70,18 @@
     </ClInclude>
     <ClInclude Include="TestRenderer.h">
       <Filter>Source Files\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerNode.h">
+      <Filter>Source Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerCameraNode.h">
+      <Filter>Source Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainNode.h">
+      <Filter>Source Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyNode.h">
+      <Filter>Source Files\Nodes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
