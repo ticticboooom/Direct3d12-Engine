@@ -401,14 +401,18 @@ std::vector<Structures::AnimBone> ModelLoader::FillTimes(aiNode * node, std::vec
 std::vector<Structures::AnimBone> ModelLoader::FillMissingMappedTransforms(aiNode * node, std::vector<Structures::AnimBone> list, UINT animI)
 {
 	for (auto& bone : list) {
+		auto prevKey = 0u;
 		for (auto i = 1; i < bone.mappedTransforms.size(); i++) {
 			if (XMMatrixIsIdentity(bone.mappedTransforms[i])) {
 				auto prev = bone.mappedTransforms[i - 1];
 				auto nextIndex = GetNextNoneIdentity(bone.mappedTransforms, i);
 
-				float f = (float)((i)-(i - 1)) / (float)(nextIndex - (i));
+				float f =  i / (nextIndex - prevKey);
 				auto matrix = InterpMatrix(prev, bone.mappedTransforms[nextIndex], f);
 				bone.mappedTransforms[i] = matrix;
+			}
+			else {
+				prevKey = i;
 			}
 		}
 		bone.transforms = bone.mappedTransforms;

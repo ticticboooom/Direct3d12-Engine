@@ -67,7 +67,6 @@ BinaryModelLoader::BinaryModelLoader(const char* filePath, bool hasAnimations)
 			(*m_finalData->animations)[i].swap(animation);
 		}
 	}
-	assert(_CrtCheckMemory());
 }
 
 

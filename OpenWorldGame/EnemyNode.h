@@ -24,5 +24,12 @@ public:
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
+private:
+	void Move();
+	void InitPoints();
+	std::vector<XMVECTOR> m_points;
+	UINT m_currentPointIndex;
+	UINT m_intervalIndex;
+	const float c_multiplyer = 0.2;
 };
 

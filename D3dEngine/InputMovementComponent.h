@@ -20,6 +20,7 @@ public:
 	XMVECTOR GetPos() const { return m_position; };
 	float GetPitch() const { return m_pitch; };
 	float GetYaw() const { return m_yaw; };
+	float GetIdleState() const { return isIdle; };
 	void SetRotationAbilities(bool allowPitch, bool allowYaw) { m_canRotatePitch = allowPitch; m_canRotateYaw = allowYaw; };
 private:
 	float m_pitch; /// The pitch of the mouse movement
@@ -33,5 +34,6 @@ private:
 	bool m_canRotatePitch;
 	bool m_canRotateYaw;
 	DirectX::XMVECTOR m_camTarget; /// The target that the camera will look at
+	bool isIdle;
 };
 

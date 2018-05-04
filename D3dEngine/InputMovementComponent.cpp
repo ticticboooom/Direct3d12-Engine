@@ -9,7 +9,8 @@ InputMovementComponent::InputMovementComponent():
 	m_yaw(0),
 	m_direction({}),
 	m_canRotatePitch(true),
-	m_canRotateYaw(true)
+	m_canRotateYaw(true),
+	isIdle(true)
 {
 }
 
@@ -29,6 +30,12 @@ void InputMovementComponent::Init()
 
 void InputMovementComponent::Update()
 {
+	if (XMVector3Equal(m_direction, XMVectorSet(0, 0, 0, 0))) {
+		isIdle = true;
+	}
+	else {
+		isIdle = false;
+	}
 	ComponentManager* fullOwner = ComponentManager::GetOwner(owner);
 	auto physicsComp = fullOwner->GetComponent(typeid(PhysicsComponent).name());
 	if (physicsComp) {

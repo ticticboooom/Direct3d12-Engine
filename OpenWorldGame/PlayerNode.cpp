@@ -3,7 +3,7 @@
 
 
 PlayerNode::PlayerNode() : Node(),
-counter(0), animation(0)
+counter(0), animation(0), m_prevIdleState(true)
 {
 	//player
 	auto pathManager = PathManager();
@@ -21,8 +21,8 @@ counter(0), animation(0)
 	auto playerCollider = Structures::BoundingCylinder({ 0,0,0 }, 1.2f, 3);
 	boxCollider->InitCollider(playerCollider);
 
-	auto movementComponent = std::make_shared<InputMovementComponent>();
-	AddComponent(movementComponent);
+	m_movementComp = std::make_shared<InputMovementComponent>();
+	AddComponent(m_movementComp);
 
 	auto terrainCollisionComponent = std::make_shared<TerrainCollisionComponent>();
 	AddComponent(terrainCollisionComponent);
@@ -44,12 +44,17 @@ void PlayerNode::Init()
 
 void PlayerNode::Update()
 {
-	if (counter == 0) {
-		counter = 100;
+	auto idleState = m_movementComp->GetIdleState();
+	if (m_prevIdleState != idleState) {
 		auto meshComp = GetComponentManager()->GetComponent(typeid(SkeletalMeshComponent).name());
 		auto skeletalMesh = (SkeletalMeshComponent*)meshComp.get();
-		skeletalMesh->SetAnimInUse(animation);
-		animation = !animation;
+		if (idleState == true) {
+			skeletalMesh->SetAnimInUse(0);
+		}
+		else {
+			skeletalMesh->SetAnimInUse(1);
+		}
+		m_prevIdleState = idleState;
 	}
 	counter--;
 	Node::Update();

@@ -28,5 +28,7 @@ public:
 private:
 	UINT counter;
 	UINT animation;
+	bool m_prevIdleState;
+	std::shared_ptr<InputMovementComponent> m_movementComp;
 };
 

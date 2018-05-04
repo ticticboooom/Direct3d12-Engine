@@ -61,6 +61,7 @@ void SkeletalMeshComponent::Init()
 		m_perAnimBufferOffset.push_back(bufferSize);
 		bufferSize += m_animationManager->GetFrameCount(i, 0);
 	}
+
 	m_animationConstantBufferManager = std::make_unique<ConstantBufferManager<XMFLOAT4X4>>(1,
 		m_animationConstantBufferManager->GetAlignedSize() * bufferSize,
 		CommonObjects::m_deviceResources,
