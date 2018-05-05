@@ -76,7 +76,7 @@ void InputMovementComponent::Update()
 	m_transform->position = XMVectorAdd(m_transform->position, zAxisMovement);
 	m_transform->position = XMVectorAdd(m_transform->position, yAxisMovement);
 	m_position = m_transform->position;
-	m_transform->rotationQuat = XMQuaternionRotationRollPitchYaw(0, m_yaw + XM_PI / 2, 0);
+	m_transform->rotationQuat = XMQuaternionRotationRollPitchYaw(0, m_yaw - XM_PI / 2, 0);
 }
 
 void InputMovementComponent::Render()

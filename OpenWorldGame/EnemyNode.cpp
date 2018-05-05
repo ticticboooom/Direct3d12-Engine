@@ -22,6 +22,7 @@ m_currentPointIndex(0)
 	AddComponent(boxCollider1);
 	boxCollider1->InitCollider(playerCollider);
 	InitPoints();
+
 }
 
 
@@ -33,10 +34,12 @@ int EnemyNode::InitRootSignatureParameters(int indexOffset)
 {
 	return Node::InitRootSignatureParameters(indexOffset);
 }
-
+	
 void EnemyNode::Init()
 {
 	Node::Init();
+	auto skeletalMesh = std::dynamic_pointer_cast<SkeletalMeshComponent>(GetComponentManager()->GetComponent(typeid(SkeletalMeshComponent).name()));
+	skeletalMesh->SetAnimInUse(1);
 }
 
 void EnemyNode::Update()
@@ -104,6 +107,17 @@ void EnemyNode::Move()
 	auto movement = XMVector3Rotate(zForward, rot);
 	auto newPos = m_transform->position + movement;
 	m_transform->position = newPos;
+	
+	{
+		auto newRot = XMQuaternionMultiply(rot, XMQuaternionRotationRollPitchYaw(0, XM_PI / 2, 0));
+		float angle;
+		XMVECTOR axis;
+		XMQuaternionToAxisAngle(&axis, &angle, newRot);
+		
+		auto newAxis = axis * XMVectorSet(0, 1, 0, 0);
+		
+		m_transform->rotationQuat = XMQuaternionRotationAxis(newAxis, angle);
+	}
 }
 
 void EnemyNode::InitPoints()

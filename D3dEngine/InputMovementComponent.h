@@ -35,5 +35,6 @@ private:
 	bool m_canRotateYaw;
 	DirectX::XMVECTOR m_camTarget; /// The target that the camera will look at
 	bool isIdle;
+	float m_rotOffset;
 };
 

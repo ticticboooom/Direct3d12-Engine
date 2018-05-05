@@ -19,6 +19,7 @@ public:
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
 	void SetAnimInUse(UINT index);
+	void InterpFromTo(const int index0, const int index1, const float interval, const int stationaryIndex);
 protected:
 	std::unique_ptr<AnimationManager> m_animationManager;
 	std::unique_ptr<ConstantBufferManager<XMFLOAT4X4>> m_animationConstantBufferManager;
@@ -30,5 +31,12 @@ protected:
 	UINT m_animHeapIndex;
 private:
 	static bool m_isRootSignatureInitialised;
+	float interpT;
+	bool isInterping;
+	float interpInterval;
+	UINT m_interpFrame;
+	UINT m_interpIndex0;
+	UINT m_interpIndex1;
+	UINT m_stationaryIndex;
 };
 

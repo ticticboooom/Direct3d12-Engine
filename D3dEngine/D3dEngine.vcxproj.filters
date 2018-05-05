@@ -49,11 +49,11 @@
     <Filter Include="Components\Colliders">
       <UniqueIdentifier>{963305d9-936f-4174-8ce5-091334953027}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\Player">
-      <UniqueIdentifier>{b5aa9f8a-fc19-46eb-850e-76e1fdb4b548}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Components\Renderers">
       <UniqueIdentifier>{8d71d468-fb6f-43e4-aa7e-4830fee0018e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Player">
+      <UniqueIdentifier>{b5aa9f8a-fc19-46eb-850e-76e1fdb4b548}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -49,14 +49,13 @@ void PlayerNode::Update()
 		auto meshComp = GetComponentManager()->GetComponent(typeid(SkeletalMeshComponent).name());
 		auto skeletalMesh = (SkeletalMeshComponent*)meshComp.get();
 		if (idleState == true) {
-			skeletalMesh->SetAnimInUse(0);
+			skeletalMesh->InterpFromTo(1, 0, 0.09f, 2);
 		}
 		else {
-			skeletalMesh->SetAnimInUse(1);
+			skeletalMesh->InterpFromTo(0, 1, 0.09f, 2);
 		}
 		m_prevIdleState = idleState;
 	}
-	counter--;
 	Node::Update();
 }
 
