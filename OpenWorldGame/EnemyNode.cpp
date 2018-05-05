@@ -19,8 +19,15 @@ m_currentPointIndex(0)
 	auto playerCollider = Structures::BoundingCylinder({ 0,0,0 }, 1.2f, 3);
 	auto boxCollider1 = std::make_shared<CylinderCollider>();
 
+
+
 	AddComponent(boxCollider1);
 	boxCollider1->InitCollider(playerCollider);
+	auto boxCollider = std::make_shared<BoxCollider>();
+	AddComponent(boxCollider);
+	auto playerCollider1 = BoundingBox({ 0,0,0 }, { 0,5.f,0 });
+	boxCollider->InitCollider(playerCollider1);
+
 	InitPoints();
 
 }
@@ -37,9 +44,13 @@ int EnemyNode::InitRootSignatureParameters(int indexOffset)
 	
 void EnemyNode::Init()
 {
+	auto startPointIndex = (rand() / RAND_MAX) * (m_points.size());
+	m_transform->position = m_points[startPointIndex];
+
 	Node::Init();
 	auto skeletalMesh = std::dynamic_pointer_cast<SkeletalMeshComponent>(GetComponentManager()->GetComponent(typeid(SkeletalMeshComponent).name()));
-	skeletalMesh->SetAnimInUse(1);
+	skeletalMesh->SetAnimInUse(4);
+
 }
 
 void EnemyNode::Update()
@@ -124,7 +135,7 @@ void EnemyNode::InitPoints()
 {
 	for (auto i = 0; i < 10; i++) {
 		auto direction = XMVector3Normalize(XMVectorSet(rand(), 0, rand(), 0));
-		auto pos = direction * (((float)rand() / RAND_MAX) * 500);
+		auto pos = direction * ((static_cast<float>(rand()) / static_cast<float>(RAND_MAX)) * 500.f);
 		m_points.push_back(pos);
 	}
 }

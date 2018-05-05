@@ -59,7 +59,7 @@ void SkeletalMeshComponent::Init()
 	auto bufferSize = 0u;
 	for (auto i = 0; i < animCount; i++) {
 		m_perAnimBufferOffset.push_back(bufferSize);
-		bufferSize += m_animationManager->GetFrameCount(i, 0);
+		bufferSize += m_animationManager->GetBoneCount(i);
 	}
 
 	m_animationConstantBufferManager = std::make_unique<ConstantBufferManager<XMFLOAT4X4>>(1,
@@ -68,11 +68,11 @@ void SkeletalMeshComponent::Init()
 		CommonObjects::m_commandListManager);
 
 	for (auto i = 0; i < animCount; i++) {
-		m_animationConstantBufferManager->CreateBufferDesc(m_animationConstantBufferManager->GetAlignedSize() * m_animationManager->GetFrameCount(i, 0), CommonObjects::m_descriptorHeapIndexOffset, CommonObjects::m_descriptorHeapManager, m_cbvDescriptorSize);
+		m_animationConstantBufferManager->CreateBufferDesc(m_animationConstantBufferManager->GetAlignedSize() * m_animationManager->GetBoneCount(i), CommonObjects::m_descriptorHeapIndexOffset, CommonObjects::m_descriptorHeapManager, m_cbvDescriptorSize);
 		m_animDescHeapIndicies.push_back(CommonObjects::m_descriptorHeapIndexOffset);
 		CommonObjects::m_descriptorHeapIndexOffset++;
 	}
-	m_heapInds.push_back(CommonObjects::m_descriptorHeapIndexOffset);
+	m_heapInds.push_back(m_animDescHeapIndicies[0]);
 	m_rootSignInds.push_back(m_animRootSigIndex);
 	m_animHeapIndex = m_heapInds.size() - 1;
 	Mesh::Init();
@@ -83,7 +83,10 @@ void SkeletalMeshComponent::Init()
  */
 void SkeletalMeshComponent::Update()
 {
-
+	m_frame++;
+	if (m_frame >= m_animationManager->GetFrameCount(m_anim, 0)) {
+		m_frame = 0;
+	}
 	std::vector<XMFLOAT4X4> cbvData;
 	if (isInterping) {
 		m_interpFrame++;
@@ -104,10 +107,7 @@ void SkeletalMeshComponent::Update()
 		cbvData = m_animationManager->GetPositioninAnim(m_anim, m_frame);
 	}
 	
-	m_frame++;
-	if (m_frame >= m_animationManager->GetFrameCount(m_anim, 0)) {
-		m_frame = 0;
-	}
+
 
 	UINT8* destination = m_animationConstantBufferManager->GetMappedData() + (m_perAnimBufferOffset[m_anim] * m_animationConstantBufferManager->GetAlignedSize());
 	std::memcpy(destination, cbvData.data(), sizeof(XMFLOAT4X4) * cbvData.size());

@@ -20,6 +20,8 @@ public:
 	virtual void CreateDeviceDependentResoures() override;
 	void SetAnimInUse(UINT index);
 	void InterpFromTo(const int index0, const int index1, const float interval, const int stationaryIndex);
+	UINT GetCurrentFrame() { return m_frame; };
+	UINT GetAnimFrameCount(const unsigned int index) { return m_animationManager->GetFrameCount(index, 0); };
 protected:
 	std::unique_ptr<AnimationManager> m_animationManager;
 	std::unique_ptr<ConstantBufferManager<XMFLOAT4X4>> m_animationConstantBufferManager;

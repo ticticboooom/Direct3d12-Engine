@@ -30,5 +30,8 @@ private:
 	UINT animation;
 	bool m_prevIdleState;
 	std::shared_ptr<InputMovementComponent> m_movementComp;
+	bool m_isHitting;
+	UINT m_hitStartFrame;
+	
 };
 
