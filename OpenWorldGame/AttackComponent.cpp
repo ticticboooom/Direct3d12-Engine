@@ -35,13 +35,14 @@ void AttackComponent::Update()
 	auto frameCount = m_meshComponent->GetAnimFrameCount(1);
 	if (counter >= frameCount && m_isHitting) {
 		if (counter == frameCount) {
-			m_meshComponent->InterpFromTo(0, idleAnim, 0.25f, -1);
+			m_meshComponent->InterpFromTo(0, idleAnim, 0.1f, -1);
 		}
-		else if (counter == frameCount + 4) {
+		else if (counter == frameCount + 10) {
 			m_isHitting = false;
 			m_movementComp->SetCanMove(true);
 		}
 	}
+
 	if ((GetKeyState(VK_LBUTTON) & 0x100) != 0 && !m_isHitting) {
 		m_meshComponent->InterpFromTo(idleAnim, 0, 0.25f, -1);
 		m_isHitting = true;

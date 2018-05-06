@@ -157,7 +157,7 @@ void SkeletalMeshComponent::SetAnimInUse(UINT index)
 	}
 }
 
-void SkeletalMeshComponent::InterpFromTo(const int index0, const int index1, const float interval, const int stationaryIndex)
+void SkeletalMeshComponent::InterpFromTo(const int index0, const int index1, const float interval, const int frameFlag)
 {
 	m_anim = index0;
 	isInterping = true;
@@ -166,6 +166,9 @@ void SkeletalMeshComponent::InterpFromTo(const int index0, const int index1, con
 	m_interpIndex0 = index0;
 	m_interpIndex1 = index1;
 	m_heapInds[m_animHeapIndex] = m_animDescHeapIndicies[index0];
-	m_stationaryIndex = stationaryIndex;
+	m_stationaryIndex = frameFlag;
+	if (frameFlag == 0) {
+		m_frame = m_interpFrame;
+	}
 }
 

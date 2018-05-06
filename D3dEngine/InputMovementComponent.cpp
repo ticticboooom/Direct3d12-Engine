@@ -33,13 +33,14 @@ void InputMovementComponent::Init()
 
 void InputMovementComponent::Update()
 {
+	if (XMVector3Equal(m_direction, XMVectorSet(0, 0, 0, 0))) {
+		isIdle = true;
+		m_isRunning = false;
+	}
+	else {
+		isIdle = false;
+	}
 	if (m_canMove) {
-		if (XMVector3Equal(m_direction, XMVectorSet(0, 0, 0, 0))) {
-			isIdle = true;
-		}
-		else {
-			isIdle = false;
-		}
 		ComponentManager* fullOwner = ComponentManager::GetOwner(owner);
 		auto physicsComp = fullOwner->GetComponent(typeid(PhysicsComponent).name());
 		if (physicsComp) {

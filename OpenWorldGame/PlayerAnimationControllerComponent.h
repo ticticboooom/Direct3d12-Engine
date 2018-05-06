@@ -24,6 +24,7 @@ public:
 private:
 	bool m_prevIdleState;
 	bool m_prevRunningState;
+	bool m_prevHittingState;
 	std::shared_ptr<InputMovementComponent> m_movementComp;
 	std::shared_ptr <SkeletalMeshComponent> m_meshComponent;
 	std::shared_ptr <AttackComponent> m_AttackComponent;

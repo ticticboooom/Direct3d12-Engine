@@ -35,7 +35,7 @@ void PlayerAnimationControllerComponent::Update()
 	auto idleAnim = (idleState) ? 1 : moveAnim;
 	if (m_prevIdleState != idleState && !m_AttackComponent->GetHittingState()) {
 		if (idleState == true) {
-			m_meshComponent->InterpFromTo(moveAnim, 1, 0.09f, 2);
+			m_meshComponent->InterpFromTo(idleAnim, 1, 0.09f, 2);
 		}
 		else {
 			m_meshComponent->InterpFromTo(1, moveAnim, 0.09f, 2);
@@ -43,16 +43,17 @@ void PlayerAnimationControllerComponent::Update()
 		m_prevIdleState = idleState;
 	}
 
-	if (m_prevRunningState != runningState && !idleState) {
+	if (m_prevRunningState != runningState && !idleState && !m_AttackComponent->GetHittingState()) {
 		idleAnim = idleState ? 1 : 4;
 		if (runningState) {
-			m_meshComponent->InterpFromTo(idleAnim, 2, 0.09f, 2);
+			m_meshComponent->InterpFromTo(idleAnim, 2, 0.2f, 0);
 		}
 		else {
-			m_meshComponent->InterpFromTo(2, idleAnim, 0.09f, 2);
+			m_meshComponent->InterpFromTo(2, idleAnim, 0.2f, 2);
 		}
 		m_prevRunningState = runningState;
 	}
+	m_prevHittingState = m_AttackComponent->GetHittingState();
 }
 
 void PlayerAnimationControllerComponent::Render()
