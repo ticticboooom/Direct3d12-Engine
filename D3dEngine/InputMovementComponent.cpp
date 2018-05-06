@@ -11,7 +11,9 @@ InputMovementComponent::InputMovementComponent() :
 	m_canRotatePitch(true),
 	m_canRotateYaw(true),
 	isIdle(true),
-	m_canMove(true)
+	m_canMove(true),
+	m_isRunning(false),
+	isJumping(false)
 {
 }
 
@@ -32,7 +34,6 @@ void InputMovementComponent::Init()
 void InputMovementComponent::Update()
 {
 	if (m_canMove) {
-
 		if (XMVector3Equal(m_direction, XMVectorSet(0, 0, 0, 0))) {
 			isIdle = true;
 		}
@@ -58,10 +59,12 @@ void InputMovementComponent::Update()
 		up.v = XMVector3TransformCoord(up, RotateYTempMatrix);
 
 		// The float value to multiply the \property m_direction vector coords X and Z
-		const auto multiplyerXZ = -0.3f;
+		auto multiplyerXZ = -0.3f;
 		// The float value to multiply the \property m_direction vector coord Y
 		const auto multiplyerY = 0.3f;
-
+		if (m_isRunning) {
+			multiplyerXZ *= 2;
+		}
 		// Multiplies the \property m_direction vector with the multiplyers \var multiplyerXZ and \var multiplyerY
 		const auto x = XMVectorGetX(m_direction) * multiplyerXZ;
 		const auto z = XMVectorGetZ(m_direction) * multiplyerXZ;
@@ -117,7 +120,7 @@ void InputMovementComponent::OnKeyDown(UINT key)
 	// Set \property m_direction to down on "Shift" pressed
 	else if (key == VK_SHIFT)
 	{
-		m_direction.v = XMVectorSetY(m_direction, -1);
+		m_isRunning = true;
 	}
 }
 
@@ -152,7 +155,7 @@ void InputMovementComponent::OnKeyUp(UINT key)
 	// Set \property m_direction to not down on "Shift" pressed
 	else if (key == VK_SHIFT)
 	{
-		m_direction.v = XMVectorSetY(m_direction, 0);
+		m_isRunning = false;
 	}
 }
 

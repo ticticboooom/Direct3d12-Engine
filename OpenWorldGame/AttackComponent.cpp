@@ -3,7 +3,7 @@
 #include "LifeComponent.h"
 
 AttackComponent::AttackComponent() : Component(),
-counter(0), animation(0), m_prevIdleState(true)
+counter(0), animation(0), m_isHitting(false)
 {
 }
 
@@ -29,21 +29,13 @@ void AttackComponent::Update()
 {
 	counter++;
 	auto idleState = m_movementComp->GetIdleState();
-	if (m_prevIdleState != idleState && !m_isHitting) {
-		if (idleState == true) {
-			m_meshComponent->InterpFromTo(4, 2, 0.09f, 2);
-		}
-		else {
-			m_meshComponent->InterpFromTo(2, 4, 0.09f, 2);
-		}
-		m_prevIdleState = idleState;
-	}
-
-	auto anim = ((idleState == true) ? 2 : 4);
+	auto runningState = m_movementComp->GetRunningState();
+	auto moveAnim = (runningState) ? 2 : 4;
+	auto idleAnim = (idleState) ? 1 : moveAnim;
 	auto frameCount = m_meshComponent->GetAnimFrameCount(1);
 	if (counter >= frameCount && m_isHitting) {
 		if (counter == frameCount) {
-			m_meshComponent->InterpFromTo(1, anim, 0.25f, -1);
+			m_meshComponent->InterpFromTo(0, idleAnim, 0.25f, -1);
 		}
 		else if (counter == frameCount + 4) {
 			m_isHitting = false;
@@ -51,7 +43,7 @@ void AttackComponent::Update()
 		}
 	}
 	if ((GetKeyState(VK_LBUTTON) & 0x100) != 0 && !m_isHitting) {
-		m_meshComponent->InterpFromTo(anim, 1, 0.25f, -1);
+		m_meshComponent->InterpFromTo(idleAnim, 0, 0.25f, -1);
 		m_isHitting = true;
 		counter = 0;
 		m_movementComp->SetCanMove(false);
@@ -91,8 +83,16 @@ void AttackComponent::AttckOther()
 {
 	LifeComponent* closestLife = nullptr;
 	XMVECTOR closestPos{};
+
+	BoundingOrientedBox hitArea = BoundingOrientedBox({ 0,0,0 }, { 0, 0, c_attackDistance }, { 0,0,0,0 });
+	XMStoreFloat3(&hitArea.Center, m_transform->position - XMVector3Rotate(XMVectorSet(0, 0, c_attackDistance, 0), m_transform->rotationQuat));
+	XMStoreFloat4(&hitArea.Orientation, m_transform->rotationQuat);
+	
+	BoundingBox them = BoundingBox({ 0,0,0 }, { 5,5,5 });
 	for (auto& life : LifeComponent::m_lives) {
-		if (XMVectorGetX(XMVector3Length(m_transform->position - life->m_transform->position)) < 30) {
+		XMStoreFloat3(&them.Center, life->m_transform->position);
+
+		if (hitArea.Intersects(them)) {
 			closestPos = life->m_transform->position;
 			closestLife = life;
 		}

@@ -185,6 +185,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="PlayerAnimationControllerComponent.cpp" />
     <ClCompile Include="PlayerCameraNode.cpp">
       <SubType>
       </SubType>
@@ -243,6 +244,7 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="PlayerAnimationControllerComponent.h" />
     <ClInclude Include="PlayerCameraNode.h">
       <SubType>
       </SubType>

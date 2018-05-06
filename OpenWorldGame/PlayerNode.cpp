@@ -1,6 +1,6 @@
 #include "PlayerNode.h"
 #include "AttackComponent.h"
-
+#include "PlayerAnimationControllerComponent.h"
 
 PlayerNode::PlayerNode() : Node()
 {
@@ -33,6 +33,9 @@ PlayerNode::PlayerNode() : Node()
 
 	auto attackComponent = std::make_shared<AttackComponent>();
 	AddComponent(attackComponent);
+
+	auto animController = std::make_shared<PlayerAnimationControllerComponent>();
+	AddComponent(animController);
 }
 
 PlayerNode::~PlayerNode()
@@ -51,7 +54,7 @@ void PlayerNode::Init()
 
 void PlayerNode::Update()
 {
-	
+
 	Node::Update();
 }
 

@@ -63,6 +63,9 @@
     <ClCompile Include="PathFinderComponent.cpp">
       <Filter>Source Files\Components\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerAnimationControllerComponent.cpp">
+      <Filter>Source Files\Components\Player</Filter>
+    </ClCompile>
     <ClCompile Include="LifeComponent.cpp">
       <Filter>Source Files\Components\Common</Filter>
     </ClCompile>
@@ -112,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="LifeComponent.h">
       <Filter>Source Files\Components\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAnimationControllerComponent.h">
+      <Filter>Source Files\Components\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -20,7 +20,8 @@ public:
 	XMVECTOR GetPos() const { return m_position; };
 	float GetPitch() const { return m_pitch; };
 	float GetYaw() const { return m_yaw; };
-	float GetIdleState() const { return isIdle; };
+	bool GetIdleState() const { return isIdle; };
+	bool GetRunningState() const { return m_isRunning; };
 	void SetRotationAbilities(bool allowPitch, bool allowYaw) { m_canRotatePitch = allowPitch; m_canRotateYaw = allowYaw; };
 	void SetCanMove(bool value) { m_canMove = value; };
 private:
@@ -38,5 +39,6 @@ private:
 	bool isIdle;
 	float m_rotOffset;
 	bool m_canMove; 
+	bool m_isRunning;
 };
 

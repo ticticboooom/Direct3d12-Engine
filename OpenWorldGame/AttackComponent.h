@@ -19,14 +19,15 @@ public:
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
+	bool GetHittingState() const { return m_isHitting; };
 private:
 	void AttckOther();
 	UINT counter;
 	UINT animation;
-	bool m_prevIdleState;
 	std::shared_ptr<InputMovementComponent> m_movementComp;
 	std::shared_ptr <SkeletalMeshComponent> m_meshComponent;
 	bool m_isHitting;
 	UINT m_hitStartFrame;
+	const float c_attackDistance = 6.f;
 };
 
