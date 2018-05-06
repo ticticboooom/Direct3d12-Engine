@@ -26,12 +26,7 @@ public:
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
 private:
-	UINT counter;
-	UINT animation;
-	bool m_prevIdleState;
-	std::shared_ptr<InputMovementComponent> m_movementComp;
-	bool m_isHitting;
-	UINT m_hitStartFrame;
+
 	
 };
 

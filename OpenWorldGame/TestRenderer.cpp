@@ -18,8 +18,7 @@ TestRenderer::TestRenderer() : Renderer()
 	m_nodeManager.AddComponent(m_cameraNode);
 	
 	m_terrainNode = std::make_shared<TerrainNode>();
-	m_nodeManager.AddComponent(m_terrainNode);
-	
+	m_nodeManager.AddComponent(m_terrainNode);	
 	
 	for (auto i = 0; i < 10; i++) {
 		auto enemy = std::make_shared<EnemyNode>();

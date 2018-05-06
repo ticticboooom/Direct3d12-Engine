@@ -2,6 +2,7 @@
 #include "IGameBase.h"
 #include "ComponentManager.h"
 #include "Renderer.h"
+#include "Node.h"
 
 class D3DENGINE_API RendererManager : IGameBase
 {
@@ -20,6 +21,7 @@ public:
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
+
 protected:
 	void AddRenderer(std::shared_ptr<Renderer> renderer);
 private:

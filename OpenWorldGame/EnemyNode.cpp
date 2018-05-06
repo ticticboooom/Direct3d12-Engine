@@ -1,7 +1,7 @@
 #include "EnemyNode.h"
-
-EnemyNode::EnemyNode() : Node(),
-m_currentPointIndex(0)
+#include "PathFinderComponent.h"
+#include "LifeComponent.h"
+EnemyNode::EnemyNode() : Node()
 {
 	auto pathManager = PathManager();
 	auto skeletalMeshComponent = std::make_shared<SkeletalMeshComponent>(pathManager.GetAssetPathStr() + std::string("Character.coxl"));
@@ -28,8 +28,12 @@ m_currentPointIndex(0)
 	auto playerCollider1 = BoundingBox({ 0,0,0 }, { 0,5.f,0 });
 	boxCollider->InitCollider(playerCollider1);
 
-	InitPoints();
+	auto pathFinder = std::make_shared<PathFinderComponent>();
+	AddComponent(pathFinder);
 
+
+	auto life = std::make_shared<LifeComponent>();
+	AddComponent(life);
 }
 
 
@@ -44,9 +48,6 @@ int EnemyNode::InitRootSignatureParameters(int indexOffset)
 	
 void EnemyNode::Init()
 {
-	auto startPointIndex = (rand() / RAND_MAX) * (m_points.size());
-	m_transform->position = m_points[startPointIndex];
-
 	Node::Init();
 	auto skeletalMesh = std::dynamic_pointer_cast<SkeletalMeshComponent>(GetComponentManager()->GetComponent(typeid(SkeletalMeshComponent).name()));
 	skeletalMesh->SetAnimInUse(4);
@@ -55,7 +56,6 @@ void EnemyNode::Init()
 
 void EnemyNode::Update()
 {
-	Move();
 	Node::Update();
 }
 
@@ -94,48 +94,3 @@ void EnemyNode::CreateDeviceDependentResoures()
 	Node::CreateDeviceDependentResoures();
 }
 
-void EnemyNode::Move()
-{
-	auto diff = m_points[m_currentPointIndex] - XMVectorSetY(m_transform->position, 0);
-	auto distance = XMVectorGetX(XMVector3Length(XMVectorSet(XMVectorGetX(diff), 0, XMVectorGetZ(diff), 0)));
-	if (distance < 3) {
-		auto newIndex = m_currentPointIndex + 1;
-		if (newIndex >= m_points.size()) {
-			newIndex = 0;
-		}
-
-		m_currentPointIndex = newIndex;
-		m_intervalIndex = 0;
-	}
-
-
-	auto rotMat = XMMatrixTranspose(XMMatrixLookAtLH(m_transform->position, m_points[m_currentPointIndex], { 0,1, 0,0 }));
-	auto scale = XMVECTOR{};
-	auto rot = XMVECTOR{};
-	auto pos = XMVECTOR{};
-	XMMatrixDecompose(&scale, &rot, &pos, rotMat);
-	auto zForward = XMVectorSet(0, 0, c_multiplyer, 0);
-	auto movement = XMVector3Rotate(zForward, rot);
-	auto newPos = m_transform->position + movement;
-	m_transform->position = newPos;
-	
-	{
-		auto newRot = XMQuaternionMultiply(rot, XMQuaternionRotationRollPitchYaw(0, XM_PI / 2, 0));
-		float angle;
-		XMVECTOR axis;
-		XMQuaternionToAxisAngle(&axis, &angle, newRot);
-		
-		auto newAxis = axis * XMVectorSet(0, 1, 0, 0);
-		
-		m_transform->rotationQuat = XMQuaternionRotationAxis(newAxis, angle);
-	}
-}
-
-void EnemyNode::InitPoints()
-{
-	for (auto i = 0; i < 10; i++) {
-		auto direction = XMVector3Normalize(XMVectorSet(rand(), 0, rand(), 0));
-		auto pos = direction * ((static_cast<float>(rand()) / static_cast<float>(RAND_MAX)) * 500.f);
-		m_points.push_back(pos);
-	}
-}

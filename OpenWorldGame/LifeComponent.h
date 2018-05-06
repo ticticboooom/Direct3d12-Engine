@@ -1,19 +1,13 @@
 #pragma once
-#include "Node.h"
-#include "SkeletalMeshComponent.h"
-#include "PathManager.h"
-#include "CameraComponent.h"
-#include "TerrainComponent.h"
-#include "TerrainCollisionComponent.h"
-#include "BoxCollider.h"
-#include "PhysicsComponent.h"
-#include "CylinderCollider.h"
-
-class EnemyNode : public Node
+#include "Component.h"
+class LifeComponent : public Component
 {
 public:
-	EnemyNode();
-	~EnemyNode();
+	LifeComponent();
+	~LifeComponent();
+
+	// Inherited via 
+
 	virtual int InitRootSignatureParameters(int indexOffset) override;
 	virtual void Init() override;
 	virtual void Update() override;
@@ -24,7 +18,12 @@ public:
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
+
+	void SetLife(float value) { m_life = value; };
+	float GetLife() const { return m_life; };
+	static std::vector<LifeComponent*> m_lives;
 private:
+	float m_life;
 
 };
 

@@ -116,9 +116,12 @@ void RendererManager::CreateDeviceDependentResoures()
 	m_renderers.CreateDeviceDependentResoures();
 }
 
+
+
 void RendererManager::AddRenderer(std::shared_ptr<Renderer> renderer)
 {
 	m_renderers.AddComponent(renderer);
+	renderer->owner = this;
 }
 
 /**

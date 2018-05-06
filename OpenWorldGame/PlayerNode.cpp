@@ -1,9 +1,8 @@
 #include "PlayerNode.h"
+#include "AttackComponent.h"
 
 
-
-PlayerNode::PlayerNode() : Node(),
-counter(0), animation(0), m_prevIdleState(true)
+PlayerNode::PlayerNode() : Node()
 {
 	//player
 	auto pathManager = PathManager();
@@ -26,11 +25,14 @@ counter(0), animation(0), m_prevIdleState(true)
 	boxCollider->InitCollider(playerCollider);
 
 
-	m_movementComp = std::make_shared<InputMovementComponent>();
-	AddComponent(m_movementComp);
+	auto movementComp = std::make_shared<InputMovementComponent>();
+	AddComponent(movementComp);
 
 	auto terrainCollisionComponent = std::make_shared<TerrainCollisionComponent>();
 	AddComponent(terrainCollisionComponent);
+
+	auto attackComponent = std::make_shared<AttackComponent>();
+	AddComponent(attackComponent);
 }
 
 PlayerNode::~PlayerNode()
@@ -49,41 +51,7 @@ void PlayerNode::Init()
 
 void PlayerNode::Update()
 {
-	counter++;
-	auto idleState = m_movementComp->GetIdleState();
-	auto meshComp = GetComponentManager()->GetComponent(typeid(SkeletalMeshComponent).name());
-	auto skeletalMesh = std::dynamic_pointer_cast<SkeletalMeshComponent>(meshComp);
-	if (m_prevIdleState != idleState && !m_isHitting) {
-		if (idleState == true) {
-			skeletalMesh->InterpFromTo(4, 2, 0.09f, 2);
-		}
-		else {
-			skeletalMesh->InterpFromTo(2, 4, 0.09f, 2);
-		}
-		m_prevIdleState = idleState;
-	}
-	auto anim = ((idleState == true) ? 2 : 4);
-	auto frameCount = skeletalMesh->GetAnimFrameCount(1);
-	if (counter >= frameCount && m_isHitting) {
-		if (counter == frameCount) {
-			skeletalMesh->InterpFromTo(1, anim, 0.25f, -1);
-		}
-		else if (counter == frameCount + 4) {
-			m_isHitting = false;
-			auto movementComp = GetComponentManager()->GetComponent(typeid(InputMovementComponent).name());
-			auto inputMovement = std::dynamic_pointer_cast<InputMovementComponent>(movementComp);
-			inputMovement->SetCanMove(true);
-		}
-	}
-	if ((GetKeyState(VK_LBUTTON) & 0x100) != 0 && !m_isHitting) {
-		skeletalMesh->InterpFromTo(anim, 1, 0.25f, -1);
-		m_isHitting = true;
-		counter = 0;
-		auto movementComp = GetComponentManager()->GetComponent(typeid(InputMovementComponent).name());
-		auto inputMovement = std::dynamic_pointer_cast<InputMovementComponent>(movementComp);
-		inputMovement->SetCanMove(false);
-	}
-
+	
 	Node::Update();
 }
 

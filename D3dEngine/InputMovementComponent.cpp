@@ -158,20 +158,22 @@ void InputMovementComponent::OnKeyUp(UINT key)
 
 void InputMovementComponent::OnMouseMoved(float x, float y)
 {
-	// Multiplyer of the relative \param x  \param y;
-	const auto multiplyer = 0.003f;
+	if (m_canMove) {
+		// Multiplyer of the relative \param x  \param y;
+		const auto multiplyer = 0.003f;
 
-	if ((y < 0 && !m_canRotatePitch) || m_canRotatePitch) {
-		m_pitch -= y * multiplyer;
+		if ((y < 0 && !m_canRotatePitch) || m_canRotatePitch) {
+			m_pitch -= y * multiplyer;
+		}
+
+		if (m_canRotateYaw) {
+			m_yaw -= -x * multiplyer;
+		}
+
+		// Stops the rotations from going past half a circle
+		m_pitch = (float)__max(-DirectX::XM_PI / 2.0f - 0.00003f, m_pitch);
+		m_pitch = (float)__min(+DirectX::XM_PI / 2.0f - 0.00003f, m_pitch);
 	}
-
-	if (m_canRotateYaw) {
-		m_yaw -= -x * multiplyer;
-	}
-
-	// Stops the rotations from going past half a circle
-	m_pitch = (float)__max(-DirectX::XM_PI / 2.0f - 0.00003f, m_pitch);
-	m_pitch = (float)__min(+DirectX::XM_PI / 2.0f - 0.00003f, m_pitch);
 }
 
 void InputMovementComponent::OnDeviceRemoved()

@@ -1,19 +1,14 @@
 #pragma once
-#include "Node.h"
+#include "Component.h"
+#include "InputMovementComponent.h"
 #include "SkeletalMeshComponent.h"
-#include "PathManager.h"
-#include "CameraComponent.h"
-#include "TerrainComponent.h"
-#include "TerrainCollisionComponent.h"
-#include "BoxCollider.h"
-#include "PhysicsComponent.h"
-#include "CylinderCollider.h"
-
-class EnemyNode : public Node
+class AttackComponent : public Component
 {
 public:
-	EnemyNode();
-	~EnemyNode();
+	AttackComponent();
+	~AttackComponent();
+
+	// Inherited via Component
 	virtual int InitRootSignatureParameters(int indexOffset) override;
 	virtual void Init() override;
 	virtual void Update() override;
@@ -25,6 +20,13 @@ public:
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
 private:
-
+	void AttckOther();
+	UINT counter;
+	UINT animation;
+	bool m_prevIdleState;
+	std::shared_ptr<InputMovementComponent> m_movementComp;
+	std::shared_ptr <SkeletalMeshComponent> m_meshComponent;
+	bool m_isHitting;
+	UINT m_hitStartFrame;
 };
 
