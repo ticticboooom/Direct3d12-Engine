@@ -35,7 +35,7 @@ void PlayerAnimationControllerComponent::Update()
 	auto idleAnim = (idleState) ? 1 : moveAnim;
 	if (m_prevIdleState != idleState && !m_AttackComponent->GetHittingState()) {
 		if (idleState == true) {
-			m_meshComponent->InterpFromTo(idleAnim, 1, 0.09f, 2);
+			m_meshComponent->InterpFromTo(moveAnim, 1, 0.09f, 2);
 		}
 		else {
 			m_meshComponent->InterpFromTo(1, moveAnim, 0.09f, 2);

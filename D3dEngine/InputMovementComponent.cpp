@@ -35,7 +35,6 @@ void InputMovementComponent::Update()
 {
 	if (XMVector3Equal(m_direction, XMVectorSet(0, 0, 0, 0))) {
 		isIdle = true;
-		m_isRunning = false;
 	}
 	else {
 		isIdle = false;
