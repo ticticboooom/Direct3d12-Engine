@@ -69,6 +69,9 @@
     <ClCompile Include="LifeComponent.cpp">
       <Filter>Source Files\Components\Common</Filter>
     </ClCompile>
+    <ClCompile Include="TreeNode.cpp">
+      <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -118,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="PlayerAnimationControllerComponent.h">
       <Filter>Source Files\Components\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeNode.h">
+      <Filter>Source Files\Nodes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

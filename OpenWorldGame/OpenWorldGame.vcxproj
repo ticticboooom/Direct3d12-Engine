@@ -196,6 +196,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="TestRenderer.cpp" />
+    <ClCompile Include="TreeNode.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -255,6 +259,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="TestRenderer.h" />
+    <ClInclude Include="TreeNode.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

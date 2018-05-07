@@ -4,6 +4,7 @@
 #include "PlayerCameraNode.h"
 #include "TerrainNode.h"
 #include "EnemyNode.h"
+#include "TreeNode.h"
 #include "InputMovementComponent.h"
 
 TestRenderer::TestRenderer() : Renderer()
@@ -22,6 +23,12 @@ TestRenderer::TestRenderer() : Renderer()
 	
 	for (auto i = 0; i < 10; i++) {
 		auto enemy = std::make_shared<EnemyNode>();
+		m_otherNode.push_back(enemy);
+		m_nodeManager.AddComponent(enemy);
+	}
+
+	for (auto i = 0; i < 10; i++) {
+		auto enemy = std::make_shared<TreeNode>();
 		m_otherNode.push_back(enemy);
 		m_nodeManager.AddComponent(enemy);
 	}

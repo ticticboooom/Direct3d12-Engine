@@ -59,6 +59,8 @@ int Mesh::InitRootSignatureParameters(int indexOffset)
  */
 void Mesh::Init()
 {
+	m_cbvDescriptorSize = CommonObjects::m_descriptorHeapManager->GetDescriptorSize();
+
 	auto pathManager = PathManager();
 	if (m_usingTexture) {
 		const auto textureManager = new TextureResourceManager(std::wstring(pathManager.GetAssetPath() + m_texturePath).c_str(), CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);

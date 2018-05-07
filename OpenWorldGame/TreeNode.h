@@ -1,12 +1,11 @@
 #pragma once
-#include "Renderer.h"
 #include "Node.h"
-class TestRenderer : public Renderer
+
+class TreeNode : public Node
 {
 public:
-	TestRenderer();
-	~TestRenderer();
-
+	TreeNode();
+	~TreeNode();
 	virtual int InitRootSignatureParameters(int indexOffset) override;
 	virtual void Init() override;
 	virtual void Update() override;
@@ -17,12 +16,5 @@ public:
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
-private:
-	std::shared_ptr<Node> m_playerNode;
-	std::vector<std::shared_ptr<Node>> m_otherNode;
-	std::vector<std::shared_ptr<Node>> m_trees;
-	std::shared_ptr<Node> m_cameraNode;
-	std::shared_ptr<Node> m_terrainNode;
-
 };
 
