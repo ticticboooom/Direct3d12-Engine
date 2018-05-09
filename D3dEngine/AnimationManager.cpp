@@ -1,6 +1,5 @@
 ﻿#include "stdafx.h"
 #include "AnimationManager.h"
-#include "ModelLoader.h"
 /**
  * @brief Construct a new Animation Manager:: Animation Manager object
  *

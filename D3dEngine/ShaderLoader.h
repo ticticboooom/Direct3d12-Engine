@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "ModelLoader.h"
+#include "Structures.h"
 
 class ShaderLoader
 {

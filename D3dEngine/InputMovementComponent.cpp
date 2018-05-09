@@ -39,51 +39,55 @@ void InputMovementComponent::Update()
 	else {
 		isIdle = false;
 	}
+	ComponentManager* fullOwner = ComponentManager::GetOwner(owner);
+	auto physicsComp = fullOwner->GetComponent(typeid(PhysicsComponent).name());
+	if (physicsComp) {
+		auto collider = ((PhysicsComponent*)physicsComp.get())->isRising = isJumping;
+	}
+	// The vector that is facing up
+	DirectX::XMVECTORF32 up = { 0.0f, 1.0f, 0.0f, 0.0f };
+
+	// Gets the yaw rotation matrix from \property m_yaw
+	const auto RotateYTempMatrix = XMMatrixRotationY(m_yaw);
+
+	// Rotates the \property DefaultRight vector with the yaw rotation matrix \var RotateYTempMatrix
+	const auto camRight = XMVector3TransformCoord(DefaultRight, RotateYTempMatrix);
+	// Rotates the \property DefaultForward vector with the yaw rotation matrix \var RotateYTempMatrix
+	const auto camForward = XMVector3TransformCoord(DefaultForward, RotateYTempMatrix);
+	// Rotates the \var up vector with the yaw rotation matrix \var RotateYTempMatrix
+	up.v = XMVector3TransformCoord(up, RotateYTempMatrix);
+
+	// The float value to multiply the \property m_direction vector coords X and Z
+	auto multiplyerXZ = -0.3f;
+	// The float value to multiply the \property m_direction vector coord Y
+	const auto multiplyerY = 0.3f;
+	if (m_isRunning) {
+		multiplyerXZ *= 2;
+	}
+
+	auto xAxisMovement = XMVECTOR{};
+	auto zAxisMovement = XMVECTOR{};
+	auto yAxisMovement = XMVECTOR{};
 	if (m_canMove) {
-		ComponentManager* fullOwner = ComponentManager::GetOwner(owner);
-		auto physicsComp = fullOwner->GetComponent(typeid(PhysicsComponent).name());
-		if (physicsComp) {
-			auto collider = ((PhysicsComponent*)physicsComp.get())->isRising = isJumping;
-		}
-		// The vector that is facing up
-		DirectX::XMVECTORF32 up = { 0.0f, 1.0f, 0.0f, 0.0f };
-
-		// Gets the yaw rotation matrix from \property m_yaw
-		const auto RotateYTempMatrix = XMMatrixRotationY(m_yaw);
-
-		// Rotates the \property DefaultRight vector with the yaw rotation matrix \var RotateYTempMatrix
-		const auto camRight = XMVector3TransformCoord(DefaultRight, RotateYTempMatrix);
-		// Rotates the \property DefaultForward vector with the yaw rotation matrix \var RotateYTempMatrix
-		const auto camForward = XMVector3TransformCoord(DefaultForward, RotateYTempMatrix);
-		// Rotates the \var up vector with the yaw rotation matrix \var RotateYTempMatrix
-		up.v = XMVector3TransformCoord(up, RotateYTempMatrix);
-
-		// The float value to multiply the \property m_direction vector coords X and Z
-		auto multiplyerXZ = -0.3f;
-		// The float value to multiply the \property m_direction vector coord Y
-		const auto multiplyerY = 0.3f;
-		if (m_isRunning) {
-			multiplyerXZ *= 2;
-		}
 		// Multiplies the \property m_direction vector with the multiplyers \var multiplyerXZ and \var multiplyerY
 		const auto x = XMVectorGetX(m_direction) * multiplyerXZ;
 		const auto z = XMVectorGetZ(m_direction) * multiplyerXZ;
 		const auto y = XMVectorGetY(m_direction) * multiplyerY;
 
 		// Creates XMVECTOR from \var x and multiplies it by \var camRight to get the x movement of the camera
-		const auto xAxisMovement = XMVectorMultiply(XMVectorSet(x, x, x, x), camRight);
+		xAxisMovement = XMVectorMultiply(XMVectorSet(x, x, x, x), camRight);
 		// Creates XMVECTOR from \var z and multiplies it by \var camForward to get the z movement of the camera
-		const auto zAxisMovement = XMVectorMultiply(XMVectorSet(z, z, z, z), camForward);
+		zAxisMovement = XMVectorMultiply(XMVectorSet(z, z, z, z), camForward);
 		// Creates XMVECTOR from \var y and multiplies it by the \var up vector to get the y movement of the camera
-		const auto yAxisMovement = XMVectorMultiply(XMVectorSet(y, y, y, y), up);
-
-		// Add the movement vectors (\var xAxisMovement \var zAxisMovement \var yAxisMovement) to the position (\var pos) of the camera
-		m_transform->position = XMVectorAdd(m_transform->position, xAxisMovement);
-		m_transform->position = XMVectorAdd(m_transform->position, zAxisMovement);
-		m_transform->position = XMVectorAdd(m_transform->position, yAxisMovement);
-		m_position = m_transform->position;
-		m_transform->rotationQuat = XMQuaternionRotationRollPitchYaw(0, m_yaw - XM_PI / 2, 0);
+		yAxisMovement = XMVectorMultiply(XMVectorSet(y, y, y, y), up);
 	}
+
+	// Add the movement vectors (\var xAxisMovement \var zAxisMovement \var yAxisMovement) to the position (\var pos) of the camera
+	m_transform->position = XMVectorAdd(m_transform->position, xAxisMovement);
+	m_transform->position = XMVectorAdd(m_transform->position, zAxisMovement);
+	m_transform->position = XMVectorAdd(m_transform->position, yAxisMovement);
+	m_position = m_transform->position;
+	m_transform->rotationQuat = XMQuaternionRotationRollPitchYaw(0, m_yaw - XM_PI / 2, 0);
 }
 
 void InputMovementComponent::Render()

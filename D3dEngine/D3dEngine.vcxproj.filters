@@ -102,9 +102,6 @@
     <ClInclude Include="PathManager.h">
       <Filter>Util</Filter>
     </ClInclude>
-    <ClInclude Include="ModelLoader.h">
-      <Filter>Util\Loaders</Filter>
-    </ClInclude>
     <ClInclude Include="PerlinNoise.h">
       <Filter>Util\Helpers</Filter>
     </ClInclude>
@@ -233,9 +230,6 @@
     <ClCompile Include="PathManager.cpp">
       <Filter>Util</Filter>
     </ClCompile>
-    <ClCompile Include="ModelLoader.cpp">
-      <Filter>Util\Loaders</Filter>
-    </ClCompile>
     <ClCompile Include="PerlinNoise.cpp">
       <Filter>Util\Helpers</Filter>
     </ClCompile>
@@ -323,8 +317,5 @@
     <ClCompile Include="CylinderCollider.cpp">
       <Filter>Components\Colliders</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
 </Project>
