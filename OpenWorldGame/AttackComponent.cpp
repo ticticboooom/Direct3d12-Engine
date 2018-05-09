@@ -21,7 +21,7 @@ void AttackComponent::Init()
 {
 	ComponentManager* fullOwner = ComponentManager::GetOwner(owner);
 	m_movementComp = std::dynamic_pointer_cast<InputMovementComponent>(fullOwner->GetComponent(typeid(InputMovementComponent).name()));
-
+	m_lifeComponent = std::dynamic_pointer_cast<LifeComponent>(fullOwner->GetComponent(typeid(LifeComponent).name()));
 	m_meshComponent = std::dynamic_pointer_cast<SkeletalMeshComponent>(fullOwner->GetComponent(typeid(SkeletalMeshComponent).name()));
 }
 
@@ -91,6 +91,9 @@ void AttackComponent::AttckOther()
 	
 	BoundingBox them = BoundingBox({ 0,0,0 }, { 5,5,5 });
 	for (auto& life : LifeComponent::m_lives) {
+		if (m_lifeComponent->GetLifeIndex() == life->GetLifeIndex()) {
+			continue;
+		}
 		XMStoreFloat3(&them.Center, life->m_transform->position);
 
 		if (hitArea.Intersects(them)) {
@@ -99,6 +102,6 @@ void AttackComponent::AttckOther()
 		}
 	}
 	if (closestLife != nullptr) {
-		closestLife->SetLife(closestLife->GetLife() - 5);
+		closestLife->SetLife(closestLife->GetLife() - c_attckDamage);
 	}
 }

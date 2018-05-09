@@ -1,13 +1,12 @@
 #pragma once
 #include "Component.h"
-class LifeComponent : public Component
+class EnemyAttackComponent : public Component
 {
 public:
-	LifeComponent();
-	~LifeComponent();
+	EnemyAttackComponent();
+	~EnemyAttackComponent();
 
-	// Inherited via 
-
+	// Inherited via Component
 	virtual int InitRootSignatureParameters(int indexOffset) override;
 	virtual void Init() override;
 	virtual void Update() override;
@@ -18,13 +17,5 @@ public:
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
-
-	void SetLife(float value) { m_life = value; };
-	float GetLife() const { return m_life; };
-	UINT GetLifeIndex() const { return m_lifeIndex; };
-	static std::vector<LifeComponent*> m_lives;
-private:
-	float m_life;
-	UINT m_lifeIndex;
 };
 

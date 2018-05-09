@@ -2,6 +2,7 @@
 #include "Component.h"
 #include "InputMovementComponent.h"
 #include "SkeletalMeshComponent.h"
+#include "LifeComponent.h"
 class AttackComponent : public Component
 {
 public:
@@ -25,9 +26,11 @@ private:
 	UINT counter;
 	UINT animation;
 	std::shared_ptr<InputMovementComponent> m_movementComp;
-	std::shared_ptr <SkeletalMeshComponent> m_meshComponent;
+	std::shared_ptr<SkeletalMeshComponent> m_meshComponent;
+	std::shared_ptr<LifeComponent> m_lifeComponent;
 	bool m_isHitting;
 	UINT m_hitStartFrame;
 	const float c_attackDistance = 6.f;
+	const float c_attckDamage = 5.f;
 };
 

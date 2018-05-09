@@ -8,6 +8,7 @@ LifeComponent::LifeComponent() : Component(),
  m_life(20)
 {
 	m_lives.push_back(this);
+	m_lifeIndex = m_lives.size() - 1;
 }
 
 LifeComponent::~LifeComponent()

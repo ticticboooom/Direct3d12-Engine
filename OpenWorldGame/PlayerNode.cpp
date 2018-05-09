@@ -1,7 +1,7 @@
 #include "PlayerNode.h"
 #include "AttackComponent.h"
 #include "PlayerAnimationControllerComponent.h"
-
+#include "PathFinderComponent.h"
 PlayerNode::PlayerNode() : Node()
 {
 	//player
@@ -34,6 +34,9 @@ PlayerNode::PlayerNode() : Node()
 	auto attackComponent = std::make_shared<AttackComponent>();
 	AddComponent(attackComponent);
 
+	auto lifeComponent = std::make_shared<LifeComponent>();
+	AddComponent(lifeComponent);
+
 	auto animController = std::make_shared<PlayerAnimationControllerComponent>();
 	AddComponent(animController);
 }
@@ -49,12 +52,13 @@ int PlayerNode::InitRootSignatureParameters(int indexOffset)
 
 void PlayerNode::Init()
 {
+
 	Node::Init();
 }
 
 void PlayerNode::Update()
 {
-
+	PathFinderComponent::SetPlayerTransform(*m_transform);
 	Node::Update();
 }
 

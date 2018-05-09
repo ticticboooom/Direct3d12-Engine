@@ -57,9 +57,6 @@
     <ClCompile Include="EnemyNode.cpp">
       <Filter>Source Files\Nodes</Filter>
     </ClCompile>
-    <ClCompile Include="AttackComponent.cpp">
-      <Filter>Source Files\Components\Player</Filter>
-    </ClCompile>
     <ClCompile Include="PathFinderComponent.cpp">
       <Filter>Source Files\Components\Enemy</Filter>
     </ClCompile>
@@ -71,6 +68,12 @@
     </ClCompile>
     <ClCompile Include="TreeNode.cpp">
       <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackComponent.cpp">
+      <Filter>Source Files\Components\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyAttackComponent.cpp">
+      <Filter>Source Files\Components\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,9 +113,6 @@
     <ClInclude Include="EnemyNode.h">
       <Filter>Source Files\Nodes</Filter>
     </ClInclude>
-    <ClInclude Include="AttackComponent.h">
-      <Filter>Source Files\Components\Player</Filter>
-    </ClInclude>
     <ClInclude Include="PathFinderComponent.h">
       <Filter>Source Files\Components\Enemy</Filter>
     </ClInclude>
@@ -124,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="TreeNode.h">
       <Filter>Source Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackComponent.h">
+      <Filter>Source Files\Components\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyAttackComponent.h">
+      <Filter>Source Files\Components\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,4 +1,7 @@
 #include "PathFinderComponent.h"
+#include "ComponentManager.h"
+
+Structures::Transform PathFinderComponent::s_playerTransform;
 
 PathFinderComponent::PathFinderComponent() : Component(),
 m_currentPointIndex(0)
@@ -20,6 +23,8 @@ void PathFinderComponent::Init()
 	InitPoints();
 	auto startPointIndex = (rand() / RAND_MAX) * (m_points.size());
 	m_transform->position = m_points[startPointIndex];
+	auto fullOwner = ComponentManager::GetOwner(owner);
+	m_enemyAttackComponent = std::dynamic_pointer_cast<EnemyAttackComponent>(fullOwner->GetComponent(typeid(EnemyAttackComponent).name()));
 }
 
 void PathFinderComponent::Update()
@@ -58,6 +63,25 @@ void PathFinderComponent::CreateDeviceDependentResoures()
 
 void PathFinderComponent::Move()
 {
+	auto positionToGoTo = XMVECTOR{};
+	auto distanceToPlayer = XMVectorGetX(XMVector3Length(s_playerTransform.position - m_transform->position));
+	auto distanceToApproach = c_distanceFromPlayer;
+
+	if (m_isPlayerClocked) {
+		distanceToApproach = c_distanceFromPlayerWhenClocked;
+	}
+
+	if (distanceToPlayer < distanceToApproach) {
+		positionToGoTo = s_playerTransform.position;
+		m_isPlayerClocked = true;
+	}
+	else {
+		if (m_isPlayerClocked) {
+			m_isPlayerClocked = false;
+		}
+		positionToGoTo = m_points[m_currentPointIndex];
+	}
+
 	auto diff = m_points[m_currentPointIndex] - XMVectorSetY(m_transform->position, 0);
 	auto distance = XMVectorGetX(XMVector3Length(XMVectorSet(XMVectorGetX(diff), 0, XMVectorGetZ(diff), 0)));
 	if (distance < 3) {
@@ -71,7 +95,7 @@ void PathFinderComponent::Move()
 	}
 
 
-	auto rotMat = XMMatrixTranspose(XMMatrixLookAtLH(m_transform->position, m_points[m_currentPointIndex], { 0,1, 0,0 }));
+	auto rotMat = XMMatrixTranspose(XMMatrixLookAtLH(m_transform->position, positionToGoTo, { 0,1, 0,0 }));
 	auto scale = XMVECTOR{};
 	auto rot = XMVECTOR{};
 	auto pos = XMVECTOR{};
