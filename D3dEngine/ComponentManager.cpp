@@ -4,15 +4,15 @@
 /**
  * @brief Construct a new Component Manager:: Component Manager object
  * 	 calls all the required functions when they need to be called
- * @param passTransform 
+ * @param passTransform
  */
-ComponentManager::ComponentManager(bool passTransform) : passTransform(passTransform)
+ComponentManager::ComponentManager(bool passTransform) : passTransform(passTransform), m_componentsToRemove()
 {
 	m_components = std::vector<std::shared_ptr<Component>>();
 }
 /**
  * @brief Destroy the Component Manager:: Component Manager object
- * 
+ *
  */
 ComponentManager::~ComponentManager()
 {
@@ -29,12 +29,20 @@ int ComponentManager::InitRootSignatureParameters(int indexOffset)
 void ComponentManager::Init()
 {
 	for (auto& comp : m_components) {
+		if (passTransform) {
+			comp->m_transform = m_transform;
+		}
 		comp->Init();
 	}
 }
 
 void ComponentManager::Update()
 {
+	for (auto& item : m_componentsToRemove) {
+		m_components.erase(m_components.begin() + item);
+	}
+	m_componentsToRemove.erase(m_componentsToRemove.begin(), m_componentsToRemove.end());
+
 	for (auto& comp : m_components) {
 		if (passTransform) {
 			comp->m_transform = m_transform;
@@ -93,7 +101,7 @@ void ComponentManager::CreateDeviceDependentResoures()
 }
 /**
  * @brief adds a component to the manager (component must inherit from Componment)
- * 
+ *
  * @param comp componment
  */
 void ComponentManager::AddComponent(std::shared_ptr<Component> comp)
@@ -103,7 +111,7 @@ void ComponentManager::AddComponent(std::shared_ptr<Component> comp)
 }
 /**
  * @brief gets gets the owner ComponentManager from  the IGameBase interface
- * 
+ *
  * @param ownerBase IGameBase interface instance
  * @return ComponentManager* the owner
  */
@@ -113,7 +121,7 @@ ComponentManager * ComponentManager::GetOwner(IGameBase * ownerBase)
 }
 /**
  * @brief gets a component that is stored in a manager
- * 
+ *
  * @param componentName the typeid() name of the component
  * @return std::shared_ptr<Component> the component found or nullptr if not found
  */
@@ -125,4 +133,22 @@ std::shared_ptr<Component> ComponentManager::GetComponent(std::string componentN
 		}
 	}
 	return nullptr;
+}
+
+std::shared_ptr<Component> ComponentManager::GetComponentByPointer(Component* compPtr) {
+	for (auto& comp : m_components) {
+		if (comp.get() == compPtr) {
+			return comp;
+		}
+	}
+	return nullptr;
+}
+
+void ComponentManager::RemoveComponentByPointer(Component * compPtr)
+{
+	for (auto i = 0; i < m_components.size(); i++) {
+		if (m_components[i].get() == compPtr) {
+			m_componentsToRemove.push_back(i);
+		}
+	}
 }

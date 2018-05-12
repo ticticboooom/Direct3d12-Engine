@@ -49,11 +49,11 @@
     <Filter Include="Components\Colliders">
       <UniqueIdentifier>{963305d9-936f-4174-8ce5-091334953027}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\Player">
-      <UniqueIdentifier>{b5aa9f8a-fc19-46eb-850e-76e1fdb4b548}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Components\Renderers">
       <UniqueIdentifier>{8d71d468-fb6f-43e4-aa7e-4830fee0018e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Player">
+      <UniqueIdentifier>{b5aa9f8a-fc19-46eb-850e-76e1fdb4b548}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -101,9 +101,6 @@
     </ClInclude>
     <ClInclude Include="PathManager.h">
       <Filter>Util</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelLoader.h">
-      <Filter>Util\Loaders</Filter>
     </ClInclude>
     <ClInclude Include="PerlinNoise.h">
       <Filter>Util\Helpers</Filter>
@@ -233,9 +230,6 @@
     <ClCompile Include="PathManager.cpp">
       <Filter>Util</Filter>
     </ClCompile>
-    <ClCompile Include="ModelLoader.cpp">
-      <Filter>Util\Loaders</Filter>
-    </ClCompile>
     <ClCompile Include="PerlinNoise.cpp">
       <Filter>Util\Helpers</Filter>
     </ClCompile>
@@ -323,8 +317,5 @@
     <ClCompile Include="CylinderCollider.cpp">
       <Filter>Components\Colliders</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
 </Project>

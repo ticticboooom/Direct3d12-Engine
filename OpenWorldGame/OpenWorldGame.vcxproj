@@ -173,12 +173,20 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AttackComponent.cpp" />
+    <ClCompile Include="EnemyAttackComponent.cpp" />
     <ClCompile Include="EnemyNode.cpp">
       <SubType>
       </SubType>
     </ClCompile>
     <ClCompile Include="GameRendererManager.cpp" />
+    <ClCompile Include="LifeComponent.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PathFinderComponent.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="PlayerAnimationControllerComponent.cpp" />
     <ClCompile Include="PlayerCameraNode.cpp">
       <SubType>
       </SubType>
@@ -189,6 +197,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="TestRenderer.cpp" />
+    <ClCompile Include="TreeNode.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -226,11 +238,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AttackComponent.h" />
+    <ClInclude Include="EnemyAttackComponent.h" />
     <ClInclude Include="EnemyNode.h">
       <SubType>
       </SubType>
     </ClInclude>
     <ClInclude Include="GameRendererManager.h" />
+    <ClInclude Include="LifeComponent.h" />
+    <ClInclude Include="PathFinderComponent.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="PlayerAnimationControllerComponent.h" />
     <ClInclude Include="PlayerCameraNode.h">
       <SubType>
       </SubType>
@@ -241,6 +261,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="TestRenderer.h" />
+    <ClInclude Include="TreeNode.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

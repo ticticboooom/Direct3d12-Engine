@@ -3,7 +3,6 @@
 #include <vector>
 #include "RootSignatureManager.h"
 #include <map>
-#include <assimp/mesh.h>
 
 using namespace DirectX;
 /**

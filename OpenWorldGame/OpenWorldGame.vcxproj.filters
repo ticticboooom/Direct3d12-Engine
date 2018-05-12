@@ -22,6 +22,18 @@
     <Filter Include="Source Files\Nodes">
       <UniqueIdentifier>{88059a6b-51e0-46bc-819c-121333eeba51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Components">
+      <UniqueIdentifier>{5e060aa0-b8af-482b-8ba5-68bd458eeb7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Components\Player">
+      <UniqueIdentifier>{edac7982-9520-4e2c-b295-e56a3140df1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Components\Enemy">
+      <UniqueIdentifier>{b29eb9fc-69ad-485f-8928-f9b47ccad264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Components\Common">
+      <UniqueIdentifier>{2032679b-8944-4722-b15e-a1a56a1e6840}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -44,6 +56,24 @@
     </ClCompile>
     <ClCompile Include="EnemyNode.cpp">
       <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="PathFinderComponent.cpp">
+      <Filter>Source Files\Components\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAnimationControllerComponent.cpp">
+      <Filter>Source Files\Components\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="LifeComponent.cpp">
+      <Filter>Source Files\Components\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeNode.cpp">
+      <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackComponent.cpp">
+      <Filter>Source Files\Components\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyAttackComponent.cpp">
+      <Filter>Source Files\Components\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +112,24 @@
     </ClInclude>
     <ClInclude Include="EnemyNode.h">
       <Filter>Source Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFinderComponent.h">
+      <Filter>Source Files\Components\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeComponent.h">
+      <Filter>Source Files\Components\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAnimationControllerComponent.h">
+      <Filter>Source Files\Components\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeNode.h">
+      <Filter>Source Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackComponent.h">
+      <Filter>Source Files\Components\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyAttackComponent.h">
+      <Filter>Source Files\Components\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -27,7 +27,7 @@
     <SccProvider>SAK</SccProvider>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>D3dEngine</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -171,7 +171,6 @@
     <ClInclude Include="IndexBufferManager.h" />
     <ClInclude Include="InputMovementComponent.h" />
     <ClInclude Include="Mesh.h" />
-    <ClInclude Include="ModelLoader.h" />
     <ClInclude Include="ModelViewProjectionManager.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="PathManager.h" />
@@ -218,7 +217,6 @@
     <ClCompile Include="IndexBufferManager.cpp" />
     <ClCompile Include="InputMovementComponent.cpp" />
     <ClCompile Include="Mesh.cpp" />
-    <ClCompile Include="ModelLoader.cpp" />
     <ClCompile Include="ModelViewProjectionManager.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="PathManager.cpp" />
@@ -247,19 +245,6 @@
     <ClCompile Include="UtilityRenderer.cpp" />
     <ClCompile Include="VertexBufferManager.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\Assimp.redist.3.0.0\build\native\Assimp.redist.targets" Condition="Exists('..\packages\Assimp.redist.3.0.0\build\native\Assimp.redist.targets')" />
-    <Import Project="..\packages\Assimp.3.0.0\build\native\Assimp.targets" Condition="Exists('..\packages\Assimp.3.0.0\build\native\Assimp.targets')" />
-  </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Assimp.redist.3.0.0\build\native\Assimp.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Assimp.redist.3.0.0\build\native\Assimp.redist.targets'))" />
-    <Error Condition="!Exists('..\packages\Assimp.3.0.0\build\native\Assimp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Assimp.3.0.0\build\native\Assimp.targets'))" />
-  </Target>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

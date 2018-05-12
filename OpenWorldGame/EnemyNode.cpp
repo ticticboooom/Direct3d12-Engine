@@ -1,5 +1,6 @@
 #include "EnemyNode.h"
-
+#include "PathFinderComponent.h"
+#include "LifeComponent.h"
 EnemyNode::EnemyNode() : Node()
 {
 	auto pathManager = PathManager();
@@ -18,8 +19,21 @@ EnemyNode::EnemyNode() : Node()
 	auto playerCollider = Structures::BoundingCylinder({ 0,0,0 }, 1.2f, 3);
 	auto boxCollider1 = std::make_shared<CylinderCollider>();
 
+
+
 	AddComponent(boxCollider1);
 	boxCollider1->InitCollider(playerCollider);
+	auto boxCollider = std::make_shared<BoxCollider>();
+	AddComponent(boxCollider);
+	auto playerCollider1 = BoundingBox({ 0,0,0 }, { 0,5.f,0 });
+	boxCollider->InitCollider(playerCollider1);
+
+	auto pathFinder = std::make_shared<PathFinderComponent>();
+	AddComponent(pathFinder);
+
+
+	auto life = std::make_shared<LifeComponent>();
+	AddComponent(life);
 }
 
 
@@ -31,10 +45,13 @@ int EnemyNode::InitRootSignatureParameters(int indexOffset)
 {
 	return Node::InitRootSignatureParameters(indexOffset);
 }
-
+	
 void EnemyNode::Init()
 {
 	Node::Init();
+	auto skeletalMesh = std::dynamic_pointer_cast<SkeletalMeshComponent>(GetComponentManager()->GetComponent(typeid(SkeletalMeshComponent).name()));
+	skeletalMesh->SetAnimInUse(4);
+
 }
 
 void EnemyNode::Update()
@@ -76,3 +93,4 @@ void EnemyNode::CreateDeviceDependentResoures()
 {
 	Node::CreateDeviceDependentResoures();
 }
+

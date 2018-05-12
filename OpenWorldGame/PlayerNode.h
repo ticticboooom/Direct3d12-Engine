@@ -26,7 +26,7 @@ public:
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
 private:
-	UINT counter;
-	UINT animation;
+
+	
 };
 

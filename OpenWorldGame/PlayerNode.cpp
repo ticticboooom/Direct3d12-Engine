@@ -1,9 +1,8 @@
 #include "PlayerNode.h"
-
-
-
-PlayerNode::PlayerNode() : Node(),
-counter(0), animation(0)
+#include "AttackComponent.h"
+#include "PlayerAnimationControllerComponent.h"
+#include "PathFinderComponent.h"
+PlayerNode::PlayerNode() : Node()
 {
 	//player
 	auto pathManager = PathManager();
@@ -12,20 +11,34 @@ counter(0), animation(0)
 	AddComponent(playerMesh);
 
 
-
 	auto physicsComponent = std::make_shared<PhysicsComponent>();
 	AddComponent(physicsComponent);
 
-	auto boxCollider = std::make_shared<CylinderCollider>();
+	auto cylinderCollider = std::make_shared<CylinderCollider>();
+	AddComponent(cylinderCollider);
+	auto playerCylinderCollider = Structures::BoundingCylinder({ 0,0,0 }, 3.f, 3);
+	cylinderCollider->InitCollider(playerCylinderCollider);
+
+	auto boxCollider = std::make_shared<BoxCollider>();
 	AddComponent(boxCollider);
-	auto playerCollider = Structures::BoundingCylinder({ 0,0,0 }, 1.2f, 3);
+	auto playerCollider = BoundingBox({ 0,0,0 }, { 0,5.f,0 });
 	boxCollider->InitCollider(playerCollider);
 
-	auto movementComponent = std::make_shared<InputMovementComponent>();
-	AddComponent(movementComponent);
+
+	auto movementComp = std::make_shared<InputMovementComponent>();
+	AddComponent(movementComp);
 
 	auto terrainCollisionComponent = std::make_shared<TerrainCollisionComponent>();
 	AddComponent(terrainCollisionComponent);
+
+	auto attackComponent = std::make_shared<AttackComponent>();
+	AddComponent(attackComponent);
+
+	auto lifeComponent = std::make_shared<LifeComponent>();
+	AddComponent(lifeComponent);
+
+	auto animController = std::make_shared<PlayerAnimationControllerComponent>();
+	AddComponent(animController);
 }
 
 PlayerNode::~PlayerNode()
@@ -39,19 +52,13 @@ int PlayerNode::InitRootSignatureParameters(int indexOffset)
 
 void PlayerNode::Init()
 {
+
 	Node::Init();
 }
 
 void PlayerNode::Update()
 {
-	if (counter == 0) {
-		counter = 100;
-		auto meshComp = GetComponentManager()->GetComponent(typeid(SkeletalMeshComponent).name());
-		auto skeletalMesh = (SkeletalMeshComponent*)meshComp.get();
-		skeletalMesh->SetAnimInUse(animation);
-		animation = !animation;
-	}
-	counter--;
+	PathFinderComponent::SetPlayerTransform(*m_transform);
 	Node::Update();
 }
 

@@ -8,7 +8,6 @@ public:
 	App();
 	~App();
 	int Run(HINSTANCE hInstance, int nCmdShow, std::shared_ptr<RendererManager> rendererManager);
-
 protected:
 	static LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 	std::shared_ptr<DX::DeviceResources> GetDeviceResources();

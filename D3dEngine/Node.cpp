@@ -14,6 +14,7 @@ Node::Node() : Component(), m_compManager(true)
 	m_transform = std::make_shared<Structures::Transform>();
 	m_mvpManager = std::make_shared<ModelViewProjectionManager>();
 	m_descriptorCount += 1;
+	m_compManager.owner = this;
 }
 
 Node::~Node()
@@ -57,6 +58,8 @@ void Node::Init()
 	m_rootSignInds.push_back(m_mvpRootSigIndex);
 	m_heapInds.push_back(m_mvpDescHeapIndex);
 	CommonObjects::m_descriptorHeapIndexOffset++;
+
+	m_compManager.m_transform = m_transform;
 	m_compManager.Init();
 }
 /**
@@ -120,4 +123,9 @@ void Node::CreateDeviceDependentResoures()
 void Node::AddComponent(std::shared_ptr<Component> comp)
 {
 	m_compManager.AddComponent(comp);
+	
+}
+void Node::Destroy() {
+	auto manager = ComponentManager::GetOwner(owner);
+	manager->RemoveComponentByPointer(this);
 }

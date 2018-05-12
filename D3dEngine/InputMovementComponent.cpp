@@ -4,12 +4,16 @@
 #include "PhysicsComponent.h"
 
 
-InputMovementComponent::InputMovementComponent(): 
+InputMovementComponent::InputMovementComponent() :
 	m_pitch(0),
 	m_yaw(0),
 	m_direction({}),
 	m_canRotatePitch(true),
-	m_canRotateYaw(true)
+	m_canRotateYaw(true),
+	isIdle(true),
+	m_canMove(true),
+	m_isRunning(false),
+	isJumping(false)
 {
 }
 
@@ -29,6 +33,12 @@ void InputMovementComponent::Init()
 
 void InputMovementComponent::Update()
 {
+	if (XMVector3Equal(m_direction, XMVectorSet(0, 0, 0, 0))) {
+		isIdle = true;
+	}
+	else {
+		isIdle = false;
+	}
 	ComponentManager* fullOwner = ComponentManager::GetOwner(owner);
 	auto physicsComp = fullOwner->GetComponent(typeid(PhysicsComponent).name());
 	if (physicsComp) {
@@ -48,28 +58,36 @@ void InputMovementComponent::Update()
 	up.v = XMVector3TransformCoord(up, RotateYTempMatrix);
 
 	// The float value to multiply the \property m_direction vector coords X and Z
-	const auto multiplyerXZ = -0.3f;
+	auto multiplyerXZ = -0.3f;
 	// The float value to multiply the \property m_direction vector coord Y
 	const auto multiplyerY = 0.3f;
+	if (m_isRunning) {
+		multiplyerXZ *= 2;
+	}
 
-	// Multiplies the \property m_direction vector with the multiplyers \var multiplyerXZ and \var multiplyerY
-	const auto x = XMVectorGetX(m_direction) * multiplyerXZ;
-	const auto z = XMVectorGetZ(m_direction) * multiplyerXZ;
-	const auto y = XMVectorGetY(m_direction) * multiplyerY;
+	auto xAxisMovement = XMVECTOR{};
+	auto zAxisMovement = XMVECTOR{};
+	auto yAxisMovement = XMVECTOR{};
+	if (m_canMove) {
+		// Multiplies the \property m_direction vector with the multiplyers \var multiplyerXZ and \var multiplyerY
+		const auto x = XMVectorGetX(m_direction) * multiplyerXZ;
+		const auto z = XMVectorGetZ(m_direction) * multiplyerXZ;
+		const auto y = XMVectorGetY(m_direction) * multiplyerY;
 
-	// Creates XMVECTOR from \var x and multiplies it by \var camRight to get the x movement of the camera
-	const auto xAxisMovement = XMVectorMultiply(XMVectorSet(x, x, x, x), camRight);
-	// Creates XMVECTOR from \var z and multiplies it by \var camForward to get the z movement of the camera
-	const auto zAxisMovement = XMVectorMultiply(XMVectorSet(z, z, z, z), camForward);
-	// Creates XMVECTOR from \var y and multiplies it by the \var up vector to get the y movement of the camera
-	const auto yAxisMovement = XMVectorMultiply(XMVectorSet(y, y, y, y), up);
+		// Creates XMVECTOR from \var x and multiplies it by \var camRight to get the x movement of the camera
+		xAxisMovement = XMVectorMultiply(XMVectorSet(x, x, x, x), camRight);
+		// Creates XMVECTOR from \var z and multiplies it by \var camForward to get the z movement of the camera
+		zAxisMovement = XMVectorMultiply(XMVectorSet(z, z, z, z), camForward);
+		// Creates XMVECTOR from \var y and multiplies it by the \var up vector to get the y movement of the camera
+		yAxisMovement = XMVectorMultiply(XMVectorSet(y, y, y, y), up);
+	}
 
 	// Add the movement vectors (\var xAxisMovement \var zAxisMovement \var yAxisMovement) to the position (\var pos) of the camera
 	m_transform->position = XMVectorAdd(m_transform->position, xAxisMovement);
 	m_transform->position = XMVectorAdd(m_transform->position, zAxisMovement);
 	m_transform->position = XMVectorAdd(m_transform->position, yAxisMovement);
 	m_position = m_transform->position;
-	m_transform->rotationQuat = XMQuaternionRotationRollPitchYaw(0, m_yaw + XM_PI / 2, 0);
+	m_transform->rotationQuat = XMQuaternionRotationRollPitchYaw(0, m_yaw - XM_PI / 2, 0);
 }
 
 void InputMovementComponent::Render()
@@ -106,7 +124,7 @@ void InputMovementComponent::OnKeyDown(UINT key)
 	// Set \property m_direction to down on "Shift" pressed
 	else if (key == VK_SHIFT)
 	{
-		m_direction.v = XMVectorSetY(m_direction, -1);
+		m_isRunning = true;
 	}
 }
 
@@ -141,26 +159,28 @@ void InputMovementComponent::OnKeyUp(UINT key)
 	// Set \property m_direction to not down on "Shift" pressed
 	else if (key == VK_SHIFT)
 	{
-		m_direction.v = XMVectorSetY(m_direction, 0);
+		m_isRunning = false;
 	}
 }
 
 void InputMovementComponent::OnMouseMoved(float x, float y)
 {
-	// Multiplyer of the relative \param x  \param y;
-	const auto multiplyer = 0.003f;
+	if (m_canMove) {
+		// Multiplyer of the relative \param x  \param y;
+		const auto multiplyer = 0.003f;
 
-	if ((y < 0 && !m_canRotatePitch) || m_canRotatePitch) {
-		m_pitch -= y * multiplyer;
+		if ((y < 0 && !m_canRotatePitch) || m_canRotatePitch) {
+			m_pitch -= y * multiplyer;
+		}
+
+		if (m_canRotateYaw) {
+			m_yaw -= -x * multiplyer;
+		}
+
+		// Stops the rotations from going past half a circle
+		m_pitch = (float)__max(-DirectX::XM_PI / 2.0f - 0.00003f, m_pitch);
+		m_pitch = (float)__min(+DirectX::XM_PI / 2.0f - 0.00003f, m_pitch);
 	}
-
-	if (m_canRotateYaw) {
-		m_yaw -= -x * multiplyer;
-	}
-
-	// Stops the rotations from going past half a circle
-	m_pitch = (float)__max(-DirectX::XM_PI / 2.0f - 0.00003f, m_pitch);
-	m_pitch = (float)__min(+DirectX::XM_PI / 2.0f - 0.00003f, m_pitch);
 }
 
 void InputMovementComponent::OnDeviceRemoved()

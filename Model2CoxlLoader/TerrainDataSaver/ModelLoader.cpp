@@ -46,11 +46,15 @@ XMMATRIX ModelLoader::getParentTrans(XMMATRIX mat, aiNode * node)
 
 void ModelLoader::InitFromScene(const aiScene * scene)
 {
-	LoadAnimations(scene);
+	if (scene->HasAnimations()) {
+		LoadAnimations(scene);
+	}
 	for (auto i = 0; i < scene->mNumMeshes; i++) {
 		m_vertices = loadVertices(scene, i);
 		m_indices = loadIndices(scene, i);
-		LoadBones(scene, i);
+		if (scene->HasAnimations()) {
+			LoadBones(scene, i);
+		}
 	}
 	ReadBoneHierarchy(scene);
 	FinaliseAnimations();
@@ -401,14 +405,18 @@ std::vector<Structures::AnimBone> ModelLoader::FillTimes(aiNode * node, std::vec
 std::vector<Structures::AnimBone> ModelLoader::FillMissingMappedTransforms(aiNode * node, std::vector<Structures::AnimBone> list, UINT animI)
 {
 	for (auto& bone : list) {
+		auto prevKey = 0u;
 		for (auto i = 1; i < bone.mappedTransforms.size(); i++) {
 			if (XMMatrixIsIdentity(bone.mappedTransforms[i])) {
 				auto prev = bone.mappedTransforms[i - 1];
 				auto nextIndex = GetNextNoneIdentity(bone.mappedTransforms, i);
 
-				float f = (float)((i)-(i - 1)) / (float)(nextIndex - (i));
+				float f = 1 / (nextIndex - prevKey);
 				auto matrix = InterpMatrix(prev, bone.mappedTransforms[nextIndex], f);
 				bone.mappedTransforms[i] = matrix;
+			}
+			else {
+				prevKey = i;
 			}
 		}
 		bone.transforms = bone.mappedTransforms;
@@ -434,7 +442,7 @@ XMMATRIX ModelLoader::InterpMatrix(XMMATRIX m0, XMMATRIX m1, float f)
 	XMVECTOR rot0;
 	XMVECTOR scale0;
 	XMMatrixDecompose(&scale0, &rot0, &pos0, m0);
-	
+
 	XMVECTOR pos1;
 	XMVECTOR rot1;
 	XMVECTOR scale1;
@@ -444,7 +452,7 @@ XMMATRIX ModelLoader::InterpMatrix(XMMATRIX m0, XMMATRIX m1, float f)
 	auto newRot = XMQuaternionSlerp(rot0, rot1, f);
 	auto newScale = XMVectorLerp(scale0, scale1, f);
 
-	auto outMat = XMMatrixAffineTransformation(newScale, {0,0,0,0}, newRot, newPos);
+	auto outMat = XMMatrixAffineTransformation(newScale, { 0,0,0,0 }, newRot, newPos);
 	return outMat;
 }
 

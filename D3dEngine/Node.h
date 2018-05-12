@@ -20,6 +20,7 @@ public:
 	virtual void CreateDeviceDependentResoures() override;
 	void AddComponent(std::shared_ptr<Component> comp);
 	std::shared_ptr<ComponentManager> GetComponentManager() { return std::make_shared<ComponentManager>(m_compManager); };
+	void Destroy();
 protected:
 	ComponentManager m_compManager; /// The manager of the copmponents used by the node
 	std::shared_ptr<ModelViewProjectionManager> m_mvpManager; 
