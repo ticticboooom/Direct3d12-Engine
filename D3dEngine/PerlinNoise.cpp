@@ -50,6 +50,8 @@ double PerlinNoise::GetHeight(double x, double y) const
  */
 double PerlinNoise::Total(double i, double j) const
 {
+	i = abs(i);
+	j = abs(j);
 	double t = 0.0f;
 	double _amplitude = 1;
 	double freq = frequency;

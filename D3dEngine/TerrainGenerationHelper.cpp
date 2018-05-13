@@ -57,7 +57,7 @@ std::shared_ptr<Structures::VerticesIndicesFromBin> TerrainGenerationHelper::Gen
 	// create the required vectors
 	values->vertices = std::make_unique<std::vector<Structures::VertexTexCoordNormal>>();
 	values->indices = std::make_unique<std::vector<unsigned long>>();
-	auto index = m_index;
+	auto index = 0;
 	auto deltaIndex = 0;
 	// create the 2D plane of heights and triangles
 	for (auto x = originX; x < originX + c_size; x += TERRAIN_STEP_SIZE) {

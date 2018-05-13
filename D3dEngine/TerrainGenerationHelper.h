@@ -5,16 +5,17 @@
 #define TERRAIN_STEP_SIZE 5
 /**
  * @brief uses the PerlinNoise class to generate terrian based on a random seed
- * 
+ *
  */
-class TerrainGenerationHelper
+class D3DENGINE_API TerrainGenerationHelper
 {
 public:
-	D3DENGINE_API TerrainGenerationHelper();
-	D3DENGINE_API ~TerrainGenerationHelper();
-	D3DENGINE_API std::shared_ptr<Structures::VerticesIndicesFromBin>  GenTerrain(float originX, float originY);
-	D3DENGINE_API std::shared_ptr<std::vector<std::shared_ptr<std::vector<std::vector<float>>>>> GetChunks() const { return m_chunks; };
-	D3DENGINE_API std::shared_ptr<std::vector<XMFLOAT4>> GetChunkOrigins() const { return m_chunkOrigins; };
+	TerrainGenerationHelper();
+	~TerrainGenerationHelper();
+	std::shared_ptr<Structures::VerticesIndicesFromBin>  GenTerrain(float originX, float originY);
+	std::shared_ptr<std::vector<std::shared_ptr<std::vector<std::vector<float>>>>> GetChunks() const { return m_chunks; };
+	std::shared_ptr<std::vector<XMFLOAT4>> GetChunkOrigins() const { return m_chunkOrigins; };
+	int GetChunkSize() const { return c_size; };
 private:
 	std::unique_ptr<PerlinNoise> m_noiseGenerator;
 	std::shared_ptr<Structures::VerticesIndicesFromBin> GenVertices(std::shared_ptr<std::vector<std::vector<float>>> heights, float originX, float originZ);

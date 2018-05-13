@@ -3,6 +3,7 @@
 #include "VertexBufferManager.h"
 #include "IndexBufferManager.h"
 #include "TerrainGenerationHelper.h"
+#include <map>
 class D3DENGINE_API TerrainComponent : public Component
 {
 public:
@@ -20,17 +21,21 @@ public:
 	virtual void CreateWindowSizeDependentResources() override;
 	virtual void CreateDeviceDependentResoures() override;
 	void UseTexture(std::wstring filename);
+	static XMVECTOR m_playerPos;
 private:
+	void CreateChunkFromCoords(float x, float z);
 	std::unique_ptr<TerrainGenerationHelper> m_terrainGenerator;
-	D3D12_VERTEX_BUFFER_VIEW m_terrainVertexBufferView;
-	std::unique_ptr<VertexBufferManager> m_terrainVertexBufferManager;
-	D3D12_INDEX_BUFFER_VIEW m_terrainIndexBufferView;
-	std::unique_ptr<IndexBufferManager> m_terrainIndexBufferManager;
-	UINT m_indexCount;
+	std::vector<D3D12_VERTEX_BUFFER_VIEW> m_terrainVertexBufferViews;
+	std::vector<std::shared_ptr<VertexBufferManager>> m_terrainVertexBufferManagers;
+	std::vector<D3D12_INDEX_BUFFER_VIEW> m_terrainIndexBufferViews;
+	std::vector<std::shared_ptr<IndexBufferManager>> m_terrainIndexBufferManagers;
+	std::vector<UINT> m_indexCounts;
+	std::vector<XMFLOAT2> m_newPositions;
 	static bool m_isRootSignatureInitialised;
 	std::wstring m_texturePath;
 	bool m_usingTexture;
 	static UINT m_textureRootSigIndex;
 	UINT m_textureDescHeapIndex;
+	const int gridOffset = 3;
 };
 

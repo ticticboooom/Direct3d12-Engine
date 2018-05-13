@@ -46,6 +46,12 @@ bool TerrainCollisionHelper::GetNewYPos(XMFLOAT3 position, float* yOut)
 	int gridX = static_cast<int>(floorf(terrainXZ.x / gridSquareSize));
 	int gridZ = static_cast<int>(floorf(terrainXZ.y / gridSquareSize));
 
+	//auto defaultX = gridX;
+	//auto defaultZ = gridZ;
+	//
+	//gridX = abs(gridX);
+	//gridZ = abs(gridZ);
+
 	// chunks that will be used
 	auto chunkIndex = -1;
 	auto nextChunkIndex = -1;
@@ -72,8 +78,8 @@ bool TerrainCollisionHelper::GetNewYPos(XMFLOAT3 position, float* yOut)
 	}
 
 	// relative coordinates inside the current tile
-	float xCoord = (fmodf(terrainXZ.x, gridSquareSize)) / gridSquareSize;
-	float zCoord = (fmodf(terrainXZ.y, gridSquareSize)) / gridSquareSize;
+	float xCoord = abs(fmodf(terrainXZ.x, gridSquareSize)) / gridSquareSize;
+	float zCoord = abs(fmodf(terrainXZ.y, gridSquareSize)) / gridSquareSize;
 
 
 	float answer = 0;
