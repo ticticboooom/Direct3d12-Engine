@@ -3,7 +3,8 @@
 #include "VertexBufferManager.h"
 #include "IndexBufferManager.h"
 #include "TerrainGenerationHelper.h"
-#include <map>
+#include "Thread.h"
+#include <concurrent_vector.h>
 class D3DENGINE_API TerrainComponent : public Component
 {
 public:
@@ -23,7 +24,9 @@ public:
 	void UseTexture(std::wstring filename);
 	static XMVECTOR m_playerPos;
 private:
-	void CreateChunkFromCoords(float x, float z);
+	void CreateTerrainPoints();
+	void CreateChunkFromData(std::shared_ptr<Structures::VerticesIndicesFromBin> data);
+	void CreateChunks();
 	std::unique_ptr<TerrainGenerationHelper> m_terrainGenerator;
 	std::vector<D3D12_VERTEX_BUFFER_VIEW> m_terrainVertexBufferViews;
 	std::vector<std::shared_ptr<VertexBufferManager>> m_terrainVertexBufferManagers;
@@ -31,11 +34,18 @@ private:
 	std::vector<std::shared_ptr<IndexBufferManager>> m_terrainIndexBufferManagers;
 	std::vector<UINT> m_indexCounts;
 	std::vector<XMFLOAT2> m_newPositions;
+	std::vector<std::unique_ptr<Thread>> m_loadingThreads;
+	concurrency::concurrent_vector<std::shared_ptr<Structures::VerticesIndicesFromBin>> m_generated;
 	static bool m_isRootSignatureInitialised;
 	std::wstring m_texturePath;
 	bool m_usingTexture;
 	static UINT m_textureRootSigIndex;
 	UINT m_textureDescHeapIndex;
-	const int gridOffset = 3;
+	const int c_gridOffset = 3;
+	const float c_raySize = 20;
+	UINT m_runningTerrainThreads;
+	bool m_isGeneratedVectorBeingWrittenTo;
+	bool m_isGeneratedVectorBeingRead;
+	bool m_isPrevThreadComplete;
 };
 

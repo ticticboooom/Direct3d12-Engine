@@ -194,6 +194,7 @@
     <ClInclude Include="TerrainGenerationHelper.h" />
     <ClInclude Include="TextureLoader.h" />
     <ClInclude Include="TextureResourceManager.h" />
+    <ClInclude Include="Thread.h" />
     <ClInclude Include="UtilityRenderer.h" />
     <ClInclude Include="VertexBufferManager.h" />
   </ItemGroup>
@@ -242,6 +243,7 @@
     <ClCompile Include="TerrainGenerationHelper.cpp" />
     <ClCompile Include="TextureLoader.cpp" />
     <ClCompile Include="TextureResourceManager.cpp" />
+    <ClCompile Include="Thread.cpp" />
     <ClCompile Include="UtilityRenderer.cpp" />
     <ClCompile Include="VertexBufferManager.cpp" />
   </ItemGroup>
