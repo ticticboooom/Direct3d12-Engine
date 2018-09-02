@@ -55,6 +55,9 @@
     <Filter Include="Components\Player">
       <UniqueIdentifier>{b5aa9f8a-fc19-46eb-850e-76e1fdb4b548}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Util\Threading">
+      <UniqueIdentifier>{aff7c33f-4cb0-4c28-8e7b-7de840fe35ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -192,6 +195,9 @@
     <ClInclude Include="CylinderCollider.h">
       <Filter>Components\Colliders</Filter>
     </ClInclude>
+    <ClInclude Include="Thread.h">
+      <Filter>Util\Threading</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -316,6 +322,9 @@
     </ClCompile>
     <ClCompile Include="CylinderCollider.cpp">
       <Filter>Components\Colliders</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread.cpp">
+      <Filter>Util\Threading</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

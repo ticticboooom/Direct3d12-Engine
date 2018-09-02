@@ -2,8 +2,9 @@
 #include "TerrainCollisionHelper.h"
 #include "Structures.h"
 #include "TerrainGenerationHelper.h"
-std::shared_ptr<std::vector<std::shared_ptr<std::vector<std::vector<float>>>>> TerrainCollisionHelper::m_terrainHeights = std::make_shared<std::vector<std::shared_ptr<std::vector<std::vector<float>>>>>();
-std::shared_ptr<std::vector<XMFLOAT4>> TerrainCollisionHelper::m_chunkOrigins = std::make_shared<std::vector<XMFLOAT4>>();
+#include <concurrent_vector.h>
+std::shared_ptr<concurrency::concurrent_vector<std::shared_ptr<std::vector<std::vector<float>>>>> TerrainCollisionHelper::m_terrainHeights = std::make_shared<concurrency::concurrent_vector<std::shared_ptr<std::vector<std::vector<float>>>>>();
+std::shared_ptr<concurrency::concurrent_vector<XMFLOAT4>> TerrainCollisionHelper::m_chunkOrigins = std::make_shared<concurrency::concurrent_vector<XMFLOAT4>>();
 XMFLOAT3 TerrainCollisionHelper::m_terrainPos{};
 /**
  * @brief Construct a new Terrain Collision Helper:: Terrain Collision Helper object
@@ -46,6 +47,12 @@ bool TerrainCollisionHelper::GetNewYPos(XMFLOAT3 position, float* yOut)
 	int gridX = static_cast<int>(floorf(terrainXZ.x / gridSquareSize));
 	int gridZ = static_cast<int>(floorf(terrainXZ.y / gridSquareSize));
 
+	//auto defaultX = gridX;
+	//auto defaultZ = gridZ;
+	//
+	//gridX = abs(gridX);
+	//gridZ = abs(gridZ);
+
 	// chunks that will be used
 	auto chunkIndex = -1;
 	auto nextChunkIndex = -1;
@@ -72,8 +79,17 @@ bool TerrainCollisionHelper::GetNewYPos(XMFLOAT3 position, float* yOut)
 	}
 
 	// relative coordinates inside the current tile
-	float xCoord = (fmodf(terrainXZ.x, gridSquareSize)) / gridSquareSize;
-	float zCoord = (fmodf(terrainXZ.y, gridSquareSize)) / gridSquareSize;
+	float xCoord = fmodf(terrainXZ.x, gridSquareSize) / gridSquareSize;
+	float zCoord = fmodf(terrainXZ.y, gridSquareSize) / gridSquareSize;
+
+	if (xCoord < 0) {
+		xCoord = 1 - abs(xCoord);
+	}
+
+
+	if (zCoord < 0) {
+		zCoord = 1 - abs(zCoord);
+	}
 
 
 	float answer = 0;

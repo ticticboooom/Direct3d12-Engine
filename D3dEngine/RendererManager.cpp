@@ -74,6 +74,8 @@ void RendererManager::Init()
 void RendererManager::Update()
 {
 	m_renderers.Update();
+	CommonObjects::m_commandListManager->CloseAndExcecute();
+	CommonObjects::m_deviceResources->WaitForGpu();
 }
 /**
  * @brief renders the renderers and then closes and executes the command list to run things on the GPU

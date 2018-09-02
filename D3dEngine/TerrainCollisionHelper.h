@@ -1,21 +1,22 @@
 #pragma once
 #include "stdafx.h"
+#include <concurrent_vector.h>
 /**
  * @brief controls the collision of any object with terrain
  * 
  */
-class TerrainCollisionHelper
+class D3DENGINE_API TerrainCollisionHelper
 {
 public:
-	D3DENGINE_API TerrainCollisionHelper();
-	D3DENGINE_API ~TerrainCollisionHelper();
-	D3DENGINE_API bool GetNewYPos(XMFLOAT3 position, float * yOut);
-	D3DENGINE_API static void SetTerrainHeights(std::shared_ptr<std::vector<std::shared_ptr<std::vector<std::vector<float>>>>> heights) { m_terrainHeights = heights; };
-	D3DENGINE_API static void SetTerrainOrigins(std::shared_ptr<std::vector<XMFLOAT4>> origins) { m_chunkOrigins = origins; };
-	D3DENGINE_API static void SetTerrainPos(XMFLOAT3 pos) { m_terrainPos = pos; };
+	TerrainCollisionHelper();
+	~TerrainCollisionHelper();
+	bool GetNewYPos(XMFLOAT3 position, float * yOut);
+	static void SetTerrainHeights(std::shared_ptr<concurrency::concurrent_vector<std::shared_ptr<std::vector<std::vector<float>>>>> heights) { m_terrainHeights = heights; };
+	static void SetTerrainOrigins(std::shared_ptr<concurrency::concurrent_vector<XMFLOAT4>> origins) { m_chunkOrigins = origins; };
+	 static void SetTerrainPos(XMFLOAT3 pos) { m_terrainPos = pos; };
 private:
-	static std::shared_ptr<std::vector<std::shared_ptr<std::vector<std::vector<float>>>>> m_terrainHeights; /// heights of the terrian in chunks
-	static std::shared_ptr<std::vector<XMFLOAT4>> m_chunkOrigins; /// origins of the chunks
+	static std::shared_ptr<concurrency::concurrent_vector<std::shared_ptr<std::vector<std::vector<float>>>>> m_terrainHeights; /// heights of the terrian in chunks
+	static std::shared_ptr<concurrency::concurrent_vector<XMFLOAT4>> m_chunkOrigins; /// origins of the chunks
 	static XMFLOAT3 m_terrainPos; /// position of the terrain
 	UINT m_size; 
 	float prevYPos; /// previsous y pos

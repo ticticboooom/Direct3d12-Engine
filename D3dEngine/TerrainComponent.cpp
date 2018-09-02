@@ -6,22 +6,31 @@
 #include "Mesh.h"
 #include "ComponentManager.h"
 #include "TerrainCollisionHelper.h"
-
+#include  <functional>
 bool TerrainComponent::m_isRootSignatureInitialised = false;
 UINT TerrainComponent::m_textureRootSigIndex = 0;
+XMVECTOR TerrainComponent::m_playerPos{};
 /**
  * @brief Construct a new Terrain Component:: Terrain Component object
  * creates a terrain and all required to render it
- * 
+ *
  */
-TerrainComponent::TerrainComponent()
+TerrainComponent::TerrainComponent() :
+	m_terrainVertexBufferViews(),
+	m_terrainVertexBufferManagers(),
+	m_terrainIndexBufferManagers(),
+	m_terrainIndexBufferViews(),
+	m_indexCounts(),
+	m_isGeneratedVectorBeingRead(false),
+	m_isGeneratedVectorBeingWrittenTo(false),
+	m_isPrevThreadComplete(true)
 {
 	m_descriptorCount += 1;
 }
 
 /**
  * @brief Destroy the Terrain Component:: Terrain Component object
- * 
+ *
  */
 TerrainComponent::~TerrainComponent()
 {
@@ -29,9 +38,9 @@ TerrainComponent::~TerrainComponent()
 
 /**
  * @brief adds the texture root signature parameter
- * 
- * @param indexOffset 
- * @return int 
+ *
+ * @param indexOffset
+ * @return int
  */
 int TerrainComponent::InitRootSignatureParameters(int indexOffset)
 {
@@ -57,10 +66,10 @@ int TerrainComponent::InitRootSignatureParameters(int indexOffset)
 /**
  * @brief creates the terrain and required buffers on GPU (and texture)
  *	Creates texture and puts
- * @param commandListManager 
- * @param descriptorHeapManager 
- * @param descOffset 
- * @param pso 
+ * @param commandListManager
+ * @param descriptorHeapManager
+ * @param descOffset
+ * @param pso
  */
 void TerrainComponent::Init()
 {
@@ -70,31 +79,17 @@ void TerrainComponent::Init()
 	TerrainCollisionHelper::SetTerrainHeights(m_terrainGenerator->GetChunks());
 	TerrainCollisionHelper::SetTerrainOrigins(m_terrainGenerator->GetChunkOrigins());
 	auto terrainData = m_terrainGenerator->GenTerrain(0, 0);
-	auto terrainData1 = m_terrainGenerator->GenTerrain(250, 0);
-	auto terrainData2 = m_terrainGenerator->GenTerrain(0, 250);
-	auto terrainData3 = m_terrainGenerator->GenTerrain(250, 250);
-
 	auto terrainInds = std::make_shared<std::vector<unsigned int>>(terrainData->indices->begin(), terrainData->indices->end());
-	auto terrainInds1 = std::make_shared<std::vector<unsigned int>>(terrainData1->indices->begin(), terrainData1->indices->end());
-	auto terrainInds2 = std::make_shared<std::vector<unsigned int>>(terrainData2->indices->begin(), terrainData2->indices->end());
-	auto terrainInds3 = std::make_shared<std::vector<unsigned int>>(terrainData3->indices->begin(), terrainData3->indices->end());
 
+	auto vManager = std::make_shared<VertexBufferManager>(terrainData->vertices, CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
+	auto iManager = std::make_shared<IndexBufferManager>(terrainInds, CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
+	m_terrainVertexBufferManagers.push_back(vManager);
+	m_terrainIndexBufferManagers.push_back(iManager);
 
-	terrainData->vertices->insert(terrainData->vertices->end(), terrainData1->vertices->begin(), terrainData1->vertices->end());
-	terrainData->vertices->insert(terrainData->vertices->end(), terrainData2->vertices->begin(), terrainData2->vertices->end());
-	terrainData->vertices->insert(terrainData->vertices->end(), terrainData3->vertices->begin(), terrainData3->vertices->end());
+	m_indexCounts.push_back(terrainInds->size());
 
-
-	terrainInds->insert(terrainInds->end(), terrainInds1->begin(), terrainInds1->end());
-	terrainInds->insert(terrainInds->end(), terrainInds2->begin(), terrainInds2->end());
-	terrainInds->insert(terrainInds->end(), terrainInds3->begin(), terrainInds3->end());
-
-	m_terrainVertexBufferManager = std::make_unique<VertexBufferManager>(terrainData->vertices, CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
-	m_terrainIndexBufferManager = std::make_unique<IndexBufferManager>(terrainInds, CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
-	m_indexCount = terrainInds->size();
-
-	m_terrainVertexBufferView = m_terrainVertexBufferManager->CreateVertexBufferView();
-	m_terrainIndexBufferView = m_terrainIndexBufferManager->CreateIndexBufferView();
+	m_terrainVertexBufferViews.push_back(vManager->CreateVertexBufferView());
+	m_terrainIndexBufferViews.push_back(iManager->CreateIndexBufferView());
 
 	m_cbvDescriptorSize = CommonObjects::m_descriptorHeapManager->GetDescriptorSize();
 	if (m_usingTexture) {
@@ -109,22 +104,52 @@ void TerrainComponent::Init()
 
 void TerrainComponent::Update()
 {
+	
+
+	CreateTerrainPoints();
+	
+	if (m_newPositions.size() > 0 && m_isPrevThreadComplete) {
+		m_loadingThreads.clear();
+		std::function<void()> threadFunc = [&] {CreateChunks(); };
+		m_loadingThreads.push_back(std::make_unique<Thread>(threadFunc));
+		m_isPrevThreadComplete = false;
+	}
+
+	for (auto& thread : m_loadingThreads) {
+		if (thread->GetCompleteState()) {
+			m_isPrevThreadComplete = true;
+			for (auto& data : m_generated) {
+				CreateChunkFromData(data);
+			}
+			thread->CloseIfComplete();
+		}
+	}
+	if (m_isPrevThreadComplete) {
+		m_loadingThreads.clear();
+	}
 }
+
+
 
 /**
  * @brief renders texture and terrain
- * 
+ *
  */
 void TerrainComponent::Render()
 {
+
+
 	CommonObjects::m_descriptorHeapManager->Render(m_rootSignInds.size(), m_rootSignInds.data(), m_heapInds.data(), CommonObjects::m_commandListManager);
 
 	CommonObjects::m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
 
 	CommonObjects::m_commandListManager->SetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-	CommonObjects::m_commandListManager->SetVertexBuffers(0, 1, &m_terrainVertexBufferView);
-	CommonObjects::m_commandListManager->SetIndexBuffer(&m_terrainIndexBufferView);
-	CommonObjects::m_commandListManager->DrawIndexedInstanced(m_indexCount, 1, 0, 0, 0);
+
+	for (auto i = 0; i < m_terrainIndexBufferManagers.size(); i++) {
+		CommonObjects::m_commandListManager->SetVertexBuffers(0, 1, &m_terrainVertexBufferViews[i]);
+		CommonObjects::m_commandListManager->SetIndexBuffer(&m_terrainIndexBufferViews[i]);
+		CommonObjects::m_commandListManager->DrawIndexedInstanced(m_indexCounts[i], 1, 0, 0, 0);
+	}
 
 	CommonObjects::m_commandListManager->CreateResourceBarrier(D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);
 }
@@ -155,11 +180,132 @@ void TerrainComponent::CreateDeviceDependentResoures()
 
 /**
  * @brief defines whether and what texture to use
- * 
+ *
  * @param filename the filename to the texture file
  */
 void TerrainComponent::UseTexture(std::wstring filename)
 {
 	m_usingTexture = true;
 	m_texturePath = filename;
+}
+
+void TerrainComponent::CreateTerrainPoints()
+{
+
+	auto pos = XMFLOAT3{};
+	XMStoreFloat3(&pos, m_playerPos);
+
+	float gridSquareSize = TERRAIN_STEP_SIZE;
+	// grid positions X and Z 
+	auto gridX = static_cast<int>(floorf(pos.x / gridSquareSize));
+	auto gridZ = static_cast<int>(floorf(pos.z / gridSquareSize));
+
+	auto chunkSize = m_terrainGenerator->GetChunkSize();
+	auto gridCorner = chunkSize / gridSquareSize;
+
+	auto relGridX = fmod(gridX, chunkSize / gridSquareSize);
+	auto relGridZ = fmod(gridZ, chunkSize / gridSquareSize);
+
+	if (relGridX < 0) {
+		relGridX = gridCorner - abs(relGridX);
+	}
+
+	if (relGridZ < 0) {
+		relGridZ = gridCorner - abs(relGridZ);
+	}
+
+	auto cornerX = (gridX - relGridX) * gridSquareSize;
+	auto cornerZ = (gridZ - relGridZ) * gridSquareSize;
+
+
+	auto positions = std::vector<XMFLOAT2>();
+	// all are for looking X+
+	{
+		//Front
+		float x = cornerX + chunkSize;
+		float z = cornerZ;
+		positions.push_back({ x,z });
+	}
+	{
+		//Back
+		float x = cornerX - chunkSize;
+		float z = cornerZ;
+		positions.push_back({ x,z });
+	}
+	{
+		//Left
+		float x = cornerX;
+		float z = cornerZ - chunkSize;
+		positions.push_back({ x,z });
+	}
+	{
+		//Right
+		float x = cornerX;
+		float z = cornerZ + chunkSize;
+		positions.push_back({ x,z });
+	}
+
+	// corners
+	{
+		//Front - Left
+		float x = cornerX + chunkSize;
+		float z = cornerZ - chunkSize;
+		positions.push_back({ x,z });
+	}
+	{
+		//Back
+		float x = cornerX - chunkSize;
+		float z = cornerZ + chunkSize;
+		positions.push_back({ x,z });
+	}
+	{
+		//Left
+		float x = cornerX - chunkSize;
+		float z = cornerZ - chunkSize;
+		positions.push_back({ x,z });
+	}
+	{
+		//Right
+		float x = cornerX + chunkSize;
+		float z = cornerZ + chunkSize;
+		positions.push_back({ x,z });
+	}
+
+	m_newPositions.clear();
+	auto chunkExtents = m_terrainGenerator->GetChunkOrigins();
+	for (auto& position : positions) {
+		auto exists = false;
+		for (auto& extent : *chunkExtents) {
+			if (position.x == extent.x && position.y == extent.y) {
+				exists = true;
+				break;
+			}
+		}
+		if (!exists) {
+			m_newPositions.push_back(position);
+		}
+	}
+}
+
+void TerrainComponent::CreateChunkFromData(std::shared_ptr<Structures::VerticesIndicesFromBin> data)
+{
+	auto terrainInds = std::make_shared<std::vector<unsigned int>>(data->indices->begin(), data->indices->end());
+
+	auto vManager = std::make_shared<VertexBufferManager>(data->vertices, CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
+	auto iManager = std::make_shared<IndexBufferManager>(terrainInds, CommonObjects::m_deviceResources, CommonObjects::m_commandListManager);
+	m_terrainVertexBufferManagers.push_back(vManager);
+	m_terrainIndexBufferManagers.push_back(iManager);
+
+	m_indexCounts.push_back(terrainInds->size());
+
+	m_terrainVertexBufferViews.push_back(vManager->CreateVertexBufferView());
+	m_terrainIndexBufferViews.push_back(iManager->CreateIndexBufferView());
+}
+
+void TerrainComponent::CreateChunks()
+{
+	auto positions = m_newPositions;
+	for (auto pos : positions) {
+		m_generated.push_back(m_terrainGenerator->GenTerrain(pos.x, pos.y));
+	}
 }

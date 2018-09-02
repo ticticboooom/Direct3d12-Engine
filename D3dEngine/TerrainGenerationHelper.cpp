@@ -8,8 +8,8 @@
 TerrainGenerationHelper::TerrainGenerationHelper()
 {
 	m_noiseGenerator = std::make_unique<PerlinNoise>(4, 0.00013, 5, 5.8, 0);
-	m_chunks = std::make_shared<std::vector<std::shared_ptr<std::vector<std::vector<float>>>>>();
-	m_chunkOrigins = std::make_shared<std::vector<XMFLOAT4>>();
+	m_chunks = std::make_shared<concurrency::concurrent_vector<std::shared_ptr<std::vector<std::vector<float>>>>>();
+	m_chunkOrigins = std::make_shared<concurrency::concurrent_vector<XMFLOAT4>>();
 }
 
 /**
@@ -34,6 +34,7 @@ std::shared_ptr<Structures::VerticesIndicesFromBin>  TerrainGenerationHelper::Ge
 	std::fill(heights->begin(), heights->end(), std::vector<float>(c_size / TERRAIN_STEP_SIZE + 1));
 
 	// add the heights, chunks and origins the the corresponding vector
+
 	m_chunks->push_back(heights);
 	m_chunkOrigins->push_back({ 
 		originX,
@@ -57,7 +58,7 @@ std::shared_ptr<Structures::VerticesIndicesFromBin> TerrainGenerationHelper::Gen
 	// create the required vectors
 	values->vertices = std::make_unique<std::vector<Structures::VertexTexCoordNormal>>();
 	values->indices = std::make_unique<std::vector<unsigned long>>();
-	auto index = m_index;
+	auto index = 0;
 	auto deltaIndex = 0;
 	// create the 2D plane of heights and triangles
 	for (auto x = originX; x < originX + c_size; x += TERRAIN_STEP_SIZE) {

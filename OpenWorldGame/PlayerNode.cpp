@@ -59,6 +59,7 @@ void PlayerNode::Init()
 void PlayerNode::Update()
 {
 	PathFinderComponent::SetPlayerTransform(*m_transform);
+	TerrainComponent::m_playerPos = m_transform->position;
 	Node::Update();
 }
 

@@ -71,6 +71,10 @@ void UtilityRenderer::Init()
 
 void UtilityRenderer::Update()
 {
+	CommonObjects::m_deviceResources->WaitForGpu();
+	ThrowIfFailed(CommonObjects::m_deviceResources->GetCommandAllocator()->Reset());
+	ThrowIfFailed(CommonObjects::m_commandListManager->Reset(CommonObjects::m_deviceResources->GetCommandAllocator(), CommonObjects::m_psoManager->GetState()));
+
 }
 
 /**
