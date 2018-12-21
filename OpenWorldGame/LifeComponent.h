@@ -17,7 +17,7 @@ public:
 	virtual void OnMouseMoved(float x, float y) override;
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
-	virtual void CreateDeviceDependentResoures() override;
+	virtual void CreateDeviceDependentResources() override;
 
 	void SetLife(float value) { m_life = value; };
 	float GetLife() const { return m_life; };

@@ -174,7 +174,7 @@ void TerrainComponent::CreateWindowSizeDependentResources()
 {
 }
 
-void TerrainComponent::CreateDeviceDependentResoures()
+void TerrainComponent::CreateDeviceDependentResources()
 {
 }
 

@@ -17,7 +17,7 @@ public:
 	virtual void OnMouseMoved(float x, float y) override;
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
-	virtual void CreateDeviceDependentResoures() override;
+	virtual void CreateDeviceDependentResources() override;
 	void SetAnimInUse(UINT index);
 	void InterpFromTo(const int index0, const int index1, const float interval, const int stationaryIndex);
 	UINT GetCurrentFrame() { return m_frame; };

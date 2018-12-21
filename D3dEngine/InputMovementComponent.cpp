@@ -191,6 +191,6 @@ void InputMovementComponent::CreateWindowSizeDependentResources()
 {
 }
 
-void InputMovementComponent::CreateDeviceDependentResoures()
+void InputMovementComponent::CreateDeviceDependentResources()
 {
 }

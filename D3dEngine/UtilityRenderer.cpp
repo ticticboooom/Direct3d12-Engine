@@ -163,6 +163,6 @@ void UtilityRenderer::CreateWindowSizeDependentResources()
 	XMStoreFloat4x4(&m_projection, XMMatrixTranspose(perspectiveMatrix * orientationMatrix));
 }
 
-void UtilityRenderer::CreateDeviceDependentResoures()
+void UtilityRenderer::CreateDeviceDependentResources()
 {
 }

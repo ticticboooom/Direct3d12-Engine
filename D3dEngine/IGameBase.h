@@ -17,6 +17,6 @@ public:
 	virtual void OnDeviceRemoved() = 0;
 	virtual void CreateWindowSizeDependentResources() = 0;
 private:
-	virtual void CreateDeviceDependentResoures() = 0;
+	virtual void CreateDeviceDependentResources() = 0;
 };
 

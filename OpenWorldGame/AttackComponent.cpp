@@ -76,7 +76,7 @@ void AttackComponent::CreateWindowSizeDependentResources()
 {
 }
 
-void AttackComponent::CreateDeviceDependentResoures()
+void AttackComponent::CreateDeviceDependentResources()
 {
 }
 

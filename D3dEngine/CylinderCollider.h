@@ -26,7 +26,7 @@ public:
 
 	virtual void CreateWindowSizeDependentResources() override;
 
-	virtual void CreateDeviceDependentResoures() override;
+	virtual void CreateDeviceDependentResources() override;
 	void InitCollider(Structures::BoundingCylinder collider);
 	Structures::BoundingCylinder GetCollider() const { return m_collider; };
 private:

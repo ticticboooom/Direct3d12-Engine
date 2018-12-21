@@ -16,7 +16,7 @@ public:
 	virtual void OnMouseMoved(float x, float y) override;
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
-	virtual void CreateDeviceDependentResoures() override;
+	virtual void CreateDeviceDependentResources() override;
 	XMVECTOR GetPos() const { return m_position; };
 	float GetPitch() const { return m_pitch; };
 	float GetYaw() const { return m_yaw; };

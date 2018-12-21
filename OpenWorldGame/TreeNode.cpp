@@ -76,7 +76,7 @@ void TreeNode::CreateWindowSizeDependentResources()
 	Node::CreateWindowSizeDependentResources();
 }
 
-void TreeNode::CreateDeviceDependentResoures()
+void TreeNode::CreateDeviceDependentResources()
 {
-	Node::CreateDeviceDependentResoures();
+	Node::CreateDeviceDependentResources();
 }

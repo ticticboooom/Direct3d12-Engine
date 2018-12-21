@@ -93,10 +93,10 @@ void ComponentManager::CreateWindowSizeDependentResources()
 	}
 }
 
-void ComponentManager::CreateDeviceDependentResoures()
+void ComponentManager::CreateDeviceDependentResources()
 {
 	for (auto& comp : m_components) {
-		comp->CreateDeviceDependentResoures();
+		comp->CreateDeviceDependentResources();
 	}
 }
 /**

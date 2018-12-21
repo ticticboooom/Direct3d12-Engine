@@ -48,6 +48,6 @@ void EnemyAttackComponent::CreateWindowSizeDependentResources()
 {
 }
 
-void EnemyAttackComponent::CreateDeviceDependentResoures()
+void EnemyAttackComponent::CreateDeviceDependentResources()
 {
 }

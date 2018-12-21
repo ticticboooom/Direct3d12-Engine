@@ -57,7 +57,7 @@ void TerrainNode::CreateWindowSizeDependentResources()
 	Node::CreateWindowSizeDependentResources();
 }
 
-void TerrainNode::CreateDeviceDependentResoures()
+void TerrainNode::CreateDeviceDependentResources()
 {
-	Node::CreateDeviceDependentResoures();
+	Node::CreateDeviceDependentResources();
 }

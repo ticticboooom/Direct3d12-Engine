@@ -23,7 +23,7 @@ public:
 	virtual void OnMouseMoved(float x, float y) override;
 	virtual void OnDeviceRemoved() override;
 	virtual void CreateWindowSizeDependentResources() override;
-	virtual void CreateDeviceDependentResoures() override;
+	virtual void CreateDeviceDependentResources() override;
 private:
 
 };

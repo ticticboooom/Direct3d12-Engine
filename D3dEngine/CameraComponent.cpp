@@ -88,6 +88,6 @@ void CameraComponent::CreateWindowSizeDependentResources()
 {
 }
 
-void CameraComponent::CreateDeviceDependentResoures()
+void CameraComponent::CreateDeviceDependentResources()
 {
 }

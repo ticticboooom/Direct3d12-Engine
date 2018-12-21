@@ -57,7 +57,7 @@ void PathFinderComponent::CreateWindowSizeDependentResources()
 {
 }
 
-void PathFinderComponent::CreateDeviceDependentResoures()
+void PathFinderComponent::CreateDeviceDependentResources()
 {
 }
 

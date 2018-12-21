@@ -66,7 +66,7 @@ void PlayerCameraNode::CreateWindowSizeDependentResources()
 	Node::CreateWindowSizeDependentResources();
 }
 
-void PlayerCameraNode::CreateDeviceDependentResoures()
+void PlayerCameraNode::CreateDeviceDependentResources()
 {
-	Node::CreateDeviceDependentResoures();
+	Node::CreateDeviceDependentResources();
 }

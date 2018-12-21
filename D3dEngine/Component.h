@@ -24,7 +24,7 @@ public:
 	virtual void OnMouseMoved(float x, float y) override = 0;
 	virtual void OnDeviceRemoved() override = 0;
 	virtual void CreateWindowSizeDependentResources() override = 0;
-	virtual void CreateDeviceDependentResoures() override = 0;
+	virtual void CreateDeviceDependentResources() override = 0;
 	std::shared_ptr<Structures::Transform> m_transform;
 	IGameBase* owner;
 	static UINT m_descriptorCount;

@@ -80,6 +80,6 @@ void PlayerAnimationControllerComponent::CreateWindowSizeDependentResources()
 {
 }
 
-void PlayerAnimationControllerComponent::CreateDeviceDependentResoures()
+void PlayerAnimationControllerComponent::CreateDeviceDependentResources()
 {
 }

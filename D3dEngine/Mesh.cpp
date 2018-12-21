@@ -128,7 +128,7 @@ void Mesh::CreateWindowSizeDependentResources()
 {
 }
 
-void Mesh::CreateDeviceDependentResoures()
+void Mesh::CreateDeviceDependentResources()
 {
 }
 

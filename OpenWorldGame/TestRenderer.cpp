@@ -85,7 +85,7 @@ void TestRenderer::CreateWindowSizeDependentResources()
 	Renderer::CreateWindowSizeDependentResources();
 }
 
-void TestRenderer::CreateDeviceDependentResoures()
+void TestRenderer::CreateDeviceDependentResources()
 {
-	Renderer::CreateDeviceDependentResoures();
+	Renderer::CreateDeviceDependentResources();
 }

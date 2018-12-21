@@ -56,6 +56,6 @@ void LifeComponent::CreateWindowSizeDependentResources()
 {
 }
 
-void LifeComponent::CreateDeviceDependentResoures()
+void LifeComponent::CreateDeviceDependentResources()
 {
 }

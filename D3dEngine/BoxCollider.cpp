@@ -54,7 +54,7 @@ void BoxCollider::CreateWindowSizeDependentResources()
 {
 }
 
-void BoxCollider::CreateDeviceDependentResoures()
+void BoxCollider::CreateDeviceDependentResources()
 {
 }
 /**

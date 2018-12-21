@@ -60,7 +60,7 @@ void StaticMeshComponent::CreateWindowSizeDependentResources()
 	Mesh::CreateWindowSizeDependentResources();
 }
 
-void StaticMeshComponent::CreateDeviceDependentResoures()
+void StaticMeshComponent::CreateDeviceDependentResources()
 {
-	Mesh::CreateDeviceDependentResoures();
+	Mesh::CreateDeviceDependentResources();
 }

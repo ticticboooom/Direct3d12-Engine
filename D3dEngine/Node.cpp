@@ -115,9 +115,9 @@ void Node::CreateWindowSizeDependentResources()
 	m_compManager.CreateWindowSizeDependentResources();
 }
 
-void Node::CreateDeviceDependentResoures()
+void Node::CreateDeviceDependentResources()
 {
-	m_compManager.CreateDeviceDependentResoures();
+	m_compManager.CreateDeviceDependentResources();
 }
 
 void Node::AddComponent(std::shared_ptr<Component> comp)

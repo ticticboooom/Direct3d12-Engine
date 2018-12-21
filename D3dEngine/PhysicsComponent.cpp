@@ -115,6 +115,6 @@ void PhysicsComponent::CreateWindowSizeDependentResources()
 {
 }
 
-void PhysicsComponent::CreateDeviceDependentResoures()
+void PhysicsComponent::CreateDeviceDependentResources()
 {
 }

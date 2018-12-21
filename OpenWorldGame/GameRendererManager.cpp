@@ -59,7 +59,7 @@ void GameRendererManager::CreateWindowSizeDependentResources()
 	RendererManager::CreateWindowSizeDependentResources();
 }
 
-void GameRendererManager::CreateDeviceDependentResoures()
+void GameRendererManager::CreateDeviceDependentResources()
 {
-	RendererManager::CreateDeviceDependentResoures();
+	RendererManager::CreateDeviceDependentResources();
 }

@@ -56,7 +56,7 @@ void CylinderCollider::CreateWindowSizeDependentResources()
 {
 }
 
-void CylinderCollider::CreateDeviceDependentResoures()
+void CylinderCollider::CreateDeviceDependentResources()
 {
 }
 

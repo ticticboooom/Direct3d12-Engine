@@ -93,7 +93,7 @@ void PlayerNode::CreateWindowSizeDependentResources()
 	Node::CreateWindowSizeDependentResources();
 }
 
-void PlayerNode::CreateDeviceDependentResoures()
+void PlayerNode::CreateDeviceDependentResources()
 {
-	Node::CreateDeviceDependentResoures();
+	Node::CreateDeviceDependentResources();
 }

@@ -63,7 +63,7 @@ void Renderer::CreateWindowSizeDependentResources()
 	m_nodeManager.CreateWindowSizeDependentResources();
 }
 
-void Renderer::CreateDeviceDependentResoures()
+void Renderer::CreateDeviceDependentResources()
 {
-	m_nodeManager.CreateDeviceDependentResoures();
+	m_nodeManager.CreateDeviceDependentResources();
 }

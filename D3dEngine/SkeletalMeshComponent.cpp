@@ -144,9 +144,9 @@ void SkeletalMeshComponent::CreateWindowSizeDependentResources()
 	Mesh::CreateWindowSizeDependentResources();
 }
 
-void SkeletalMeshComponent::CreateDeviceDependentResoures()
+void SkeletalMeshComponent::CreateDeviceDependentResources()
 {
-	Mesh::CreateDeviceDependentResoures();
+	Mesh::CreateDeviceDependentResources();
 }
 
 void SkeletalMeshComponent::SetAnimInUse(UINT index)

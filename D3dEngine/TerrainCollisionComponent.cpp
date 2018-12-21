@@ -96,6 +96,6 @@ void TerrainCollisionComponent::CreateWindowSizeDependentResources()
 {
 }
 
-void TerrainCollisionComponent::CreateDeviceDependentResoures()
+void TerrainCollisionComponent::CreateDeviceDependentResources()
 {
 }

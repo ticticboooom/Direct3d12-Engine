@@ -89,8 +89,8 @@ void EnemyNode::CreateWindowSizeDependentResources()
 	Node::CreateWindowSizeDependentResources();
 }
 
-void EnemyNode::CreateDeviceDependentResoures()
+void EnemyNode::CreateDeviceDependentResources()
 {
-	Node::CreateDeviceDependentResoures();
+	Node::CreateDeviceDependentResources();
 }
 
