@@ -18,9 +18,7 @@ EnemyNode::EnemyNode() : Node()
 
 	auto playerCollider = Structures::BoundingCylinder({ 0,0,0 }, 1.2f, 3);
 	auto boxCollider1 = std::make_shared<CylinderCollider>();
-
-
-
+	   
 	AddComponent(boxCollider1);
 	boxCollider1->InitCollider(playerCollider);
 	auto boxCollider = std::make_shared<BoxCollider>();
