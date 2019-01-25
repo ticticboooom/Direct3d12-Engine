@@ -70,7 +70,7 @@ void PhysicsComponent::Update()
 				yPos = XMVectorGetY(m_transform->position);
 			}
 			// fall down
-			yPosFallDiff *= yPosFallMultiplyer;
+			yPosFallDiff = yPosFallDiff * yPosFallMultiplyer + (yPosFallDiff);
 			yPos -= yPosFallDiff;
 			m_transform->position = XMVectorSetY(m_transform->position, yPos);
 		}
