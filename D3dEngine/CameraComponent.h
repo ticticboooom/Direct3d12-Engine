@@ -5,7 +5,7 @@
 class D3DENGINE_API CameraComponent : public Component
 {
 public:
-	CameraComponent(std::shared_ptr<InputMovementComponent> movement);
+	CameraComponent(std::shared_ptr<InputMovementComponent> movement, float cameraGroundOffset, float camMultiplier);
 	~CameraComponent();
 
 	virtual int InitRootSignatureParameters(int indexOffset) override;
@@ -25,7 +25,8 @@ private:
 
 	D3D12_RECT m_scissorRect; /// Rect that anything outside of it will not be displayed
 
-	const float c_cameraGroundOffset = 0.2; /// The constant offset of the camera from the ground
+	float m_cameraGroundOffset; /// The constant offset of the camera from the ground
 	bool m_isUnderGround; /// is the camera underground 
+	float m_camMultiplier;
 };
 

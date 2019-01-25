@@ -7,8 +7,10 @@
  * @brief Construct a new Camera Component:: Camera Component object
  * Controls the camera movement with keypresses and mouse movement also orbits around the node position
  */
-CameraComponent::CameraComponent(std::shared_ptr<InputMovementComponent> movement) :
-m_isUnderGround(false)
+CameraComponent::CameraComponent(std::shared_ptr<InputMovementComponent> movement, float cameraGroundOffset, float camMultiplier) :
+m_isUnderGround(false),
+m_cameraGroundOffset(cameraGroundOffset),
+m_camMultiplier(camMultiplier)
 {
 	m_movementComponent = movement;
 }
@@ -40,15 +42,15 @@ void CameraComponent::Update()
 	auto yaw = m_movementComponent->GetYaw();
 	DirectX::XMVECTORF32 up = { 0.0f, 1.0f, 0.0f, 0.0f };
 	XMFLOAT3 fullNewPosFloat3;
-	// Creates the multiplyer / offset for the camera orbitting the player.
-	const auto camMultiplyer = 15;
+	// Creates the multiplyer / offset for the camera orbitting the player 
+
 	// Orbits the camera around the player (research sin waves and cos waves to understand more)
-	XMStoreFloat3(&fullNewPosFloat3, XMVectorSet(sin(yaw) * camMultiplyer, sin(pitch) * camMultiplyer, cos(yaw) * camMultiplyer, 1) + target);
+	XMStoreFloat3(&fullNewPosFloat3, XMVectorSet(sin(yaw) * m_camMultiplier, sin(pitch) * m_camMultiplier, cos(yaw) * m_camMultiplier, 1) + target);
 
 
 	// sets the \var newYPos if it is above terrain and the camera is not (\property c_cameraGroundOffset is the constant offset of how much the camera should be above ground)
-	if (m_minY > fullNewPosFloat3.y - c_cameraGroundOffset) {
-		fullNewPosFloat3.y = m_minY + c_cameraGroundOffset;
+	if (m_minY > fullNewPosFloat3.y - m_cameraGroundOffset) {
+		fullNewPosFloat3.y = m_minY + m_cameraGroundOffset;
 		m_movementComponent->SetRotationAbilities(false, true);
 	}
 	else {

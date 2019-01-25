@@ -10,7 +10,7 @@
 
 PlayerCameraNode::PlayerCameraNode(std::shared_ptr<InputMovementComponent> movementComponent) : Node()
 {
-	auto camera = std::make_shared<CameraComponent>(movementComponent);
+	auto camera = std::make_shared<CameraComponent>(movementComponent, 0.2f, 15.f);
 	AddComponent(camera);
 	auto terrainCollisionComponentForCam = std::make_shared<TerrainCollisionComponent>();
 	AddComponent(terrainCollisionComponentForCam);
