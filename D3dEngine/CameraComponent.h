@@ -25,7 +25,7 @@ private:
 
 	D3D12_RECT m_scissorRect; /// Rect that anything outside of it will not be displayed
 
-	const float c_cameraGroundOffset = 2; /// The constant offset of the camera from the ground
+	const float c_cameraGroundOffset = 0.2; /// The constant offset of the camera from the ground
 	bool m_isUnderGround; /// is the camera underground 
 };
 

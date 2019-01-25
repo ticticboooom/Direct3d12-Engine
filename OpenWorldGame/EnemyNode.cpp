@@ -25,7 +25,7 @@ EnemyNode::EnemyNode() : Node()
 	boxCollider1->InitCollider(playerCollider);
 	auto boxCollider = std::make_shared<BoxCollider>();
 	AddComponent(boxCollider);
-	auto playerCollider1 = BoundingBox({ 0,0,0 }, { 0,5.f,0 });
+	auto playerCollider1 = BoundingBox({ 0,0,0 }, { 0,8.5f,0 });
 	boxCollider->InitCollider(playerCollider1);
 
 	auto pathFinder = std::make_shared<PathFinderComponent>();

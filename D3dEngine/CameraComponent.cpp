@@ -41,7 +41,7 @@ void CameraComponent::Update()
 	DirectX::XMVECTORF32 up = { 0.0f, 1.0f, 0.0f, 0.0f };
 	XMFLOAT3 fullNewPosFloat3;
 	// Creates the multiplyer / offset for the camera orbitting the player.
-	const auto camMultiplyer = 10;
+	const auto camMultiplyer = 15;
 	// Orbits the camera around the player (research sin waves and cos waves to understand more)
 	XMStoreFloat3(&fullNewPosFloat3, XMVectorSet(sin(yaw) * camMultiplyer, sin(pitch) * camMultiplyer, cos(yaw) * camMultiplyer, 1) + target);
 

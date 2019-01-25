@@ -21,7 +21,7 @@ PlayerNode::PlayerNode() : Node()
 
 	auto boxCollider = std::make_shared<BoxCollider>();
 	AddComponent(boxCollider);
-	auto playerCollider = BoundingBox({ 0,0,0 }, { 0,5.f,0 });
+	auto playerCollider = BoundingBox({ 0,0.f,0 }, { 0,8.5f,0 });
 	boxCollider->InitCollider(playerCollider);
 
 
@@ -30,9 +30,6 @@ PlayerNode::PlayerNode() : Node()
 
 	auto terrainCollisionComponent = std::make_shared<TerrainCollisionComponent>();
 	AddComponent(terrainCollisionComponent);
-
-	auto attackComponent = std::make_shared<AttackComponent>();
-	AddComponent(attackComponent);
 
 	auto lifeComponent = std::make_shared<LifeComponent>();
 	AddComponent(lifeComponent);
